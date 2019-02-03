@@ -1,0 +1,29 @@
+site_name: Poetry documentation
+
+theme:
+  name: null
+  custom_dir: theme
+
+extra:
+  version: 2.0
+
+nav:
+  - Introduction: index.md
+  - Basic Usage: basic-usage.md
+  - Libraries: libraries.md
+  - Commands: cli.md
+  - Configuration: configuration.md
+  - Repositories: repositories.md
+  - Versions: versions.md
+  - The pyproject.toml file: pyproject.md
+  - Contributing: contributing.md
+  - FAQ: faq.md
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - pymdownx.superfences
+  - toc:
+      permalink: 
+
+docs_dir: docs.ja

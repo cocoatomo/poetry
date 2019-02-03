@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config xmlns="http://zanata.org/namespace/config/">
+  <url>https://translate.zanata.org/</url>
+  <project>poetry-ja</project>
+  <project-version>master</project-version>
+  <project-type>podir</project-type>
+
+  <src-dir>locales/pot</src-dir>
+  <trans-dir>locales</trans-dir>
+  <rules>
+    <rule pattern="**/*.pot">{locale}/{path}/{filename}.po</rule>
+  </rules>
+</config>

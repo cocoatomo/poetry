@@ -1,0 +1,59 @@
+PYTHON := python3.7
+VENV := .venv
+LANG := ja
+ORIGDIR := docs
+LOCALESDIR := locales
+POTDIR := $(LOCALESDIR)/pot
+PODIR := $(LOCALESDIR)/$(LANG)
+TRANSDIR := docs.$(LANG)
+
+DOCS := $(wildcard $(ORIGDIR)/*.md)
+POTS := $(subst $(ORIGDIR), $(POTDIR), $(patsubst %.md, %.pot, $(DOCS)))
+TRANSDOCS := $(subst $(ORIGDIR), $(TRANSDIR), $(DOCS))
+# $(warning $(TRANSDOCS))
+
+.PHONY: venv pushorig catalog pullpo translate build-$(LANG)
+
+venv:
+	$(PYTHON) -m venv --prompt=poetrydoc $(VENV)
+	$(VENV)/bin/pip install mkdocs pygments mkdocs-material
+
+pushorig: catalog
+	zanata-cli push --batch-mode
+
+catalog: $(POTS)
+
+$(POTDIR)/%.pot: $(ORIGDIR)/%.md
+	po4a-gettextize \
+	--master-charset UTF-8 \
+	--format text \
+	--master $< \
+	--po $@
+
+pullpo:
+	zanata-cli pull -l ja --batch-mode
+
+translate: $(TRANSDOCS)
+
+$(TRANSDIR)/%.md: $(ORIGDIR)/%.md
+	po4a-translate \
+	--master-charset UTF-8 \
+	--localized-charset UTF-8 \
+	--format text \
+	--keep 0 \
+	--master $< \
+	--po $(PODIR)/$(*F).po \
+	--localized $@
+
+$(TRANSDIR)/%.md: $(PODIR)/%.po
+	po4a-translate \
+	--master-charset UTF-8 \
+	--localized-charset UTF-8 \
+	--format text \
+	--keep 0 \
+	--master $(ORIGDIR)/$(*F).md \
+	--po $< \
+	--localized $@
+
+build-$(LANG):
+	PATH=$(VENV)/bin:$$PATH mkdocs build -f mkdocs.$(LANG).yml --theme material
