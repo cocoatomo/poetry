@@ -35,17 +35,7 @@ pullpo:
 
 translate: $(TRANSDOCS)
 
-$(TRANSDIR)/%.md: $(ORIGDIR)/%.md
-	po4a-translate \
-	--master-charset UTF-8 \
-	--localized-charset UTF-8 \
-	--format text \
-	--keep 0 \
-	--master $< \
-	--po $(PODIR)/$(*F).po \
-	--localized $@
-
-$(TRANSDIR)/%.md: $(PODIR)/%.po
+$(TRANSDIR)/%.md: $(PODIR)/%.po $(ORIGDIR)/%.md
 	po4a-translate \
 	--master-charset UTF-8 \
 	--localized-charset UTF-8 \
