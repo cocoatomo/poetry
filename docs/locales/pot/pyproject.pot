@@ -1,0 +1,600 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: docs/pyproject.md:2
+msgid "# The `pyproject.toml` file"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:4
+msgid ""
+"The `tool.poetry` section of the `pyproject.toml` file is composed of "
+"multiple sections."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:6
+msgid "## name"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:8
+msgid "The name of the package. **Required**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:10
+msgid "## version"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:12
+msgid "The version of the package. **Required**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:15
+msgid ""
+"This should follow [semantic versioning](http://semver.org/). However it "
+"will not be enforced and you remain free to follow another specification."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:17
+msgid "## description"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:19
+msgid "A short description of the package. **Required**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:21
+msgid "## license"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:23
+msgid "The license of the package."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:25
+msgid "The recommended notation for the most common licenses is (alphabetical):"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "Apache-2.0"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "BSD-2-Clause"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "BSD-3-Clause"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "BSD-4-Clause"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "GPL-2.0"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "GPL-2.0+"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "GPL-3.0"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "GPL-3.0+"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "LGPL-2.1"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "LGPL-2.1+"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "LGPL-3.0"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "LGPL-3.0+"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:39
+msgid "MIT"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:42
+msgid ""
+"Optional, but it is highly recommended to supply this.  More identifiers are "
+"listed at the [SPDX Open Source License "
+"Registry](https://www.spdx.org/licenses/)."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:44
+msgid "## authors"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:46
+msgid ""
+"The authors of the package. This is a list of authors and should contain at "
+"least one author."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:48
+msgid "Authors must be in the form `name <email>`."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:50
+msgid "## readme"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:52
+msgid "The readme file of the package. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:54
+msgid "The file can be either `README.rst` or `README.md`."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:56
+msgid "## homepage"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:58
+msgid "An URL to the website of the project. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:60
+msgid "## repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:62
+msgid "An URL to the repository of the project. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:64
+msgid "## documentation"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:66
+msgid "An URL to the documentation of the project. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:68
+msgid "## keywords"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:70
+msgid "A list of keywords (max: 5) that the package is related to. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:72
+msgid "## classifiers"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:74
+msgid ""
+"A list of PyPI [trove classifiers](https://pypi.org/classifiers/) that "
+"describe the project. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:83
+#, no-wrap
+msgid ""
+"```toml\n"
+"[tool.poetry]\n"
+"# ...\n"
+"classifiers = [\n"
+"    \"Topic :: Software Development :: Build Tools\",\n"
+"    \"Topic :: Software Development :: Libraries :: Python Modules\"\n"
+"]\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:85 docs/pyproject.md:117 docs/pyproject.md:132 docs/pyproject.md:175 docs/pyproject.md:256
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:87
+#, no-wrap
+msgid ""
+"    Note that Python classifiers are still automatically added for you and "
+"are determined by your `python` requirement.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:89
+#, no-wrap
+msgid ""
+"    The `license` property will also set the License classifier "
+"automatically.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:91
+msgid "## packages"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:93
+msgid "A list of packages and modules to include in the final distribution."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:96
+msgid ""
+"If your project structure differs from the standard one supported by "
+"`poetry`, you can specify the packages you want to include in the final "
+"distribution."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:105
+#, no-wrap
+msgid ""
+"```toml\n"
+"[tool.poetry]\n"
+"# ...\n"
+"packages = [\n"
+"    { include = \"mypackage\" },\n"
+"    { include = \"extra_package/**/*.py\" },\n"
+"]\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:107
+msgid ""
+"If your package is stored inside a \"source\" directory, you must specify "
+"it:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:115
+#, no-wrap
+msgid ""
+"```toml\n"
+"[tool.poetry]\n"
+"# ...\n"
+"packages = [\n"
+"    { include = \"mypackage\", from = \"lib\" },\n"
+"]\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:120
+#, no-wrap
+msgid ""
+"    Using `packages` disables the package auto-detection feature meaning you "
+"have to\n"
+"    **explicitly** specify the \"default\" package.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:123
+#, no-wrap
+msgid ""
+"    For instance, if you have a package named `my_package` and you want to "
+"also include\n"
+"    another package named `extra_package`, you will need to specify "
+"`my_package` explicitly:\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:130
+#, no-wrap
+msgid ""
+"    ```toml\n"
+"    packages = [\n"
+"        { include = \"mypackage\" },\n"
+"        { include = \"extra_package\" },\n"
+"    ]\n"
+"    ```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:134
+#, no-wrap
+msgid "    Poetry is clever enough to detect Python subpackages.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:136
+#, no-wrap
+msgid ""
+"    Thus, you only have to specify the directory where your root package "
+"resides.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:138
+msgid "## include and exclude"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:140
+msgid "A list of patterns that will be included in the final package."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:143
+msgid ""
+"You can explicitly specify to Poetry that a set of globs should be ignored "
+"or included for the purposes of packaging.  The globs specified in the "
+"exclude field identify a set of files that are not included when a package "
+"is built."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:145
+msgid ""
+"If a VCS is being used for a package, the exclude field will be seeded with "
+"the VCS’ ignore settings (`.gitignore` for git for example)."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:151
+msgid "```toml [tool.poetry] # ...  include = [\"CHANGELOG.md\"] ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:155
+msgid "```toml exclude = [\"my_package/excluded.py\"] ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:157
+msgid "## `dependencies` and `dev-dependencies`"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:160
+msgid ""
+"Poetry is configured to look for dependencies on [PyPi](https://pypi.org) by "
+"default.  Only the name and a version string are required in this case."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:165
+msgid "```toml [tool.poetry.dependencies] requests = \"^2.13.0\" ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:167
+msgid ""
+"If you want to use a private repository, you can add it to your "
+"`pyproject.toml` file, like so:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:173
+msgid ""
+"```toml [[tool.poetry.source]] name = 'private' url = "
+"'http://example.com/simple' ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:178
+#, no-wrap
+msgid ""
+"    Be aware that declaring the python version for which your package\n"
+"    is compatible is mandatory:\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:183
+#, no-wrap
+msgid ""
+"    ```toml\n"
+"    [tool.poetry.dependencies]\n"
+"    python = \"^3.6\"\n"
+"    ```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:185
+msgid "## `scripts`"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:187
+msgid ""
+"This section describe the scripts or executable that will be installed when "
+"installing the package"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:192
+msgid "```toml [tool.poetry.scripts] poetry = 'poetry:console.run' ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:194
+msgid ""
+"Here, we will have the `poetry` script installed which will execute "
+"`console.run` in the `poetry` package."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:196
+msgid "## `extras`"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:198
+msgid "Poetry supports extras to allow expression of:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:201
+msgid "optional dependencies, which enhance a package, but are not required; and"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/pyproject.md:201
+msgid "clusters of optional dependencies."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:205
+msgid "```toml [tool.poetry] name = \"awesome\""
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:209
+msgid ""
+"[tool.poetry.dependencies] # These packages are mandatory and form the core "
+"of this package’s distribution.  mandatory = \"^1.0\""
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:214
+msgid ""
+"# A list of all of the optional dependencies, some of which are included in "
+"the # below `extras`. They can be opted into by apps.  psycopg2 = { version "
+"= \"^2.7\", optional = true } mysqlclient = { version = \"^1.3\", optional = "
+"true }"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:219
+msgid "[tool.poetry.extras] mysql = [\"mysqlclient\"] pgsql = [\"psycopg2\"] ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:221
+msgid ""
+"When installing packages, you can specify extras by using the `-E|--extras` "
+"option:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:226
+msgid ""
+"```bash poetry install --extras \"mysql pgsql\" poetry install -E mysql -E "
+"pgsql ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:228
+msgid "## `plugins`"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:232
+msgid ""
+"Poetry supports arbitrary plugins which work similarly to [setuptools entry "
+"points](http://setuptools.readthedocs.io/en/latest/setuptools.html).  To "
+"match the example in the setuptools documentation, you would use the "
+"following:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:235
+msgid "```toml [tool.poetry.plugins] # Optional super table"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:239
+msgid ""
+"[tool.poetry.plugins.\"blogtool.parsers\"] \".rst\" = "
+"\"some_module:SomeClass\" ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:241
+msgid "## Poetry and PEP-517"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:244
+msgid ""
+"[PEP-517](https://www.python.org/dev/peps/pep-0517/) introduces a standard "
+"way to define alternative build systems to build a Python project."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:248
+msgid ""
+"Poetry is compliant with PEP-517 so if you use Poetry to manage your Python "
+"project you should reference it in the `build-system` section of the "
+"`pyproject.toml` file like so:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:254
+msgid ""
+"```toml [build-system] requires = [\"poetry>=0.12\"] build-backend = "
+"\"poetry.masonry.api\" ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:257
+#, no-wrap
+msgid ""
+"    When using the `new` or `init` command this section will be "
+"automatically added.\n"
+msgstr ""

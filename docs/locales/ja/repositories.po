@@ -1,0 +1,168 @@
+# cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-30 04:33+0000\n"
+"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#. type: Plain text
+#: docs/repositories.md:2
+msgid "# Repositories"
+msgstr "# レポジトリ"
+
+#. type: Plain text
+#: docs/repositories.md:4
+msgid "## Using the PyPI repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:7
+msgid ""
+"By default, Poetry is configured to use the [PyPI](https://pypi.org) "
+"repository, for package installation and publishing."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:10
+msgid ""
+"So, when you add dependencies to your project, Poetry will assume they are "
+"available on PyPI."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:12
+msgid "This represents most cases and will likely be enough for most users."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:15
+msgid "## Using a private repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:19
+msgid ""
+"However, at times, you may need to keep your package private while still "
+"being able to share it with your teammates. In this case, you will need to "
+"use a private repository."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:21
+msgid "### Adding a repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:23
+msgid "Adding a new repository is easy with the `config` command."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:27
+msgid "```bash poetry config repositories.foo https://foo.bar/simple/ ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:29
+msgid ""
+"This will set the url for repository `foo` to `https://foo.bar/simple/`."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:31
+msgid "### Configuring credentials"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:33
+msgid ""
+"If you want to store your credentials for a specific repository, you can do "
+"so easily:"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:37
+msgid "```bash poetry config http-basic.foo username password ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:39
+msgid "If you do not specify the password you will be prompted to write it."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:41
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:44
+#, no-wrap
+msgid ""
+"    To publish to PyPI, you can set your credentials for the repository\n"
+"    named `pypi`:\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:48
+#, no-wrap
+msgid ""
+"    ```bash\n"
+"    poetry config http-basic.pypi username password\n"
+"    ```\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:51
+msgid ""
+"You can also specify the username and password when using the `publish` "
+"command with the `--username` and `--password` options."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:53
+msgid "### Install dependencies from a private repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:56
+msgid ""
+"Now that you can publish to your private repository, you need to be able to "
+"install dependencies from it."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:58
+msgid "For that, you have to edit your `pyproject.toml` file, like so"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:64
+msgid ""
+"```toml [[tool.poetry.source]] name = \"foo\" url = \"https://foo.bar/simple/"
+"\" ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:66
+msgid ""
+"From now on, Poetry will also look for packages in your private repository."
+msgstr ""
+
+#. type: Plain text
+#: docs/repositories.md:70
+msgid ""
+"If your private repository requires HTTP Basic Auth be sure to add the "
+"username and password to your `http-basic` config using the example above "
+"(be sure to use the same name that is in the `tool.poetry.source` section). "
+"Poetry will use these values to authenticate to your private repository when "
+"downloading or looking for packages."
+msgstr ""

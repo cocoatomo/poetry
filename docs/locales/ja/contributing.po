@@ -1,0 +1,406 @@
+# cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-30 04:31+0000\n"
+"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#. type: Plain text
+#: docs/contributing.md:2
+msgid "# Contributing to Poetry"
+msgstr "# Poetryに貢献する"
+
+#. type: Plain text
+#: docs/contributing.md:4
+msgid "First off, thank for taking the time to contribute!"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:6
+msgid ""
+"The following is a set of guidelines for contributing to Poetry on GitHub. "
+"These are mostly guidelines, not rules. Use your best judgment, and feel "
+"free to propose changes to this document in a pull request."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:8
+msgid "#### Table of Contents"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:10
+msgid "[How to contribute](#how-to-contribute)"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: docs/contributing.md:14
+msgid "[Reporting bugs](#reporting-bugs)"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: docs/contributing.md:14
+msgid "[Suggesting enhancements](#suggesting-enhancements)"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: docs/contributing.md:14
+msgid "[Contributing to code](#contributing-to-code)"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:17
+msgid "## How to contribute"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:19
+msgid "### Reporting bugs"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:22
+msgid ""
+"This section guides you through submitting a bug report for Poetry.  "
+"Following these guidelines helps maintainers and the community understand "
+"your report, reproduce the behavior, and find related reports."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:24
+msgid ""
+"Before creating bug reports, please check [this list](#before-submitting-a-"
+"bug-report) to be sure that you need to create one. When you are creating a "
+"bug report, please include as many details as possible. Fill out the "
+"[required template](https://github.com/sdispater/poetry/blob/master/.github/"
+"ISSUE_TEMPLATE/1_Bug_report.md), the information it asks helps the "
+"maintainers resolve the issue faster."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:26
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:28
+#, no-wrap
+msgid ""
+"    If you find a **Closed** issue that seems like it is the same thing that "
+"you're experiencing, open a new issue and include a link to the original "
+"issue in the body of your new one.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:30
+msgid "#### Before submitting a bug report"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:33 docs/contributing.md:71
+msgid ""
+"**Check the [FAQs on the official website](https://poetry.eustace.io)** for "
+"a list of common questions and problems."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:33 docs/contributing.md:71
+msgid ""
+"**Check that your issue does not already exist in the [issue tracker](https:/"
+"/github.com/sdispater/poetry/issues)**."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:35
+msgid "#### How do I submit a bug report"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:37
+msgid ""
+"Bugs are tracked on the [official issue tracker](https://github.com/"
+"sdispater/poetry/issues) where you can create a new one and provide the "
+"following information by filling in [the template](https://github.com/"
+"sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md)."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:39
+msgid ""
+"Explain the problem and include additional details to help maintainers "
+"reproduce the problem:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**Use a clear and descriptive title** for the issue to identify the problem."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**Describe the exact steps which reproduce the problem** in as many details "
+"as possible."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**Provide your pyproject.toml file** in a [Gist](https://gist.github.com) "
+"after removing potential private information (like private package "
+"repositories)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**Provide specific examples to demonstrate the steps to reproduce the "
+"issue**. Include links to files or GitHub projects, or copy/pasteable "
+"snippets, which you use in those examples."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**Describe the behavior you observed after following the steps** and point "
+"out what exactly is the problem with that behavior."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid "**Explain which behavior you expected to see instead and why.**"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:47
+msgid ""
+"**If the problem is an unexpected error being raised**, execute the "
+"corresponding command in **debug** mode (the `-vvv` option)."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:49
+msgid "Provide more context by answering these questions:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:53
+msgid ""
+"**Did the problem start happening recently** (e.g. after updating to a new "
+"version of Poetry) or was this always a problem?"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:53
+msgid ""
+"If the problem started happening recently, **can you reproduce the problem "
+"in an older version of Poetry?** What's the most recent version in which the "
+"problem doesn't happen?"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:53
+msgid ""
+"**Can you reliably reproduce the issue?** If not, provide details about how "
+"often the problem happens and under which conditions it normally happens."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:55
+msgid "Include details about your configuration and environment:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:59
+msgid ""
+"**Which version of Poetry are you using?** You can get the exact version by "
+"running `poetry -V` in your terminal."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:59
+msgid ""
+"**Which Python version Poetry has been installed for?** Execute the `debug:"
+"info` to get the information."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:59
+msgid "**What's the name and version of the OS you're using**?"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:62
+msgid "### Suggesting enhancements"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:64
+msgid ""
+"This section guides you through submitting an enhancement suggestion for "
+"Poetry, including completely new features and minor improvements to existing "
+"functionality. Following these guidelines helps maintainers and the "
+"community understand your suggestion and find related suggestions."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:66
+msgid ""
+"Before creating enhancement suggestions, please check [this list](#before-"
+"submitting-an-enhancement-suggestion) as you might find out that you don't "
+"need to create one. When you are creating an enhancement suggestion, please "
+"[include as many details as possible](#how-do-i-submit-an-enhancement-"
+"suggestion). Fill in [the template](https://github.com/sdispater/poetry/blob/"
+"master/.github/ISSUE_TEMPLATE/2_Feature_request.md), including the steps "
+"that you imagine you would take if the feature you're requesting existed."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:68
+msgid "#### Before submitting an enhancement suggestion"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:74
+msgid "#### How do I submit an Enhancement suggestion?"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:76
+msgid ""
+"Enhancement suggestions are tracked on the [official issue tracker](https://"
+"github.com/sdispater/poetry/issues) where you can create a new one and "
+"provide the following information:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:81
+msgid ""
+"**Use a clear and descriptive title** for the issue to identify the "
+"suggestion."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:81
+msgid ""
+"**Provide a step-by-step description of the suggested enhancement** in as "
+"many details as possible."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:81
+msgid "**Provide specific examples to demonstrate the steps**.."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:81
+msgid ""
+"**Describe the current behavior** and **explain which behavior you expected "
+"to see instead** and why."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:84
+msgid "### Contributing to code"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:86
+msgid "#### Local development"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:88
+msgid ""
+"You will need Poetry to start contributing on the Poetry codebase. Refer to "
+"the [documentation](https://poetry.eustace.io/docs/#introduction) to start "
+"using Poetry."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:90
+msgid ""
+"You will first need to clone the repository using `git` and place yourself "
+"in its directory:"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:95
+msgid ""
+"```bash $ git clone git@github.com:sdispater/poetry.git $ cd poetry ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:98
+msgid ""
+"Now, you will need to install the required dependency for Poetry and be sure "
+"that the current tests are passing on your machine:"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:103
+msgid "```bash $ poetry install $ poetry run pytest tests/ ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:106
+msgid ""
+"Poetry uses the [black](https://github.com/ambv/black) coding style and you "
+"must ensure that your code follows it. If not, the CI will fail and your "
+"Pull Request will not be merged."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:109
+msgid ""
+"To make sure that you don't accidently commit code that does not follow the "
+"coding style, you can install a pre-commit hook that will check that "
+"everything is in order:"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:113
+msgid "```bash $ poetry run pre-commit install ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:116
+msgid ""
+"Your code must always be accompanied by corresponding tests, if tests are "
+"not present your code will not be merged."
+msgstr ""
+
+#. type: Plain text
+#: docs/contributing.md:118
+msgid "#### Pull requests"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:121
+msgid ""
+"Fill in [the required template](https://github.com/sdispater/poetry/blob/"
+"master/.github/PULL_REQUEST_TEMPLATE.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:121
+msgid ""
+"Be sure that you pull request contains tests that cover the changed or added "
+"code."
+msgstr ""
+
+#. type: Bullet: '* '
+#: docs/contributing.md:121
+msgid ""
+"If you changes warrant a documentation change, the pull request must also "
+"update the documentation."
+msgstr ""

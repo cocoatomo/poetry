@@ -1,0 +1,368 @@
+# cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-02-03 10:55+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-02-02 06:39+0000\n"
+"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#. type: Plain text
+#: docs/index.md:2
+msgid "# Introduction"
+msgstr "# 入門"
+
+#. type: Plain text
+#: docs/index.md:5
+msgid ""
+"Poetry is a tool for dependency management and packaging in Python.  It "
+"allows you to declare the libraries your project depends on and it will "
+"manage (install/update) them for you."
+msgstr ""
+"PoetryはPythonでの依存関係管理とパッケージングのためのツールです。\n"
+"Poetryを使うとプロジェクトが依存しているライブラリを宣言でき、それらを管理 (インストールおよびアップデート) してくれます。"
+
+#. type: Plain text
+#: docs/index.md:8
+msgid "## System requirements"
+msgstr "## システム要件"
+
+#. type: Plain text
+#: docs/index.md:11
+msgid ""
+"Poetry requires Python 2.7 or 3.4+. It is multi-platform and the goal is to "
+"make it work equally well on Windows, Linux and OSX."
+msgstr ""
+"PoetryはPython 2.7あるいはPython 3.4以降を必要とします。\n"
+"Poetryはマルチプラットフォームに対応していて、Windows, Linux, OSXで同じように動作することを目標としています。"
+
+#. type: Plain text
+#: docs/index.md:14
+msgid "## Installation"
+msgstr "## インストール"
+
+#. type: Plain text
+#: docs/index.md:18
+msgid ""
+"Poetry provides a custom installer that will install `poetry` isolated from "
+"the rest of your system by vendorizing its dependencies. This is the "
+"recommended way of installing `poetry`."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:22
+msgid ""
+"```bash curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/"
+"get-poetry.py | python ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:24 docs/index.md:159
+msgid "!!! note"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:27
+#, no-wrap
+msgid ""
+"    You only need to install Poetry once. It will automatically pick up the "
+"current\n"
+"    Python version and use it to [create virtualenvs](/docs/basic-usage/"
+"#poetry-and-virtualenvs) accordingly.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:30
+msgid ""
+"The installer installs the `poetry` tool to Poetry's `bin` directory.  On "
+"Unix it is located at `$HOME/.poetry/bin` and on Windows at `%USERPROFILE%\\."
+"poetry\\bin`."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:34
+msgid ""
+"This directory will be in your `$PATH` environment variable, which means you "
+"can run them from the shell without further configuration.  Open a new shell "
+"and type the following:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:38
+msgid "```bash poetry --version ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:43
+msgid ""
+"If you see something like `Poetry 0.12.0` then you are ready to use Poetry.  "
+"If you decide Poetry isn't your thing, you can completely remove it from "
+"your system by running the installer again with the `--uninstall` option or "
+"by setting the `POETRY_UNINSTALL` environment variable before executing the "
+"installer."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:48
+msgid ""
+"```bash python get-poetry.py --uninstall POETRY_UNINSTALL=1 python get-"
+"poetry.py ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:51
+msgid ""
+"If you want to install prerelease versions, you can do so by passing `--"
+"preview` to `get-poetry.py` or by using the `POETRY_PREVIEW` environment "
+"variable:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:56
+msgid ""
+"```bash python get-poetry.py --preview POETRY_PREVIEW=1 python get-poetry.py "
+"```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:59
+msgid ""
+"Similarly, if you want to install a specific version, you can use `--"
+"version` or the `POETRY_VERSION` environment variable:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:64
+msgid ""
+"```bash python get-poetry.py --version 0.12.0 POETRY_VERSION=0.12.0 python "
+"get-poetry.py ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:66 docs/index.md:72 docs/index.md:128
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:68
+#, no-wrap
+msgid ""
+"    Note that the installer does not support Poetry releases < 0.12.0.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:70
+msgid "### Alternative installation methods (not recommended)"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:76
+#, no-wrap
+msgid ""
+"    Using alternative installation methods will make Poetry always\n"
+"    use the Python version for which it has been installed to create\n"
+"    virtualenvs.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:79
+#, no-wrap
+msgid ""
+"    So, you will need to install Poetry for each Python version you\n"
+"    want to use and switch between them.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:81
+msgid "#### Installing with `pip`"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:83
+msgid "Using `pip` to install Poetry is possible."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:87
+msgid "```bash pip install --user poetry ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:89
+msgid "!!!warning"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:92
+#, no-wrap
+msgid ""
+"    Be aware that it will also install Poetry's dependencies\n"
+"    which might cause conflicts with other packages.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:94
+msgid "#### Installing with `pipsi`"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:96
+msgid ""
+"Using [`pipsi`](https://github.com/mitsuhiko/pipsi) to install Poetry is "
+"also possible."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:100
+msgid "```bash pipsi install poetry ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:104
+msgid ""
+"Make sure your installed version of `pipsi` is at least version `0.10`, "
+"otherwise Poetry will not function properly. You can get it from its [Github "
+"repository](https://github.com/mitsuhiko/pipsi)."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:107
+msgid "## Updating `poetry`"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:109
+msgid ""
+"Updating poetry to the latest stable version is as simple as calling the "
+"`self:update` command."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:113
+msgid "```bash poetry self:update ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:115
+msgid ""
+"If you want to install prerelease versions, you can use the `--preview` "
+"option."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:119
+msgid "```bash poetry self:update --preview ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:122
+msgid ""
+"And finally, if you want to install a specific version you can pass it as an "
+"argument to `self:update`."
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:126
+msgid "```bash poetry self:update 0.8.0 ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:131
+#, no-wrap
+msgid ""
+"    The `self:update` command will only work if you used the recommended\n"
+"    installer to install Poetry.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:134
+msgid "## Enable tab completion for Bash, Fish, or Zsh"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:137
+msgid ""
+"`poetry` supports generating completion scripts for Bash, Fish, and Zsh.  "
+"See `poetry help completions` for full details, but the gist is as simple as "
+"using one of the following:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:142
+msgid ""
+"```bash # Bash poetry completions bash > /etc/bash_completion.d/poetry.bash-"
+"completion"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:145
+msgid ""
+"# Bash (macOS/Homebrew)  poetry completions bash > $(brew --prefix)/etc/"
+"bash_completion.d/poetry.bash-completion"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:148
+msgid ""
+"# Fish poetry completions fish > ~/.config/fish/completions/poetry.fish"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:151
+msgid "# Zsh poetry completions zsh > ~/.zfunc/_poetry"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:155
+msgid ""
+"# Oh-My-Zsh mkdir $ZSH/plugins/poetry poetry completions zsh > $ZSH/plugins/"
+"poetry/_poetry"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:157
+msgid "```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:161
+#, no-wrap
+msgid ""
+"    You may need to restart your shell in order for the changes to take "
+"effect.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:163
+msgid ""
+"For `zsh`, you must then add the following line in your `~/.zshrc` before "
+"`compinit`:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:167
+msgid "```bash fpath+=~/.zfunc ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:169
+msgid ""
+"For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:175
+#, no-wrap
+msgid "```\n"
+"plugins(\n"
+"\tpoetry\n"
+"\t...\n"
+"\t)\n"
+"```\n"
+msgstr ""

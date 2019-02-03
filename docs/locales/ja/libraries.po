@@ -1,0 +1,206 @@
+# cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-30 04:31+0000\n"
+"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#. type: Plain text
+#: docs/libraries.md:2
+msgid "# Libraries"
+msgstr "# ライブラリ"
+
+#. type: Plain text
+#: docs/libraries.md:4
+msgid ""
+"This chapter will tell you how to make your library installable through "
+"Poetry."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:6
+msgid "## Every project is a package"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:9
+msgid ""
+"As soon as you have a `pyproject.toml` in a directory, that directory is a "
+"package.  However, to make it accessible to others you will need to package "
+"and publish it."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:12
+msgid "## Versioning"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:15
+msgid ""
+"While Poetry does not enforce any convention regarding package versioning, "
+"it **strongly** recommends to follow [semantic versioning](https://semver."
+"org)."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:18
+msgid ""
+"This has many advantages for the end users and allows them to set "
+"appropriate [version constraints](/docs/versions/)."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:20
+msgid "## Lock file"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:25
+msgid ""
+"For your library, you may commit the `poetry.lock` file if you want to.  "
+"This can help your team to always test against the same dependency versions. "
+" However, this lock file will not have any effect on other projects that "
+"depend on it.  It only has an effect on the main project."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:27
+msgid ""
+"If you do not want to commit the lock file and you are using git, add it to "
+"the `.gitignore`."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:29
+msgid "## Packaging"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:31
+msgid ""
+"Before you can actually publish your library, you will need to package it."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:35
+msgid "```bash poetry build ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:38
+msgid ""
+"This command will package your library in two different formats: `sdist` "
+"which is the source format, and `wheel` which is a `compiled` package."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:40
+msgid "Once that's done you are ready to publish your library"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:42
+msgid "## Publishing to PyPI"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:44
+msgid "Alright, so now you can publish packages."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:48
+msgid ""
+"Poetry will publish to [PyPI](https://pypi.org) by default. Anything that is "
+"published to PyPI is available automatically through Poetry. Since "
+"[pendulum](https://pypi.org/project/pendulum/)  is on PyPI we can depend on "
+"it without having to specify any additional repositories."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:51
+msgid ""
+"If we wanted to share `poetry-demo` with the Python community, we would "
+"publish on PyPI as well.  Doing so is really easy."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:55
+msgid "```bash poetry publish ```"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:58
+msgid ""
+"This will package and publish the library to PyPI, at the condition that you "
+"are a registered user and you have [configured your credentials](/docs/"
+"repositories/#adding-credentials) properly."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:60
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:62
+#, no-wrap
+msgid "    The `publish` command does not execute `build` by default.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:65
+#, no-wrap
+msgid ""
+"    If you want to build and publish your packages together,\n"
+"    just pass the `--build` option.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:67
+msgid "Once this is done, your library will be available to anyone."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:70
+msgid "## Publishing to a private repository"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:72
+msgid ""
+"Sometimes, you may want to keep your library private but also being "
+"accessible to your team."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:74
+msgid "In this case, you will need to use a private repository."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:78
+msgid ""
+"In order to publish to a private repository, you will need to add it to your "
+"global list of repositories. See [Adding a repository](/docs/repositories/"
+"#adding-a-repository)  for more information."
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:80
+msgid "Once this is done, you can actually publish to it like so:"
+msgstr ""
+
+#. type: Plain text
+#: docs/libraries.md:83
+msgid "```bash poetry publish -r my-repository ```"
+msgstr ""
