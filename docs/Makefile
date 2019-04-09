@@ -27,11 +27,12 @@ $(POTDIR)/%.pot: $(ORIGDIR)/%.md
 	po4a-gettextize \
 	--master-charset UTF-8 \
 	--format text \
+	--option markdown \
 	--master $< \
 	--po $@
 
 pullpo:
-	zanata-cli pull -l ja --batch-mode
+	zanata-cli pull --locales ja --batch-mode
 
 translate: $(TRANSDOCS)
 
@@ -40,6 +41,7 @@ $(TRANSDIR)/%.md: $(PODIR)/%.po $(ORIGDIR)/%.md
 	--master-charset UTF-8 \
 	--localized-charset UTF-8 \
 	--format text \
+	--option markdown \
 	--keep 0 \
 	--master $(ORIGDIR)/$(*F).md \
 	--po $< \

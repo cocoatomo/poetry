@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/configuration.md:2
-msgid "# Configuration"
+#. type: Title #
+#: docs/configuration.md:1
+#, no-wrap
+msgid "Configuration"
 msgstr ""
 
 #. type: Plain text
@@ -45,14 +46,16 @@ msgid ""
 "means, by default `~/.config/pypoetry`."
 msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:14
-msgid "## Available settings"
+#. type: Title ##
+#: docs/configuration.md:13
+#, no-wrap
+msgid "Available settings"
 msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:16
-msgid "### `settings.virtualenvs.create`: boolean"
+#. type: Title ###
+#: docs/configuration.md:15
+#, no-wrap
+msgid "`settings.virtualenvs.create`: boolean"
 msgstr ""
 
 #. type: Plain text
@@ -60,9 +63,10 @@ msgstr ""
 msgid "Create a new virtualenv if one doesn't already exist.  Defaults to `true`."
 msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:21
-msgid "### `settings.virtualenvs.in-project`: boolean"
+#. type: Title ###
+#: docs/configuration.md:20
+#, no-wrap
+msgid "`settings.virtualenvs.in-project`: boolean"
 msgstr ""
 
 #. type: Plain text
@@ -72,9 +76,10 @@ msgid ""
 "`false`."
 msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:26
-msgid "### `settings.virtualenvs.path`: string"
+#. type: Title ###
+#: docs/configuration.md:25
+#, no-wrap
+msgid "`settings.virtualenvs.path`: string"
 msgstr ""
 
 #. type: Plain text
@@ -94,9 +99,10 @@ msgid ""
 "- Unix:    `~/.cache/pypoetry/virtualenvs`\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:35
-msgid "### `repositories.<name>`: string"
+#. type: Title ###
+#: docs/configuration.md:34
+#, no-wrap
+msgid "`repositories.<name>`: string"
 msgstr ""
 
 #. type: Plain text

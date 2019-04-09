@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-02-03 10:55+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/index.md:2
-msgid "# Introduction"
+#. type: Title #
+#: docs/index.md:1
+#, no-wrap
+msgid "Introduction"
 msgstr ""
 
 #. type: Plain text
@@ -29,9 +30,10 @@ msgid ""
 "manage (install/update) them for you."
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:8
-msgid "## System requirements"
+#. type: Title ##
+#: docs/index.md:7
+#, no-wrap
+msgid "System requirements"
 msgstr ""
 
 #. type: Plain text
@@ -41,9 +43,10 @@ msgid ""
 "make it work equally well on Windows, Linux and OSX."
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:14
-msgid "## Installation"
+#. type: Title ##
+#: docs/index.md:13
+#, no-wrap
+msgid "Installation"
 msgstr ""
 
 #. type: Plain text
@@ -54,12 +57,20 @@ msgid ""
 "recommended way of installing `poetry`."
 msgstr ""
 
+#. type: Code fence info string
+#: docs/index.md:19 docs/index.md:35 docs/index.md:44 docs/index.md:52 docs/index.md:60 docs/index.md:84 docs/index.md:97 docs/index.md:110 docs/index.md:116 docs/index.md:123 docs/index.md:139 docs/index.md:164
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/index.md:22
+#: docs/index.md:19
+#, no-wrap
 msgid ""
-"```bash curl -sSL "
+"curl -sSL "
 "https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | "
-"python ```"
+"python\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -94,8 +105,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:38
-msgid "```bash poetry --version ```"
+#: docs/index.md:35
+#, no-wrap
+msgid ""
+"poetry --version\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -109,10 +123,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:48
+#: docs/index.md:44
+#, no-wrap
 msgid ""
-"```bash python get-poetry.py --uninstall POETRY_UNINSTALL=1 python "
-"get-poetry.py ```"
+"python get-poetry.py --uninstall\n"
+"\n"
+"POETRY_UNINSTALL=1 python get-poetry.py\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -124,10 +141,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:56
+#: docs/index.md:52
+#, no-wrap
 msgid ""
-"```bash python get-poetry.py --preview POETRY_PREVIEW=1 python get-poetry.py "
-"```"
+"python get-poetry.py --preview\n"
+"\n"
+"POETRY_PREVIEW=1 python get-poetry.py\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -138,10 +158,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:64
+#: docs/index.md:60
+#, no-wrap
 msgid ""
-"```bash python get-poetry.py --version 0.12.0 POETRY_VERSION=0.12.0 python "
-"get-poetry.py ```"
+"python get-poetry.py --version 0.12.0\n"
+"\n"
+"POETRY_VERSION=0.12.0 python get-poetry.py\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -155,9 +178,10 @@ msgstr ""
 msgid "    Note that the installer does not support Poetry releases < 0.12.0.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:70
-msgid "### Alternative installation methods (not recommended)"
+#. type: Title ###
+#: docs/index.md:69
+#, no-wrap
+msgid "Alternative installation methods (not recommended)"
 msgstr ""
 
 #. type: Plain text
@@ -177,9 +201,10 @@ msgid ""
 "    want to use and switch between them.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:81
-msgid "#### Installing with `pip`"
+#. type: Title ####
+#: docs/index.md:80
+#, no-wrap
+msgid "Installing with `pip`"
 msgstr ""
 
 #. type: Plain text
@@ -188,8 +213,11 @@ msgid "Using `pip` to install Poetry is possible."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:87
-msgid "```bash pip install --user poetry ```"
+#: docs/index.md:84
+#, no-wrap
+msgid ""
+"pip install --user poetry\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -205,9 +233,10 @@ msgid ""
 "    which might cause conflicts with other packages.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:94
-msgid "#### Installing with `pipsi`"
+#. type: Title ####
+#: docs/index.md:93
+#, no-wrap
+msgid "Installing with `pipsi`"
 msgstr ""
 
 #. type: Plain text
@@ -218,8 +247,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:100
-msgid "```bash pipsi install poetry ```"
+#: docs/index.md:97
+#, no-wrap
+msgid ""
+"pipsi install poetry\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -230,9 +262,10 @@ msgid ""
 "repository](https://github.com/mitsuhiko/pipsi)."
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:107
-msgid "## Updating `poetry`"
+#. type: Title ##
+#: docs/index.md:106
+#, no-wrap
+msgid "Updating `poetry`"
 msgstr ""
 
 #. type: Plain text
@@ -243,8 +276,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:113
-msgid "```bash poetry self:update ```"
+#: docs/index.md:110
+#, no-wrap
+msgid ""
+"poetry self:update\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -255,8 +291,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:119
-msgid "```bash poetry self:update --preview ```"
+#: docs/index.md:116
+#, no-wrap
+msgid ""
+"poetry self:update --preview\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -267,8 +306,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:126
-msgid "```bash poetry self:update 0.8.0 ```"
+#: docs/index.md:123
+#, no-wrap
+msgid ""
+"poetry self:update 0.8.0\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -279,9 +321,10 @@ msgid ""
 "    installer to install Poetry.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/index.md:134
-msgid "## Enable tab completion for Bash, Fish, or Zsh"
+#. type: Title ##
+#: docs/index.md:133
+#, no-wrap
+msgid "Enable tab completion for Bash, Fish, or Zsh"
 msgstr ""
 
 #. type: Plain text
@@ -293,39 +336,42 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:142
+#: docs/index.md:139
+#, no-wrap
 msgid ""
-"```bash # Bash poetry completions bash > "
-"/etc/bash_completion.d/poetry.bash-completion"
-msgstr ""
-
-#. type: Plain text
-#: docs/index.md:145
-msgid ""
-"# Bash (macOS/Homebrew)  poetry completions bash > $(brew "
-"--prefix)/etc/bash_completion.d/poetry.bash-completion"
-msgstr ""
-
-#. type: Plain text
-#: docs/index.md:148
-msgid "# Fish poetry completions fish > ~/.config/fish/completions/poetry.fish"
-msgstr ""
-
-#. type: Plain text
-#: docs/index.md:151
-msgid "# Zsh poetry completions zsh > ~/.zfunc/_poetry"
-msgstr ""
-
-#. type: Plain text
-#: docs/index.md:155
-msgid ""
-"# Oh-My-Zsh mkdir $ZSH/plugins/poetry poetry completions zsh > "
-"$ZSH/plugins/poetry/_poetry"
-msgstr ""
-
-#. type: Plain text
-#: docs/index.md:157
-msgid "```"
+"# Bash\n"
+"\n"
+"poetry completions bash > /etc/bash_completion.d/poetry.bash-completion\n"
+"\n"
+"\n"
+"\n"
+"# Bash (macOS/Homebrew)\n"
+"\n"
+"poetry completions bash > $(brew "
+"--prefix)/etc/bash_completion.d/poetry.bash-completion\n"
+"\n"
+"\n"
+"\n"
+"# Fish\n"
+"\n"
+"poetry completions fish > ~/.config/fish/completions/poetry.fish\n"
+"\n"
+"\n"
+"\n"
+"# Zsh\n"
+"\n"
+"poetry completions zsh > ~/.zfunc/_poetry\n"
+"\n"
+"\n"
+"\n"
+"# Oh-My-Zsh\n"
+"\n"
+"mkdir $ZSH/plugins/poetry\n"
+"\n"
+"poetry completions zsh > $ZSH/plugins/poetry/_poetry\n"
+"\n"
+"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -344,8 +390,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:167
-msgid "```bash fpath+=~/.zfunc ```"
+#: docs/index.md:164
+#, no-wrap
+msgid ""
+"fpath+=~/.zfunc\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -354,13 +403,15 @@ msgid "For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:175
+#: docs/index.md:170
 #, no-wrap
 msgid ""
-"```\n"
 "plugins(\n"
+"\n"
 "\tpoetry\n"
+"\n"
 "\t...\n"
+"\n"
 "\t)\n"
-"```\n"
+"\n"
 msgstr ""

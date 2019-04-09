@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/versions.md:2
-msgid "# Versions and constraints"
+#. type: Title #
+#: docs/versions.md:1
+#, no-wrap
+msgid "Versions and constraints"
 msgstr ""
 
 #. type: Plain text
@@ -28,14 +29,16 @@ msgid ""
 "will not enforce it."
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:6
-msgid "## Version constraints"
+#. type: Title ##
+#: docs/versions.md:5
+#, no-wrap
+msgid "Version constraints"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:8
-msgid "### Caret requirements"
+#. type: Title ###
+#: docs/versions.md:7
+#, no-wrap
+msgid "Caret requirements"
 msgstr ""
 
 #. type: Plain text
@@ -76,9 +79,10 @@ msgid ""
 "| ^0          | >=0.0.0 <1.0.0   |\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:29
-msgid "### Tilde requirements"
+#. type: Title ###
+#: docs/versions.md:28
+#, no-wrap
+msgid "Tilde requirements"
 msgstr ""
 
 #. type: Plain text
@@ -109,9 +113,10 @@ msgid ""
 "| ~1          | >=1.0.0 <2.0.0   |\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:43
-msgid "### Wildcard requirements"
+#. type: Title ###
+#: docs/versions.md:42
+#, no-wrap
+msgid "Wildcard requirements"
 msgstr ""
 
 #. type: Plain text
@@ -138,9 +143,10 @@ msgid ""
 "| 1.2.*       | >=1.2.0 <1.3.0   |\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:55
-msgid "### Inequality requirements"
+#. type: Title ###
+#: docs/versions.md:54
+#, no-wrap
+msgid "Inequality requirements"
 msgstr ""
 
 #. type: Plain text
@@ -156,14 +162,30 @@ msgstr ""
 msgid "Here are some examples of inequality requirements:"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:66
-msgid "```text >= 1.2.0 > 1 < 2 != 1.2.3 ```"
+#. type: Code fence info string
+#: docs/versions.md:60
+#, no-wrap
+msgid "text"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:68
-msgid "### Exact requirements"
+#: docs/versions.md:60
+#, no-wrap
+msgid ""
+">= 1.2.0\n"
+"\n"
+"> 1\n"
+"\n"
+"< 2\n"
+"\n"
+"!= 1.2.3\n"
+"\n"
+msgstr ""
+
+#. type: Title ###
+#: docs/versions.md:67
+#, no-wrap
+msgid "Exact requirements"
 msgstr ""
 
 #. type: Plain text
@@ -175,21 +197,24 @@ msgid ""
 "update procedures."
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:74
-msgid "#### Multiple requirements"
+#. type: Title ####
+#: docs/versions.md:73
+#, no-wrap
+msgid "Multiple requirements"
 msgstr ""
 
 #. type: Plain text
 #: docs/versions.md:76
+#, no-wrap
 msgid ""
 "Multiple version requirements can also be separated with a comma, e.g. `>= "
-"1.2, < 1.5`."
+"1.2, < 1.5`.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:78
-msgid "### `git` dependencies"
+#. type: Title ###
+#: docs/versions.md:77
+#, no-wrap
+msgid "`git` dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -200,11 +225,20 @@ msgid ""
 "git key:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/versions.md:82 docs/versions.md:92 docs/versions.md:102 docs/versions.md:122 docs/versions.md:127 docs/versions.md:142
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/versions.md:86
+#: docs/versions.md:82
+#, no-wrap
 msgid ""
-"```toml [tool.poetry.dependencies] requests = { git = "
-"\"https://github.com/requests/requests.git\" } ```"
+"[tool.poetry.dependencies]\n"
+"\n"
+"requests = { git = \"https://github.com/requests/requests.git\" }\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -218,15 +252,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:96
+#: docs/versions.md:92
+#, no-wrap
 msgid ""
-"```toml [tool.poetry.dependencies] requests = { git = "
-"\"https://github.com/kennethreitz/requests.git\", branch = \"next\" } ```"
+"[tool.poetry.dependencies]\n"
+"\n"
+"requests = { git = \"https://github.com/kennethreitz/requests.git\", branch "
+"= \"next\" }\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:98
-msgid "### `path` dependencies"
+#. type: Title ###
+#: docs/versions.md:97
+#, no-wrap
+msgid "`path` dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -237,17 +276,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:106
+#: docs/versions.md:102
+#, no-wrap
 msgid ""
-"```toml [tool.poetry.dependencies] # directory my-package = { path = "
-"\"../my-package/\" }"
-msgstr ""
-
-#. type: Plain text
-#: docs/versions.md:110
-msgid ""
-"# file my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" "
-"} ```"
+"[tool.poetry.dependencies]\n"
+"\n"
+"# directory\n"
+"\n"
+"my-package = { path = \"../my-package/\" }\n"
+"\n"
+"\n"
+"\n"
+"# file\n"
+"\n"
+"my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -264,9 +307,10 @@ msgid ""
 "    the `install` command.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:119
-msgid "### Python restricted dependencies"
+#. type: Title ###
+#: docs/versions.md:118
+#, no-wrap
+msgid "Python restricted dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -277,22 +321,29 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:126
+#: docs/versions.md:122
+#, no-wrap
 msgid ""
-"```toml [tool.poetry.dependencies] pathlib2 = { version = \"^2.2\", python = "
-"\"~2.7\" } ```"
+"[tool.poetry.dependencies]\n"
+"\n"
+"pathlib2 = { version = \"^2.2\", python = \"~2.7\" }\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:131
+#: docs/versions.md:127
+#, no-wrap
 msgid ""
-"```toml [tool.poetry.dependencies] pathlib2 = { version = \"^2.2\", python = "
-"[\"~2.7\", \"^3.2\"] } ```"
+"[tool.poetry.dependencies]\n"
+"\n"
+"pathlib2 = { version = \"^2.2\", python = [\"~2.7\", \"^3.2\"] }\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:134
-msgid "### Multiple constraints dependencies"
+#. type: Title ###
+#: docs/versions.md:133
+#, no-wrap
+msgid "Multiple constraints dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -304,23 +355,29 @@ msgstr ""
 
 #. type: Plain text
 #: docs/versions.md:141
+#, no-wrap
 msgid ""
 "Let's say you have a dependency on the package `foo` which is only "
-"compatible with Python <3.0 up to version 1.9 and compatible with Python "
-"3.4+ from version 2.0: you would declare it like so:"
+"compatible\n"
+"with Python <3.0 up to version 1.9 and compatible with Python 3.4+ from "
+"version 2.0:\n"
+"you would declare it like so:\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:149
+#: docs/versions.md:142
 #, no-wrap
 msgid ""
-"```toml\n"
 "[tool.poetry.dependencies]\n"
+"\n"
 "foo = [\n"
+"\n"
 "    {version = \"<=1.9\", python = \"^2.7\"},\n"
+"\n"
 "    {version = \"^2.0\", python = \"^3.4\"}\n"
+"\n"
 "]\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text

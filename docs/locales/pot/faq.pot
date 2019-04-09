@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/faq.md:2
-msgid "# FAQ"
+#. type: Title #
+#: docs/faq.md:1
+#, no-wrap
+msgid "FAQ"
 msgstr ""
 
-#. type: Plain text
-#: docs/faq.md:4
-msgid "## Why is the dependency resolution process slow?"
+#. type: Title ##
+#: docs/faq.md:3
+#, no-wrap
+msgid "Why is the dependency resolution process slow?"
 msgstr ""
 
 #. type: Plain text
@@ -64,17 +66,19 @@ msgid ""
 "    will be much faster.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/faq.md:22
-msgid "## Why are unbound version constraints a bad idea?"
+#. type: Title ##
+#: docs/faq.md:21
+#, no-wrap
+msgid "Why are unbound version constraints a bad idea?"
 msgstr ""
 
 #. type: Plain text
 #: docs/faq.md:25
+#, no-wrap
 msgid ""
 "A version constraint without an upper bound such as `*` or `>=3.4` will "
-"allow updates to any future version of the dependency.  This includes major "
-"versions breaking backward compatibility."
+"allow updates to any future version of the dependency.\n"
+"This includes major versions breaking backward compatibility.\n"
 msgstr ""
 
 #. type: Plain text
@@ -95,15 +99,18 @@ msgstr ""
 
 #. type: Plain text
 #: docs/faq.md:35
+#, no-wrap
 msgid ""
 "For example instead of using `>=3.4` you should use `~3.4` which allows all "
-"versions `<4.0`.  The `^` operator works very well with libraries following "
-"[semantic versioning](https://semver.org)."
+"versions `<4.0`.\n"
+"The `^` operator works very well with libraries following [semantic "
+"versioning](https://semver.org).\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/faq.md:37
-msgid "## Is tox supported?"
+#. type: Title ##
+#: docs/faq.md:36
+#, no-wrap
+msgid "Is tox supported?"
 msgstr ""
 
 #. type: Plain text
@@ -122,11 +129,22 @@ msgid ""
 "exist:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/faq.md:43
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/faq.md:48
+#: docs/faq.md:43
+#, no-wrap
 msgid ""
-"```toml [build-system] requires = [\"poetry>=0.12\"] build-backend = "
-"\"poetry.masonry.api\" ```"
+"[build-system]\n"
+"\n"
+"requires = [\"poetry>=0.12\"]\n"
+"\n"
+"build-backend = \"poetry.masonry.api\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -134,26 +152,40 @@ msgstr ""
 msgid "And use a `tox.ini` configuration file similar to this:"
 msgstr ""
 
-#. type: Plain text
-#: docs/faq.md:55
-msgid "```INI [tox] isolated_build = true envlist = py27, py36"
+#. type: Code fence info string
+#: docs/faq.md:51
+#, no-wrap
+msgid "INI"
 msgstr ""
 
 #. type: Plain text
-#: docs/faq.md:62
+#: docs/faq.md:51
 #, no-wrap
 msgid ""
+"[tox]\n"
+"\n"
+"isolated_build = true\n"
+"\n"
+"envlist = py27, py36\n"
+"\n"
+"\n"
+"\n"
 "[testenv]\n"
+"\n"
 "whitelist_externals = poetry\n"
+"\n"
 "commands =\n"
+"\n"
 "    poetry install -v\n"
+"\n"
 "    poetry run pytest tests/\n"
-"```\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/faq.md:64
-msgid "## I don't want Poetry to manage my virtualenvs. Can I disable it?"
+#. type: Title ##
+#: docs/faq.md:63
+#, no-wrap
+msgid "I don't want Poetry to manage my virtualenvs. Can I disable it?"
 msgstr ""
 
 #. type: Plain text
@@ -171,7 +203,16 @@ msgid ""
 "`virtualenvs.create` setting to `false`:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/faq.md:71
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/faq.md:73
-msgid "```bash poetry config settings.virtualenvs.create false ```"
+#: docs/faq.md:71
+#, no-wrap
+msgid ""
+"poetry config settings.virtualenvs.create false\n"
+"\n"
 msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/repositories.md:2
-msgid "# Repositories"
+#. type: Title #
+#: docs/repositories.md:1
+#, no-wrap
+msgid "Repositories"
 msgstr ""
 
-#. type: Plain text
-#: docs/repositories.md:4
-msgid "## Using the PyPI repository"
+#. type: Title ##
+#: docs/repositories.md:3
+#, no-wrap
+msgid "Using the PyPI repository"
 msgstr ""
 
 #. type: Plain text
@@ -45,9 +47,10 @@ msgstr ""
 msgid "This represents most cases and will likely be enough for most users."
 msgstr ""
 
-#. type: Plain text
-#: docs/repositories.md:15
-msgid "## Using a private repository"
+#. type: Title ##
+#: docs/repositories.md:14
+#, no-wrap
+msgid "Using a private repository"
 msgstr ""
 
 #. type: Plain text
@@ -58,9 +61,10 @@ msgid ""
 "use a private repository."
 msgstr ""
 
-#. type: Plain text
-#: docs/repositories.md:21
-msgid "### Adding a repository"
+#. type: Title ###
+#: docs/repositories.md:20
+#, no-wrap
+msgid "Adding a repository"
 msgstr ""
 
 #. type: Plain text
@@ -68,9 +72,18 @@ msgstr ""
 msgid "Adding a new repository is easy with the `config` command."
 msgstr ""
 
+#. type: Code fence info string
+#: docs/repositories.md:24 docs/repositories.md:34
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/repositories.md:27
-msgid "```bash poetry config repositories.foo https://foo.bar/simple/ ```"
+#: docs/repositories.md:24
+#, no-wrap
+msgid ""
+"poetry config repositories.foo https://foo.bar/simple/\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -78,9 +91,10 @@ msgstr ""
 msgid "This will set the url for repository `foo` to `https://foo.bar/simple/`."
 msgstr ""
 
-#. type: Plain text
-#: docs/repositories.md:31
-msgid "### Configuring credentials"
+#. type: Title ###
+#: docs/repositories.md:30
+#, no-wrap
+msgid "Configuring credentials"
 msgstr ""
 
 #. type: Plain text
@@ -91,8 +105,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/repositories.md:37
-msgid "```bash poetry config http-basic.foo username password ```"
+#: docs/repositories.md:34
+#, no-wrap
+msgid ""
+"poetry config http-basic.foo username password\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -129,9 +146,10 @@ msgid ""
 "command with the `--username` and `--password` options."
 msgstr ""
 
-#. type: Plain text
-#: docs/repositories.md:53
-msgid "### Install dependencies from a private repository"
+#. type: Title ###
+#: docs/repositories.md:52
+#, no-wrap
+msgid "Install dependencies from a private repository"
 msgstr ""
 
 #. type: Plain text
@@ -146,11 +164,22 @@ msgstr ""
 msgid "For that, you have to edit your `pyproject.toml` file, like so"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/repositories.md:59
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/repositories.md:64
+#: docs/repositories.md:59
+#, no-wrap
 msgid ""
-"```toml [[tool.poetry.source]] name = \"foo\" url = "
-"\"https://foo.bar/simple/\" ```"
+"[[tool.poetry.source]]\n"
+"\n"
+"name = \"foo\"\n"
+"\n"
+"url = \"https://foo.bar/simple/\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text

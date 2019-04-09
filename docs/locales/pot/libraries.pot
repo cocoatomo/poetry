@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/libraries.md:2
-msgid "# Libraries"
+#. type: Title #
+#: docs/libraries.md:1
+#, no-wrap
+msgid "Libraries"
 msgstr ""
 
 #. type: Plain text
@@ -28,9 +29,10 @@ msgid ""
 "Poetry."
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:6
-msgid "## Every project is a package"
+#. type: Title ##
+#: docs/libraries.md:5
+#, no-wrap
+msgid "Every project is a package"
 msgstr ""
 
 #. type: Plain text
@@ -41,9 +43,10 @@ msgid ""
 "and publish it."
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:12
-msgid "## Versioning"
+#. type: Title ##
+#: docs/libraries.md:11
+#, no-wrap
+msgid "Versioning"
 msgstr ""
 
 #. type: Plain text
@@ -61,9 +64,10 @@ msgid ""
 "appropriate [version constraints](/docs/versions/)."
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:20
-msgid "## Lock file"
+#. type: Title ##
+#: docs/libraries.md:19
+#, no-wrap
+msgid "Lock file"
 msgstr ""
 
 #. type: Plain text
@@ -82,9 +86,10 @@ msgid ""
 "the `.gitignore`."
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:29
-msgid "## Packaging"
+#. type: Title ##
+#: docs/libraries.md:28
+#, no-wrap
+msgid "Packaging"
 msgstr ""
 
 #. type: Plain text
@@ -92,9 +97,18 @@ msgstr ""
 msgid "Before you can actually publish your library, you will need to package it."
 msgstr ""
 
+#. type: Code fence info string
+#: docs/libraries.md:32 docs/libraries.md:52 docs/libraries.md:81
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/libraries.md:35
-msgid "```bash poetry build ```"
+#: docs/libraries.md:32
+#, no-wrap
+msgid ""
+"poetry build\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -109,9 +123,10 @@ msgstr ""
 msgid "Once that's done you are ready to publish your library"
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:42
-msgid "## Publishing to PyPI"
+#. type: Title ##
+#: docs/libraries.md:41
+#, no-wrap
+msgid "Publishing to PyPI"
 msgstr ""
 
 #. type: Plain text
@@ -136,8 +151,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:55
-msgid "```bash poetry publish ```"
+#: docs/libraries.md:52
+#, no-wrap
+msgid ""
+"poetry publish\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -172,9 +190,10 @@ msgstr ""
 msgid "Once this is done, your library will be available to anyone."
 msgstr ""
 
-#. type: Plain text
-#: docs/libraries.md:70
-msgid "## Publishing to a private repository"
+#. type: Title ##
+#: docs/libraries.md:69
+#, no-wrap
+msgid "Publishing to a private repository"
 msgstr ""
 
 #. type: Plain text
@@ -203,6 +222,9 @@ msgid "Once this is done, you can actually publish to it like so:"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:83
-msgid "```bash poetry publish -r my-repository ```"
+#: docs/libraries.md:81
+#, no-wrap
+msgid ""
+"poetry publish -r my-repository\n"
+"\n"
 msgstr ""

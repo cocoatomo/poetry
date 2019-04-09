@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: docs/contributing.md:2
-msgid "# Contributing to Poetry"
+#. type: Title #
+#: docs/contributing.md:1
+#, no-wrap
+msgid "Contributing to Poetry"
 msgstr ""
 
 #. type: Plain text
@@ -34,9 +35,10 @@ msgid ""
 "feel free to propose changes to this document in a pull request."
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:8
-msgid "#### Table of Contents"
+#. type: Title ####
+#: docs/contributing.md:7
+#, no-wrap
+msgid "Table of Contents"
 msgstr ""
 
 #. type: Plain text
@@ -59,14 +61,16 @@ msgstr ""
 msgid "[Contributing to code](#contributing-to-code)"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:17
-msgid "## How to contribute"
+#. type: Title ##
+#: docs/contributing.md:16
+#, no-wrap
+msgid "How to contribute"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:19
-msgid "### Reporting bugs"
+#. type: Title ###
+#: docs/contributing.md:18
+#, no-wrap
+msgid "Reporting bugs"
 msgstr ""
 
 #. type: Plain text
@@ -102,9 +106,10 @@ msgid ""
 "issue in the body of your new one.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:30
-msgid "#### Before submitting a bug report"
+#. type: Title ####
+#: docs/contributing.md:29
+#, no-wrap
+msgid "Before submitting a bug report"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -121,9 +126,10 @@ msgid ""
 "tracker](https://github.com/sdispater/poetry/issues)**."
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:35
-msgid "#### How do I submit a bug report"
+#. type: Title ####
+#: docs/contributing.md:34
+#, no-wrap
+msgid "How do I submit a bug report"
 msgstr ""
 
 #. type: Plain text
@@ -240,9 +246,10 @@ msgstr ""
 msgid "**What's the name and version of the OS you're using**?"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:62
-msgid "### Suggesting enhancements"
+#. type: Title ###
+#: docs/contributing.md:61
+#, no-wrap
+msgid "Suggesting enhancements"
 msgstr ""
 
 #. type: Plain text
@@ -267,14 +274,16 @@ msgid ""
 "requesting existed."
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:68
-msgid "#### Before submitting an enhancement suggestion"
+#. type: Title ####
+#: docs/contributing.md:67
+#, no-wrap
+msgid "Before submitting an enhancement suggestion"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:74
-msgid "#### How do I submit an Enhancement suggestion?"
+#. type: Title ####
+#: docs/contributing.md:73
+#, no-wrap
+msgid "How do I submit an Enhancement suggestion?"
 msgstr ""
 
 #. type: Plain text
@@ -311,14 +320,16 @@ msgid ""
 "to see instead** and why."
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:84
-msgid "### Contributing to code"
+#. type: Title ###
+#: docs/contributing.md:83
+#, no-wrap
+msgid "Contributing to code"
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:86
-msgid "#### Local development"
+#. type: Title ####
+#: docs/contributing.md:85
+#, no-wrap
+msgid "Local development"
 msgstr ""
 
 #. type: Plain text
@@ -336,9 +347,20 @@ msgid ""
 "in its directory:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/contributing.md:91 docs/contributing.md:99 docs/contributing.md:110
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/contributing.md:95
-msgid "```bash $ git clone git@github.com:sdispater/poetry.git $ cd poetry ```"
+#: docs/contributing.md:91
+#, no-wrap
+msgid ""
+"$ git clone git@github.com:sdispater/poetry.git\n"
+"\n"
+"$ cd poetry\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -349,8 +371,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/contributing.md:103
-msgid "```bash $ poetry install $ poetry run pytest tests/ ```"
+#: docs/contributing.md:99
+#, no-wrap
+msgid ""
+"$ poetry install\n"
+"\n"
+"$ poetry run pytest tests/\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -370,8 +397,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/contributing.md:113
-msgid "```bash $ poetry run pre-commit install ```"
+#: docs/contributing.md:110
+#, no-wrap
+msgid ""
+"$ poetry run pre-commit install\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -381,9 +411,10 @@ msgid ""
 "not present your code will not be merged."
 msgstr ""
 
-#. type: Plain text
-#: docs/contributing.md:118
-msgid "#### Pull requests"
+#. type: Title ####
+#: docs/contributing.md:117
+#, no-wrap
+msgid "Pull requests"
 msgstr ""
 
 #. type: Bullet: '* '
