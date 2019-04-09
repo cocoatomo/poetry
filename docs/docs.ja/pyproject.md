@@ -44,10 +44,9 @@ Registry](https://www.spdx.org/licenses/).
 
 ## authors
 
-The authors of the package. This is a list of authors and should contain at
-least one author.
+The authors of the package. **Required**
 
-Authors must be in the form `name <email>`.
+This is a list of authors and should contain at least one author. Authors must be in the form `name <email>`.
 
 ## readme
 

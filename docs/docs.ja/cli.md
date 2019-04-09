@@ -235,6 +235,21 @@ poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl
 ```
 
 
+Path dependencies pointing to a local directory will be installed in
+editable mode (i.e. setuptools "develop mode").  It means that changes in
+the local directory will be reflected directly in environment.
+
+If you don't want the dependency to be installed in editable mode you can
+specify it in the `pyproject.toml` file:
+
+```
+[tool.poetry.dependencies]
+
+my-package = {path = "../my/path", develop = false}
+
+```
+
+
 ### Options
 
 * `--dev (-D)`: Add package as development dependency.

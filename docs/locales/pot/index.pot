@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
+"POT-Creation-Date: 2019-04-09 10:30+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 
 #. type: Code fence info string
-#: docs/index.md:19 docs/index.md:35 docs/index.md:44 docs/index.md:52 docs/index.md:60 docs/index.md:84 docs/index.md:97 docs/index.md:110 docs/index.md:116 docs/index.md:123 docs/index.md:139 docs/index.md:164
+#: docs/index.md:19 docs/index.md:35 docs/index.md:44 docs/index.md:52 docs/index.md:60 docs/index.md:84 docs/index.md:97 docs/index.md:101 docs/index.md:105 docs/index.md:116 docs/index.md:122 docs/index.md:129 docs/index.md:145 docs/index.md:170
 #, no-wrap
 msgid "bash"
 msgstr ""
@@ -74,7 +74,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:24 docs/index.md:159
+#: docs/index.md:24 docs/index.md:165
 msgid "!!! note"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:66 docs/index.md:72 docs/index.md:128
+#: docs/index.md:66 docs/index.md:72 docs/index.md:134
 msgid "!!!note"
 msgstr ""
 
@@ -236,47 +236,63 @@ msgstr ""
 #. type: Title ####
 #: docs/index.md:93
 #, no-wrap
-msgid "Installing with `pipsi`"
+msgid "Installing with `pipx`"
 msgstr ""
 
 #. type: Plain text
 #: docs/index.md:96
 msgid ""
-"Using [`pipsi`](https://github.com/mitsuhiko/pipsi) to install Poetry is "
-"also possible."
+"Using [`pipx`](https://github.com/cs01/pipx) to install Poetry is also "
+"possible. [pipx] is used to install Python CLI applications globally while "
+"still isolating them in virtual environments. This allows for clean upgrades "
+"and uninstalls. pipx supports Python 3.6 and later. If using an earlier "
+"version of Python, consider [pipsi](https://github.com/mitsuhiko/pipsi)."
 msgstr ""
 
 #. type: Plain text
 #: docs/index.md:97
 #, no-wrap
 msgid ""
-"pipsi install poetry\n"
+"pipx install poetry\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:104
+#: docs/index.md:101
+#, no-wrap
 msgid ""
-"Make sure your installed version of `pipsi` is at least version `0.10`, "
-"otherwise Poetry will not function properly. You can get it from its [Github "
-"repository](https://github.com/mitsuhiko/pipsi)."
+"pipx upgrade poetry\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:105
+#, no-wrap
+msgid ""
+"pipx uninstall poetry\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:110
+msgid "[Github repository](https://github.com/cs01/pipx)."
 msgstr ""
 
 #. type: Title ##
-#: docs/index.md:106
+#: docs/index.md:112
 #, no-wrap
 msgid "Updating `poetry`"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:109
+#: docs/index.md:115
 msgid ""
 "Updating poetry to the latest stable version is as simple as calling the "
 "`self:update` command."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:110
+#: docs/index.md:116
 #, no-wrap
 msgid ""
 "poetry self:update\n"
@@ -284,14 +300,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:115
+#: docs/index.md:121
 msgid ""
 "If you want to install prerelease versions, you can use the `--preview` "
 "option."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:116
+#: docs/index.md:122
 #, no-wrap
 msgid ""
 "poetry self:update --preview\n"
@@ -299,14 +315,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:122
+#: docs/index.md:128
 msgid ""
 "And finally, if you want to install a specific version you can pass it as an "
 "argument to `self:update`."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:123
+#: docs/index.md:129
 #, no-wrap
 msgid ""
 "poetry self:update 0.8.0\n"
@@ -314,7 +330,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:131
+#: docs/index.md:137
 #, no-wrap
 msgid ""
 "    The `self:update` command will only work if you used the recommended\n"
@@ -322,13 +338,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/index.md:133
+#: docs/index.md:139
 #, no-wrap
 msgid "Enable tab completion for Bash, Fish, or Zsh"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:137
+#: docs/index.md:143
 msgid ""
 "`poetry` supports generating completion scripts for Bash, Fish, and Zsh.  "
 "See `poetry help completions` for full details, but the gist is as simple as "
@@ -336,7 +352,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:139
+#: docs/index.md:145
 #, no-wrap
 msgid ""
 "# Bash\n"
@@ -375,7 +391,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:161
+#: docs/index.md:167
 #, no-wrap
 msgid ""
 "    You may need to restart your shell in order for the changes to take "
@@ -383,14 +399,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:163
+#: docs/index.md:169
 msgid ""
 "For `zsh`, you must then add the following line in your `~/.zshrc` before "
 "`compinit`:"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:164
+#: docs/index.md:170
 #, no-wrap
 msgid ""
 "fpath+=~/.zfunc\n"
@@ -398,12 +414,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:169
+#: docs/index.md:175
 msgid "For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:170
+#: docs/index.md:176
 #, no-wrap
 msgid ""
 "plugins(\n"

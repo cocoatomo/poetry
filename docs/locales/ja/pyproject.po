@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
+"POT-Creation-Date: 2019-04-09 10:30+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -164,15 +164,15 @@ msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:46
-msgid ""
-"The authors of the package. This is a list of authors and should contain at "
-"least one author."
+msgid "The authors of the package. **Required**"
 msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:48
 #, no-wrap
-msgid "Authors must be in the form `name <email>`.\n"
+msgid ""
+"This is a list of authors and should contain at least one author. Authors "
+"must be in the form `name <email>`.\n"
 msgstr ""
 
 #. type: Title ##

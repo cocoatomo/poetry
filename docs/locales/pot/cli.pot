@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
+"POT-Creation-Date: 2019-04-09 10:30+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 
 #. type: Code fence info string
-#: docs/cli.md:11 docs/cli.md:33 docs/cli.md:53 docs/cli.md:59 docs/cli.md:84 docs/cli.md:102 docs/cli.md:115 docs/cli.md:122 docs/cli.md:137 docs/cli.md:145 docs/cli.md:162 docs/cli.md:168 docs/cli.md:174 docs/cli.md:195 docs/cli.md:209 docs/cli.md:215 docs/cli.md:240 docs/cli.md:256 docs/cli.md:273 docs/cli.md:279 docs/cli.md:295 docs/cli.md:310 docs/cli.md:323 docs/cli.md:332 docs/cli.md:340 docs/cli.md:352
+#: docs/cli.md:11 docs/cli.md:33 docs/cli.md:53 docs/cli.md:59 docs/cli.md:84 docs/cli.md:102 docs/cli.md:115 docs/cli.md:122 docs/cli.md:137 docs/cli.md:145 docs/cli.md:162 docs/cli.md:168 docs/cli.md:174 docs/cli.md:205 docs/cli.md:219 docs/cli.md:225 docs/cli.md:250 docs/cli.md:266 docs/cli.md:283 docs/cli.md:289 docs/cli.md:305 docs/cli.md:320 docs/cli.md:333 docs/cli.md:342 docs/cli.md:350 docs/cli.md:362
 #, no-wrap
 msgid "bash"
 msgstr ""
@@ -241,7 +241,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: docs/cli.md:88 docs/cli.md:127 docs/cli.md:149 docs/cli.md:180 docs/cli.md:199 docs/cli.md:228 docs/cli.md:246 docs/cli.md:262 docs/cli.md:286 docs/cli.md:344
+#: docs/cli.md:88 docs/cli.md:127 docs/cli.md:149 docs/cli.md:190 docs/cli.md:209 docs/cli.md:238 docs/cli.md:256 docs/cli.md:272 docs/cli.md:296 docs/cli.md:354
 #, no-wrap
 msgid "Options"
 msgstr ""
@@ -395,7 +395,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:154 docs/cli.md:188 docs/cli.md:203
+#: docs/cli.md:154 docs/cli.md:198 docs/cli.md:213
 msgid ""
 "`--dry-run` : Outputs the operations but will not execute anything "
 "(implicitly enables --verbose)."
@@ -469,46 +469,71 @@ msgid ""
 "\n"
 msgstr ""
 
+#. type: Plain text
+#: docs/cli.md:182
+msgid ""
+"Path dependencies pointing to a local directory will be installed in "
+"editable mode (i.e. setuptools \"develop mode\").  It means that changes in "
+"the local directory will be reflected directly in environment."
+msgstr ""
+
+#. type: Plain text
+#: docs/cli.md:184
+msgid ""
+"If you don't want the dependency to be installed in editable mode you can "
+"specify it in the `pyproject.toml` file:"
+msgstr ""
+
+#. type: Plain text
+#: docs/cli.md:185
+#, no-wrap
+msgid ""
+"[tool.poetry.dependencies]\n"
+"\n"
+"my-package = {path = \"../my/path\", develop = false}\n"
+"\n"
+msgstr ""
+
 #. type: Bullet: '* '
-#: docs/cli.md:188
+#: docs/cli.md:198
 msgid "`--dev (-D)`: Add package as development dependency."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:188
+#: docs/cli.md:198
 msgid "`--git`: The url of the Git repository."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:188
+#: docs/cli.md:198
 msgid "`--path`: The path to a dependency."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:188
+#: docs/cli.md:198
 msgid "`--extras (-E)`: Extras to activate for the dependency."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:188
+#: docs/cli.md:198
 msgid "`--optional` : Add as an optional dependency."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:190
+#: docs/cli.md:200
 #, no-wrap
 msgid "remove"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:194
+#: docs/cli.md:204
 msgid ""
 "The `remove` command removes a package from the current list of installed "
 "packages."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:195
+#: docs/cli.md:205
 #, no-wrap
 msgid ""
 "poetry remove pendulum\n"
@@ -516,23 +541,23 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:203
+#: docs/cli.md:213
 msgid "`--dev (-D)`: Removes a package from the development dependencies."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:205
+#: docs/cli.md:215
 #, no-wrap
 msgid "show"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:208
+#: docs/cli.md:218
 msgid "To list all of the available packages, you can use the `show` command."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:209
+#: docs/cli.md:219
 #, no-wrap
 msgid ""
 "poetry show\n"
@@ -540,14 +565,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:214
+#: docs/cli.md:224
 msgid ""
 "If you want to see the details of a certain package, you can pass the "
 "package name."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:215
+#: docs/cli.md:225
 #, no-wrap
 msgid ""
 "poetry show pendulum\n"
@@ -573,40 +598,40 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:234
+#: docs/cli.md:244
 msgid "`--no-dev`: Do not list the dev dependencies."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:234
+#: docs/cli.md:244
 msgid "`--tree`: List the dependencies as a tree."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:234
+#: docs/cli.md:244
 msgid "`--latest (-l)`: Show the latest version."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:234
+#: docs/cli.md:244
 msgid ""
 "`--outdated (-o)`: Show the latest version but only for packages that are "
 "outdated."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:236
+#: docs/cli.md:246
 #, no-wrap
 msgid "build"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:239
+#: docs/cli.md:249
 msgid "The `build` command builds the source and wheels archives."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:240
+#: docs/cli.md:250
 #, no-wrap
 msgid ""
 "poetry build\n"
@@ -614,37 +639,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:245
+#: docs/cli.md:255
 msgid "Note that, at the moment, only pure python wheels are supported."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:249
+#: docs/cli.md:259
 msgid "`--format (-F)`: Limit the format to either wheel or sdist."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:250
+#: docs/cli.md:260
 #, no-wrap
 msgid "publish"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:253
+#: docs/cli.md:263
 msgid ""
 "This command publishes the package, previously built with the "
 "[`build`](#build) command, to the remote repository."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:255
+#: docs/cli.md:265
 msgid ""
 "It will automatically register the package before uploading if this is the "
 "first time it is submitted."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:256
+#: docs/cli.md:266
 #, no-wrap
 msgid ""
 "poetry publish\n"
@@ -652,12 +677,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:261
+#: docs/cli.md:271
 msgid "It can also build the package if you pass it the `--build` option."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:268
+#: docs/cli.md:278
 #, no-wrap
 msgid ""
 "* `--repository (-r)`: The repository to register the package to (default: "
@@ -668,20 +693,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:269
+#: docs/cli.md:279
 #, no-wrap
 msgid "config"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:272
+#: docs/cli.md:282
 msgid ""
 "The `config` command allows you to edit poetry config settings and "
 "repositories."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:273
+#: docs/cli.md:283
 #, no-wrap
 msgid ""
 "poetry config --list\n"
@@ -689,13 +714,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: docs/cli.md:277
+#: docs/cli.md:287
 #, no-wrap
 msgid "Usage"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:279
+#: docs/cli.md:289
 #, no-wrap
 msgid ""
 "poetry config [options] [setting-key] [setting-value1] "
@@ -704,7 +729,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:285
+#: docs/cli.md:295
 msgid ""
 "`setting-key` is a configuration option name and `setting-value1` is a "
 "configuration value.  See [Configuration](/docs/configuration/) for all "
@@ -712,30 +737,30 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:290
+#: docs/cli.md:300
 msgid "`--unset`: Remove the configuration element named by `setting-key`."
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:290
+#: docs/cli.md:300
 msgid "`--list`: Show the list of current config variables."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:291
+#: docs/cli.md:301
 #, no-wrap
 msgid "run"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:294
+#: docs/cli.md:304
 msgid ""
 "The `run` command executes the given command inside the project's "
 "virtualenv."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:295
+#: docs/cli.md:305
 #, no-wrap
 msgid ""
 "poetry run python -V\n"
@@ -743,23 +768,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:300
+#: docs/cli.md:310
 msgid "It can also execute one of the scripts defined in `pyproject.toml`."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:302
+#: docs/cli.md:312
 msgid "So, if you have a script defined like this:"
 msgstr ""
 
 #. type: Code fence info string
-#: docs/cli.md:303
+#: docs/cli.md:313
 #, no-wrap
 msgid "toml"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:303
+#: docs/cli.md:313
 #, no-wrap
 msgid ""
 "[tool.poetry.scripts]\n"
@@ -769,12 +794,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:309
+#: docs/cli.md:319
 msgid "You can execute it like so:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:310
+#: docs/cli.md:320
 #, no-wrap
 msgid ""
 "poetry run my-script\n"
@@ -782,18 +807,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:315
+#: docs/cli.md:325
 msgid "Note that this command has no option."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:316
+#: docs/cli.md:326
 #, no-wrap
 msgid "shell"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:322
+#: docs/cli.md:332
 msgid ""
 "The `shell` command spawns a shell, according to the `$SHELL` environment "
 "variable, within the virtual environment.  If one doesn't exist yet, it will "
@@ -801,7 +826,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:323
+#: docs/cli.md:333
 #, no-wrap
 msgid ""
 "poetry shell\n"
@@ -809,20 +834,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:327
+#: docs/cli.md:337
 #, no-wrap
 msgid "check"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:331
+#: docs/cli.md:341
 msgid ""
 "The `check` command validates the structure of the `pyproject.toml` file and "
 "returns a detailed report if there are any errors."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:332
+#: docs/cli.md:342
 #, no-wrap
 msgid ""
 "poetry check\n"
@@ -830,18 +855,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:336
+#: docs/cli.md:346
 #, no-wrap
 msgid "search"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:339
+#: docs/cli.md:349
 msgid "This command searches for packages on a remote index."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:340
+#: docs/cli.md:350
 #, no-wrap
 msgid ""
 "poetry search requests pendulum\n"
@@ -849,25 +874,25 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/cli.md:347
+#: docs/cli.md:357
 msgid "`--only-name (-N)`: Search only in name."
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:348
+#: docs/cli.md:358
 #, no-wrap
 msgid "lock"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:351
+#: docs/cli.md:361
 msgid ""
 "This command locks (without installing) the dependencies specified in "
 "`pyproject.toml`."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:352
+#: docs/cli.md:362
 #, no-wrap
 msgid ""
 "poetry lock\n"
@@ -875,20 +900,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/cli.md:356
+#: docs/cli.md:366
 #, no-wrap
 msgid "version"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:360
+#: docs/cli.md:370
 msgid ""
 "This command bumps the version of the project and writes the new version "
 "back to `pyproject.toml`"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:362
+#: docs/cli.md:372
 msgid ""
 "The new version should ideally be a valid semver string or a valid bump "
 "rule: `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`, "
