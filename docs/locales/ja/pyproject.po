@@ -2,21 +2,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-30 04:32+0000\n"
+"PO-Revision-Date: 2019-02-04 03:37+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#. type: Plain text
-#: docs/pyproject.md:2
-msgid "# The `pyproject.toml` file"
-msgstr "# `pyproject.toml` ファイル"
+#. type: Title #
+#: docs/pyproject.md:1
+#, no-wrap
+msgid "The `pyproject.toml` file"
+msgstr "`pyproject.toml` ファイル"
 
 #. type: Plain text
 #: docs/pyproject.md:4
@@ -25,9 +26,10 @@ msgid ""
 "multiple sections."
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:6
-msgid "## name"
+#. type: Title ##
+#: docs/pyproject.md:5
+#, no-wrap
+msgid "name"
 msgstr ""
 
 #. type: Plain text
@@ -35,9 +37,10 @@ msgstr ""
 msgid "The name of the package. **Required**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:10
-msgid "## version"
+#. type: Title ##
+#: docs/pyproject.md:9
+#, no-wrap
+msgid "version"
 msgstr ""
 
 #. type: Plain text
@@ -52,9 +55,10 @@ msgid ""
 "will not be enforced and you remain free to follow another specification."
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:17
-msgid "## description"
+#. type: Title ##
+#: docs/pyproject.md:16
+#, no-wrap
+msgid "description"
 msgstr ""
 
 #. type: Plain text
@@ -62,9 +66,10 @@ msgstr ""
 msgid "A short description of the package. **Required**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:21
-msgid "## license"
+#. type: Title ##
+#: docs/pyproject.md:20
+#, no-wrap
+msgid "license"
 msgstr ""
 
 #. type: Plain text
@@ -151,9 +156,10 @@ msgid ""
 "licenses/)."
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:44
-msgid "## authors"
+#. type: Title ##
+#: docs/pyproject.md:43
+#, no-wrap
+msgid "authors"
 msgstr ""
 
 #. type: Plain text
@@ -165,12 +171,14 @@ msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:48
-msgid "Authors must be in the form `name <email>`."
+#, no-wrap
+msgid "Authors must be in the form `name <email>`.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:50
-msgid "## readme"
+#. type: Title ##
+#: docs/pyproject.md:49
+#, no-wrap
+msgid "readme"
 msgstr ""
 
 #. type: Plain text
@@ -183,9 +191,10 @@ msgstr ""
 msgid "The file can be either `README.rst` or `README.md`."
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:56
-msgid "## homepage"
+#. type: Title ##
+#: docs/pyproject.md:55
+#, no-wrap
+msgid "homepage"
 msgstr ""
 
 #. type: Plain text
@@ -193,9 +202,10 @@ msgstr ""
 msgid "An URL to the website of the project. **Optional**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:60
-msgid "## repository"
+#. type: Title ##
+#: docs/pyproject.md:59
+#, no-wrap
+msgid "repository"
 msgstr ""
 
 #. type: Plain text
@@ -203,9 +213,10 @@ msgstr ""
 msgid "An URL to the repository of the project. **Optional**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:64
-msgid "## documentation"
+#. type: Title ##
+#: docs/pyproject.md:63
+#, no-wrap
+msgid "documentation"
 msgstr ""
 
 #. type: Plain text
@@ -213,9 +224,10 @@ msgstr ""
 msgid "An URL to the documentation of the project. **Optional**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:68
-msgid "## keywords"
+#. type: Title ##
+#: docs/pyproject.md:67
+#, no-wrap
+msgid "keywords"
 msgstr ""
 
 #. type: Plain text
@@ -224,9 +236,10 @@ msgid ""
 "A list of keywords (max: 5) that the package is related to. **Optional**"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:72
-msgid "## classifiers"
+#. type: Title ##
+#: docs/pyproject.md:71
+#, no-wrap
+msgid "classifiers"
 msgstr ""
 
 #. type: Plain text
@@ -236,18 +249,28 @@ msgid ""
 "describe the project. **Optional**"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/pyproject.md:75 docs/pyproject.md:97 docs/pyproject.md:108 docs/pyproject.md:146 docs/pyproject.md:152 docs/pyproject.md:161 docs/pyproject.md:168 docs/pyproject.md:188 docs/pyproject.md:202 docs/pyproject.md:233 docs/pyproject.md:249
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/pyproject.md:83
+#: docs/pyproject.md:75
 #, no-wrap
 msgid ""
-"```toml\n"
 "[tool.poetry]\n"
+"\n"
 "# ...\n"
+"\n"
 "classifiers = [\n"
+"\n"
 "    \"Topic :: Software Development :: Build Tools\",\n"
+"\n"
 "    \"Topic :: Software Development :: Libraries :: Python Modules\"\n"
+"\n"
 "]\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -271,9 +294,10 @@ msgid ""
 "automatically.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:91
-msgid "## packages"
+#. type: Title ##
+#: docs/pyproject.md:90
+#, no-wrap
+msgid "packages"
 msgstr ""
 
 #. type: Plain text
@@ -290,17 +314,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:105
+#: docs/pyproject.md:97
 #, no-wrap
 msgid ""
-"```toml\n"
 "[tool.poetry]\n"
+"\n"
 "# ...\n"
+"\n"
 "packages = [\n"
+"\n"
 "    { include = \"mypackage\" },\n"
+"\n"
 "    { include = \"extra_package/**/*.py\" },\n"
+"\n"
 "]\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -311,16 +339,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:115
+#: docs/pyproject.md:108
 #, no-wrap
 msgid ""
-"```toml\n"
 "[tool.poetry]\n"
+"\n"
 "# ...\n"
+"\n"
 "packages = [\n"
+"\n"
 "    { include = \"mypackage\", from = \"lib\" },\n"
+"\n"
 "]\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -368,9 +399,10 @@ msgid ""
 "resides.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:138
-msgid "## include and exclude"
+#. type: Title ##
+#: docs/pyproject.md:137
+#, no-wrap
+msgid "include and exclude"
 msgstr ""
 
 #. type: Plain text
@@ -395,18 +427,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:151
-msgid "```toml [tool.poetry] # ...  include = [\"CHANGELOG.md\"] ```"
+#: docs/pyproject.md:146
+#, no-wrap
+msgid "[tool.poetry]\n"
+"\n"
+"# ...\n"
+"\n"
+"include = [\"CHANGELOG.md\"]\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:155
-msgid "```toml exclude = [\"my_package/excluded.py\"] ```"
+#: docs/pyproject.md:152
+#, no-wrap
+msgid "exclude = [\"my_package/excluded.py\"]\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:157
-msgid "## `dependencies` and `dev-dependencies`"
+#. type: Title ##
+#: docs/pyproject.md:156
+#, no-wrap
+msgid "`dependencies` and `dev-dependencies`"
 msgstr ""
 
 #. type: Plain text
@@ -417,8 +458,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:165
-msgid "```toml [tool.poetry.dependencies] requests = \"^2.13.0\" ```"
+#: docs/pyproject.md:161
+#, no-wrap
+msgid "[tool.poetry.dependencies]\n"
+"\n"
+"requests = \"^2.13.0\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -429,10 +474,15 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:173
+#: docs/pyproject.md:168
+#, no-wrap
 msgid ""
-"```toml [[tool.poetry.source]] name = 'private' url = 'http://example.com/"
-"simple' ```"
+"[[tool.poetry.source]]\n"
+"\n"
+"name = 'private'\n"
+"\n"
+"url = 'http://example.com/simple'\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -453,9 +503,10 @@ msgid ""
 "    ```\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:185
-msgid "## `scripts`"
+#. type: Title ##
+#: docs/pyproject.md:184
+#, no-wrap
+msgid "`scripts`"
 msgstr ""
 
 #. type: Plain text
@@ -466,8 +517,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:192
-msgid "```toml [tool.poetry.scripts] poetry = 'poetry:console.run' ```"
+#: docs/pyproject.md:188
+#, no-wrap
+msgid "[tool.poetry.scripts]\n"
+"\n"
+"poetry = 'poetry:console.run'\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -477,9 +532,10 @@ msgid ""
 "run` in the `poetry` package."
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:196
-msgid "## `extras`"
+#. type: Title ##
+#: docs/pyproject.md:195
+#, no-wrap
+msgid "`extras`"
 msgstr ""
 
 #. type: Plain text
@@ -499,29 +555,41 @@ msgid "clusters of optional dependencies."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:205
-msgid "```toml [tool.poetry] name = \"awesome\""
-msgstr ""
-
-#. type: Plain text
-#: docs/pyproject.md:209
+#: docs/pyproject.md:202
+#, no-wrap
 msgid ""
-"[tool.poetry.dependencies] # These packages are mandatory and form the core "
-"of this package’s distribution.  mandatory = \"^1.0\""
-msgstr ""
-
-#. type: Plain text
-#: docs/pyproject.md:214
-msgid ""
+"[tool.poetry]\n"
+"\n"
+"name = \"awesome\"\n"
+"\n"
+"\n"
+"\n"
+"[tool.poetry.dependencies]\n"
+"\n"
+"# These packages are mandatory and form the core of this package’s "
+"distribution.\n"
+"\n"
+"mandatory = \"^1.0\"\n"
+"\n"
+"\n"
+"\n"
 "# A list of all of the optional dependencies, some of which are included in "
-"the # below `extras`. They can be opted into by apps.  psycopg2 = { version ="
-" \"^2.7\", optional = true } mysqlclient = { version = \"^1.3\", optional = "
-"true }"
-msgstr ""
-
-#. type: Plain text
-#: docs/pyproject.md:219
-msgid "[tool.poetry.extras] mysql = [\"mysqlclient\"] pgsql = [\"psycopg2\"] ```"
+"the\n"
+"\n"
+"# below `extras`. They can be opted into by apps.\n"
+"\n"
+"psycopg2 = { version = \"^2.7\", optional = true }\n"
+"\n"
+"mysqlclient = { version = \"^1.3\", optional = true }\n"
+"\n"
+"\n"
+"\n"
+"[tool.poetry.extras]\n"
+"\n"
+"mysql = [\"mysqlclient\"]\n"
+"\n"
+"pgsql = [\"psycopg2\"]\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -531,16 +599,26 @@ msgid ""
 "option:"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:226
-msgid ""
-"```bash poetry install --extras \"mysql pgsql\" poetry install -E mysql -E "
-"pgsql ```"
+#. type: Code fence info string
+#: docs/pyproject.md:222
+#, no-wrap
+msgid "bash"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:228
-msgid "## `plugins`"
+#: docs/pyproject.md:222
+#, no-wrap
+msgid ""
+"poetry install --extras \"mysql pgsql\"\n"
+"\n"
+"poetry install -E mysql -E pgsql\n"
+"\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/pyproject.md:227
+#, no-wrap
+msgid "`plugins`"
 msgstr ""
 
 #. type: Plain text
@@ -553,20 +631,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:235
-msgid "```toml [tool.poetry.plugins] # Optional super table"
-msgstr ""
-
-#. type: Plain text
-#: docs/pyproject.md:239
+#: docs/pyproject.md:233
+#, no-wrap
 msgid ""
-"[tool.poetry.plugins.\"blogtool.parsers\"] \".rst\" = \"some_module:"
-"SomeClass\" ```"
+"[tool.poetry.plugins] # Optional super table\n"
+"\n"
+"\n"
+"\n"
+"[tool.poetry.plugins.\"blogtool.parsers\"]\n"
+"\n"
+"\".rst\" = \"some_module:SomeClass\"\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/pyproject.md:241
-msgid "## Poetry and PEP-517"
+#. type: Title ##
+#: docs/pyproject.md:240
+#, no-wrap
+msgid "Poetry and PEP-517"
 msgstr ""
 
 #. type: Plain text
@@ -585,10 +666,15 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:254
+#: docs/pyproject.md:249
+#, no-wrap
 msgid ""
-"```toml [build-system] requires = [\"poetry>=0.12\"] build-backend = "
-"\"poetry.masonry.api\" ```"
+"[build-system]\n"
+"\n"
+"requires = [\"poetry>=0.12\"]\n"
+"\n"
+"build-backend = \"poetry.masonry.api\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text

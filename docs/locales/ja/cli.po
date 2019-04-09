@@ -2,21 +2,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-30 04:30+0000\n"
+"PO-Revision-Date: 2019-02-04 03:33+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#. type: Plain text
-#: docs/cli.md:2
-msgid "# Commands"
-msgstr "# コマンド"
+#. type: Title #
+#: docs/cli.md:1
+#, no-wrap
+msgid "Commands"
+msgstr "コマンド"
 
 #. type: Plain text
 #: docs/cli.md:5
@@ -40,9 +41,17 @@ msgid ""
 "commands by short name if it's not ambiguous."
 msgstr ""
 
+#. type: Code fence info string
+#: docs/cli.md:11 docs/cli.md:33 docs/cli.md:53 docs/cli.md:59 docs/cli.md:84 docs/cli.md:102 docs/cli.md:115 docs/cli.md:122 docs/cli.md:137 docs/cli.md:145 docs/cli.md:162 docs/cli.md:168 docs/cli.md:174 docs/cli.md:195 docs/cli.md:209 docs/cli.md:215 docs/cli.md:240 docs/cli.md:256 docs/cli.md:273 docs/cli.md:279 docs/cli.md:295 docs/cli.md:310 docs/cli.md:323 docs/cli.md:332 docs/cli.md:340 docs/cli.md:352
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/cli.md:14
-msgid "```bash poetry up ```"
+#: docs/cli.md:11
+#, no-wrap
+msgid "poetry up\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -50,9 +59,10 @@ msgstr ""
 msgid "calls `poetry update`."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:19
-msgid "## Global options"
+#. type: Title ##
+#: docs/cli.md:18
+#, no-wrap
+msgid "Global options"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -87,9 +97,10 @@ msgstr ""
 msgid "`--version (-V)`: Display this application version."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:29
-msgid "## new"
+#. type: Title ##
+#: docs/cli.md:28
+#, no-wrap
+msgid "new"
 msgstr ""
 
 #. type: Plain text
@@ -100,8 +111,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:36
-msgid "```bash poetry new my-package ```"
+#: docs/cli.md:33
+#, no-wrap
+msgid "poetry new my-package\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -109,20 +122,32 @@ msgstr ""
 msgid "will create a folder as follows:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/cli.md:39 docs/cli.md:65
+#, no-wrap
+msgid "text"
+msgstr ""
+
 #. type: Plain text
-#: docs/cli.md:49
+#: docs/cli.md:39
 #, no-wrap
 msgid ""
-"```text\n"
 "my-package\n"
+"\n"
 "├── pyproject.toml\n"
+"\n"
 "├── README.rst\n"
+"\n"
 "├── my_package\n"
+"\n"
 "│   └── __init__.py\n"
+"\n"
 "└── tests\n"
+"\n"
 "    ├── __init__.py\n"
+"\n"
 "    └── test_my_package\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -133,8 +158,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:56
-msgid "```bash poetry new my-folder --name my-package ```"
+#: docs/cli.md:53
+#, no-wrap
+msgid "poetry new my-folder --name my-package\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -143,8 +170,10 @@ msgid "If you want to use a src folder, you can use the `--src` option:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:62
-msgid "```bash poetry new --src my-package ```"
+#: docs/cli.md:59
+#, no-wrap
+msgid "poetry new --src my-package\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -153,25 +182,33 @@ msgid "That will create a folder structure as follows:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:76
+#: docs/cli.md:65
 #, no-wrap
 msgid ""
-"```text\n"
 "my-package\n"
+"\n"
 "├── pyproject.toml\n"
+"\n"
 "├── README.rst\n"
+"\n"
 "├── src\n"
+"\n"
 "│   └── my_package\n"
+"\n"
 "│       └── __init__.py\n"
+"\n"
 "└── tests\n"
+"\n"
 "    ├── __init__.py\n"
+"\n"
 "    └── test_my_package\n"
-"```\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:78
-msgid "## init"
+#. type: Title ##
+#: docs/cli.md:77
+#, no-wrap
+msgid "init"
 msgstr ""
 
 #. type: Plain text
@@ -189,13 +226,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:87
-msgid "```bash poetry init ```"
+#: docs/cli.md:84
+#, no-wrap
+msgid "poetry init\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:89 docs/cli.md:128 docs/cli.md:150 docs/cli.md:181 docs/cli.md:200 docs/cli.md:229 docs/cli.md:247 docs/cli.md:263 docs/cli.md:287 docs/cli.md:345
-msgid "### Options"
+#. type: Title ###
+#: docs/cli.md:88 docs/cli.md:127 docs/cli.md:149 docs/cli.md:180 docs/cli.md:199 docs/cli.md:228 docs/cli.md:246 docs/cli.md:262 docs/cli.md:286 docs/cli.md:344
+#, no-wrap
+msgid "Options"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -225,9 +265,10 @@ msgstr ""
 msgid "`--dev-dependency`: Development requirements, see `--require`."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:98
-msgid "## install"
+#. type: Title ##
+#: docs/cli.md:97
+#, no-wrap
+msgid "install"
 msgstr ""
 
 #. type: Plain text
@@ -238,8 +279,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:105
-msgid "```bash poetry install ```"
+#: docs/cli.md:102
+#, no-wrap
+msgid "poetry install\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -265,8 +308,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:118
-msgid "```bash poetry install --no-dev ```"
+#: docs/cli.md:115
+#, no-wrap
+msgid "poetry install --no-dev\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -277,10 +322,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:126
+#: docs/cli.md:122
+#, no-wrap
 msgid ""
-"```bash poetry install --extras \"mysql pgsql\" poetry install -E mysql -E "
-"pgsql ```"
+"poetry install --extras \"mysql pgsql\"\n"
+"\n"
+"poetry install -E mysql -E pgsql\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -293,9 +341,10 @@ msgstr ""
 msgid "`--extras (-E)`: Features to install (multiple values allowed)."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:133
-msgid "## update"
+#. type: Title ##
+#: docs/cli.md:132
+#, no-wrap
+msgid "update"
 msgstr ""
 
 #. type: Plain text
@@ -306,8 +355,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:140
-msgid "```bash poetry update ```"
+#: docs/cli.md:137
+#, no-wrap
+msgid "poetry update\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -325,8 +376,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:148
-msgid "```bash poetry update requests toml ```"
+#: docs/cli.md:145
+#, no-wrap
+msgid "poetry update requests toml\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -346,9 +399,10 @@ msgstr ""
 msgid "`--lock` : Do not perform install (only update the lockfile)."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:156
-msgid "## add"
+#. type: Title ##
+#: docs/cli.md:155
+#, no-wrap
+msgid "add"
 msgstr ""
 
 #. type: Plain text
@@ -366,8 +420,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:165
-msgid "```bash poetry add requests pendulum ```"
+#: docs/cli.md:162
+#, no-wrap
+msgid "poetry add requests pendulum\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -376,10 +432,10 @@ msgid "You can also add `git` dependencies:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:171
-msgid ""
-"```bash poetry add pendulum --git https://github.com/sdispater/pendulum.git "
-"```"
+#: docs/cli.md:168
+#, no-wrap
+msgid "poetry add pendulum --git https://github.com/sdispater/pendulum.git\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -388,11 +444,15 @@ msgid "or make them point to a local directory or file:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:179
+#: docs/cli.md:174
+#, no-wrap
 msgid ""
-"```bash poetry add my-package --path ../my-package/ poetry add my-package --"
-"path ../my-package/dist/my-package-0.1.0.tar.gz poetry add my-package --path "
-"../my-package/dist/my_package-0.1.0.whl ```"
+"poetry add my-package --path ../my-package/\n"
+"\n"
+"poetry add my-package --path ../my-package/dist/my-package-0.1.0.tar.gz\n"
+"\n"
+"poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -420,9 +480,10 @@ msgstr ""
 msgid "`--optional` : Add as an optional dependency."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:191
-msgid "## remove"
+#. type: Title ##
+#: docs/cli.md:190
+#, no-wrap
+msgid "remove"
 msgstr ""
 
 #. type: Plain text
@@ -433,8 +494,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:198
-msgid "```bash poetry remove pendulum ```"
+#: docs/cli.md:195
+#, no-wrap
+msgid "poetry remove pendulum\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -442,9 +505,10 @@ msgstr ""
 msgid "`--dev (-D)`: Removes a package from the development dependencies."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:206
-msgid "## show"
+#. type: Title ##
+#: docs/cli.md:205
+#, no-wrap
+msgid "show"
 msgstr ""
 
 #. type: Plain text
@@ -453,8 +517,10 @@ msgid "To list all of the available packages, you can use the `show` command."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:212
-msgid "```bash poetry show ```"
+#: docs/cli.md:209
+#, no-wrap
+msgid "poetry show\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -465,28 +531,29 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:217
-msgid "```bash poetry show pendulum"
-msgstr ""
-
-#. type: Plain text
-#: docs/cli.md:221
+#: docs/cli.md:215
 #, no-wrap
 msgid ""
+"poetry show pendulum\n"
+"\n"
+"\n"
+"\n"
 "name        : pendulum\n"
+"\n"
 "version     : 1.4.2\n"
+"\n"
 "description : Python datetimes made easy\n"
-msgstr ""
-
-#. type: Plain text
-#: docs/cli.md:227
-#, no-wrap
-msgid ""
+"\n"
+"\n"
+"\n"
 "dependencies:\n"
+"\n"
 " - python-dateutil >=2.6.1\n"
+"\n"
 " - tzlocal >=1.4\n"
+"\n"
 " - pytzdata >=2017.2.2\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -511,9 +578,10 @@ msgid ""
 "outdated."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:237
-msgid "## build"
+#. type: Title ##
+#: docs/cli.md:236
+#, no-wrap
+msgid "build"
 msgstr ""
 
 #. type: Plain text
@@ -522,8 +590,10 @@ msgid "The `build` command builds the source and wheels archives."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:243
-msgid "```bash poetry build ```"
+#: docs/cli.md:240
+#, no-wrap
+msgid "poetry build\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -536,9 +606,10 @@ msgstr ""
 msgid "`--format (-F)`: Limit the format to either wheel or sdist."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:251
-msgid "## publish"
+#. type: Title ##
+#: docs/cli.md:250
+#, no-wrap
+msgid "publish"
 msgstr ""
 
 #. type: Plain text
@@ -556,8 +627,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:259
-msgid "```bash poetry publish ```"
+#: docs/cli.md:256
+#, no-wrap
+msgid "poetry publish\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -576,9 +649,10 @@ msgid ""
 "* `--password (-p)`: The password to access the repository.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:270
-msgid "## config"
+#. type: Title ##
+#: docs/cli.md:269
+#, no-wrap
+msgid "config"
 msgstr ""
 
 #. type: Plain text
@@ -589,20 +663,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:276
-msgid "```bash poetry config --list ```"
+#: docs/cli.md:273
+#, no-wrap
+msgid "poetry config --list\n"
+"\n"
+msgstr ""
+
+#. type: Title ###
+#: docs/cli.md:277
+#, no-wrap
+msgid "Usage"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:278
-msgid "### Usage"
-msgstr ""
-
-#. type: Plain text
-#: docs/cli.md:282
+#: docs/cli.md:279
+#, no-wrap
 msgid ""
-"````bash poetry config [options] [setting-key] [setting-value1] ... [setting-"
-"valueN] ````"
+"poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -623,9 +701,10 @@ msgstr ""
 msgid "`--list`: Show the list of current config variables."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:292
-msgid "## run"
+#. type: Title ##
+#: docs/cli.md:291
+#, no-wrap
+msgid "run"
 msgstr ""
 
 #. type: Plain text
@@ -636,8 +715,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:298
-msgid "```bash poetry run python -V ```"
+#: docs/cli.md:295
+#, no-wrap
+msgid "poetry run python -V\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -650,9 +731,19 @@ msgstr ""
 msgid "So, if you have a script defined like this:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/cli.md:303
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/cli.md:307
-msgid "```toml [tool.poetry.scripts] my-script = \"my_module:main\" ```"
+#: docs/cli.md:303
+#, no-wrap
+msgid "[tool.poetry.scripts]\n"
+"\n"
+"my-script = \"my_module:main\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -661,8 +752,10 @@ msgid "You can execute it like so:"
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:313
-msgid "```bash poetry run my-script ```"
+#: docs/cli.md:310
+#, no-wrap
+msgid "poetry run my-script\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -670,9 +763,10 @@ msgstr ""
 msgid "Note that this command has no option."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:317
-msgid "## shell"
+#. type: Title ##
+#: docs/cli.md:316
+#, no-wrap
+msgid "shell"
 msgstr ""
 
 #. type: Plain text
@@ -684,13 +778,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:326
-msgid "```bash poetry shell ```"
+#: docs/cli.md:323
+#, no-wrap
+msgid "poetry shell\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:328
-msgid "## check"
+#. type: Title ##
+#: docs/cli.md:327
+#, no-wrap
+msgid "check"
 msgstr ""
 
 #. type: Plain text
@@ -701,13 +798,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:335
-msgid "```bash poetry check ```"
+#: docs/cli.md:332
+#, no-wrap
+msgid "poetry check\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:337
-msgid "## search"
+#. type: Title ##
+#: docs/cli.md:336
+#, no-wrap
+msgid "search"
 msgstr ""
 
 #. type: Plain text
@@ -716,8 +816,10 @@ msgid "This command searches for packages on a remote index."
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:343
-msgid "```bash poetry search requests pendulum ```"
+#: docs/cli.md:340
+#, no-wrap
+msgid "poetry search requests pendulum\n"
+"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -725,9 +827,10 @@ msgstr ""
 msgid "`--only-name (-N)`: Search only in name."
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:349
-msgid "## lock"
+#. type: Title ##
+#: docs/cli.md:348
+#, no-wrap
+msgid "lock"
 msgstr ""
 
 #. type: Plain text
@@ -738,13 +841,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/cli.md:355
-msgid "```bash poetry lock ```"
+#: docs/cli.md:352
+#, no-wrap
+msgid "poetry lock\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/cli.md:357
-msgid "## version"
+#. type: Title ##
+#: docs/cli.md:356
+#, no-wrap
+msgid "version"
 msgstr ""
 
 #. type: Plain text

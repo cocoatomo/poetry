@@ -1,22 +1,24 @@
+# Kotone Potts <acedraingon@yahoo.co.jp>, 2019. #zanata
 # cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 00:45+0900\n"
+"POT-Creation-Date: 2019-04-09 08:57+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-30 04:30+0000\n"
-"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
+"PO-Revision-Date: 2019-03-22 02:58+0000\n"
+"Last-Translator: Kotone Potts <acedraingon@yahoo.co.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#. type: Plain text
-#: docs/basic-usage.md:2
-msgid "# Basic usage"
-msgstr "# 基本的な使い方"
+#. type: Title #
+#: docs/basic-usage.md:1
+#, no-wrap
+msgid "Basic usage"
+msgstr "基本的な使い方"
 
 #. type: Plain text
 #: docs/basic-usage.md:5
@@ -26,19 +28,28 @@ msgid ""
 "[Introduction](/docs/) chapter."
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:7
-msgid "## Project setup"
-msgstr ""
+#. type: Title ##
+#: docs/basic-usage.md:6
+#, no-wrap
+msgid "Project setup"
+msgstr "プロジェクトのセットアップ"
 
 #. type: Plain text
 #: docs/basic-usage.md:9
 msgid "First, let's create our new project, let's call it `poetry-demo`:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/basic-usage.md:10 docs/basic-usage.md:60 docs/basic-usage.md:92
+#, no-wrap
+msgid "bash"
+msgstr ""
+
 #. type: Plain text
-#: docs/basic-usage.md:13
-msgid "```bash poetry new poetry-demo ```"
+#: docs/basic-usage.md:10
+#, no-wrap
+msgid "poetry new poetry-demo\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -47,20 +58,32 @@ msgid ""
 "This will create the `poetry-demo` directory with the following content:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/basic-usage.md:16
+#, no-wrap
+msgid "text"
+msgstr ""
+
 #. type: Plain text
-#: docs/basic-usage.md:26
+#: docs/basic-usage.md:16
 #, no-wrap
 msgid ""
-"```text\n"
 "poetry-demo\n"
+"\n"
 "├── pyproject.toml\n"
+"\n"
 "├── README.rst\n"
+"\n"
 "├── poetry_demo\n"
+"\n"
 "│   └── __init__.py\n"
+"\n"
 "└── tests\n"
+"\n"
 "    ├── __init__.py\n"
+"\n"
 "    └── test_poetry_demo.py\n"
-"```\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -70,26 +93,44 @@ msgid ""
 "orchestrate your project and its dependencies. For now, it looks like this:"
 msgstr ""
 
+#. type: Code fence info string
+#: docs/basic-usage.md:30 docs/basic-usage.md:48
+#, no-wrap
+msgid "toml"
+msgstr ""
+
 #. type: Plain text
-#: docs/basic-usage.md:36
+#: docs/basic-usage.md:30
+#, no-wrap
 msgid ""
-"```toml [tool.poetry] name = \"poetry-demo\" version = \"0.1.0\" description "
-"= \"\" authors = [\"Sébastien Eustace <sebastien@eustace.io>\"]"
+"[tool.poetry]\n"
+"\n"
+"name = \"poetry-demo\"\n"
+"\n"
+"version = \"0.1.0\"\n"
+"\n"
+"description = \"\"\n"
+"\n"
+"authors = [\"Sébastien Eustace <sebastien@eustace.io>\"]\n"
+"\n"
+"\n"
+"\n"
+"[tool.poetry.dependencies]\n"
+"\n"
+"python = \"*\"\n"
+"\n"
+"\n"
+"\n"
+"[tool.poetry.dev-dependencies]\n"
+"\n"
+"pytest = \"^3.4\"\n"
+"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:39
-msgid "[tool.poetry.dependencies] python = \"*\""
-msgstr ""
-
-#. type: Plain text
-#: docs/basic-usage.md:43
-msgid "[tool.poetry.dev-dependencies] pytest = \"^3.4\" ```"
-msgstr ""
-
-#. type: Plain text
-#: docs/basic-usage.md:45
-msgid "### Specifying dependencies"
+#. type: Title ###
+#: docs/basic-usage.md:44
+#, no-wrap
+msgid "Specifying dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -100,8 +141,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/basic-usage.md:52
-msgid "```toml [tool.poetry.dependencies] pendulum = \"^1.4\" ```"
+#: docs/basic-usage.md:48
+#, no-wrap
+msgid "[tool.poetry.dependencies]\n"
+"\n"
+"pendulum = \"^1.4\"\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -127,8 +172,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/basic-usage.md:63
-msgid "```bash $ poetry add pendulum ```"
+#: docs/basic-usage.md:60
+#, no-wrap
+msgid "$ poetry add pendulum\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -138,17 +185,20 @@ msgid ""
 "package and subdependencies."
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:68
-msgid "### Version constraints"
+#. type: Title ###
+#: docs/basic-usage.md:67
+#, no-wrap
+msgid "Version constraints"
 msgstr ""
 
 #. type: Plain text
 #: docs/basic-usage.md:71
+#, no-wrap
 msgid ""
 "In our example, we are requesting the `pendulum` package with the version "
-"constraint `^1.4`.  This means any version greater or equal to 1.4.0 and "
-"less than 2.0.0 (`>=1.4.0 <2.0.0`)."
+"constraint `^1.4`.\n"
+"This means any version greater or equal to 1.4.0 and less than 2.0.0 (`>=1.4."
+"0 <2.0.0`).\n"
 msgstr ""
 
 #. type: Plain text
@@ -191,9 +241,10 @@ msgid ""
 "    for the version constraint you have specified.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:89
-msgid "## Installing dependencies"
+#. type: Title ##
+#: docs/basic-usage.md:88
+#, no-wrap
+msgid "Installing dependencies"
 msgstr ""
 
 #. type: Plain text
@@ -204,8 +255,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/basic-usage.md:95
-msgid "```bash poetry install ```"
+#: docs/basic-usage.md:92
+#, no-wrap
+msgid "poetry install\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
@@ -213,9 +266,10 @@ msgstr ""
 msgid "When you run this command, one of two things may happen:"
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:99
-msgid "### Installing without `poetry.lock`"
+#. type: Title ###
+#: docs/basic-usage.md:98
+#, no-wrap
+msgid "Installing without `poetry.lock`"
 msgstr ""
 
 #. type: Plain text
@@ -236,9 +290,10 @@ msgid ""
 "locked to the same versions of dependencies (more below)."
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:109
-msgid "### Installing with `poetry.lock`"
+#. type: Title ###
+#: docs/basic-usage.md:108
+#, no-wrap
+msgid "Installing with `poetry.lock`"
 msgstr ""
 
 #. type: Plain text
@@ -265,9 +320,10 @@ msgid ""
 "your project does not break because of unexpected changes in dependencies."
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:122
-msgid "### Commit your `poetry.lock` file to version control"
+#. type: Title ###
+#: docs/basic-usage.md:121
+#, no-wrap
+msgid "Commit your `poetry.lock` file to version control"
 msgstr ""
 
 #. type: Plain text
@@ -290,9 +346,10 @@ msgstr ""
 msgid "    For libraries it is not necessary to commit the lock file.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:138
-msgid "## Updating dependencies to their latest versions"
+#. type: Title ##
+#: docs/basic-usage.md:137
+#, no-wrap
+msgid "Updating dependencies to their latest versions"
 msgstr ""
 
 #. type: Plain text
@@ -315,9 +372,10 @@ msgid ""
 "    are not synchronized.\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/basic-usage.md:153
-msgid "## Poetry and virtualenvs"
+#. type: Title ##
+#: docs/basic-usage.md:152
+#, no-wrap
+msgid "Poetry and virtualenvs"
 msgstr ""
 
 #. type: Plain text
