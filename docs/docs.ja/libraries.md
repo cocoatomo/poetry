@@ -33,7 +33,11 @@ the `.gitignore`.
 
 Before you can actually publish your library, you will need to package it.
 
-```bash poetry build ```
+```bash
+poetry build
+
+```
+
 
 This command will package your library in two different formats: `sdist`
 which is the source format, and `wheel` which is a `compiled` package.
@@ -52,7 +56,11 @@ it without having to specify any additional repositories.
 If we wanted to share `poetry-demo` with the Python community, we would
 publish on PyPI as well.  Doing so is really easy.
 
-```bash poetry publish ```
+```bash
+poetry publish
+
+```
+
 
 This will package and publish the library to PyPI, at the condition that you
 are a registered user and you have [configured your
@@ -81,4 +89,8 @@ repository](/docs/repositories/#adding-a-repository)  for more information.
 
 Once this is done, you can actually publish to it like so:
 
-```bash poetry publish -r my-repository ```
+```bash
+poetry publish -r my-repository
+
+```
+

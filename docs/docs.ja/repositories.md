@@ -21,7 +21,11 @@ use a private repository.
 
 Adding a new repository is easy with the `config` command.
 
-```bash poetry config repositories.foo https://foo.bar/simple/ ```
+```bash
+poetry config repositories.foo https://foo.bar/simple/
+
+```
+
 
 This will set the url for repository `foo` to `https://foo.bar/simple/`.
 
@@ -30,7 +34,11 @@ This will set the url for repository `foo` to `https://foo.bar/simple/`.
 If you want to store your credentials for a specific repository, you can do
 so easily:
 
-```bash poetry config http-basic.foo username password ```
+```bash
+poetry config http-basic.foo username password
+
+```
+
 
 If you do not specify the password you will be prompted to write it.
 
@@ -53,8 +61,15 @@ install dependencies from it.
 
 For that, you have to edit your `pyproject.toml` file, like so
 
-```toml [[tool.poetry.source]] name = "foo" url = "https://foo.bar/simple/"
+```toml
+[[tool.poetry.source]]
+
+name = "foo"
+
+url = "https://foo.bar/simple/"
+
 ```
+
 
 From now on, Poetry will also look for packages in your private repository.
 

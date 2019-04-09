@@ -1,4 +1,4 @@
-# バージョンと制限
+# バージョンと制約
 
 Poetry recommends following [semantic versioning](https://semver.org) but
 will not enforce it.
@@ -59,7 +59,17 @@ If you only specify a major version, then minor- and patch-level changes are all
 
 Here are some examples of inequality requirements:
 
-```text >= 1.2.0 > 1 < 2 != 1.2.3 ```
+```text
+>= 1.2.0
+
+> 1
+
+< 2
+
+!= 1.2.3
+
+```
+
 
 ### Exact requirements
 
@@ -70,8 +80,7 @@ update procedures.
 
 #### Multiple requirements
 
-Multiple version requirements can also be separated with a comma, e.g. `>=
-1.2, < 1.5`.
+Multiple version requirements can also be separated with a comma, e.g. `>= 1.2, < 1.5`.
 
 ### `git` dependencies
 
@@ -79,8 +88,13 @@ To depend on a library located in a `git` repository, the minimum
 information you need to specify is the location of the repository with the
 git key:
 
-```toml [tool.poetry.dependencies] requests = { git =
-"https://github.com/requests/requests.git" } ```
+```toml
+[tool.poetry.dependencies]
+
+requests = { git = "https://github.com/requests/requests.git" }
+
+```
+
 
 Since we haven’t specified any other information, Poetry assumes that we
 intend to use the latest commit on the `master` branch to build our
@@ -88,19 +102,34 @@ project.  You can combine the `git` key with the `rev`, `tag`, or `branch`
 keys to specify something else.  Here's an example of specifying that you
 want to use the latest commit on a branch named `next`:
 
-```toml [tool.poetry.dependencies] requests = { git =
-"https://github.com/kennethreitz/requests.git", branch = "next" } ```
+```toml
+[tool.poetry.dependencies]
+
+requests = { git = "https://github.com/kennethreitz/requests.git", branch = "next" }
+
+```
+
 
 ### `path` dependencies
 
 To depend on a library located in a local directory or file, you can use the
 `path` property:
 
-```toml [tool.poetry.dependencies] # directory my-package = { path =
-"../my-package/" }
+```toml
+[tool.poetry.dependencies]
 
-# file my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
+# directory
+
+my-package = { path = "../my-package/" }
+
+
+
+# file
+
+my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
+
 ```
+
 
 !!!note
 
@@ -114,11 +143,21 @@ To depend on a library located in a local directory or file, you can use the
 You can also specify that a dependency should be installed only for specific
 Python versions:
 
-```toml [tool.poetry.dependencies] pathlib2 = { version = "^2.2", python =
-"~2.7" } ```
+```toml
+[tool.poetry.dependencies]
 
-```toml [tool.poetry.dependencies] pathlib2 = { version = "^2.2", python =
-["~2.7", "^3.2"] } ```
+pathlib2 = { version = "^2.2", python = "~2.7" }
+
+```
+
+
+```toml
+[tool.poetry.dependencies]
+
+pathlib2 = { version = "^2.2", python = ["~2.7", "^3.2"] }
+
+```
+
 
 
 ### Multiple constraints dependencies
@@ -126,17 +165,23 @@ Python versions:
 Sometimes, one of your dependency may have different version ranges
 depending on the target Python versions.
 
-Let's say you have a dependency on the package `foo` which is only
-compatible with Python <3.0 up to version 1.9 and compatible with Python
-3.4+ from version 2.0: you would declare it like so:
+Let's say you have a dependency on the package `foo` which is only compatible
+with Python <3.0 up to version 1.9 and compatible with Python 3.4+ from version 2.0:
+you would declare it like so:
 
 ```toml
 [tool.poetry.dependencies]
+
 foo = [
+
     {version = "<=1.9", python = "^2.7"},
+
     {version = "^2.0", python = "^3.4"}
+
 ]
+
 ```
+
 
 !!!note
 

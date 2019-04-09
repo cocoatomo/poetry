@@ -22,9 +22,8 @@ At the moment there is no way around it.
 
 ## Why are unbound version constraints a bad idea?
 
-A version constraint without an upper bound such as `*` or `>=3.4` will
-allow updates to any future version of the dependency.  This includes major
-versions breaking backward compatibility.
+A version constraint without an upper bound such as `*` or `>=3.4` will allow updates to any future version of the dependency.
+This includes major versions breaking backward compatibility.
 
 Once a release of your package is published, you cannot tweak its
 dependencies anymore in case a dependency breaks BC - you have to do a new
@@ -34,9 +33,8 @@ The only good alternative is to define an upper bound on your constraints,
 which you can increase in a new release after testing that your package is
 compatible with the new major version of your dependency.
 
-For example instead of using `>=3.4` you should use `~3.4` which allows all
-versions `<4.0`.  The `^` operator works very well with libraries following
-[semantic versioning](https://semver.org).
+For example instead of using `>=3.4` you should use `~3.4` which allows all versions `<4.0`.
+The `^` operator works very well with libraries following [semantic versioning](https://semver.org).
 
 ## Is tox supported?
 
@@ -48,19 +46,39 @@ build system provided by Poetry.
 So, in your `pyproject.toml` file, add this section if it does not already
 exist:
 
-```toml [build-system] requires = ["poetry>=0.12"] build-backend =
-"poetry.masonry.api" ```
+```toml
+[build-system]
+
+requires = ["poetry>=0.12"]
+
+build-backend = "poetry.masonry.api"
+
+```
+
 
 And use a `tox.ini` configuration file similar to this:
 
-```INI [tox] isolated_build = true envlist = py27, py36
+```INI
+[tox]
+
+isolated_build = true
+
+envlist = py27, py36
+
+
 
 [testenv]
+
 whitelist_externals = poetry
+
 commands =
+
     poetry install -v
+
     poetry run pytest tests/
+
 ```
+
 
 ## I don't want Poetry to manage my virtualenvs. Can I disable it?
 
@@ -71,4 +89,8 @@ necessary and is an overhead, like when working with containers.
 In this case, you can disable this feature by setting the
 `virtualenvs.create` setting to `false`:
 
-```bash poetry config settings.virtualenvs.create false ```
+```bash
+poetry config settings.virtualenvs.create false
+
+```
+

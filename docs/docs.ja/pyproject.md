@@ -78,12 +78,19 @@ describe the project. **Optional**
 
 ```toml
 [tool.poetry]
+
 # ...
+
 classifiers = [
+
     "Topic :: Software Development :: Build Tools",
+
     "Topic :: Software Development :: Libraries :: Python Modules"
+
 ]
+
 ```
+
 
 !!!note
 
@@ -101,22 +108,35 @@ distribution.
 
 ```toml
 [tool.poetry]
+
 # ...
+
 packages = [
+
     { include = "mypackage" },
+
     { include = "extra_package/**/*.py" },
+
 ]
+
 ```
+
 
 If your package is stored inside a "source" directory, you must specify it:
 
 ```toml
 [tool.poetry]
+
 # ...
+
 packages = [
+
     { include = "mypackage", from = "lib" },
+
 ]
+
 ```
+
 
 !!!note
 
@@ -151,22 +171,47 @@ is built.
 If a VCS is being used for a package, the exclude field will be seeded with
 the VCS’ ignore settings (`.gitignore` for git for example).
 
-```toml [tool.poetry] # ...  include = ["CHANGELOG.md"] ```
+```toml
+[tool.poetry]
 
-```toml exclude = ["my_package/excluded.py"] ```
+# ...
+
+include = ["CHANGELOG.md"]
+
+```
+
+
+```toml
+exclude = ["my_package/excluded.py"]
+
+```
+
 
 ## `dependencies` and `dev-dependencies`
 
 Poetry is configured to look for dependencies on [PyPi](https://pypi.org) by
 default.  Only the name and a version string are required in this case.
 
-```toml [tool.poetry.dependencies] requests = "^2.13.0" ```
+```toml
+[tool.poetry.dependencies]
+
+requests = "^2.13.0"
+
+```
+
 
 If you want to use a private repository, you can add it to your
 `pyproject.toml` file, like so:
 
-```toml [[tool.poetry.source]] name = 'private' url =
-'http://example.com/simple' ```
+```toml
+[[tool.poetry.source]]
+
+name = 'private'
+
+url = 'http://example.com/simple'
+
+```
+
 
 !!!note
 
@@ -183,7 +228,13 @@ If you want to use a private repository, you can add it to your
 This section describe the scripts or executable that will be installed when
 installing the package
 
-```toml [tool.poetry.scripts] poetry = 'poetry:console.run' ```
+```toml
+[tool.poetry.scripts]
+
+poetry = 'poetry:console.run'
+
+```
+
 
 Here, we will have the `poetry` script installed which will execute
 `console.run` in the `poetry` package.
@@ -195,23 +246,50 @@ Poetry supports extras to allow expression of:
 * optional dependencies, which enhance a package, but are not required; and
 * clusters of optional dependencies.
 
-```toml [tool.poetry] name = "awesome"
+```toml
+[tool.poetry]
 
-[tool.poetry.dependencies] # These packages are mandatory and form the core
-of this package’s distribution.  mandatory = "^1.0"
+name = "awesome"
 
-# A list of all of the optional dependencies, some of which are included in
-the # below `extras`. They can be opted into by apps.  psycopg2 = { version
-= "^2.7", optional = true } mysqlclient = { version = "^1.3", optional =
-true }
 
-[tool.poetry.extras] mysql = ["mysqlclient"] pgsql = ["psycopg2"] ```
+
+[tool.poetry.dependencies]
+
+# These packages are mandatory and form the core of this package’s distribution.
+
+mandatory = "^1.0"
+
+
+
+# A list of all of the optional dependencies, some of which are included in the
+
+# below `extras`. They can be opted into by apps.
+
+psycopg2 = { version = "^2.7", optional = true }
+
+mysqlclient = { version = "^1.3", optional = true }
+
+
+
+[tool.poetry.extras]
+
+mysql = ["mysqlclient"]
+
+pgsql = ["psycopg2"]
+
+```
+
 
 When installing packages, you can specify extras by using the `-E|--extras`
 option:
 
-```bash poetry install --extras "mysql pgsql" poetry install -E mysql -E
-pgsql ```
+```bash
+poetry install --extras "mysql pgsql"
+
+poetry install -E mysql -E pgsql
+
+```
+
 
 ## `plugins`
 
@@ -220,10 +298,17 @@ points](http://setuptools.readthedocs.io/en/latest/setuptools.html).  To
 match the example in the setuptools documentation, you would use the
 following:
 
-```toml [tool.poetry.plugins] # Optional super table
+```toml
+[tool.poetry.plugins] # Optional super table
 
-[tool.poetry.plugins."blogtool.parsers"] ".rst" = "some_module:SomeClass"
+
+
+[tool.poetry.plugins."blogtool.parsers"]
+
+".rst" = "some_module:SomeClass"
+
 ```
+
 
 ## Poetry and PEP-517
 
@@ -234,8 +319,15 @@ Poetry is compliant with PEP-517 so if you use Poetry to manage your Python
 project you should reference it in the `build-system` section of the
 `pyproject.toml` file like so:
 
-```toml [build-system] requires = ["poetry>=0.12"] build-backend =
-"poetry.masonry.api" ```
+```toml
+[build-system]
+
+requires = ["poetry>=0.12"]
+
+build-backend = "poetry.masonry.api"
+
+```
+
 
 !!!note
 

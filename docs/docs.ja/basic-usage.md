@@ -4,41 +4,79 @@ For the basic usage introduction we will be installing `pendulum`, a
 datetime library.  If you have not yet installed Poetry, refer to the
 [Introduction](/docs/) chapter.
 
-## Project setup
+## プロジェクトのセットアップ
 
 First, let's create our new project, let's call it `poetry-demo`:
 
-```bash poetry new poetry-demo ```
+```bash
+poetry new poetry-demo
+
+```
+
 
 This will create the `poetry-demo` directory with the following content:
 
 ```text
 poetry-demo
+
 ├── pyproject.toml
+
 ├── README.rst
+
 ├── poetry_demo
+
 │   └── __init__.py
+
 └── tests
+
     ├── __init__.py
+
     └── test_poetry_demo.py
+
 ```
+
 
 The `pyproject.toml` file is what is the most important here. This will
 orchestrate your project and its dependencies. For now, it looks like this:
 
-```toml [tool.poetry] name = "poetry-demo" version = "0.1.0" description =
-"" authors = ["Sébastien Eustace <sebastien@eustace.io>"]
+```toml
+[tool.poetry]
 
-[tool.poetry.dependencies] python = "*"
+name = "poetry-demo"
 
-[tool.poetry.dev-dependencies] pytest = "^3.4" ```
+version = "0.1.0"
+
+description = ""
+
+authors = ["Sébastien Eustace <sebastien@eustace.io>"]
+
+
+
+[tool.poetry.dependencies]
+
+python = "*"
+
+
+
+[tool.poetry.dev-dependencies]
+
+pytest = "^3.4"
+
+```
+
 
 ### Specifying dependencies
 
 If you want to add dependencies to your project, you can specify them in the
 `tool.poetry.dependencies` section.
 
-```toml [tool.poetry.dependencies] pendulum = "^1.4" ```
+```toml
+[tool.poetry.dependencies]
+
+pendulum = "^1.4"
+
+```
+
 
 As you can see, it takes a mapping of **package names** and **version
 constraints**.
@@ -50,7 +88,11 @@ or on [PyPI](https://pypi.org) by default.
 Also, instead of modifying the `pyproject.toml` file by hand, you can use
 the `add` command.
 
-```bash $ poetry add pendulum ```
+```bash
+$ poetry add pendulum
+
+```
+
 
 It will automatically find a suitable version constraint **and install** the
 package and subdependencies.
@@ -58,9 +100,8 @@ package and subdependencies.
 
 ### Version constraints
 
-In our example, we are requesting the `pendulum` package with the version
-constraint `^1.4`.  This means any version greater or equal to 1.4.0 and
-less than 2.0.0 (`>=1.4.0 <2.0.0`).
+In our example, we are requesting the `pendulum` package with the version constraint `^1.4`.
+This means any version greater or equal to 1.4.0 and less than 2.0.0 (`>=1.4.0 <2.0.0`).
 
 Please read [versions](/docs/versions/) for more in-depth information on
 versions, how versions relate to each other, and on version constraints.
@@ -84,7 +125,11 @@ versions, how versions relate to each other, and on version constraints.
 To install the defined dependencies for your project, just run the `install`
 command.
 
-```bash poetry install ```
+```bash
+poetry install
+
+```
+
 
 When you run this command, one of two things may happen:
 
