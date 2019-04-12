@@ -6,13 +6,14 @@ LOCALESDIR := locales
 POTDIR := $(LOCALESDIR)/pot
 PODIR := $(LOCALESDIR)/$(LANG)
 TRANSDIR := docs.$(LANG)
+PUBLISHDIR := ../../../cocoatomo.github.io/poetry-ja
 
 DOCS := $(wildcard $(ORIGDIR)/*.md)
 POTS := $(subst $(ORIGDIR), $(POTDIR), $(patsubst %.md, %.pot, $(DOCS)))
 TRANSDOCS := $(subst $(ORIGDIR), $(TRANSDIR), $(DOCS))
 # $(warning $(TRANSDOCS))
 
-.PHONY: venv pushorig catalog pullpo translate build-$(LANG)
+.PHONY: venv pushorig catalog pullpo translate build-$(LANG) publish-$(LANG)
 
 venv:
 	$(PYTHON) -m venv --prompt=poetrydoc $(VENV)
@@ -49,3 +50,7 @@ $(TRANSDIR)/%.md: $(PODIR)/%.po $(ORIGDIR)/%.md
 
 build-$(LANG):
 	PATH=$(VENV)/bin:$$PATH mkdocs build -f mkdocs.$(LANG).yml --theme material
+
+publish-$(LANG):
+	rm -rf $(PUBLISHDIR)/*
+	cp -rp site/* $(PUBLISHDIR)/
