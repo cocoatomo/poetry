@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-04-09 12:39+0000\n"
+"PO-Revision-Date: 2019-04-14 03:28+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -155,6 +155,8 @@ msgid ""
 "preview` to `get-poetry.py` or by using the `POETRY_PREVIEW` environment "
 "variable:"
 msgstr ""
+"プレリリースバージョンをインストールしたい場合は、 `get-poetry.py` に `--preview` を渡すか "
+"`POETRY_PREVIEW` 環境変数を使えばできます:"
 
 #. type: Plain text
 #: docs/index.md:52
@@ -172,7 +174,7 @@ msgstr "python get-poetry.py --preview\n"
 msgid ""
 "Similarly, if you want to install a specific version, you can use `--"
 "version` or the `POETRY_VERSION` environment variable:"
-msgstr ""
+msgstr "同様に、特定のバージョンをインストールしたい場合は、 `--version` や `POETRY_VERSION` 環境変数が使えます:"
 
 #. type: Plain text
 #: docs/index.md:60
@@ -189,7 +191,7 @@ msgstr ""
 #. type: Plain text
 #: docs/index.md:66 docs/index.md:72 docs/index.md:134
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/index.md:68
@@ -232,7 +234,7 @@ msgstr "`pip` でインストール"
 #. type: Plain text
 #: docs/index.md:83
 msgid "Using `pip` to install Poetry is possible."
-msgstr ""
+msgstr "`pip` を使ってPoetryをインストールできます。"
 
 #. type: Plain text
 #: docs/index.md:84
@@ -244,7 +246,7 @@ msgstr "pip install --user poetry\n"
 #. type: Plain text
 #: docs/index.md:89
 msgid "!!!warning"
-msgstr ""
+msgstr "!!!警告"
 
 #. type: Plain text
 #: docs/index.md:92
@@ -253,14 +255,14 @@ msgid ""
 "    Be aware that it will also install Poetry's dependencies\n"
 "    which might cause conflicts with other packages.\n"
 msgstr ""
-"    他のパッケージと衝突を起こすかもしれないPoetryの依存パッケージを\n"
-"    インストールすることにもなることを認識しておいてください。\n"
+"    他のパッケージと衝突を起こす可能性のあるPoetryの依存パッケージを\n"
+"    インストールすることにもなるのを認識しておいてください。\n"
 
 #. type: Title ####
 #: docs/index.md:93
 #, no-wrap
 msgid "Installing with `pipx`"
-msgstr ""
+msgstr "`pipx` でインストール"
 
 #. type: Plain text
 #: docs/index.md:96
@@ -271,32 +273,38 @@ msgid ""
 "and uninstalls. pipx supports Python 3.6 and later. If using an earlier "
 "version of Python, consider [pipsi](https://github.com/mitsuhiko/pipsi)."
 msgstr ""
+"[`pipx`](https://github.com/cs01/pipx)を使ってPoetryをインストールすることもできます。\n"
+"[pipx]は、PythonのCLIアプリケーションを仮想環境に隔離したまま、システム全体で使えるようにインストールするのに使われます。\n"
+"これにより更新やアンインストールが環境を汚さずに行えます。\n"
+"pipxはPython 3.6以降のバージョンをサポートしています。\n"
+"もっと前のバージョンのPythonを使っている場合は、 [pipsi](https://github.com/mitsuhiko/"
+"pipsi)を検討してください。"
 
 #. type: Plain text
 #: docs/index.md:97
 #, no-wrap
 msgid "pipx install poetry\n"
 "\n"
-msgstr ""
+msgstr "pipx install poetry\n"
 
 #. type: Plain text
 #: docs/index.md:101
 #, no-wrap
 msgid "pipx upgrade poetry\n"
 "\n"
-msgstr ""
+msgstr "pipx upgrade poetry\n"
 
 #. type: Plain text
 #: docs/index.md:105
 #, no-wrap
 msgid "pipx uninstall poetry\n"
 "\n"
-msgstr ""
+msgstr "pipx uninstall poetry\n"
 
 #. type: Plain text
 #: docs/index.md:110
 msgid "[Github repository](https://github.com/cs01/pipx)."
-msgstr ""
+msgstr "[Github repository](https://github.com/cs01/pipx)。"
 
 #. type: Title ##
 #: docs/index.md:112
@@ -309,7 +317,7 @@ msgstr "`poetry` のアップデート"
 msgid ""
 "Updating poetry to the latest stable version is as simple as calling the "
 "`self:update` command."
-msgstr ""
+msgstr "Poetryを最新バージョンまで更新するのは簡単で `self:update` コマンドを呼び出すだけです。"
 
 #. type: Plain text
 #: docs/index.md:116
@@ -323,7 +331,7 @@ msgstr "poetry self:update\n"
 msgid ""
 "If you want to install prerelease versions, you can use the `--preview` "
 "option."
-msgstr ""
+msgstr "プレリリースバージョンをインストールしたい場合は、 `--preview` オプションが使えます。"
 
 #. type: Plain text
 #: docs/index.md:122
@@ -337,7 +345,7 @@ msgstr "poetry self:update --preview\n"
 msgid ""
 "And finally, if you want to install a specific version you can pass it as an "
 "argument to `self:update`."
-msgstr ""
+msgstr "最後に、特定のバージョンをインストールしたい場合は、引数としてバージョンを `self:update` に渡せます。"
 
 #. type: Plain text
 #: docs/index.md:129
@@ -369,6 +377,8 @@ msgid ""
 "See `poetry help completions` for full details, but the gist is as simple as "
 "using one of the following:"
 msgstr ""
+"`poetry` はBash, Fish, Zsh用の補完スクリプトの生成をサポートしています。\n"
+"完全な詳細については `poetry help completions` を参照してください。要点は簡単で、次のコマンドのどれか1つを使う、です:"
 
 #. type: Plain text
 #: docs/index.md:145
@@ -408,6 +418,23 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"# Bash\n"
+"poetry completions bash > /etc/bash_completion.d/poetry.bash-completion\n"
+"\n"
+"# Bash (macOS/Homebrew)\n"
+"poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-"
+"completion\n"
+"\n"
+"# Fish\n"
+"poetry completions fish > ~/.config/fish/completions/poetry.fish\n"
+"\n"
+"# Zsh\n"
+"poetry completions zsh > ~/.zfunc/_poetry\n"
+"\n"
+"# Oh-My-Zsh\n"
+"mkdir $ZSH/plugins/poetry\n"
+"poetry completions zsh > $ZSH/plugins/poetry/_poetry\n"
+"\n"
 
 #. type: Plain text
 #: docs/index.md:167
@@ -415,27 +442,27 @@ msgstr ""
 msgid ""
 "    You may need to restart your shell in order for the changes to take "
 "effect.\n"
-msgstr ""
+msgstr "    変更が効くようにするのにシェルを再起動する必要があるかもしれません。\n"
 
 #. type: Plain text
 #: docs/index.md:169
 msgid ""
 "For `zsh`, you must then add the following line in your `~/.zshrc` before "
 "`compinit`:"
-msgstr ""
+msgstr "`zsh` では、 `~/.zshrc` の `compinit` より前に次の行を追加しなければなりません:"
 
 #. type: Plain text
 #: docs/index.md:170
 #, no-wrap
 msgid "fpath+=~/.zfunc\n"
 "\n"
-msgstr ""
+msgstr "fpath+=~/.zfunc\n"
 
 #. type: Plain text
 #: docs/index.md:175
 msgid ""
 "For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
-msgstr ""
+msgstr "`oh-my-zsh` では、 `~/.zshrc` プラグインでpoetryを有効化しなければなりません:"
 
 #. type: Plain text
 #: docs/index.md:176
@@ -448,4 +475,7 @@ msgid "plugins(\n"
 "\n"
 "\t)\n"
 "\n"
-msgstr ""
+msgstr "plugins(\n"
+"\tpoetry\n"
+"\t...\n"
+"\t)\n"

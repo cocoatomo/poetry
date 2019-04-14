@@ -48,9 +48,8 @@ POETRY_UNINSTALL=1 python get-poetry.py
 ```
 
 
-If you want to install prerelease versions, you can do so by passing
-`--preview` to `get-poetry.py` or by using the `POETRY_PREVIEW` environment
-variable:
+プレリリースバージョンをインストールしたい場合は、 `get-poetry.py` に `--preview` を渡すか
+`POETRY_PREVIEW` 環境変数を使えばできます:
 
 ```bash
 python get-poetry.py --preview
@@ -58,8 +57,7 @@ POETRY_PREVIEW=1 python get-poetry.py
 ```
 
 
-Similarly, if you want to install a specific version, you can use
-`--version` or the `POETRY_VERSION` environment variable:
+同様に、特定のバージョンをインストールしたい場合は、 `--version` や `POETRY_VERSION` 環境変数が使えます:
 
 ```bash
 python get-poetry.py --version 0.12.0
@@ -67,13 +65,13 @@ POETRY_VERSION=0.12.0 python get-poetry.py
 ```
 
 
-!!!note
+!!!注意
 
     インストーラーはリリースバージョンが0.12.0より前のPoetryはサポートしていないことに注意してください。
 
 ### 他のインストール方法 (非推奨)
 
-!!!note
+!!!注意
 
     他のインストール方法を使うと、Poetryは常に、
     仮想環境を作成するためにインストールされたバージョンのPythonを使います。
@@ -82,74 +80,69 @@ POETRY_VERSION=0.12.0 python get-poetry.py
 
 #### `pip` でインストール
 
-Using `pip` to install Poetry is possible.
+`pip` を使ってPoetryをインストールできます。
 
 ```bash
 pip install --user poetry
 ```
 
 
-!!!warning
+!!!警告
 
-    他のパッケージと衝突を起こすかもしれないPoetryの依存パッケージを
-    インストールすることにもなることを認識しておいてください。
+    他のパッケージと衝突を起こす可能性のあるPoetryの依存パッケージを
+    インストールすることにもなるのを認識しておいてください。
 
-#### Installing with `pipx`
+#### `pipx` でインストール
 
-Using [`pipx`](https://github.com/cs01/pipx) to install Poetry is also
-possible. [pipx] is used to install Python CLI applications globally while
-still isolating them in virtual environments. This allows for clean upgrades
-and uninstalls. pipx supports Python 3.6 and later. If using an earlier
-version of Python, consider [pipsi](https://github.com/mitsuhiko/pipsi).
+[`pipx`](https://github.com/cs01/pipx)を使ってPoetryをインストールすることもできます。
+[pipx]は、PythonのCLIアプリケーションを仮想環境に隔離したまま、システム全体で使えるようにインストールするのに使われます。
+これにより更新やアンインストールが環境を汚さずに行えます。
+pipxはPython 3.6以降のバージョンをサポートしています。
+もっと前のバージョンのPythonを使っている場合は、
+[pipsi](https://github.com/mitsuhiko/pipsi)を検討してください。
 
 ```bash
 pipx install poetry
-
 ```
 
 
 ```bash
 pipx upgrade poetry
-
 ```
 
 
 ```bash
 pipx uninstall poetry
-
 ```
 
 
-[Github repository](https://github.com/cs01/pipx).
+[Github repository](https://github.com/cs01/pipx)。
 
 
 ## `poetry` のアップデート
 
-Updating poetry to the latest stable version is as simple as calling the
-`self:update` command.
+Poetryを最新バージョンまで更新するのは簡単で `self:update` コマンドを呼び出すだけです。
 
 ```bash
 poetry self:update
 ```
 
 
-If you want to install prerelease versions, you can use the `--preview`
-option.
+プレリリースバージョンをインストールしたい場合は、 `--preview` オプションが使えます。
 
 ```bash
 poetry self:update --preview
 ```
 
 
-And finally, if you want to install a specific version you can pass it as an
-argument to `self:update`.
+最後に、特定のバージョンをインストールしたい場合は、引数としてバージョンを `self:update` に渡せます。
 
 ```bash
 poetry self:update 0.8.0
 ```
 
 
-!!!note
+!!!注意
 
     `self:update` コマンドが使えるのは、推奨インストーラーを使って
     Poetryをインストールしたときだけです。
@@ -157,70 +150,47 @@ poetry self:update 0.8.0
 
 ## Bash, Fish, Zshでの補完の有効化
 
-`poetry` supports generating completion scripts for Bash, Fish, and Zsh.
-See `poetry help completions` for full details, but the gist is as simple as
-using one of the following:
+`poetry` はBash, Fish, Zsh用の補完スクリプトの生成をサポートしています。
+完全な詳細については `poetry help completions` を参照してください。要点は簡単で、次のコマンドのどれか1つを使う、です:
 
 
 ```bash
 # Bash
-
 poetry completions bash > /etc/bash_completion.d/poetry.bash-completion
 
-
-
 # Bash (macOS/Homebrew)
-
 poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-completion
 
-
-
 # Fish
-
 poetry completions fish > ~/.config/fish/completions/poetry.fish
 
-
-
 # Zsh
-
 poetry completions zsh > ~/.zfunc/_poetry
 
-
-
 # Oh-My-Zsh
-
 mkdir $ZSH/plugins/poetry
-
 poetry completions zsh > $ZSH/plugins/poetry/_poetry
-
-
 
 ```
 
 
 !!! 注意
 
-    You may need to restart your shell in order for the changes to take effect.
+    変更が効くようにするのにシェルを再起動する必要があるかもしれません。
 
-For `zsh`, you must then add the following line in your `~/.zshrc` before
-`compinit`:
+`zsh` では、 `~/.zshrc` の `compinit` より前に次の行を追加しなければなりません:
 
 ```bash
 fpath+=~/.zfunc
-
 ```
 
 
-For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins
+`oh-my-zsh` では、 `~/.zshrc` プラグインでpoetryを有効化しなければなりません:
 
 ```
 plugins(
-
 	poetry
-
 	...
-
 	)
-
 ```
 
