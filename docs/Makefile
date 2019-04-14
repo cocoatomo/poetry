@@ -20,7 +20,7 @@ venv:
 	$(VENV)/bin/pip install mkdocs pygments mkdocs-material
 
 pushorig: catalog
-	zanata-cli push --batch-mode
+	zanata-cli --batch-mode push
 
 catalog: $(POTS)
 
@@ -33,7 +33,7 @@ $(POTDIR)/%.pot: $(ORIGDIR)/%.md
 	--po $@
 
 pullpo:
-	zanata-cli pull --locales ja --batch-mode
+	zanata-cli --batch-mode pull --locales ja
 
 translate: $(TRANSDOCS)
 
