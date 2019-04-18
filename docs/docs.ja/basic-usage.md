@@ -1,16 +1,14 @@
 # 基本的な使い方
 
-For the basic usage introduction we will be installing `pendulum`, a
-datetime library.  If you have not yet installed Poetry, refer to the
-[Introduction](/docs/) chapter.
+基本的な使い方の入門として、 `pendulum` という日付ライブラリをインストールします。
+Poetryをまだインストールしていない場合は、 [Introduction](/docs/) の章を参照してください。
 
 ## プロジェクトのセットアップ
 
-First, let's create our new project, let's call it `poetry-demo`:
+最初に、新しいプロジェクトを作成し、 `poetry-demo` と名付けましょう:
 
 ```bash
 poetry new poetry-demo
-
 ```
 
 
@@ -18,21 +16,13 @@ This will create the `poetry-demo` directory with the following content:
 
 ```text
 poetry-demo
-
 ├── pyproject.toml
-
 ├── README.rst
-
 ├── poetry_demo
-
 │   └── __init__.py
-
 └── tests
-
     ├── __init__.py
-
     └── test_poetry_demo.py
-
 ```
 
 
@@ -41,40 +31,27 @@ orchestrate your project and its dependencies. For now, it looks like this:
 
 ```toml
 [tool.poetry]
-
 name = "poetry-demo"
-
 version = "0.1.0"
-
 description = ""
-
 authors = ["Sébastien Eustace <sebastien@eustace.io>"]
 
-
-
 [tool.poetry.dependencies]
-
 python = "*"
 
-
-
 [tool.poetry.dev-dependencies]
-
 pytest = "^3.4"
-
 ```
 
 
-### Specifying dependencies
+### 依存関係の指定
 
 If you want to add dependencies to your project, you can specify them in the
 `tool.poetry.dependencies` section.
 
 ```toml
 [tool.poetry.dependencies]
-
 pendulum = "^1.4"
-
 ```
 
 
@@ -90,7 +67,6 @@ the `add` command.
 
 ```bash
 $ poetry add pendulum
-
 ```
 
 
@@ -107,7 +83,7 @@ Please read [versions](/docs/versions/) for more in-depth information on
 versions, how versions relate to each other, and on version constraints.
 
 
-!!!note
+!!!注意
 
     **How does Poetry download the right files?**
 
@@ -176,7 +152,7 @@ project you can feel confident the dependencies installed are still working
 even if your dependencies released many new versions since then.  (See note
 below about using the update command.)
 
-!!!note
+!!!注意
 
     For libraries it is not necessary to commit the lock file.
 
@@ -190,7 +166,7 @@ versions (according to your `pyproject.toml` file)  and update the lock file
 with the new versions.  (This is equivalent to deleting the `poetry.lock`
 file and running `install` again.)
 
-!!!note
+!!!注意
 
     Poetry will display a **Warning** when executing an install command if `poetry.lock` and `pyproject.toml`
     are not synchronized.
@@ -203,7 +179,7 @@ When you execute the `install` command (or any other "install" commands like
 and, if not, will use an existing one or create a brand new one for you to
 always work isolated from your global Python installation.
 
-!!!note
+!!!注意
 
     To create the virtualenv for the current project, Poetry will use
     the currently activated Python version.

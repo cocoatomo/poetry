@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-03-22 02:58+0000\n"
-"Last-Translator: Kotone Potts <acedraingon@yahoo.co.jp>\n"
+"PO-Revision-Date: 2019-04-18 12:05+0000\n"
+"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -27,6 +27,8 @@ msgid ""
 "datetime library.  If you have not yet installed Poetry, refer to the "
 "[Introduction](/docs/) chapter."
 msgstr ""
+"基本的な使い方の入門として、 `pendulum` という日付ライブラリをインストールします。\n"
+"Poetryをまだインストールしていない場合は、 [Introduction](/docs/) の章を参照してください。"
 
 #. type: Title ##
 #: docs/basic-usage.md:6
@@ -37,20 +39,20 @@ msgstr "プロジェクトのセットアップ"
 #. type: Plain text
 #: docs/basic-usage.md:9
 msgid "First, let's create our new project, let's call it `poetry-demo`:"
-msgstr ""
+msgstr "最初に、新しいプロジェクトを作成し、 `poetry-demo` と名付けましょう:"
 
 #. type: Code fence info string
 #: docs/basic-usage.md:10 docs/basic-usage.md:60 docs/basic-usage.md:92
 #, no-wrap
 msgid "bash"
-msgstr ""
+msgstr "bash"
 
 #. type: Plain text
 #: docs/basic-usage.md:10
 #, no-wrap
 msgid "poetry new poetry-demo\n"
 "\n"
-msgstr ""
+msgstr "poetry new poetry-demo\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:15
@@ -62,7 +64,7 @@ msgstr ""
 #: docs/basic-usage.md:16
 #, no-wrap
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #. type: Plain text
 #: docs/basic-usage.md:16
@@ -85,6 +87,14 @@ msgid ""
 "    └── test_poetry_demo.py\n"
 "\n"
 msgstr ""
+"poetry-demo\n"
+"├── pyproject.toml\n"
+"├── README.rst\n"
+"├── poetry_demo\n"
+"│   └── __init__.py\n"
+"└── tests\n"
+"    ├── __init__.py\n"
+"    └── test_poetry_demo.py\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:29
@@ -97,7 +107,7 @@ msgstr ""
 #: docs/basic-usage.md:30 docs/basic-usage.md:48
 #, no-wrap
 msgid "toml"
-msgstr ""
+msgstr "toml"
 
 #. type: Plain text
 #: docs/basic-usage.md:30
@@ -126,12 +136,23 @@ msgid ""
 "pytest = \"^3.4\"\n"
 "\n"
 msgstr ""
+"[tool.poetry]\n"
+"name = \"poetry-demo\"\n"
+"version = \"0.1.0\"\n"
+"description = \"\"\n"
+"authors = [\"Sébastien Eustace <sebastien@eustace.io>\"]\n"
+"\n"
+"[tool.poetry.dependencies]\n"
+"python = \"*\"\n"
+"\n"
+"[tool.poetry.dev-dependencies]\n"
+"pytest = \"^3.4\"\n"
 
 #. type: Title ###
 #: docs/basic-usage.md:44
 #, no-wrap
 msgid "Specifying dependencies"
-msgstr ""
+msgstr "依存関係の指定"
 
 #. type: Plain text
 #: docs/basic-usage.md:47
@@ -147,7 +168,8 @@ msgid "[tool.poetry.dependencies]\n"
 "\n"
 "pendulum = \"^1.4\"\n"
 "\n"
-msgstr ""
+msgstr "[tool.poetry.dependencies]\n"
+"pendulum = \"^1.4\"\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:54
@@ -176,7 +198,7 @@ msgstr ""
 #, no-wrap
 msgid "$ poetry add pendulum\n"
 "\n"
-msgstr ""
+msgstr "$ poetry add pendulum\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:65
@@ -211,7 +233,7 @@ msgstr ""
 #. type: Plain text
 #: docs/basic-usage.md:76 docs/basic-usage.md:133 docs/basic-usage.md:147 docs/basic-usage.md:159
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/basic-usage.md:78
