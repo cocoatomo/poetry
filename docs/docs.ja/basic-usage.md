@@ -12,7 +12,7 @@ poetry new poetry-demo
 ```
 
 
-This will create the `poetry-demo` directory with the following content:
+このコマンドは、次の内容を持つ `poetry-demo` ディレクトリを作成します:
 
 ```text
 poetry-demo
@@ -26,8 +26,9 @@ poetry-demo
 ```
 
 
-The `pyproject.toml` file is what is the most important here. This will
-orchestrate your project and its dependencies. For now, it looks like this:
+`pyproject.toml` ファイルがここでは最も重要なものです。
+このファイルが、プロジェクトの依存関係を統括します。
+今のところの中身は、このようになっています:
 
 ```toml
 [tool.poetry]
@@ -46,8 +47,7 @@ pytest = "^3.4"
 
 ### 依存関係の指定
 
-If you want to add dependencies to your project, you can specify them in the
-`tool.poetry.dependencies` section.
+プロジェクトに依存関係を追加したい場合は、 `tool.poetry.dependencies` セクションに指定できます。
 
 ```toml
 [tool.poetry.dependencies]
@@ -55,74 +55,66 @@ pendulum = "^1.4"
 ```
 
 
-As you can see, it takes a mapping of **package names** and **version
-constraints**.
+見て分かるように、このセクションには **パッケージ名** と **バージョン制約** の対応付けを書きます。
 
-Poetry uses this information to search for the right set of files in package
-"repositories" that you register in the `tool.poetry.repositories` section,
-or on [PyPI](https://pypi.org) by default.
+Poetryはこの情報を使い、 `tool.poetry.repositories` セクションに登録されたパッケージ "レポジトリ"
+もしくはデフォルトの [PyPI](https://pypi.org) から、正しいファイル群を検索します。
 
-Also, instead of modifying the `pyproject.toml` file by hand, you can use
-the `add` command.
+`pyproject.toml` ファイルを手で編集する変わりに、 `add` コマンドも使えます。
 
 ```bash
 $ poetry add pendulum
 ```
 
 
-It will automatically find a suitable version constraint **and install** the
-package and subdependencies.
+このコマンドは自動的に適切なバージョン制約を見付け、パッケージとその依存関係を **インストールします** 。
 
 
-### Version constraints
+### バージョン制約
 
-In our example, we are requesting the `pendulum` package with the version constraint `^1.4`.
-This means any version greater or equal to 1.4.0 and less than 2.0.0 (`>=1.4.0 <2.0.0`).
+今の例では、 `^1.4` というバージョン制約の付いた  `pendulum` パッケージを要求しています。
+この制約は、1.4.0以上かつ2.0.0未満のバージョンという意味です (`>=1.4.0 <2.0.0`)。
 
-Please read [versions](/docs/versions/) for more in-depth information on
-versions, how versions relate to each other, and on version constraints.
+バージョンやバージョンどうしの関係、バージョン制約について、より深いことについては [versions](/docs/versions/)
+を読んでください。
 
 
 !!!注意
 
-    **How does Poetry download the right files?**
+**Poetryはどうやって正しいファイルをダウンロードするのか?**
 
-    When you specify a dependency in `pyproject.toml`, Poetry first take the name of the package
-    that you have requested and searches for it in any repository you have registered using the `repositories` key.
-    If you have not registered any extra repositories, or it does not find a package with that name in the
-    repositories you have specified, it falls back on PyPI.
+    `pyproject.toml` に依存関係を指定しているとき、Poetryはまず最初に要求されたパッケージ名を取り出し、
+    `repositories` キーに登録されたレポジトリを検索します。
+    追加のレポジトリを登録していないか、指定したレポジトリから要求された名前の
+    パッケージが見付からない場合は、PyPIに戻って検索します。
 
-    When Poetry finds the right package, it then attempts to find the best match
-    for the version constraint you have specified.
+    Poetryが正しいパッケージを複数見付けたときは、指定されたバージョン制約に
+    最も適合するものを見付けようとします。
 
 
-## Installing dependencies
+## 依存関係のインストール
 
-To install the defined dependencies for your project, just run the `install`
-command.
+プロジェクトに定義された依存関係をインストールするには、 `install` コマンドを実行するだけです。
 
 ```bash
 poetry install
-
 ```
 
 
-When you run this command, one of two things may happen:
+このコマンドを実行すると、2つのうちどちらかが起こります:
 
-### Installing without `poetry.lock`
+### `poetry.lock` 無しのインストール
 
-If you have never run the command before and there is also no `poetry.lock`
-file present, Poetry simply resolves all dependencies listed in your
-`pyproject.toml` file and downloads the latest version of their files.
+以前にこのコマンドを実行したことが無く、 `poetry.lock` ファイルも存在しない場合は、Poetryは `pyproject.toml`
+に並べられた全ての依存関係を解決し、それらのファイルの最新バージョンをダウンロードするだけです。
 
-When Poetry has finished installing, it writes all of the packages and the
-exact versions of them that it downloaded to the `poetry.lock` file, locking
-the project to those specific versions.  You should commit the `poetry.lock`
-file to your project repo so that all people working on the project are
-locked to the same versions of dependencies (more below).
+Poetryがインストールを完了すると、ダウンロードしたパッケージとその正確なバージョンを `poetry.lock`
+へ書き込み、その特定のバージョンでプロジェクトを固定します。
+プロジェクトレポジトリに `poetry.lock`
+ファイルをコミットし、このプロジェクトに携わる全ての人にとって、同じバージョンの依存関係を強制されるべきです (下でさらに解説します)。
 
 
-### Installing with `poetry.lock`
+### `poetry.lock` 有りのインストール
 
 This brings us to the second scenario. If there is already a `poetry.lock`
 file as well as a `pyproject.toml` file when you run `poetry install`, it

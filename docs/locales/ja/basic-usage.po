@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-04-18 12:05+0000\n"
+"PO-Revision-Date: 2019-05-06 02:19+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -58,7 +58,7 @@ msgstr "poetry new poetry-demo\n"
 #: docs/basic-usage.md:15
 msgid ""
 "This will create the `poetry-demo` directory with the following content:"
-msgstr ""
+msgstr "このコマンドは、次の内容を持つ `poetry-demo` ディレクトリを作成します:"
 
 #. type: Code fence info string
 #: docs/basic-usage.md:16
@@ -102,6 +102,9 @@ msgid ""
 "The `pyproject.toml` file is what is the most important here. This will "
 "orchestrate your project and its dependencies. For now, it looks like this:"
 msgstr ""
+"`pyproject.toml` ファイルがここでは最も重要なものです。\n"
+"このファイルが、プロジェクトの依存関係を統括します。\n"
+"今のところの中身は、このようになっています:"
 
 #. type: Code fence info string
 #: docs/basic-usage.md:30 docs/basic-usage.md:48
@@ -159,7 +162,7 @@ msgstr "依存関係の指定"
 msgid ""
 "If you want to add dependencies to your project, you can specify them in the "
 "`tool.poetry.dependencies` section."
-msgstr ""
+msgstr "プロジェクトに依存関係を追加したい場合は、 `tool.poetry.dependencies` セクションに指定できます。"
 
 #. type: Plain text
 #: docs/basic-usage.md:48
@@ -176,7 +179,7 @@ msgstr "[tool.poetry.dependencies]\n"
 msgid ""
 "As you can see, it takes a mapping of **package names** and **version "
 "constraints**."
-msgstr ""
+msgstr "見て分かるように、このセクションには **パッケージ名** と **バージョン制約** の対応付けを書きます。"
 
 #. type: Plain text
 #: docs/basic-usage.md:57
@@ -185,13 +188,15 @@ msgid ""
 "\"repositories\" that you register in the `tool.poetry.repositories` "
 "section, or on [PyPI](https://pypi.org) by default."
 msgstr ""
+"Poetryはこの情報を使い、 `tool.poetry.repositories` セクションに登録されたパッケージ \"レポジトリ\" "
+"もしくはデフォルトの [PyPI](https://pypi.org) から、正しいファイル群を検索します。"
 
 #. type: Plain text
 #: docs/basic-usage.md:59
 msgid ""
 "Also, instead of modifying the `pyproject.toml` file by hand, you can use "
 "the `add` command."
-msgstr ""
+msgstr "`pyproject.toml` ファイルを手で編集する変わりに、 `add` コマンドも使えます。"
 
 #. type: Plain text
 #: docs/basic-usage.md:60
@@ -205,13 +210,13 @@ msgstr "$ poetry add pendulum\n"
 msgid ""
 "It will automatically find a suitable version constraint **and install** the "
 "package and subdependencies."
-msgstr ""
+msgstr "このコマンドは自動的に適切なバージョン制約を見付け、パッケージとその依存関係を **インストールします** 。"
 
 #. type: Title ###
 #: docs/basic-usage.md:67
 #, no-wrap
 msgid "Version constraints"
-msgstr ""
+msgstr "バージョン制約"
 
 #. type: Plain text
 #: docs/basic-usage.md:71
@@ -222,6 +227,8 @@ msgid ""
 "This means any version greater or equal to 1.4.0 and less than 2.0.0 (`>=1.4."
 "0 <2.0.0`).\n"
 msgstr ""
+"今の例では、 `^1.4` というバージョン制約の付いた  `pendulum` パッケージを要求しています。\n"
+"この制約は、1.4.0以上かつ2.0.0未満のバージョンという意味です (`>=1.4.0 <2.0.0`)。\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:73
@@ -229,6 +236,8 @@ msgid ""
 "Please read [versions](/docs/versions/) for more in-depth information on "
 "versions, how versions relate to each other, and on version constraints."
 msgstr ""
+"バージョンやバージョンどうしの関係、バージョン制約について、より深いことについては [versions](/docs/versions/) "
+"を読んでください。"
 
 #. type: Plain text
 #: docs/basic-usage.md:76 docs/basic-usage.md:133 docs/basic-usage.md:147 docs/basic-usage.md:159
@@ -239,7 +248,7 @@ msgstr "!!!注意"
 #: docs/basic-usage.md:78
 #, no-wrap
 msgid "    **How does Poetry download the right files?**\n"
-msgstr ""
+msgstr "**Poetryはどうやって正しいファイルをダウンロードするのか?**\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:83
@@ -253,6 +262,10 @@ msgid ""
 "package with that name in the\n"
 "    repositories you have specified, it falls back on PyPI.\n"
 msgstr ""
+"    `pyproject.toml` に依存関係を指定しているとき、Poetryはまず最初に要求されたパッケージ名を取り出し、\n"
+"    `repositories` キーに登録されたレポジトリを検索します。\n"
+"    追加のレポジトリを登録していないか、指定したレポジトリから要求された名前の\n"
+"    パッケージが見付からない場合は、PyPIに戻って検索します。\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:86
@@ -261,38 +274,39 @@ msgid ""
 "    When Poetry finds the right package, it then attempts to find the best "
 "match\n"
 "    for the version constraint you have specified.\n"
-msgstr ""
+msgstr "    Poetryが正しいパッケージを複数見付けたときは、指定されたバージョン制約に\n"
+"    最も適合するものを見付けようとします。\n"
 
 #. type: Title ##
 #: docs/basic-usage.md:88
 #, no-wrap
 msgid "Installing dependencies"
-msgstr ""
+msgstr "依存関係のインストール"
 
 #. type: Plain text
 #: docs/basic-usage.md:91
 msgid ""
 "To install the defined dependencies for your project, just run the `install` "
 "command."
-msgstr ""
+msgstr "プロジェクトに定義された依存関係をインストールするには、 `install` コマンドを実行するだけです。"
 
 #. type: Plain text
 #: docs/basic-usage.md:92
 #, no-wrap
 msgid "poetry install\n"
 "\n"
-msgstr ""
+msgstr "poetry install\n"
 
 #. type: Plain text
 #: docs/basic-usage.md:97
 msgid "When you run this command, one of two things may happen:"
-msgstr ""
+msgstr "このコマンドを実行すると、2つのうちどちらかが起こります:"
 
 #. type: Title ###
 #: docs/basic-usage.md:98
 #, no-wrap
 msgid "Installing without `poetry.lock`"
-msgstr ""
+msgstr "`poetry.lock` 無しのインストール"
 
 #. type: Plain text
 #: docs/basic-usage.md:102
@@ -301,6 +315,8 @@ msgid ""
 "file present, Poetry simply resolves all dependencies listed in your "
 "`pyproject.toml` file and downloads the latest version of their files."
 msgstr ""
+"以前にこのコマンドを実行したことが無く、 `poetry.lock` ファイルも存在しない場合は、Poetryは `pyproject.toml` "
+"に並べられた全ての依存関係を解決し、それらのファイルの最新バージョンをダウンロードするだけです。"
 
 #. type: Plain text
 #: docs/basic-usage.md:106
@@ -311,12 +327,16 @@ msgid ""
 "file to your project repo so that all people working on the project are "
 "locked to the same versions of dependencies (more below)."
 msgstr ""
+"Poetryがインストールを完了すると、ダウンロードしたパッケージとその正確なバージョンを `poetry.lock` "
+"へ書き込み、その特定のバージョンでプロジェクトを固定します。\n"
+"プロジェクトレポジトリに `poetry.lock` "
+"ファイルをコミットし、このプロジェクトに携わる全ての人にとって、同じバージョンの依存関係を強制されるべきです (下でさらに解説します)。"
 
 #. type: Title ###
 #: docs/basic-usage.md:108
 #, no-wrap
 msgid "Installing with `poetry.lock`"
-msgstr ""
+msgstr "`poetry.lock` 有りのインストール"
 
 #. type: Plain text
 #: docs/basic-usage.md:113
