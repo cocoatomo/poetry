@@ -116,71 +116,61 @@ Poetryがインストールを完了すると、ダウンロードしたパッ�
 
 ### `poetry.lock` 有りのインストール
 
-This brings us to the second scenario. If there is already a `poetry.lock`
-file as well as a `pyproject.toml` file when you run `poetry install`, it
-means either you ran the `install` command before, or someone else on the
-project ran the `install` command and committed the `poetry.lock` file to
-the project (which is good).
+こちらの場合は先程とは別の第2のシナリオになります。
+`poetry install` を実行するときに、 `pyproject.toml` に加えて既に `poetry.lock`
+ファイルがある場合は、以前に `install` コマンドを実行していたか、誰か他の人がそのプロジェクトで `install` コマンドを実行し
+`poetry.lock` ファイルをプロジェクトにコミット (これは良い行いです) していたことになります。
 
-Either way, running `install` when a `poetry.lock` file is present resolves
-and installs all dependencies that you listed in `pyproject.toml`, but
-Poetry uses the exact versions listed in `poetry.lock` to ensure that the
-package versions are consistent for everyone working on your project.  As a
-result you will have all dependencies requested by your `pyproject.toml`
-file, but they may not all be at the very latest available versions (some of
-the dependencies listed in the `poetry.lock` file may have released newer
-versions since the file was created).  This is by design, it ensures that
-your project does not break because of unexpected changes in dependencies.
+どちらにせよ、 `poetry.lock` ファイルがあるときに `install` コマンドを実行すると `pyproject.toml`
+に並べた全ての依存関係を解決しインストールしますが、Poetryは `poetry.lock`
+に並べられた正確なバージョンを使い、プロジェクトに携わる全ての人にとってパッケージバージョンが一貫性を持つことを保証します。
+その結果として、 `pyproject.toml`
+ファイルで要求された全ての依存関係が手に入りますが、必ずしも全ての依存関係が利用可能な最新バージョンではないかもしれません (`poetry.lock`
+ファイルに並べられている依存関係のうちいくつかは、そのファイルが作成された後により新しいバージョンがリリースされているかもしれません)。
+これは設計によるもので、プロジェクトが予期せぬ依存関係の変更で壊れないことを保証するものです。
 
-### Commit your `poetry.lock` file to version control
+### `poetry.lock` ファイルをバージョン管理にコミット
 
-Committing this file to VC is important because it will cause anyone who
-sets up the project to use the exact same versions of the dependencies that
-you are using.  Your CI server, production machines, other developers in
-your team, everything and everyone runs on the same dependencies, which
-mitigates the potential for bugs affecting only some parts of the
-deployments.  Even if you develop alone, in six months when reinstalling the
-project you can feel confident the dependencies installed are still working
-even if your dependencies released many new versions since then.  (See note
-below about using the update command.)
+このファイルをVC (Version Control)
+にコミットするのが重要なのは、あなたが使っているバージョンと厳密に同じバージョンの依存関係を、プロジェクトをセットアップする人が使うようにするためです。
+あなたのCIサーバー、本番機、チームの他の開発者、全てのもの、全ての人が同じ依存関係の上で実行することで、配置物の一部だけに影響するバグが起きる恐れを軽減します。
+6ヶ月間1人で開発をしたとしても、プロジェクトを再インストールするときには、インストールされた依存関係は今でも正常に動作すると確信を持てます。たとえ依存関係に多くの新バージョンがリリースされていたとしてもです。
+(下にあるupdateコマンドの使い方についての注意書きを参照してください。)
 
 !!!注意
 
-    For libraries it is not necessary to commit the lock file.
+    ライブラリについては、ロックファイルをコミットするのは必須ではありません。
 
 
-## Updating dependencies to their latest versions
+## 依存関係の最新バージョンへの更新
 
-As mentioned above, the `poetry.lock` file prevents you from automatically
-getting the latest versions of your dependencies.  To update to the latest
-versions, use the `update` command.  This will fetch the latest matching
-versions (according to your `pyproject.toml` file)  and update the lock file
-with the new versions.  (This is equivalent to deleting the `poetry.lock`
-file and running `install` again.)
-
-!!!注意
-
-    Poetry will display a **Warning** when executing an install command if `poetry.lock` and `pyproject.toml`
-    are not synchronized.
-
-
-## Poetry and virtualenvs
-
-When you execute the `install` command (or any other "install" commands like
-`add` or `remove`), Poetry will check if it's currently inside a virtualenv
-and, if not, will use an existing one or create a brand new one for you to
-always work isolated from your global Python installation.
+上で言及したように、 `poetry.lock` ファイルは依存関係の最新バージョンを自動的に取得してしまうのを防止します。
+最新バージョンへ更新するには、 `update` コマンドを使ってください。
+このコマンドは適合する最新バージョンを (`pyproject.toml` ファイルに従って)
+取ってきて、ロックファイルを新しいバージョンで更新します。
+(この動作は、 `poetry.lock` ファイルを削除してから、改めて `install` を実行するのと同等です。)
 
 !!!注意
 
-    To create the virtualenv for the current project, Poetry will use
-    the currently activated Python version.
+    Poetryは、installコマンドを実行するときに `poetry.lock` と `pyproject.toml` が同期されていない場合、
+    **警告** を表示します。
 
-    To easily switch between Python versions, it is recommended to
-    use [pyenv](https://github.com/pyenv/pyenv) or similar tools.
 
-    For instance, if your project is Python 2.7 only, a standard workflow
-    would be:
+## Poetryと仮想環境
+
+`install` コマンドを実行するとき (あるいは `add` コマンドや `remove` コマンドのような他の "インストール"
+コマンド)、Poetryは現在は仮想環境の中なのかどうかを調べ、もしそうでなければ既存の仮想環境または新品の仮想環境を使い、グローバルにインストールされたPythonから常に隔離します。
+
+!!!注意
+
+    現在のプロジェクト用の仮想環境を作成するために、
+    Poetryは現在有効になっているバージョンのPythonを使います。
+
+    Pythonのバージョンを簡単に切り替えるには、
+    [pyenv](https://github.com/pyenv/pyenv) やそれに似たツールを使うのが推奨されます。
+
+    例えば、プロジェクトがPython 2.7のみの場合、
+    標準的な作業の流れは次のようになります:
 
     ```bash
     pyenv install 2.7.15
