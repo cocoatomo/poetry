@@ -24,6 +24,6 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - toc:
-      permalink: 
+      permalink: 🔗
 
 docs_dir: docs.ja
