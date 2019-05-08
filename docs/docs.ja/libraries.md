@@ -1,96 +1,85 @@
 # ライブラリ
 
-This chapter will tell you how to make your library installable through
-Poetry.
+この章では、Poetryでライブラリをインストールできるようにする方法を教えます。
 
-## Every project is a package
+## 全てのプロジェクトはパッケージ
 
-As soon as you have a `pyproject.toml` in a directory, that directory is a
-package.  However, to make it accessible to others you will need to package
-and publish it.
+`pyproject.toml` をディレクトリに置いたなら、そのディレクトリはもうパッケージになのです。
+ただし、他のパッケージからアクセス可能にするには、パッケージ化と公開が必要です。
 
 
-## Versioning
+## バージョン付け
 
-While Poetry does not enforce any convention regarding package versioning,
-it **strongly** recommends to follow [semantic
-versioning](https://semver.org).
+Poetryはパッケージのバージョン付けに関して、どんな慣習も強制することはありませんが、 [semantic
+versioning](https://semver.org) に従うことを **強く** 推奨します。
 
-This has many advantages for the end users and allows them to set
-appropriate [version constraints](/docs/versions/).
+これにはエンドユーザーにとっての多くの利点があり、適切な [バージョン制約](/docs/versions/) が設定できるようになります。
 
-## Lock file
+## ロックファイル
 
-For your library, you may commit the `poetry.lock` file if you want to.
-This can help your team to always test against the same dependency
-versions.  However, this lock file will not have any effect on other
-projects that depend on it.  It only has an effect on the main project.
+ライブラリでは、そうしたくて `poetry.lock` ファイルをコミットするかもしれません。
+これは、チームが常に同じバージョンの依存関係に対してテストをするのに役立ちます。
+ただし、このロックファイルはライブラリに依存している他のプロジェクトには何の効果もありません。
+メインのプロジェクトにのみ効果があります。
 
-If you do not want to commit the lock file and you are using git, add it to
-the `.gitignore`.
+ロックファイルをコミットしたくない人がgitを使っているなら、 `.gitignore` に追加してください。
 
-## Packaging
+## パッケージ化
 
-Before you can actually publish your library, you will need to package it.
+ライブラリを実際に公開できるようにする前に、パッケージ化する必要があります。
 
 ```bash
 poetry build
-
 ```
 
 
-This command will package your library in two different formats: `sdist`
-which is the source format, and `wheel` which is a `compiled` package.
+このコマンドはライブラリを2つの異なる形式にパッケージ化します: ソース形式である `sdist` と"コンパイル済み"パッケージである `wheel`
+です。
 
-Once that's done you are ready to publish your library
+これができたら、ライブラリを公開する準備ができました。
 
-## Publishing to PyPI
+## PyPIへ公開
 
-Alright, so now you can publish packages.
+よし、これでパッケージを公開できるようになりました。
 
-Poetry will publish to [PyPI](https://pypi.org) by default. Anything that is
-published to PyPI is available automatically through Poetry. Since
-[pendulum](https://pypi.org/project/pendulum/)  is on PyPI we can depend on
-it without having to specify any additional repositories.
+Poetryは、デフォルトでは [PyPI](https://pypi.org) に公開します。
+PyPIに公開されたものはなんであれ、必然的にPoetryで取得できます。
+[pendulum](https://pypi.org/project/pendulum/)
+はPyPIに上がっているので、追加のレポジトリを指定することなく依存できます。
 
-If we wanted to share `poetry-demo` with the Python community, we would
-publish on PyPI as well.  Doing so is really easy.
+もし `poetry-demo` をPythonコミュニティに共有したかったなら、PyPIにも公開します。
+これは本当に簡単なことです。
 
 ```bash
 poetry publish
-
 ```
 
 
-This will package and publish the library to PyPI, at the condition that you
-are a registered user and you have [configured your
-credentials](/docs/repositories/#adding-credentials) properly.
+ユーザー登録を済ませ、適切に [証明書が設定されている](/docs/repositories/#adding-credentials)
+という条件が揃っているとき、このコマンドはライブラリをパッケージ化して、PyPIへ公開します。
 
 !!!note
 
-    The `publish` command does not execute `build` by default.
+    `publish` コマンドは、デフォルトでは `build` コマンドを実行しません。
 
-    If you want to build and publish your packages together,
-    just pass the `--build` option.
+    パッケージのビルドも公開も一緒に行って欲しい場合は、
+    `--build` オプションを渡してください。
 
-Once this is done, your library will be available to anyone.
+これが済んだら、ライブラリは誰からも取得可能になります。
 
 
-## Publishing to a private repository
+## プライベートレポジトリへ公開
 
-Sometimes, you may want to keep your library private but also being
-accessible to your team.
+ライブラリは公開しないでおきたいが、チームには入手可能にしたいときもあります。
 
-In this case, you will need to use a private repository.
+その場合は、プライベートレポジトリが必要になります。
 
-In order to publish to a private repository, you will need to add it to your
-global list of repositories. See [Adding a
-repository](/docs/repositories/#adding-a-repository)  for more information.
+プライベートレポジトリに公開するには、レポジトリのリストに追加する必要があります。
+より詳しいことは [レポジトリの追加](/docs/repositories/#adding-a-repository) を参照してください。
 
-Once this is done, you can actually publish to it like so:
+これが済んだら、次のように実際に公開できます:
 
 ```bash
 poetry publish -r my-repository
-
 ```
 
