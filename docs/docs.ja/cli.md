@@ -1,237 +1,188 @@
 # コマンド
 
-You've already learned how to use the command-line interface to do some
-things.  This chapter documents all the available commands.
+これまでに、何かをするためのコマンドラインインターフェースの使い方を学びました。
+この章では、全ての利用可能なコマンドについて記述します。
 
-To get help from the command-line, simply call `poetry` or `poetry list` to
-see the complete list of commands, then `--help` combined with any of those
-can give you more information.
+コマントラインでヘルプを出すには、 `poetry` もしくは `poetry list`
+と呼び出すとコマンドの完全なリストが見られて、コマンドのどれかに `--help` を付けて実行するとより詳しい情報が得られます。
 
-As `Poetry` uses [cleo](https://github.com/sdispater/cleo) you can call
-commands by short name if it's not ambiguous.
+`Poetry` は [cleo](https://github.com/sdispater/cleo)
+を使っているので、曖昧性が無い場合は、短い名前でもコマンドが呼び出せます。
 
 ```bash
 poetry up
-
 ```
 
 
-calls `poetry update`.
+これは `poetry update` コマンドを呼び出します。
 
 
-## Global options
+## グローバルオプション
 
-* `--verbose (-v|vv|vvv)`: Increase the verbosity of messages: 1 for normal
-  output, 2 for more verbose output and 3 for debug.
-* `--help (-h)` : Display help information.
-* `--quiet (-q)` : Do not output any message.
-* `--ansi`: Force ANSI output.
-* `--no-ansi`: Disable ANSI output.
-* `--version (-V)`: Display this application version.
+* `--verbose (-v|vv|vvv)`: メッセージの冗長さを増やします:
+  1つでは標準の出力、2つではより冗長な出力、3つではデバッグ出力です。
+* `--help (-h)` : ヘルプ情報を表示します。
+* `--quiet (-q)` : メッセージを出力しません。
+* `--ansi`: ANSI出力を強制します。
+* `--no-ansi`: ANSI出力を無効にします。
+* `--version (-V)`: このアプリケーションのバージョンを表示します。
 
 
 ## new
 
-This command will help you kickstart your new Python project by creating a
-directory structure suitable for most projects.
+このコマンドは、ほとんどのプロジェクトに適するディレクトリ構造を作成して、新しいPythonプロジェクトに勢いをつける助けをしてくれます。
 
 ```bash
 poetry new my-package
-
 ```
 
 
-will create a folder as follows:
+というコマンドは次のフォルダを作成します:
 
 ```text
 my-package
-
 ├── pyproject.toml
-
 ├── README.rst
-
 ├── my_package
-
 │   └── __init__.py
-
 └── tests
-
     ├── __init__.py
-
     └── test_my_package
-
 ```
 
 
-If you want to name your project differently than the folder, you can pass
-the `--name` option:
+フォルダとは別のプロジェクト名を付けたい場合は、 `--name` オプションで渡せます:
 
 ```bash
 poetry new my-folder --name my-package
-
 ```
 
 
-If you want to use a src folder, you can use the `--src` option:
+srcフォルダを使いたい場合は、 `--src` オプションが使えます:
 
 ```bash
 poetry new --src my-package
-
 ```
 
 
-That will create a folder structure as follows:
+このコマンドは次のようなフォルダ構成を作成します:
 
 ```text
 my-package
-
 ├── pyproject.toml
-
 ├── README.rst
-
 ├── src
-
 │   └── my_package
-
 │       └── __init__.py
-
 └── tests
-
     ├── __init__.py
-
     └── test_my_package
-
 ```
 
 
 ## init
 
-This command will help you create a `pyproject.toml` file interactively by
-prompting you to provide basic information about your package.
+このコマンドは、パッケージについての基本的な情報を提供するよう促して、 `pyproject.toml` ファイルを対話的に作成する助けになります。
 
-It will interactively ask you to fill in the fields, while using some smart
-defaults.
+このコマンドは、賢いデフォルト設定を使いつつ、フィールドを埋めるよう対話的に求めます。
 
 ```bash
 poetry init
-
 ```
 
 
 ### Options
 
-* `--name`: Name of the package.
-* `--description`: Description of the package.
-* `--author`: Author of the package.
-* `--dependency`: Package to require with a version constraint. Should be in
-  format `foo:1.0.0`.
-* `--dev-dependency`: Development requirements, see `--require`.
+* `--name`: パッケージ名。
+* `--description`: パッケージの説明。
+* `--author`: パッケージの作者。
+* `--dependency`: バージョン制約付きの要求されるパッケージ。 `foo:1.0.0` 形式でなければいけません。
+* `--dev-dependency`: 開発時に要求されるパッケージ、 `--require` を参照してください。
 
 
 ## install
 
-The `install` command reads the `pyproject.toml` file from the current
-project, resolves the dependencies, and installs them.
+`install` コマンドは、現在のプロジェクトにある `pyproject.toml` ファイルを読み込み、依存関係を解決し、インストールします。
 
 ```bash
 poetry install
-
 ```
 
 
-If there is a `poetry.lock` file in the current directory, it will use the
-exact versions from there instead of resolving them.  This ensures that
-everyone using the library will get the same versions of the dependencies.
+`poetry.lock` ファイルが今のディレクトリにある場合は、依存関係を解決する代わりに、ロックファイルにある厳密なバージョンを使います。
+これにより、そのライブラリを使う全員が同じバージョンの依存関係を手に入れることを保証します。
 
-If there is no `poetry.lock` file, Poetry will create one after dependency
-resolution.
+`poetry.lock` ファイルが無い場合は、Poetryは依存関係解決の結果に従ってロックファイルを作成します。
 
-You can specify to the command that you do not want the development
-dependencies installed by passing the `--no-dev` option.
+`--no-dev` オプションを渡すことで、開発用の依存関係をインストールさせないで欲しいことをコマンドに指定できます。
 
 ```bash
 poetry install --no-dev
-
 ```
 
 
-You can also specify the extras you want installed by passing the
-`--E|--extras` option (See [Extras](#extras) for more info)
+`--E|--extras` オプションを渡すことで、インストールして欲しい追加の依存関係の指定もできます (より詳しいことは
+[Extras](#extras) を参照してください)
 
 ```bash
 poetry install --extras "mysql pgsql"
-
 poetry install -E mysql -E pgsql
-
 ```
 
 
 ### Options
 
-* `--no-dev`: Do not install dev dependencies.
-* `--extras (-E)`: Features to install (multiple values allowed).
+* `--no-dev`: 開発用の依存関係をインストールしない。
+* `--extras (-E)`: インストールする機能 (複数値も可能です)。
 
 ## update
 
-In order to get the latest versions of the dependencies and to update the
-`poetry.lock` file, you should use the `update` command.
+最新バージョンの依存関係を取得し、 `poetry.lock` を更新するには、 `update` コマンドを使いましょう。
 
 ```bash
 poetry update
-
 ```
 
 
-This will resolve all dependencies of the project and write the exact
-versions into `poetry.lock`.
+このコマンドは、プロジェクトの全ての依存関係を解決し、その厳密なバージョンを `poetry.lock` に書き込みます。
 
-If you just want to update a few packages and not all, you can list them as
-such:
+全てではない一部のパッケージだけを更新したい場合は、このように並べて指定できます:
 
 ```bash
 poetry update requests toml
-
 ```
 
 
 ### Options
 
-* `--dry-run` : Outputs the operations but will not execute anything
-  (implicitly enables --verbose).
-* `--no-dev` : Do not install dev dependencies.
-* `--lock` : Do not perform install (only update the lockfile).
+* `--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。
+* `--no-dev` : 開発用の依存関係をインストールしません。
+* `--lock` : インストールを行いません (ロックファイルを更新するだけです)。
 
 ## add
 
-The `add` command adds required packages to your `pyproject.toml` and
-installs them.
+`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。
 
-If you do not specify a version constraint, poetry will choose a suitable
-one based on the available package versions.
+バージョン制約を指定しなかった場合は、Poetryは利用可能なパッケージバージョンに基づいて適切なものを選びます。
 
 ```bash
 poetry add requests pendulum
-
 ```
 
 
-You can also add `git` dependencies:
+`git` 依存関係の追加もできます:
 
 ```bash
 poetry add pendulum --git https://github.com/sdispater/pendulum.git
-
 ```
 
 
-or make them point to a local directory or file:
+のようにするか、ローカルのディレクトリやファイルを指し示すようにします:
 
 ```bash
 poetry add my-package --path ../my-package/
-
 poetry add my-package --path ../my-package/dist/my-package-0.1.0.tar.gz
-
 poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl
-
 ```
 
 
@@ -244,9 +195,7 @@ specify it in the `pyproject.toml` file:
 
 ```
 [tool.poetry.dependencies]
-
 my-package = {path = "../my/path", develop = false}
-
 ```
 
 
@@ -257,8 +206,7 @@ my-package = {path = "../my/path", develop = false}
 * `--path`: The path to a dependency.
 * `--extras (-E)`: Extras to activate for the dependency.
 * `--optional` : Add as an optional dependency.
-* `--dry-run` : Outputs the operations but will not execute anything
-  (implicitly enables --verbose).
+* `--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。
 
 
 ## remove
@@ -268,15 +216,13 @@ packages.
 
 ```bash
 poetry remove pendulum
-
 ```
 
 
 ### Options
 
 * `--dev (-D)`: Removes a package from the development dependencies.
-* `--dry-run` : Outputs the operations but will not execute anything
-  (implicitly enables --verbose).
+* `--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。
 
 
 ## show
@@ -285,7 +231,6 @@ To list all of the available packages, you can use the `show` command.
 
 ```bash
 poetry show
-
 ```
 
 
@@ -295,24 +240,14 @@ package name.
 ```bash
 poetry show pendulum
 
-
-
 name        : pendulum
-
 version     : 1.4.2
-
 description : Python datetimes made easy
 
-
-
 dependencies:
-
  - python-dateutil >=2.6.1
-
  - tzlocal >=1.4
-
  - pytzdata >=2017.2.2
-
 ```
 
 
@@ -351,7 +286,6 @@ first time it is submitted.
 
 ```bash
 poetry publish
-
 ```
 
 
@@ -371,7 +305,6 @@ repositories.
 
 ```bash
 poetry config --list
-
 ```
 
 
@@ -379,7 +312,6 @@ poetry config --list
 
 ````bash
 poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
-
 ````
 
 
@@ -399,7 +331,6 @@ virtualenv.
 
 ```bash
 poetry run python -V
-
 ```
 
 
@@ -409,9 +340,7 @@ So, if you have a script defined like this:
 
 ```toml
 [tool.poetry.scripts]
-
 my-script = "my_module:main"
-
 ```
 
 
@@ -419,7 +348,6 @@ You can execute it like so:
 
 ```bash
 poetry run my-script
-
 ```
 
 
@@ -433,7 +361,6 @@ be created.
 
 ```bash
 poetry shell
-
 ```
 
 
@@ -444,7 +371,6 @@ returns a detailed report if there are any errors.
 
 ```bash
 poetry check
-
 ```
 
 
@@ -454,7 +380,6 @@ This command searches for packages on a remote index.
 
 ```bash
 poetry search requests pendulum
-
 ```
 
 
@@ -469,7 +394,6 @@ This command locks (without installing) the dependencies specified in
 
 ```bash
 poetry lock
-
 ```
 
 

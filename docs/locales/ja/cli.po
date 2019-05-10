@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-04 03:33+0000\n"
+"PO-Revision-Date: 2019-05-10 04:08+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -24,7 +24,8 @@ msgstr "コマンド"
 msgid ""
 "You've already learned how to use the command-line interface to do some "
 "things.  This chapter documents all the available commands."
-msgstr ""
+msgstr "これまでに、何かをするためのコマンドラインインターフェースの使い方を学びました。\n"
+"この章では、全ての利用可能なコマンドについて記述します。"
 
 #. type: Plain text
 #: docs/cli.md:8
@@ -33,6 +34,8 @@ msgid ""
 "see the complete list of commands, then `--help` combined with any of those "
 "can give you more information."
 msgstr ""
+"コマントラインでヘルプを出すには、 `poetry` もしくは `poetry list` "
+"と呼び出すとコマンドの完全なリストが見られて、コマンドのどれかに `--help` を付けて実行するとより詳しい情報が得られます。"
 
 #. type: Plain text
 #: docs/cli.md:10
@@ -40,30 +43,32 @@ msgid ""
 "As `Poetry` uses [cleo](https://github.com/sdispater/cleo) you can call "
 "commands by short name if it's not ambiguous."
 msgstr ""
+"`Poetry` は [cleo](https://github.com/sdispater/cleo) "
+"を使っているので、曖昧性が無い場合は、短い名前でもコマンドが呼び出せます。"
 
 #. type: Code fence info string
 #: docs/cli.md:11 docs/cli.md:33 docs/cli.md:53 docs/cli.md:59 docs/cli.md:84 docs/cli.md:102 docs/cli.md:115 docs/cli.md:122 docs/cli.md:137 docs/cli.md:145 docs/cli.md:162 docs/cli.md:168 docs/cli.md:174 docs/cli.md:205 docs/cli.md:219 docs/cli.md:225 docs/cli.md:250 docs/cli.md:266 docs/cli.md:283 docs/cli.md:289 docs/cli.md:305 docs/cli.md:320 docs/cli.md:333 docs/cli.md:342 docs/cli.md:350 docs/cli.md:362
 #, no-wrap
 msgid "bash"
-msgstr ""
+msgstr "bash"
 
 #. type: Plain text
 #: docs/cli.md:11
 #, no-wrap
 msgid "poetry up\n"
 "\n"
-msgstr ""
+msgstr "poetry up\n"
 
 #. type: Plain text
 #: docs/cli.md:16
 msgid "calls `poetry update`."
-msgstr ""
+msgstr "これは `poetry update` コマンドを呼び出します。"
 
 #. type: Title ##
 #: docs/cli.md:18
 #, no-wrap
 msgid "Global options"
-msgstr ""
+msgstr "グローバルオプション"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
@@ -71,62 +76,64 @@ msgid ""
 "`--verbose (-v|vv|vvv)`: Increase the verbosity of messages: 1 for normal "
 "output, 2 for more verbose output and 3 for debug."
 msgstr ""
+"`--verbose (-v|vv|vvv)`: メッセージの冗長さを増やします: "
+"1つでは標準の出力、2つではより冗長な出力、3つではデバッグ出力です。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--help (-h)` : Display help information."
-msgstr ""
+msgstr "`--help (-h)` : ヘルプ情報を表示します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--quiet (-q)` : Do not output any message."
-msgstr ""
+msgstr "`--quiet (-q)` : メッセージを出力しません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--ansi`: Force ANSI output."
-msgstr ""
+msgstr "`--ansi`: ANSI出力を強制します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--no-ansi`: Disable ANSI output."
-msgstr ""
+msgstr "`--no-ansi`: ANSI出力を無効にします。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--version (-V)`: Display this application version."
-msgstr ""
+msgstr "`--version (-V)`: このアプリケーションのバージョンを表示します。"
 
 #. type: Title ##
 #: docs/cli.md:28
 #, no-wrap
 msgid "new"
-msgstr ""
+msgstr "new"
 
 #. type: Plain text
 #: docs/cli.md:32
 msgid ""
 "This command will help you kickstart your new Python project by creating a "
 "directory structure suitable for most projects."
-msgstr ""
+msgstr "このコマンドは、ほとんどのプロジェクトに適するディレクトリ構造を作成して、新しいPythonプロジェクトに勢いをつける助けをしてくれます。"
 
 #. type: Plain text
 #: docs/cli.md:33
 #, no-wrap
 msgid "poetry new my-package\n"
 "\n"
-msgstr ""
+msgstr "poetry new my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:38
 msgid "will create a folder as follows:"
-msgstr ""
+msgstr "というコマンドは次のフォルダを作成します:"
 
 #. type: Code fence info string
 #: docs/cli.md:39 docs/cli.md:65
 #, no-wrap
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #. type: Plain text
 #: docs/cli.md:39
@@ -149,37 +156,45 @@ msgid ""
 "    └── test_my_package\n"
 "\n"
 msgstr ""
+"my-package\n"
+"├── pyproject.toml\n"
+"├── README.rst\n"
+"├── my_package\n"
+"│   └── __init__.py\n"
+"└── tests\n"
+"    ├── __init__.py\n"
+"    └── test_my_package\n"
 
 #. type: Plain text
 #: docs/cli.md:52
 msgid ""
 "If you want to name your project differently than the folder, you can pass "
 "the `--name` option:"
-msgstr ""
+msgstr "フォルダとは別のプロジェクト名を付けたい場合は、 `--name` オプションで渡せます:"
 
 #. type: Plain text
 #: docs/cli.md:53
 #, no-wrap
 msgid "poetry new my-folder --name my-package\n"
 "\n"
-msgstr ""
+msgstr "poetry new my-folder --name my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:58
 msgid "If you want to use a src folder, you can use the `--src` option:"
-msgstr ""
+msgstr "srcフォルダを使いたい場合は、 `--src` オプションが使えます:"
 
 #. type: Plain text
 #: docs/cli.md:59
 #, no-wrap
 msgid "poetry new --src my-package\n"
 "\n"
-msgstr ""
+msgstr "poetry new --src my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:64
 msgid "That will create a folder structure as follows:"
-msgstr ""
+msgstr "このコマンドは次のようなフォルダ構成を作成します:"
 
 #. type: Plain text
 #: docs/cli.md:65
@@ -204,12 +219,21 @@ msgid ""
 "    └── test_my_package\n"
 "\n"
 msgstr ""
+"my-package\n"
+"├── pyproject.toml\n"
+"├── README.rst\n"
+"├── src\n"
+"│   └── my_package\n"
+"│       └── __init__.py\n"
+"└── tests\n"
+"    ├── __init__.py\n"
+"    └── test_my_package\n"
 
 #. type: Title ##
 #: docs/cli.md:77
 #, no-wrap
 msgid "init"
-msgstr ""
+msgstr "init"
 
 #. type: Plain text
 #: docs/cli.md:81
@@ -217,59 +241,60 @@ msgid ""
 "This command will help you create a `pyproject.toml` file interactively by "
 "prompting you to provide basic information about your package."
 msgstr ""
+"このコマンドは、パッケージについての基本的な情報を提供するよう促して、 `pyproject.toml` ファイルを対話的に作成する助けになります。"
 
 #. type: Plain text
 #: docs/cli.md:83
 msgid ""
 "It will interactively ask you to fill in the fields, while using some smart "
 "defaults."
-msgstr ""
+msgstr "このコマンドは、賢いデフォルト設定を使いつつ、フィールドを埋めるよう対話的に求めます。"
 
 #. type: Plain text
 #: docs/cli.md:84
 #, no-wrap
 msgid "poetry init\n"
 "\n"
-msgstr ""
+msgstr "poetry init\n"
 
 #. type: Title ###
 #: docs/cli.md:88 docs/cli.md:127 docs/cli.md:149 docs/cli.md:190 docs/cli.md:209 docs/cli.md:238 docs/cli.md:256 docs/cli.md:272 docs/cli.md:296 docs/cli.md:354
 #, no-wrap
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--name`: Name of the package."
-msgstr ""
+msgstr "`--name`: パッケージ名。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--description`: Description of the package."
-msgstr ""
+msgstr "`--description`: パッケージの説明。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--author`: Author of the package."
-msgstr ""
+msgstr "`--author`: パッケージの作者。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid ""
 "`--dependency`: Package to require with a version constraint. Should be in "
 "format `foo:1.0.0`."
-msgstr ""
+msgstr "`--dependency`: バージョン制約付きの要求されるパッケージ。 `foo:1.0.0` 形式でなければいけません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--dev-dependency`: Development requirements, see `--require`."
-msgstr ""
+msgstr "`--dev-dependency`: 開発時に要求されるパッケージ、 `--require` を参照してください。"
 
 #. type: Title ##
 #: docs/cli.md:97
 #, no-wrap
 msgid "install"
-msgstr ""
+msgstr "install"
 
 #. type: Plain text
 #: docs/cli.md:101
@@ -277,13 +302,14 @@ msgid ""
 "The `install` command reads the `pyproject.toml` file from the current "
 "project, resolves the dependencies, and installs them."
 msgstr ""
+"`install` コマンドは、現在のプロジェクトにある `pyproject.toml` ファイルを読み込み、依存関係を解決し、インストールします。"
 
 #. type: Plain text
 #: docs/cli.md:102
 #, no-wrap
 msgid "poetry install\n"
 "\n"
-msgstr ""
+msgstr "poetry install\n"
 
 #. type: Plain text
 #: docs/cli.md:109
@@ -292,27 +318,29 @@ msgid ""
 "exact versions from there instead of resolving them.  This ensures that "
 "everyone using the library will get the same versions of the dependencies."
 msgstr ""
+"`poetry.lock` ファイルが今のディレクトリにある場合は、依存関係を解決する代わりに、ロックファイルにある厳密なバージョンを使います。\n"
+"これにより、そのライブラリを使う全員が同じバージョンの依存関係を手に入れることを保証します。"
 
 #. type: Plain text
 #: docs/cli.md:111
 msgid ""
 "If there is no `poetry.lock` file, Poetry will create one after dependency "
 "resolution."
-msgstr ""
+msgstr "`poetry.lock` ファイルが無い場合は、Poetryは依存関係解決の結果に従ってロックファイルを作成します。"
 
 #. type: Plain text
 #: docs/cli.md:114
 msgid ""
 "You can specify to the command that you do not want the development "
 "dependencies installed by passing the `--no-dev` option."
-msgstr ""
+msgstr "`--no-dev` オプションを渡すことで、開発用の依存関係をインストールさせないで欲しいことをコマンドに指定できます。"
 
 #. type: Plain text
 #: docs/cli.md:115
 #, no-wrap
 msgid "poetry install --no-dev\n"
 "\n"
-msgstr ""
+msgstr "poetry install --no-dev\n"
 
 #. type: Plain text
 #: docs/cli.md:121
@@ -320,6 +348,8 @@ msgid ""
 "You can also specify the extras you want installed by passing the `--E|--"
 "extras` option (See [Extras](#extras) for more info)"
 msgstr ""
+"`--E|--extras` オプションを渡すことで、インストールして欲しい追加の依存関係の指定もできます (より詳しいことは "
+"[Extras](#extras) を参照してください)"
 
 #. type: Plain text
 #: docs/cli.md:122
@@ -330,118 +360,120 @@ msgid ""
 "poetry install -E mysql -E pgsql\n"
 "\n"
 msgstr ""
+"poetry install --extras \"mysql pgsql\"\n"
+"poetry install -E mysql -E pgsql\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:131
 msgid "`--no-dev`: Do not install dev dependencies."
-msgstr ""
+msgstr "`--no-dev`: 開発用の依存関係をインストールしない。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:131
 msgid "`--extras (-E)`: Features to install (multiple values allowed)."
-msgstr ""
+msgstr "`--extras (-E)`: インストールする機能 (複数値も可能です)。"
 
 #. type: Title ##
 #: docs/cli.md:132
 #, no-wrap
 msgid "update"
-msgstr ""
+msgstr "update"
 
 #. type: Plain text
 #: docs/cli.md:136
 msgid ""
 "In order to get the latest versions of the dependencies and to update the "
 "`poetry.lock` file, you should use the `update` command."
-msgstr ""
+msgstr "最新バージョンの依存関係を取得し、 `poetry.lock` を更新するには、 `update` コマンドを使いましょう。"
 
 #. type: Plain text
 #: docs/cli.md:137
 #, no-wrap
 msgid "poetry update\n"
 "\n"
-msgstr ""
+msgstr "poetry update\n"
 
 #. type: Plain text
 #: docs/cli.md:142
 msgid ""
 "This will resolve all dependencies of the project and write the exact "
 "versions into `poetry.lock`."
-msgstr ""
+msgstr "このコマンドは、プロジェクトの全ての依存関係を解決し、その厳密なバージョンを `poetry.lock` に書き込みます。"
 
 #. type: Plain text
 #: docs/cli.md:144
 msgid ""
 "If you just want to update a few packages and not all, you can list them as "
 "such:"
-msgstr ""
+msgstr "全てではない一部のパッケージだけを更新したい場合は、このように並べて指定できます:"
 
 #. type: Plain text
 #: docs/cli.md:145
 #, no-wrap
 msgid "poetry update requests toml\n"
 "\n"
-msgstr ""
+msgstr "poetry update requests toml\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:154 docs/cli.md:198 docs/cli.md:213
 msgid ""
 "`--dry-run` : Outputs the operations but will not execute anything "
 "(implicitly enables --verbose)."
-msgstr ""
+msgstr "`--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:154
 msgid "`--no-dev` : Do not install dev dependencies."
-msgstr ""
+msgstr "`--no-dev` : 開発用の依存関係をインストールしません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:154
 msgid "`--lock` : Do not perform install (only update the lockfile)."
-msgstr ""
+msgstr "`--lock` : インストールを行いません (ロックファイルを更新するだけです)。"
 
 #. type: Title ##
 #: docs/cli.md:155
 #, no-wrap
 msgid "add"
-msgstr ""
+msgstr "add"
 
 #. type: Plain text
 #: docs/cli.md:158
 msgid ""
 "The `add` command adds required packages to your `pyproject.toml` and "
 "installs them."
-msgstr ""
+msgstr "`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。"
 
 #. type: Plain text
 #: docs/cli.md:161
 msgid ""
 "If you do not specify a version constraint, poetry will choose a suitable "
 "one based on the available package versions."
-msgstr ""
+msgstr "バージョン制約を指定しなかった場合は、Poetryは利用可能なパッケージバージョンに基づいて適切なものを選びます。"
 
 #. type: Plain text
 #: docs/cli.md:162
 #, no-wrap
 msgid "poetry add requests pendulum\n"
 "\n"
-msgstr ""
+msgstr "poetry add requests pendulum\n"
 
 #. type: Plain text
 #: docs/cli.md:167
 msgid "You can also add `git` dependencies:"
-msgstr ""
+msgstr "`git` 依存関係の追加もできます:"
 
 #. type: Plain text
 #: docs/cli.md:168
 #, no-wrap
 msgid "poetry add pendulum --git https://github.com/sdispater/pendulum.git\n"
 "\n"
-msgstr ""
+msgstr "poetry add pendulum --git https://github.com/sdispater/pendulum.git\n"
 
 #. type: Plain text
 #: docs/cli.md:173
 msgid "or make them point to a local directory or file:"
-msgstr ""
+msgstr "のようにするか、ローカルのディレクトリやファイルを指し示すようにします:"
 
 #. type: Plain text
 #: docs/cli.md:174
@@ -454,6 +486,9 @@ msgid ""
 "poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl\n"
 "\n"
 msgstr ""
+"poetry add my-package --path ../my-package/\n"
+"poetry add my-package --path ../my-package/dist/my-package-0.1.0.tar.gz\n"
+"poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl\n"
 
 #. type: Plain text
 #: docs/cli.md:182
@@ -479,6 +514,8 @@ msgid ""
 "my-package = {path = \"../my/path\", develop = false}\n"
 "\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"my-package = {path = \"../my/path\", develop = false}\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:198
@@ -509,7 +546,7 @@ msgstr ""
 #: docs/cli.md:200
 #, no-wrap
 msgid "remove"
-msgstr ""
+msgstr "remove"
 
 #. type: Plain text
 #: docs/cli.md:204
@@ -523,7 +560,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry remove pendulum\n"
 "\n"
-msgstr ""
+msgstr "poetry remove pendulum\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:213
@@ -534,7 +571,7 @@ msgstr ""
 #: docs/cli.md:215
 #, no-wrap
 msgid "show"
-msgstr ""
+msgstr "show"
 
 #. type: Plain text
 #: docs/cli.md:218
@@ -546,7 +583,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry show\n"
 "\n"
-msgstr ""
+msgstr "poetry show\n"
 
 #. type: Plain text
 #: docs/cli.md:224
@@ -580,6 +617,16 @@ msgid ""
 " - pytzdata >=2017.2.2\n"
 "\n"
 msgstr ""
+"poetry show pendulum\n"
+"\n"
+"name        : pendulum\n"
+"version     : 1.4.2\n"
+"description : Python datetimes made easy\n"
+"\n"
+"dependencies:\n"
+" - python-dateutil >=2.6.1\n"
+" - tzlocal >=1.4\n"
+" - pytzdata >=2017.2.2\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:244
@@ -607,7 +654,7 @@ msgstr ""
 #: docs/cli.md:246
 #, no-wrap
 msgid "build"
-msgstr ""
+msgstr "build"
 
 #. type: Plain text
 #: docs/cli.md:249
@@ -635,7 +682,7 @@ msgstr ""
 #: docs/cli.md:260
 #, no-wrap
 msgid "publish"
-msgstr ""
+msgstr "publish"
 
 #. type: Plain text
 #: docs/cli.md:263
@@ -656,7 +703,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry publish\n"
 "\n"
-msgstr ""
+msgstr "poetry publish\n"
 
 #. type: Plain text
 #: docs/cli.md:271
@@ -678,7 +725,7 @@ msgstr ""
 #: docs/cli.md:279
 #, no-wrap
 msgid "config"
-msgstr ""
+msgstr "config"
 
 #. type: Plain text
 #: docs/cli.md:282
@@ -692,13 +739,13 @@ msgstr ""
 #, no-wrap
 msgid "poetry config --list\n"
 "\n"
-msgstr ""
+msgstr "poetry config --list\n"
 
 #. type: Title ###
 #: docs/cli.md:287
 #, no-wrap
 msgid "Usage"
-msgstr ""
+msgstr "Usage"
 
 #. type: Plain text
 #: docs/cli.md:289
@@ -707,6 +754,8 @@ msgid ""
 "poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]\n"
 "\n"
 msgstr ""
+"poetry config [options] [setting-key] [setting-value1] ... [setting-"
+"valueN]\n"
 
 #. type: Plain text
 #: docs/cli.md:295
@@ -730,7 +779,7 @@ msgstr ""
 #: docs/cli.md:301
 #, no-wrap
 msgid "run"
-msgstr ""
+msgstr "run"
 
 #. type: Plain text
 #: docs/cli.md:304
@@ -744,7 +793,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry run python -V\n"
 "\n"
-msgstr ""
+msgstr "poetry run python -V\n"
 
 #. type: Plain text
 #: docs/cli.md:310
@@ -769,7 +818,8 @@ msgid "[tool.poetry.scripts]\n"
 "\n"
 "my-script = \"my_module:main\"\n"
 "\n"
-msgstr ""
+msgstr "[tool.poetry.scripts]\n"
+"my-script = \"my_module:main\"\n"
 
 #. type: Plain text
 #: docs/cli.md:319
@@ -781,7 +831,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry run my-script\n"
 "\n"
-msgstr ""
+msgstr "poetry run my-script\n"
 
 #. type: Plain text
 #: docs/cli.md:325
@@ -807,13 +857,13 @@ msgstr ""
 #, no-wrap
 msgid "poetry shell\n"
 "\n"
-msgstr ""
+msgstr "poetry shell\n"
 
 #. type: Title ##
 #: docs/cli.md:337
 #, no-wrap
 msgid "check"
-msgstr ""
+msgstr "check"
 
 #. type: Plain text
 #: docs/cli.md:341
@@ -827,13 +877,13 @@ msgstr ""
 #, no-wrap
 msgid "poetry check\n"
 "\n"
-msgstr ""
+msgstr "poetry check\n"
 
 #. type: Title ##
 #: docs/cli.md:346
 #, no-wrap
 msgid "search"
-msgstr ""
+msgstr "search"
 
 #. type: Plain text
 #: docs/cli.md:349
@@ -845,7 +895,7 @@ msgstr ""
 #, no-wrap
 msgid "poetry search requests pendulum\n"
 "\n"
-msgstr ""
+msgstr "poetry search requests pendulum\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:357
@@ -856,7 +906,7 @@ msgstr ""
 #: docs/cli.md:358
 #, no-wrap
 msgid "lock"
-msgstr ""
+msgstr "lock"
 
 #. type: Plain text
 #: docs/cli.md:361
@@ -870,13 +920,13 @@ msgstr ""
 #, no-wrap
 msgid "poetry lock\n"
 "\n"
-msgstr ""
+msgstr "poetry lock\n"
 
 #. type: Title ##
 #: docs/cli.md:366
 #, no-wrap
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #. type: Plain text
 #: docs/cli.md:370
