@@ -186,12 +186,10 @@ poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl
 ```
 
 
-Path dependencies pointing to a local directory will be installed in
-editable mode (i.e. setuptools "develop mode").  It means that changes in
-the local directory will be reflected directly in environment.
+ローカルのディレクトリを指すパス依存関係は、編集可能モード (つまり、setuptoolsの"develop mode") でインストールされます。
+これは、ローカルのディレクトリの変更が、動作環境に直接影響するということです。
 
-If you don't want the dependency to be installed in editable mode you can
-specify it in the `pyproject.toml` file:
+依存関係を編集可能モードでインストールしたくない場合は、 `pyproject.toml` ファイルでその指定ができます。
 
 ```
 [tool.poetry.dependencies]
@@ -201,18 +199,17 @@ my-package = {path = "../my/path", develop = false}
 
 ### Options
 
-* `--dev (-D)`: Add package as development dependency.
-* `--git`: The url of the Git repository.
-* `--path`: The path to a dependency.
-* `--extras (-E)`: Extras to activate for the dependency.
-* `--optional` : Add as an optional dependency.
+* `--dev (-D)`: 開発用の依存関係としてパッケージを追加します。
+* `--git`: GitレポジトリのURL。
+* `--path`: 依存関係へのパス。
+* `--extras (-E)`: 追加で有効化される依存関係。
+* `--optional` : オプションの依存関係を追加します。
 * `--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。
 
 
 ## remove
 
-The `remove` command removes a package from the current list of installed
-packages.
+`remove` コマンドは、現在のインストールされたパッケージの一覧からパッケージを削除します。
 
 ```bash
 poetry remove pendulum
@@ -221,21 +218,20 @@ poetry remove pendulum
 
 ### Options
 
-* `--dev (-D)`: Removes a package from the development dependencies.
+* `--dev (-D)`: 開発用の依存関係からパッケージを削除します。
 * `--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。
 
 
 ## show
 
-To list all of the available packages, you can use the `show` command.
+全ての利用可能なパッケージを列挙するには、 `show` コマンドが使えます。
 
 ```bash
 poetry show
 ```
 
 
-If you want to see the details of a certain package, you can pass the
-package name.
+ある特定のパッケージの詳細を見たい場合は、パッケージ名を渡せます。
 
 ```bash
 poetry show pendulum
@@ -253,11 +249,10 @@ dependencies:
 
 ### Options
 
-* `--no-dev`: Do not list the dev dependencies.
-* `--tree`: List the dependencies as a tree.
-* `--latest (-l)`: Show the latest version.
-* `--outdated (-o)`: Show the latest version but only for packages that are
-  outdated.
+* `--no-dev`: 開発用の依存関係を列挙しません。
+* `--tree`: 依存関係を木構造で列挙します。
+* `--latest (-l)`: 最新バージョンを表示します。
+* `--outdated (-o)`: 古くなったパッケージの最新バージョンだけを表示します。
 
 
 ## build
@@ -266,58 +261,53 @@ The `build` command builds the source and wheels archives.
 
 ```bash
 poetry build
-
 ```
 
 
-Note that, at the moment, only pure python wheels are supported.
+現時点では、ピュアPythonのwheelのみサポートされていることに注意してください。
 
 ### Options
 
-* `--format (-F)`: Limit the format to either wheel or sdist.
+* `--format (-F)`: 形式をwheelもしくはsdistに限定します。
 
 ## publish
 
-This command publishes the package, previously built with the
-[`build`](#build) command, to the remote repository.
+このコマンドは、前に [`build`](#build) コマンドでビルドしたパッケージを、リモートレポジトリに公開します。
 
-It will automatically register the package before uploading if this is the
-first time it is submitted.
+初めて提出する場合には、このコマンドは、アップロードの前に自動的にパッケージの登録を行います。
 
 ```bash
 poetry publish
 ```
 
 
-It can also build the package if you pass it the `--build` option.
+`--build` オプションを渡すと、パッケージのビルドもしてくれます。
 
 ### Options
 
-* `--repository (-r)`: The repository to register the package to (default: `pypi`).
-Should match a repository name set by the [`config`](#config) command.
-* `--username (-u)`: The username to access the repository.
-* `--password (-p)`: The password to access the repository.
+* `--repository (-r)`: パッケージを登録するレポジトリ (デフォルト: `pypi`) です。
+[`config`](#config) コマンドで設定したレポジトリ名と一致しなければなりません。
+* `--username (-u)`: レポジトリにアクセスするためのユーザー名。
+* `--password (-p)`: レポジトリにアクセスするためのパスワード。
 
 ## config
 
-The `config` command allows you to edit poetry config settings and
-repositories.
+`config` コマンドを使うと、Poetryのsettingsやrepositoriesの設定を編集できます。
 
 ```bash
 poetry config --list
 ```
 
 
-### Usage
+### 使い方
 
 ````bash
 poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
 ````
 
 
-`setting-key` is a configuration option name and `setting-value1` is a
-configuration value.  See [Configuration](/docs/configuration/) for all
-available settings.
+`setting-key` は設定のオプション名で `setting-value1` は設定値です。
+利用可能な全ての設定は [設定](/docs/configuration/) を参照してください。
 
 ### Options
 
