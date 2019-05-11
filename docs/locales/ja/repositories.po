@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-04 03:38+0000\n"
+"PO-Revision-Date: 2019-05-11 06:21+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -23,7 +23,7 @@ msgstr "レポジトリ"
 #: docs/repositories.md:3
 #, no-wrap
 msgid "Using the PyPI repository"
-msgstr ""
+msgstr "PyPIレポジトリの使用"
 
 #. type: Plain text
 #: docs/repositories.md:7
@@ -31,24 +31,25 @@ msgid ""
 "By default, Poetry is configured to use the [PyPI](https://pypi.org) "
 "repository, for package installation and publishing."
 msgstr ""
+"デフォルトでは、Poetryはパッケージのインストールと公開に [PyPI](https://pypi.org) レポジトリを使うよう設定されます。"
 
 #. type: Plain text
 #: docs/repositories.md:10
 msgid ""
 "So, when you add dependencies to your project, Poetry will assume they are "
 "available on PyPI."
-msgstr ""
+msgstr "そのため、プロジェクトに依存関係を追加すると、PoetryはそれがPyPIで利用可能だと仮定します。"
 
 #. type: Plain text
 #: docs/repositories.md:12
 msgid "This represents most cases and will likely be enough for most users."
-msgstr ""
+msgstr "これはほとんどの場合に当たり、ほとんどのユーザーにとって十分なようです。"
 
 #. type: Title ##
 #: docs/repositories.md:14
 #, no-wrap
 msgid "Using a private repository"
-msgstr ""
+msgstr "プライベートレポジトリの使用"
 
 #. type: Plain text
 #: docs/repositories.md:19
@@ -57,66 +58,68 @@ msgid ""
 "being able to share it with your teammates. In this case, you will need to "
 "use a private repository."
 msgstr ""
+"しかし、あるときは、チームメイトには共有可能にしつつ、パッケージを非公開のままにする必要があるかもしれません。\n"
+"その場合、プライベートレポジトリを使う必要があります。"
 
 #. type: Title ###
 #: docs/repositories.md:20
 #, no-wrap
 msgid "Adding a repository"
-msgstr ""
+msgstr "レポジトリの追加"
 
 #. type: Plain text
 #: docs/repositories.md:23
 msgid "Adding a new repository is easy with the `config` command."
-msgstr ""
+msgstr "レポジトリの追加は `config` コマンドを使うと簡単です。"
 
 #. type: Code fence info string
 #: docs/repositories.md:24 docs/repositories.md:34
 #, no-wrap
 msgid "bash"
-msgstr ""
+msgstr "bash"
 
 #. type: Plain text
 #: docs/repositories.md:24
 #, no-wrap
 msgid "poetry config repositories.foo https://foo.bar/simple/\n"
 "\n"
-msgstr ""
+msgstr "poetry config repositories.foo https://foo.bar/simple/\n"
 
 #. type: Plain text
 #: docs/repositories.md:29
 msgid ""
 "This will set the url for repository `foo` to `https://foo.bar/simple/`."
-msgstr ""
+msgstr "このコマンドは、レポジトリ `foo` のURLを `https://foo.bar/simple/` に設定します。"
 
 #. type: Title ###
 #: docs/repositories.md:30
 #, no-wrap
 msgid "Configuring credentials"
-msgstr ""
+msgstr "認証情報の設定"
 
 #. type: Plain text
 #: docs/repositories.md:33
 msgid ""
 "If you want to store your credentials for a specific repository, you can do "
 "so easily:"
-msgstr ""
+msgstr "もし特定のレポジトリの認証情報を保存したいなら、次のように簡単にできます:"
 
 #. type: Plain text
 #: docs/repositories.md:34
 #, no-wrap
 msgid "poetry config http-basic.foo username password\n"
 "\n"
-msgstr ""
+msgstr "poetry config http-basic.foo username password\n"
 
 #. type: Plain text
 #: docs/repositories.md:39
 msgid "If you do not specify the password you will be prompted to write it."
-msgstr ""
+msgstr "パスワードを指定しなかった場合は、パスワードを書くように促されます。"
 
 #. type: Plain text
 #: docs/repositories.md:41
 msgid "!!!note"
-msgstr ""
+msgstr "!!!note"
 
 #. type: Plain text
 #: docs/repositories.md:44
@@ -124,7 +127,8 @@ msgstr ""
 msgid ""
 "    To publish to PyPI, you can set your credentials for the repository\n"
 "    named `pypi`:\n"
-msgstr ""
+msgstr "    PyPIへ公開するために、 `pypi` という名前のレポジトリの認証情報を\n"
+"    設定できます:\n"
 
 #. type: Plain text
 #: docs/repositories.md:48
@@ -134,6 +138,9 @@ msgid ""
 "    poetry config http-basic.pypi username password\n"
 "    ```\n"
 msgstr ""
+"    ```bash\n"
+"    poetry config http-basic.pypi username password\n"
+"    ```\n"
 
 #. type: Plain text
 #: docs/repositories.md:51
@@ -141,30 +148,32 @@ msgid ""
 "You can also specify the username and password when using the `publish` "
 "command with the `--username` and `--password` options."
 msgstr ""
+"`pyblish` コマンドを使うときに `--username` オプションと `--password` "
+"オプションを付けて、ユーザー名とパスワードを指定することもできます。"
 
 #. type: Title ###
 #: docs/repositories.md:52
 #, no-wrap
 msgid "Install dependencies from a private repository"
-msgstr ""
+msgstr "プライベートレポジトリからの依存関係インストール"
 
 #. type: Plain text
 #: docs/repositories.md:56
 msgid ""
 "Now that you can publish to your private repository, you need to be able to "
 "install dependencies from it."
-msgstr ""
+msgstr "プライベートレポジトリへの公開ができようになったので、そこから依存関係をインストールできるようにする必要があります。"
 
 #. type: Plain text
 #: docs/repositories.md:58
 msgid "For that, you have to edit your `pyproject.toml` file, like so"
-msgstr ""
+msgstr "そのためには、 `pyproject.toml` ファイルを次のように編集する必要があります"
 
 #. type: Code fence info string
 #: docs/repositories.md:59
 #, no-wrap
 msgid "toml"
-msgstr ""
+msgstr "toml"
 
 #. type: Plain text
 #: docs/repositories.md:59
@@ -176,13 +185,15 @@ msgid ""
 "\n"
 "url = \"https://foo.bar/simple/\"\n"
 "\n"
-msgstr ""
+msgstr "[[tool.poetry.source]]\n"
+"name = \"foo\"\n"
+"url = \"https://foo.bar/simple/\"\n"
 
 #. type: Plain text
 #: docs/repositories.md:66
 msgid ""
 "From now on, Poetry will also look for packages in your private repository."
-msgstr ""
+msgstr "今後は、Poetryはプライベートレポジトリのパッケージも検索します。"
 
 #. type: Plain text
 #: docs/repositories.md:70
@@ -193,3 +204,6 @@ msgid ""
 "Poetry will use these values to authenticate to your private repository when "
 "downloading or looking for packages."
 msgstr ""
+"プライベートレポジトリがHTTP Basic認証を要求する場合、上の例を使って、忘れずにユーザー名とパスワードを `http-basic` "
+"設定に追加してください (`tool.poetry.source` セクションにある名前と同じものを使うのも忘れないでください)。\n"
+"Poetryは、パッケージのダウンロードや検索をするときに、これらの値をプライベートレポジトリに対する認証に使います。"
