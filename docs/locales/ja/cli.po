@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-11 03:27+0000\n"
+"PO-Revision-Date: 2019-05-11 04:47+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -661,7 +661,7 @@ msgstr "build"
 #. type: Plain text
 #: docs/cli.md:249
 msgid "The `build` command builds the source and wheels archives."
-msgstr ""
+msgstr "`build` コマンドは、ソースアーカイブとwheelアーカイブへビルドします。"
 
 #. type: Plain text
 #: docs/cli.md:250
@@ -776,12 +776,12 @@ msgstr ""
 #. type: Bullet: '* '
 #: docs/cli.md:300
 msgid "`--unset`: Remove the configuration element named by `setting-key`."
-msgstr ""
+msgstr "`--unset`: `setting-key` で名付けられた設定要素を削除します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:300
 msgid "`--list`: Show the list of current config variables."
-msgstr ""
+msgstr "`--list`: 現在の設定変数の一覧を表示します。"
 
 #. type: Title ##
 #: docs/cli.md:301
@@ -794,7 +794,7 @@ msgstr "run"
 msgid ""
 "The `run` command executes the given command inside the project's virtualenv."
 ""
-msgstr ""
+msgstr "`run` コマンドは、与えられたコマンドをプロジェクトの仮想環境の中で実行します。"
 
 #. type: Plain text
 #: docs/cli.md:305
@@ -806,18 +806,18 @@ msgstr "poetry run python -V\n"
 #. type: Plain text
 #: docs/cli.md:310
 msgid "It can also execute one of the scripts defined in `pyproject.toml`."
-msgstr ""
+msgstr "このコマンドは `pyproject.toml` に定義されたスクリプトうち1つを実行することもできます。"
 
 #. type: Plain text
 #: docs/cli.md:312
 msgid "So, if you have a script defined like this:"
-msgstr ""
+msgstr "それなので、次のように定義されたスクリプトがある場合:"
 
 #. type: Code fence info string
 #: docs/cli.md:313
 #, no-wrap
 msgid "toml"
-msgstr ""
+msgstr "toml"
 
 #. type: Plain text
 #: docs/cli.md:313
@@ -832,7 +832,7 @@ msgstr "[tool.poetry.scripts]\n"
 #. type: Plain text
 #: docs/cli.md:319
 msgid "You can execute it like so:"
-msgstr ""
+msgstr "このようにして実行できます:"
 
 #. type: Plain text
 #: docs/cli.md:320
@@ -844,13 +844,13 @@ msgstr "poetry run my-script\n"
 #. type: Plain text
 #: docs/cli.md:325
 msgid "Note that this command has no option."
-msgstr ""
+msgstr "このコマンドにはオプションが無いことに注意してください。"
 
 #. type: Title ##
 #: docs/cli.md:326
 #, no-wrap
 msgid "shell"
-msgstr ""
+msgstr "shell"
 
 #. type: Plain text
 #: docs/cli.md:332
@@ -859,6 +859,8 @@ msgid ""
 "variable, within the virtual environment.  If one doesn't exist yet, it will "
 "be created."
 msgstr ""
+"`shell` コマンドは、 `$SHELL` 環境変数に従って、仮想環境の中でシェルを起動します。\n"
+"仮想環境がまだ無い場合は、作成されます。"
 
 #. type: Plain text
 #: docs/cli.md:333
@@ -878,7 +880,7 @@ msgstr "check"
 msgid ""
 "The `check` command validates the structure of the `pyproject.toml` file and "
 "returns a detailed report if there are any errors."
-msgstr ""
+msgstr "`check` コマンドは、 `pyproject.toml` ファイルの構造を検証し、エラーがあった場合は、詳細なレポートを返します。"
 
 #. type: Plain text
 #: docs/cli.md:342
@@ -896,7 +898,7 @@ msgstr "search"
 #. type: Plain text
 #: docs/cli.md:349
 msgid "This command searches for packages on a remote index."
-msgstr ""
+msgstr "このコマンドは、リモートの目録にあるパッケージを検索します。"
 
 #. type: Plain text
 #: docs/cli.md:350
@@ -908,7 +910,7 @@ msgstr "poetry search requests pendulum\n"
 #. type: Bullet: '* '
 #: docs/cli.md:357
 msgid "`--only-name (-N)`: Search only in name."
-msgstr ""
+msgstr "`--only-name (-N)`: 名前でのみ検索します。"
 
 #. type: Title ##
 #: docs/cli.md:358
@@ -921,7 +923,7 @@ msgstr "lock"
 msgid ""
 "This command locks (without installing) the dependencies specified in "
 "`pyproject.toml`."
-msgstr ""
+msgstr "このコマンドは、(インストールはせずに) `pyproject.toml` に指定されている依存関係をロックします。"
 
 #. type: Plain text
 #: docs/cli.md:362
@@ -941,7 +943,7 @@ msgstr "version"
 msgid ""
 "This command bumps the version of the project and writes the new version "
 "back to `pyproject.toml`"
-msgstr ""
+msgstr "このコマンドは、プロジェクトのバージョンを更新し、新しいバージョンを `pyproject.toml` に書き戻します"
 
 #. type: Plain text
 #: docs/cli.md:372
@@ -950,3 +952,5 @@ msgid ""
 " `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`, `prerelease`."
 ""
 msgstr ""
+"新しいバージョンは理想的には、有効なセマンティックバージョン文字列か、有効な更新規則であるべきです。有効な更新規則: `patch`, `minor`, "
+"`major`, `prepatch`, `preminor`, `premajor`, `prerelease` 。"

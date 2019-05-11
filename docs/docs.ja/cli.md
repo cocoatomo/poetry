@@ -257,7 +257,7 @@ dependencies:
 
 ## build
 
-The `build` command builds the source and wheels archives.
+`build` コマンドは、ソースアーカイブとwheelアーカイブへビルドします。
 
 ```bash
 poetry build
@@ -311,22 +311,21 @@ poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
 
 ### Options
 
-* `--unset`: Remove the configuration element named by `setting-key`.
-* `--list`: Show the list of current config variables.
+* `--unset`: `setting-key` で名付けられた設定要素を削除します。
+* `--list`: 現在の設定変数の一覧を表示します。
 
 ## run
 
-The `run` command executes the given command inside the project's
-virtualenv.
+`run` コマンドは、与えられたコマンドをプロジェクトの仮想環境の中で実行します。
 
 ```bash
 poetry run python -V
 ```
 
 
-It can also execute one of the scripts defined in `pyproject.toml`.
+このコマンドは `pyproject.toml` に定義されたスクリプトうち1つを実行することもできます。
 
-So, if you have a script defined like this:
+それなので、次のように定義されたスクリプトがある場合:
 
 ```toml
 [tool.poetry.scripts]
@@ -334,20 +333,19 @@ my-script = "my_module:main"
 ```
 
 
-You can execute it like so:
+このようにして実行できます:
 
 ```bash
 poetry run my-script
 ```
 
 
-Note that this command has no option.
+このコマンドにはオプションが無いことに注意してください。
 
 ## shell
 
-The `shell` command spawns a shell, according to the `$SHELL` environment
-variable, within the virtual environment.  If one doesn't exist yet, it will
-be created.
+`shell` コマンドは、 `$SHELL` 環境変数に従って、仮想環境の中でシェルを起動します。
+仮想環境がまだ無い場合は、作成されます。
 
 ```bash
 poetry shell
@@ -356,8 +354,7 @@ poetry shell
 
 ## check
 
-The `check` command validates the structure of the `pyproject.toml` file and
-returns a detailed report if there are any errors.
+`check` コマンドは、 `pyproject.toml` ファイルの構造を検証し、エラーがあった場合は、詳細なレポートを返します。
 
 ```bash
 poetry check
@@ -366,7 +363,7 @@ poetry check
 
 ## search
 
-This command searches for packages on a remote index.
+このコマンドは、リモートの目録にあるパッケージを検索します。
 
 ```bash
 poetry search requests pendulum
@@ -375,12 +372,11 @@ poetry search requests pendulum
 
 ### Options
 
-* `--only-name (-N)`: Search only in name.
+* `--only-name (-N)`: 名前でのみ検索します。
 
 ## lock
 
-This command locks (without installing) the dependencies specified in
-`pyproject.toml`.
+このコマンドは、(インストールはせずに) `pyproject.toml` に指定されている依存関係をロックします。
 
 ```bash
 poetry lock
@@ -389,9 +385,7 @@ poetry lock
 
 ## version
 
-This command bumps the version of the project and writes the new version
-back to `pyproject.toml`
+このコマンドは、プロジェクトのバージョンを更新し、新しいバージョンを `pyproject.toml` に書き戻します
 
-The new version should ideally be a valid semver string or a valid bump
-rule: `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`,
-`prerelease`.
+新しいバージョンは理想的には、有効なセマンティックバージョン文字列か、有効な更新規則であるべきです。有効な更新規則: `patch`, `minor`,
+`major`, `prepatch`, `preminor`, `premajor`, `prerelease` 。
