@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-04 03:38+0000\n"
+"PO-Revision-Date: 2019-05-16 03:10+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -25,18 +25,19 @@ msgid ""
 "Poetry recommends following [semantic versioning](https://semver.org) but "
 "will not enforce it."
 msgstr ""
+"Poetryは [semantic versioning](https://semver.org) に従うのを推奨していますが、強制はしません。"
 
 #. type: Title ##
 #: docs/versions.md:5
 #, no-wrap
 msgid "Version constraints"
-msgstr ""
+msgstr "バージョン制約"
 
 #. type: Title ###
 #: docs/versions.md:7
 #, no-wrap
 msgid "Caret requirements"
-msgstr ""
+msgstr "キャレット要件"
 
 #. type: Plain text
 #: docs/versions.md:15
@@ -53,13 +54,19 @@ msgid ""
 "update to `0.1.14` but not `0.2.0`.\n"
 "`0.0.x` is not considered compatible with any other version.\n"
 msgstr ""
+"**キャレット要件** を使うと、指定したバージョンへのsemantic versioningに適合した更新が行えます。\n"
+"メジャー、マイナー、パッチという番号群のうち0でない最も左の数字を、新しいバージョン番号が更新しない場合に、更新が許可されます。\n"
+"この場合に、 `poetry update requests` を実行したとすると、Poetryはもし利用可能ならバージョン `2.14.0` "
+"ヘ更新しますが、 `3.0.0` には更新しません。\n"
+"その変わりにバージョン文字列に `^0.1.13` を指定していた場合は、Poetryは `0.2.0` ではなく `0.1.14` へ更新します。\n"
+"`0.0.x` は他のどんなバージョンとも適合しないと見なされます。\n"
 
 #. type: Plain text
 #: docs/versions.md:17
 msgid ""
 "Here are some more examples of caret requirements and the versions that "
 "would be allowed with them:"
-msgstr ""
+msgstr "これらがキャレット要件とそれに許可されたバージョンの例です:"
 
 #. type: Plain text
 #: docs/versions.md:27
@@ -75,12 +82,21 @@ msgid ""
 "| ^0.0        | >=0.0.0 <0.1.0   |\n"
 "| ^0          | >=0.0.0 <1.0.0   |\n"
 msgstr ""
+"| 要件 | 許可されたバージョン |\n"
+"| ----------- | ---------------- |\n"
+"| ^1.2.3      | >=1.2.3 <2.0.0   |\n"
+"| ^1.2        | >=1.2.0 <2.0.0   |\n"
+"| ^1          | >=1.0.0 <2.0.0   |\n"
+"| ^0.2.3      | >=0.2.3 <0.3.0   |\n"
+"| ^0.0.3      | >=0.0.3 <0.0.4   |\n"
+"| ^0.0        | >=0.0.0 <0.1.0   |\n"
+"| ^0          | >=0.0.0 <1.0.0   |\n"
 
 #. type: Title ###
 #: docs/versions.md:28
 #, no-wrap
 msgid "Tilde requirements"
-msgstr ""
+msgstr "チルダ要件"
 
 #. type: Plain text
 #: docs/versions.md:33
@@ -93,11 +109,14 @@ msgid ""
 "If you only specify a major version, then minor- and patch-level changes are "
 "allowed.\n"
 msgstr ""
+"**チルダ要件** は更新できる最小バージョンを指定します。\n"
+"メジャー、マイナー、パッチバージョンを指定するか、メジャー、マイナーバージョンだけを指定した場合は、パッチレベルのみ変更が許可されます。\n"
+"メジャーバージョンだけを指定した場合は、マイナーレベルとパッチレベルの変更が許可されます。\n"
 
 #. type: Plain text
 #: docs/versions.md:35
 msgid "`~1.2.3` is an example of a tilde requirement."
-msgstr ""
+msgstr "`~1.2.3` はチルダ要件の例です。"
 
 #. type: Plain text
 #: docs/versions.md:41
@@ -109,12 +128,17 @@ msgid ""
 "| ~1.2        | >=1.2.0 <1.3.0   |\n"
 "| ~1          | >=1.0.0 <2.0.0   |\n"
 msgstr ""
+"| 要件 | 許可されたバージョン |\n"
+"| ----------- | ---------------- |\n"
+"| ~1.2.3      | >=1.2.3 <1.3.0   |\n"
+"| ~1.2        | >=1.2.0 <1.3.0   |\n"
+"| ~1          | >=1.0.0 <2.0.0   |\n"
 
 #. type: Title ###
 #: docs/versions.md:42
 #, no-wrap
 msgid "Wildcard requirements"
-msgstr ""
+msgstr "ワイルドカード要件"
 
 #. type: Plain text
 #: docs/versions.md:45
@@ -122,12 +146,12 @@ msgstr ""
 msgid ""
 "**Wildcard requirements** allow for any version where the wildcard is "
 "positioned.\n"
-msgstr ""
+msgstr "**ワイルドカード要件** を使うと、ワイルドカードの位置に任意のバージョンが許可されます。\n"
 
 #. type: Plain text
 #: docs/versions.md:47
 msgid "`*`, `1.*` and `1.2.*` are examples of wildcard requirements."
-msgstr ""
+msgstr "`*`, `1.*`, `1.2.*` はワイルドカード要件の例です。"
 
 #. type: Plain text
 #: docs/versions.md:53
@@ -139,12 +163,17 @@ msgid ""
 "| 1.*         | >=1.0.0 <2.0.0   |\n"
 "| 1.2.*       | >=1.2.0 <1.3.0   |\n"
 msgstr ""
+"| 要件 | 許可されたバージョン |\n"
+"| ----------- | ---------------- |\n"
+"| *           | >=0.0.0          |\n"
+"| 1.*         | >=1.0.0 <2.0.0   |\n"
+"| 1.2.*       | >=1.2.0 <1.3.0   |\n"
 
 #. type: Title ###
 #: docs/versions.md:54
 #, no-wrap
 msgid "Inequality requirements"
-msgstr ""
+msgstr "不等要件"
 
 #. type: Plain text
 #: docs/versions.md:57
@@ -152,18 +181,18 @@ msgstr ""
 msgid ""
 "**Inequality requirements** allow manually specifying a version range or an "
 "exact version to depend on.\n"
-msgstr ""
+msgstr "**不等要件** を使うと、バージョンの範囲や依存している厳密なバージョンを自分の手で指定できます。\n"
 
 #. type: Plain text
 #: docs/versions.md:59
 msgid "Here are some examples of inequality requirements:"
-msgstr ""
+msgstr "これらが不等要件の例です:"
 
 #. type: Code fence info string
 #: docs/versions.md:60
 #, no-wrap
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #. type: Plain text
 #: docs/versions.md:60
@@ -176,13 +205,16 @@ msgid ">= 1.2.0\n"
 "\n"
 "!= 1.2.3\n"
 "\n"
-msgstr ""
+msgstr ">= 1.2.0\n"
+"> 1\n"
+"< 2\n"
+"!= 1.2.3\n"
 
 #. type: Title ###
 #: docs/versions.md:67
 #, no-wrap
 msgid "Exact requirements"
-msgstr ""
+msgstr "厳密要件"
 
 #. type: Plain text
 #: docs/versions.md:72
@@ -192,12 +224,15 @@ msgid ""
 "different version, the solver will ultimately fail and abort any install or "
 "update procedures."
 msgstr ""
+"パッケージの厳密なバージョンを指定できます。\n"
+"この指定は、このバージョンかつこのバージョンのみをインストールするようPoetryに指示します。\n"
+"他の依存関係が別のバージョンを要求した場合は、ソルバーは最終的には失敗し、インストールや更新の手続きを中止します。"
 
 #. type: Title ####
 #: docs/versions.md:73
 #, no-wrap
 msgid "Multiple requirements"
-msgstr ""
+msgstr "複合要件"
 
 #. type: Plain text
 #: docs/versions.md:76
@@ -205,13 +240,13 @@ msgstr ""
 msgid ""
 "Multiple version requirements can also be separated with a comma, e.g. `>= 1."
 "2, < 1.5`.\n"
-msgstr ""
+msgstr "複数のバージョン要件は、コンマ区切りで並べられます。例えば、 `>= 1.2, < 1.5` などです。\n"
 
 #. type: Title ###
 #: docs/versions.md:77
 #, no-wrap
 msgid "`git` dependencies"
-msgstr ""
+msgstr "`git` 依存関係"
 
 #. type: Plain text
 #: docs/versions.md:81
@@ -219,13 +254,13 @@ msgid ""
 "To depend on a library located in a `git` repository, the minimum "
 "information you need to specify is the location of the repository with the "
 "git key:"
-msgstr ""
+msgstr "`git` レポジトリにあるライブラリに依存するための、指定する必要のある最小限の情報はgitをキーとするレポジトリの場所です:"
 
 #. type: Code fence info string
 #: docs/versions.md:82 docs/versions.md:92 docs/versions.md:102 docs/versions.md:122 docs/versions.md:127 docs/versions.md:142
 #, no-wrap
 msgid "toml"
-msgstr ""
+msgstr "toml"
 
 #. type: Plain text
 #: docs/versions.md:82
@@ -236,6 +271,8 @@ msgid ""
 "requests = { git = \"https://github.com/requests/requests.git\" }\n"
 "\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"requests = { git = \"https://github.com/requests/requests.git\" }\n"
 
 #. type: Plain text
 #: docs/versions.md:91
@@ -246,6 +283,9 @@ msgid ""
 "specify something else.  Here's an example of specifying that you want to "
 "use the latest commit on a branch named `next`:"
 msgstr ""
+"これ以外の情報を指定していないので、Poetryは `master` ブランチの最新のコミットを使いプロジェクトをするつもりなのだと仮定します。\n"
+"`git` キーと `rev` キー, `tag` キー, `branch` キーを組み合わせて、それ以外のものも指定できます。\n"
+"これが、 `next` という名前のブランチの最新のコミットを使いたいことを指定する例です:"
 
 #. type: Plain text
 #: docs/versions.md:92
@@ -257,19 +297,22 @@ msgid ""
 " \"next\" }\n"
 "\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"requests = { git = \"https://github.com/kennethreitz/requests.git\", branch ="
+" \"next\" }\n"
 
 #. type: Title ###
 #: docs/versions.md:97
 #, no-wrap
 msgid "`path` dependencies"
-msgstr ""
+msgstr "`path` 依存関係"
 
 #. type: Plain text
 #: docs/versions.md:101
 msgid ""
 "To depend on a library located in a local directory or file, you can use the "
 "`path` property:"
-msgstr ""
+msgstr "ローカルディレクトリやローカルファイルにあるライブラリに依存するために、 `path` 属性が使えます:"
 
 #. type: Plain text
 #: docs/versions.md:102
@@ -288,11 +331,17 @@ msgid ""
 "my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
 "\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"# directory\n"
+"my-package = { path = \"../my-package/\" }\n"
+"\n"
+"# file\n"
+"my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
 
 #. type: Plain text
 #: docs/versions.md:112 docs/versions.md:151
 msgid "!!!note"
-msgstr ""
+msgstr "!!!note"
 
 #. type: Plain text
 #: docs/versions.md:116
@@ -302,6 +351,8 @@ msgid ""
 "    Just pass `--develop my-package` (repeatable as much as you want) to\n"
 "    the `install` command.\n"
 msgstr ""
+"    編集可能モードおよび開発モードの `path` 依存関係をインストールできます。\n"
+"    `--develop my-package` を (好きな個数だけ) `install` コマンドに渡せばよいだけです。\n"
 
 #. type: Title ###
 #: docs/versions.md:118
