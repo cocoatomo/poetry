@@ -110,56 +110,45 @@ my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
 
 !!!note
 
-    編集可能モードおよび開発モードの `path` 依存関係をインストールできます。
+    編集可能モードあるいは開発モードの `path` 依存関係をインストールできます。
     `--develop my-package` を (好きな個数だけ) `install` コマンドに渡せばよいだけです。
 
 
-### Python restricted dependencies
+### Python制限依存関係
 
-You can also specify that a dependency should be installed only for specific
-Python versions:
+ある依存関係を特定のバージョンのPythonでだけインストールする、という指定もできます:
 
 ```toml
 [tool.poetry.dependencies]
-
 pathlib2 = { version = "^2.2", python = "~2.7" }
-
 ```
 
 
 ```toml
 [tool.poetry.dependencies]
-
 pathlib2 = { version = "^2.2", python = ["~2.7", "^3.2"] }
-
 ```
 
 
 
-### Multiple constraints dependencies
+### 複数制約依存関係
 
-Sometimes, one of your dependency may have different version ranges
-depending on the target Python versions.
+あるときは、対象のPythonバージョンに依存して、依存関係に異なるバージョン範囲が設定されることがあります。
 
-Let's say you have a dependency on the package `foo` which is only compatible
-with Python <3.0 up to version 1.9 and compatible with Python 3.4+ from version 2.0:
-you would declare it like so:
+バージョン1.9まではPython 3.0未満、2.0以降はPython 3.4以上というPythonとの互換性を持つパッケージ `foo` への依存関係があるとしましょう:
+このとき次のように宣言します:
 
 ```toml
 [tool.poetry.dependencies]
 
 foo = [
-
     {version = "<=1.9", python = "^2.7"},
-
     {version = "^2.0", python = "^3.4"}
-
 ]
-
 ```
 
 
 !!!note
 
-    The constraints **must** have different requirements (like `python`)
-    otherwise it will cause an error when resolving dependencies.
+    制約は (`python` のように) 異なる要件で **なければならず** 、
+    そうでない場合は、依存関係の解決でエラーが発生します。
