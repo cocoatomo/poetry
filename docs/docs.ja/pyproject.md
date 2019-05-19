@@ -108,7 +108,7 @@ classifiers = [
 [tool.poetry]
 # ...
 packages = [
-    { include = "mypackage" },
+    { include = "my_package" },
     { include = "extra_package/**/*.py" },
 ]
 ```
@@ -119,7 +119,7 @@ packages = [
 [tool.poetry]
 # ...
 packages = [
-    { include = "mypackage", from = "lib" },
+    { include = "my_package", from = "lib" },
 ]
 ```
 
@@ -133,7 +133,7 @@ packages = [
 
     ```toml
     packages = [
-        { include = "mypackage" },
+        { include = "my_package" },
         { include = "extra_package" },
     ]
     ```

@@ -48,37 +48,23 @@ exist:
 
 ```toml
 [build-system]
-
 requires = ["poetry>=0.12"]
-
 build-backend = "poetry.masonry.api"
-
 ```
-
 
 And use a `tox.ini` configuration file similar to this:
 
 ```INI
 [tox]
-
 isolated_build = true
-
 envlist = py27, py36
 
-
-
 [testenv]
-
 whitelist_externals = poetry
-
 commands =
-
     poetry install -v
-
     poetry run pytest tests/
-
 ```
-
 
 ## I don't want Poetry to manage my virtualenvs. Can I disable it?
 
@@ -91,6 +77,4 @@ In this case, you can disable this feature by setting the
 
 ```bash
 poetry config settings.virtualenvs.create false
-
 ```
-

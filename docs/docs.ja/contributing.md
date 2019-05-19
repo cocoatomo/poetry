@@ -139,22 +139,16 @@ in its directory:
 
 ```bash
 $ git clone git@github.com:sdispater/poetry.git
-
 $ cd poetry
-
 ```
-
 
 Now, you will need to install the required dependency for Poetry and be sure
 that the current tests are passing on your machine:
 
 ```bash
 $ poetry install
-
 $ poetry run pytest tests/
-
 ```
-
 
 Poetry uses the [black](https://github.com/ambv/black) coding style and you
 must ensure that your code follows it. If not, the CI will fail and your
@@ -166,9 +160,7 @@ everything is in order:
 
 ```bash
 $ poetry run pre-commit install
-
 ```
-
 
 Your code must always be accompanied by corresponding tests, if tests are
 not present your code will not be merged.

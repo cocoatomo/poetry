@@ -20,7 +20,6 @@ Poetryは独自のインストーラーを提供していて、依存パッケ�
 curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 ```
 
-
 !!! 注意
 
     Poetryは一度だけインストールすれば良いです。Poetryは現在使われているPythonバージョンを自動的に読み取り、
@@ -37,7 +36,6 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 poetry --version
 ```
 
-
 `Poetry 0.12.0` のような出力が見えたら、Poetryを使う準備が整いました。
 もしPoetryが自分には向かないと判断したら、 `--uninstall` オプションを付けるか、インストーラーを実行する前に
 `POETRY_UNINSTALL` 環境変数を設定するかして、先程のインストーラーを再度実行すると、システムからPoetryを完全に消去できます。
@@ -47,7 +45,6 @@ python get-poetry.py --uninstall
 POETRY_UNINSTALL=1 python get-poetry.py
 ```
 
-
 プレリリースバージョンをインストールしたい場合は、 `get-poetry.py` に `--preview` を渡すか
 `POETRY_PREVIEW` 環境変数を使えばできます:
 
@@ -56,14 +53,12 @@ python get-poetry.py --preview
 POETRY_PREVIEW=1 python get-poetry.py
 ```
 
-
 同様に、特定のバージョンをインストールしたい場合は、 `--version` や `POETRY_VERSION` 環境変数が使えます:
 
 ```bash
 python get-poetry.py --version 0.12.0
 POETRY_VERSION=0.12.0 python get-poetry.py
 ```
-
 
 !!!注意
 
@@ -86,7 +81,6 @@ POETRY_VERSION=0.12.0 python get-poetry.py
 pip install --user poetry
 ```
 
-
 !!!警告
 
     他のパッケージと衝突を起こす可能性のあるPoetryの依存パッケージを
@@ -105,16 +99,13 @@ pipxはPython 3.6以降のバージョンをサポートしています。
 pipx install poetry
 ```
 
-
 ```bash
 pipx upgrade poetry
 ```
 
-
 ```bash
 pipx uninstall poetry
 ```
-
 
 [Github repository](https://github.com/cs01/pipx)。
 
@@ -127,20 +118,17 @@ Poetryを最新バージョンまで更新するのは簡単で `self:update` �
 poetry self:update
 ```
 
-
 プレリリースバージョンをインストールしたい場合は、 `--preview` オプションが使えます。
 
 ```bash
 poetry self:update --preview
 ```
 
-
 最後に、特定のバージョンをインストールしたい場合は、引数としてバージョンを `self:update` に渡せます。
 
 ```bash
 poetry self:update 0.8.0
 ```
-
 
 !!!注意
 
@@ -173,7 +161,6 @@ poetry completions zsh > $ZSH/plugins/poetry/_poetry
 
 ```
 
-
 !!! 注意
 
     変更が効くようにするのにシェルを再起動する必要があるかもしれません。
@@ -184,7 +171,6 @@ poetry completions zsh > $ZSH/plugins/poetry/_poetry
 fpath+=~/.zfunc
 ```
 
-
 `oh-my-zsh` では、 `~/.zshrc` プラグインでpoetryを有効化しなければなりません:
 
 ```
@@ -193,4 +179,3 @@ plugins(
 	...
 	)
 ```
-

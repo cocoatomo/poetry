@@ -32,7 +32,6 @@ versioning](https://semver.org) に従うことを **強く** 推奨します。
 poetry build
 ```
 
-
 このコマンドはライブラリを2つの異なる形式にパッケージ化します: ソース形式である `sdist` と"コンパイル済み"パッケージである `wheel`
 です。
 
@@ -53,7 +52,6 @@ PyPIに公開されたものはなんであれ、必然的にPoetryで取得で�
 ```bash
 poetry publish
 ```
-
 
 ユーザー登録を済ませ、適切に [証明書が設定されている](/docs/repositories/#adding-credentials)
 という条件が揃っているとき、このコマンドはライブラリをパッケージ化して、PyPIへ公開します。
@@ -82,4 +80,3 @@ poetry publish
 ```bash
 poetry publish -r my-repository
 ```
-

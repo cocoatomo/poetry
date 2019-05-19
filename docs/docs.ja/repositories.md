@@ -22,7 +22,6 @@
 poetry config repositories.foo https://foo.bar/simple/
 ```
 
-
 このコマンドは、レポジトリ `foo` のURLを `https://foo.bar/simple/` に設定します。
 
 ### 認証情報の設定
@@ -32,7 +31,6 @@ poetry config repositories.foo https://foo.bar/simple/
 ```bash
 poetry config http-basic.foo username password
 ```
-
 
 パスワードを指定しなかった場合は、パスワードを書くように促されます。
 
@@ -59,7 +57,6 @@ poetry config http-basic.foo username password
 name = "foo"
 url = "https://foo.bar/simple/"
 ```
-
 
 今後は、Poetryはプライベートレポジトリのパッケージも検索します。
 

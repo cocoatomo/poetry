@@ -13,7 +13,6 @@
 poetry up
 ```
 
-
 これは `poetry update` コマンドを呼び出します。
 
 
@@ -36,7 +35,6 @@ poetry up
 poetry new my-package
 ```
 
-
 というコマンドは次のフォルダを作成します:
 
 ```text
@@ -50,20 +48,17 @@ my-package
     └── test_my_package
 ```
 
-
 フォルダとは別のプロジェクト名を付けたい場合は、 `--name` オプションで渡せます:
 
 ```bash
 poetry new my-folder --name my-package
 ```
 
-
 srcフォルダを使いたい場合は、 `--src` オプションが使えます:
 
 ```bash
 poetry new --src my-package
 ```
-
 
 このコマンドは次のようなフォルダ構成を作成します:
 
@@ -79,7 +74,6 @@ my-package
     └── test_my_package
 ```
 
-
 ## init
 
 このコマンドは、パッケージについての基本的な情報を提供するよう促して、 `pyproject.toml` ファイルを対話的に作成する助けになります。
@@ -89,7 +83,6 @@ my-package
 ```bash
 poetry init
 ```
-
 
 ### Options
 
@@ -108,7 +101,6 @@ poetry init
 poetry install
 ```
 
-
 `poetry.lock` ファイルが今のディレクトリにある場合は、依存関係を解決する代わりに、ロックファイルにある厳密なバージョンを使います。
 これにより、そのライブラリを使う全員が同じバージョンの依存関係を手に入れることを保証します。
 
@@ -120,7 +112,6 @@ poetry install
 poetry install --no-dev
 ```
 
-
 `--E|--extras` オプションを渡すことで、インストールして欲しい追加の依存関係の指定もできます (より詳しいことは
 [Extras](#extras) を参照してください)
 
@@ -128,7 +119,6 @@ poetry install --no-dev
 poetry install --extras "mysql pgsql"
 poetry install -E mysql -E pgsql
 ```
-
 
 ### Options
 
@@ -143,7 +133,6 @@ poetry install -E mysql -E pgsql
 poetry update
 ```
 
-
 このコマンドは、プロジェクトの全ての依存関係を解決し、その厳密なバージョンを `poetry.lock` に書き込みます。
 
 全てではない一部のパッケージだけを更新したい場合は、このように並べて指定できます:
@@ -151,7 +140,6 @@ poetry update
 ```bash
 poetry update requests toml
 ```
-
 
 ### Options
 
@@ -169,13 +157,11 @@ poetry update requests toml
 poetry add requests pendulum
 ```
 
-
 `git` 依存関係の追加もできます:
 
 ```bash
 poetry add pendulum --git https://github.com/sdispater/pendulum.git
 ```
-
 
 のようにするか、ローカルのディレクトリやファイルを指し示すようにします:
 
@@ -184,7 +170,6 @@ poetry add my-package --path ../my-package/
 poetry add my-package --path ../my-package/dist/my-package-0.1.0.tar.gz
 poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl
 ```
-
 
 ローカルのディレクトリを指すパス依存関係は、編集可能モード (つまり、setuptoolsの"develop mode") でインストールされます。
 これは、ローカルのディレクトリの変更が、動作環境に直接影響するということです。
@@ -195,7 +180,6 @@ poetry add my-package --path ../my-package/dist/my_package-0.1.0.whl
 [tool.poetry.dependencies]
 my-package = {path = "../my/path", develop = false}
 ```
-
 
 ### Options
 
@@ -215,7 +199,6 @@ my-package = {path = "../my/path", develop = false}
 poetry remove pendulum
 ```
 
-
 ### Options
 
 * `--dev (-D)`: 開発用の依存関係からパッケージを削除します。
@@ -229,7 +212,6 @@ poetry remove pendulum
 ```bash
 poetry show
 ```
-
 
 ある特定のパッケージの詳細を見たい場合は、パッケージ名を渡せます。
 
@@ -245,7 +227,6 @@ dependencies:
  - tzlocal >=1.4
  - pytzdata >=2017.2.2
 ```
-
 
 ### Options
 
@@ -263,7 +244,6 @@ dependencies:
 poetry build
 ```
 
-
 現時点では、ピュアPythonのwheelのみサポートされていることに注意してください。
 
 ### Options
@@ -279,7 +259,6 @@ poetry build
 ```bash
 poetry publish
 ```
-
 
 `--build` オプションを渡すと、パッケージのビルドもしてくれます。
 
@@ -298,13 +277,11 @@ poetry publish
 poetry config --list
 ```
 
-
 ### 使い方
 
 ````bash
 poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
 ````
-
 
 `setting-key` は設定のオプション名で `setting-value1` は設定値です。
 利用可能な全ての設定は [設定](/docs/configuration/) を参照してください。
@@ -322,7 +299,6 @@ poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
 poetry run python -V
 ```
 
-
 このコマンドは `pyproject.toml` に定義されたスクリプトうち1つを実行することもできます。
 
 それなので、次のように定義されたスクリプトがある場合:
@@ -332,13 +308,11 @@ poetry run python -V
 my-script = "my_module:main"
 ```
 
-
 このようにして実行できます:
 
 ```bash
 poetry run my-script
 ```
-
 
 このコマンドにはオプションが無いことに注意してください。
 
@@ -351,7 +325,6 @@ poetry run my-script
 poetry shell
 ```
 
-
 ## check
 
 `check` コマンドは、 `pyproject.toml` ファイルの構造を検証し、エラーがあった場合は、詳細なレポートを返します。
@@ -360,7 +333,6 @@ poetry shell
 poetry check
 ```
 
-
 ## search
 
 このコマンドは、リモートの目録にあるパッケージを検索します。
@@ -368,7 +340,6 @@ poetry check
 ```bash
 poetry search requests pendulum
 ```
-
 
 ### Options
 
@@ -381,7 +352,6 @@ poetry search requests pendulum
 ```bash
 poetry lock
 ```
-
 
 ## version
 

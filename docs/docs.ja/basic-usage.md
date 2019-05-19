@@ -11,7 +11,6 @@ Poetryをまだインストールしていない場合は、 [Introduction](/doc
 poetry new poetry-demo
 ```
 
-
 このコマンドは、次の内容を持つ `poetry-demo` ディレクトリを作成します:
 
 ```text
@@ -24,7 +23,6 @@ poetry-demo
     ├── __init__.py
     └── test_poetry_demo.py
 ```
-
 
 `pyproject.toml` ファイルがここでは最も重要なものです。
 このファイルが、プロジェクトの依存関係を統括します。
@@ -44,7 +42,6 @@ python = "*"
 pytest = "^3.4"
 ```
 
-
 ### 依存関係の指定
 
 プロジェクトに依存関係を追加したい場合は、 `tool.poetry.dependencies` セクションに指定できます。
@@ -53,7 +50,6 @@ pytest = "^3.4"
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
-
 
 見て分かるように、このセクションには **パッケージ名** と **バージョン制約** の対応付けを書きます。
 
@@ -65,7 +61,6 @@ Poetryはこの情報を使い、 `tool.poetry.repositories` セクションに�
 ```bash
 $ poetry add pendulum
 ```
-
 
 このコマンドは自動的に適切なバージョン制約を見付け、パッケージとその依存関係を **インストールします** 。
 
@@ -99,7 +94,6 @@ $ poetry add pendulum
 ```bash
 poetry install
 ```
-
 
 このコマンドを実行すると、2つのうちどちらかが起こります:
 

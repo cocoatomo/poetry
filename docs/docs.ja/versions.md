@@ -63,7 +63,6 @@ Poetryは [semantic versioning](https://semver.org) に従うのを推奨して�
 != 1.2.3
 ```
 
-
 ### 厳密要件
 
 パッケージの厳密なバージョンを指定できます。
@@ -83,7 +82,6 @@ Poetryは [semantic versioning](https://semver.org) に従うのを推奨して�
 requests = { git = "https://github.com/requests/requests.git" }
 ```
 
-
 これ以外の情報を指定していないので、Poetryは `master` ブランチの最新のコミットを使いプロジェクトをするつもりなのだと仮定します。
 `git` キーと `rev` キー, `tag` キー, `branch` キーを組み合わせて、それ以外のものも指定できます。
 これが、 `next` という名前のブランチの最新のコミットを使いたいことを指定する例です:
@@ -92,7 +90,6 @@ requests = { git = "https://github.com/requests/requests.git" }
 [tool.poetry.dependencies]
 requests = { git = "https://github.com/kennethreitz/requests.git", branch = "next" }
 ```
-
 
 ### `path` 依存関係
 
@@ -106,7 +103,6 @@ my-package = { path = "../my-package/" }
 # file
 my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
 ```
-
 
 !!!note
 
@@ -123,12 +119,10 @@ my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
 pathlib2 = { version = "^2.2", python = "~2.7" }
 ```
 
-
 ```toml
 [tool.poetry.dependencies]
 pathlib2 = { version = "^2.2", python = ["~2.7", "^3.2"] }
 ```
-
 
 
 ### 複数制約依存関係
@@ -140,13 +134,11 @@ pathlib2 = { version = "^2.2", python = ["~2.7", "^3.2"] }
 
 ```toml
 [tool.poetry.dependencies]
-
 foo = [
     {version = "<=1.9", python = "^2.7"},
     {version = "^2.0", python = "^3.4"}
 ]
 ```
-
 
 !!!note
 
