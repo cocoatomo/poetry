@@ -65,6 +65,10 @@ class WheelBuilder(Builder):
 
         (fd, temp_path) = tempfile.mkstemp(suffix=".whl")
 
+        st_mode = os.stat(temp_path).st_mode
+        new_mode = normalize_file_permissions(st_mode)
+        os.chmod(temp_path, new_mode)
+
         with zipfile.ZipFile(
             os.fdopen(fd, "w+b"), mode="w", compression=zipfile.ZIP_DEFLATED
         ) as zip_file:
@@ -277,6 +281,7 @@ class WheelBuilder(Builder):
         # give you the exact same result.
         date_time = (2016, 1, 1, 0, 0, 0)
         zi = zipfile.ZipInfo(rel_path, date_time)
+        zi.external_attr = (0o644 & 0xFFFF) << 16  # Unix attributes
         b = sio.getvalue().encode("utf-8")
         hashsum = hashlib.sha256(b)
         hash_digest = urlsafe_b64encode(hashsum.digest()).decode("ascii").rstrip("=")
