@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-04 03:37+0000\n"
+"PO-Revision-Date: 2019-05-19 02:19+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -24,29 +24,30 @@ msgstr "`pyproject.toml` ファイル"
 msgid ""
 "The `tool.poetry` section of the `pyproject.toml` file is composed of "
 "multiple sections."
-msgstr ""
+msgstr "`pyproject.toml` ファイルの `tool.poetry` 節は複数の節で構成されています。"
 
 #. type: Title ##
 #: docs/pyproject.md:5
 #, no-wrap
 msgid "name"
-msgstr ""
+msgstr "name"
 
 #. type: Plain text
 #: docs/pyproject.md:8
 msgid "The name of the package. **Required**"
-msgstr ""
+msgstr "パッケージ名。\n"
+"**必須**"
 
 #. type: Title ##
 #: docs/pyproject.md:9
 #, no-wrap
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #. type: Plain text
 #: docs/pyproject.md:12
 msgid "The version of the package. **Required**"
-msgstr ""
+msgstr "パッケージのバージョン。 **必須**"
 
 #. type: Plain text
 #: docs/pyproject.md:15
@@ -54,99 +55,101 @@ msgid ""
 "This should follow [semantic versioning](http://semver.org/). However it "
 "will not be enforced and you remain free to follow another specification."
 msgstr ""
+"これは [semantic versioning](http://semver.org/) に従うべきです。\n"
+"ただし、強制はしませんし、他の仕様に従う自由も残されています。"
 
 #. type: Title ##
 #: docs/pyproject.md:16
 #, no-wrap
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #. type: Plain text
 #: docs/pyproject.md:19
 msgid "A short description of the package. **Required**"
-msgstr ""
+msgstr "パッケージの短い説明。 **必須**"
 
 #. type: Title ##
 #: docs/pyproject.md:20
 #, no-wrap
 msgid "license"
-msgstr ""
+msgstr "license"
 
 #. type: Plain text
 #: docs/pyproject.md:23
 msgid "The license of the package."
-msgstr ""
+msgstr "パッケージのライセンス。"
 
 #. type: Plain text
 #: docs/pyproject.md:25
 msgid ""
 "The recommended notation for the most common licenses is (alphabetical):"
-msgstr ""
+msgstr "最もよく使われるライセンスの推奨される記法は (アルファベット順で) 次の通りです:"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "Apache-2.0"
-msgstr ""
+msgstr "Apache-2.0"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "BSD-2-Clause"
-msgstr ""
+msgstr "BSD-2-Clause"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "BSD-3-Clause"
-msgstr ""
+msgstr "BSD-3-Clause"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "BSD-4-Clause"
-msgstr ""
+msgstr "BSD-4-Clause"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "GPL-2.0"
-msgstr ""
+msgstr "GPL-2.0"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "GPL-2.0+"
-msgstr ""
+msgstr "GPL-2.0+"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "GPL-3.0"
-msgstr ""
+msgstr "GPL-3.0"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "GPL-3.0+"
-msgstr ""
+msgstr "GPL-3.0+"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "LGPL-2.1"
-msgstr ""
+msgstr "LGPL-2.1"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "LGPL-2.1+"
-msgstr ""
+msgstr "LGPL-2.1+"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "LGPL-3.0"
-msgstr ""
+msgstr "LGPL-3.0"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "LGPL-3.0+"
-msgstr ""
+msgstr "LGPL-3.0+"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
 msgid "MIT"
-msgstr ""
+msgstr "MIT"
 
 #. type: Plain text
 #: docs/pyproject.md:42
@@ -155,17 +158,21 @@ msgid ""
 "listed at the [SPDX Open Source License Registry](https://www.spdx.org/"
 "licenses/)."
 msgstr ""
+"任意ですが、この節を載せておくことを強く推奨します。\n"
+"この他の識別子は [SPDX Open Source License Registry](https://www.spdx.org/licenses/) "
+"に一覧があります。"
 
 #. type: Title ##
 #: docs/pyproject.md:43
 #, no-wrap
 msgid "authors"
-msgstr ""
+msgstr "authors"
 
 #. type: Plain text
 #: docs/pyproject.md:46
 msgid "The authors of the package. **Required**"
-msgstr ""
+msgstr "パッケージの作者。\n"
+"**必須**"
 
 #. type: Plain text
 #: docs/pyproject.md:48
@@ -173,74 +180,80 @@ msgstr ""
 msgid ""
 "This is a list of authors and should contain at least one author. Authors "
 "must be in the form `name <email>`.\n"
-msgstr ""
+msgstr "これは作者のリストで、少なくとも1人は載せるべきです。\n"
+"作者は `name <email>` という形式で載せなければなりません。\n"
 
 #. type: Title ##
 #: docs/pyproject.md:49
 #, no-wrap
 msgid "readme"
-msgstr ""
+msgstr "readme"
 
 #. type: Plain text
 #: docs/pyproject.md:52
 msgid "The readme file of the package. **Optional**"
-msgstr ""
+msgstr "パッケージのreadmeファイル。\n"
+"**任意**"
 
 #. type: Plain text
 #: docs/pyproject.md:54
 msgid "The file can be either `README.rst` or `README.md`."
-msgstr ""
+msgstr "ファイルは `README.rst` もしくは `README.md` のどちらでも構いません。"
 
 #. type: Title ##
 #: docs/pyproject.md:55
 #, no-wrap
 msgid "homepage"
-msgstr ""
+msgstr "homepage"
 
 #. type: Plain text
 #: docs/pyproject.md:58
 msgid "An URL to the website of the project. **Optional**"
-msgstr ""
+msgstr "プロジェクトのウェブサイトへのURL。\n"
+"**任意**"
 
 #. type: Title ##
 #: docs/pyproject.md:59
 #, no-wrap
 msgid "repository"
-msgstr ""
+msgstr "repository"
 
 #. type: Plain text
 #: docs/pyproject.md:62
 msgid "An URL to the repository of the project. **Optional**"
-msgstr ""
+msgstr "プロジェクトのウェブサイトへのURL。\n"
+"**任意**"
 
 #. type: Title ##
 #: docs/pyproject.md:63
 #, no-wrap
 msgid "documentation"
-msgstr ""
+msgstr "ドキュメント"
 
 #. type: Plain text
 #: docs/pyproject.md:66
 msgid "An URL to the documentation of the project. **Optional**"
-msgstr ""
+msgstr "プロジェクトのドキュメントへのURL。\n"
+"**任意**"
 
 #. type: Title ##
 #: docs/pyproject.md:67
 #, no-wrap
 msgid "keywords"
-msgstr ""
+msgstr "keywords"
 
 #. type: Plain text
 #: docs/pyproject.md:70
 msgid ""
 "A list of keywords (max: 5) that the package is related to. **Optional**"
-msgstr ""
+msgstr "パッケージに関連する (最大5つの) キーワードの一覧。\n"
+"**任意**"
 
 #. type: Title ##
 #: docs/pyproject.md:71
 #, no-wrap
 msgid "classifiers"
-msgstr ""
+msgstr "classifiers"
 
 #. type: Plain text
 #: docs/pyproject.md:74
@@ -248,12 +261,14 @@ msgid ""
 "A list of PyPI [trove classifiers](https://pypi.org/classifiers/) that "
 "describe the project. **Optional**"
 msgstr ""
+"プロジェクトの説明となるPyPIの [trove classifiers](https://pypi.org/classifiers/) の一覧。\n"
+"**任意**"
 
 #. type: Code fence info string
 #: docs/pyproject.md:75 docs/pyproject.md:97 docs/pyproject.md:108 docs/pyproject.md:146 docs/pyproject.md:152 docs/pyproject.md:161 docs/pyproject.md:168 docs/pyproject.md:188 docs/pyproject.md:202 docs/pyproject.md:233 docs/pyproject.md:249
 #, no-wrap
 msgid "toml"
-msgstr ""
+msgstr "toml"
 
 #. type: Plain text
 #: docs/pyproject.md:75
@@ -272,11 +287,17 @@ msgid ""
 "]\n"
 "\n"
 msgstr ""
+"[tool.poetry]\n"
+"# ...\n"
+"classifiers = [\n"
+"    \"Topic :: Software Development :: Build Tools\",\n"
+"    \"Topic :: Software Development :: Libraries :: Python Modules\"\n"
+"]\n"
 
 #. type: Plain text
 #: docs/pyproject.md:85 docs/pyproject.md:117 docs/pyproject.md:132 docs/pyproject.md:175 docs/pyproject.md:256
 msgid "!!!note"
-msgstr ""
+msgstr "!!!note"
 
 #. type: Plain text
 #: docs/pyproject.md:87
@@ -284,7 +305,8 @@ msgstr ""
 msgid ""
 "    Note that Python classifiers are still automatically added for you and "
 "are determined by your `python` requirement.\n"
-msgstr ""
+msgstr "    何にせよ、Python classifierは自動的に追加され、\n"
+"    それは `python` 要件で決まります。\n"
 
 #. type: Plain text
 #: docs/pyproject.md:89
@@ -292,18 +314,18 @@ msgstr ""
 msgid ""
 "    The `license` property will also set the License classifier "
 "automatically.\n"
-msgstr ""
+msgstr "    `license` 属性から自動的にLicense classifierが設定されます。\n"
 
 #. type: Title ##
 #: docs/pyproject.md:90
 #, no-wrap
 msgid "packages"
-msgstr ""
+msgstr "packages"
 
 #. type: Plain text
 #: docs/pyproject.md:93
 msgid "A list of packages and modules to include in the final distribution."
-msgstr ""
+msgstr "最終配布物に含まれるパッケージやモジュールの一覧。"
 
 #. type: Plain text
 #: docs/pyproject.md:96
@@ -311,7 +333,7 @@ msgid ""
 "If your project structure differs from the standard one supported by "
 "`poetry`, you can specify the packages you want to include in the final "
 "distribution."
-msgstr ""
+msgstr "プロジェクトの構成が `poetry` が標準でサポートしているものと異なる場合は、最終配布物に含めたいパッケージを指定できます。"
 
 #. type: Plain text
 #: docs/pyproject.md:97
@@ -330,13 +352,19 @@ msgid ""
 "]\n"
 "\n"
 msgstr ""
+"[tool.poetry]\n"
+"# ...\n"
+"packages = [\n"
+"    { include = \"mypackage\" },\n"
+"    { include = \"extra_package/**/*.py\" },\n"
+"]\n"
 
 #. type: Plain text
 #: docs/pyproject.md:107
 msgid ""
 "If your package is stored inside a \"source\" directory, you must specify it:"
 ""
-msgstr ""
+msgstr "パッケージが\"source\"ディレクトリ内にある場合は、それを指定しなければなりません:"
 
 #. type: Plain text
 #: docs/pyproject.md:108
@@ -353,6 +381,11 @@ msgid ""
 "]\n"
 "\n"
 msgstr ""
+"[tool.poetry]\n"
+"# ...\n"
+"packages = [\n"
+"    { include = \"mypackage\", from = \"lib\" },\n"
+"]\n"
 
 #. type: Plain text
 #: docs/pyproject.md:120
@@ -362,6 +395,8 @@ msgid ""
 "have to\n"
 "    **explicitly** specify the \"default\" package.\n"
 msgstr ""
+"    `packages` を使うとパッケージの自動検出機能が無効になり、\n"
+"    「デフォルトの」パッケージを **明示的に** 指定しないといけないことになります。\n"
 
 #. type: Plain text
 #: docs/pyproject.md:123
@@ -372,6 +407,9 @@ msgid ""
 "    another package named `extra_package`, you will need to specify "
 "`my_package` explicitly:\n"
 msgstr ""
+"    例えば、 `my_package` という名前のパッケージがあり、 `extra_package` "
+"という名前の別のパッケージも一緒に含めたい場合、\n"
+"    明示的に `my_package` も指定する必要があります:\n"
 
 #. type: Plain text
 #: docs/pyproject.md:130
@@ -384,12 +422,18 @@ msgid ""
 "    ]\n"
 "    ```\n"
 msgstr ""
+"    ```toml\n"
+"    packages = [\n"
+"        { include = \"mypackage\" },\n"
+"        { include = \"extra_package\" },\n"
+"    ]\n"
+"    ```\n"
 
 #. type: Plain text
 #: docs/pyproject.md:134
 #, no-wrap
 msgid "    Poetry is clever enough to detect Python subpackages.\n"
-msgstr ""
+msgstr "    Poetryは賢いのでPythonのサブパッケージを検出できます。\n"
 
 #. type: Plain text
 #: docs/pyproject.md:136
@@ -397,18 +441,18 @@ msgstr ""
 msgid ""
 "    Thus, you only have to specify the directory where your root package "
 "resides.\n"
-msgstr ""
+msgstr "    それなので、ルートパッケージがあるディレクトリを指定するだけで済みます。\n"
 
 #. type: Title ##
 #: docs/pyproject.md:137
 #, no-wrap
 msgid "include and exclude"
-msgstr ""
+msgstr "includeとexclude"
 
 #. type: Plain text
 #: docs/pyproject.md:140
 msgid "A list of patterns that will be included in the final package."
-msgstr ""
+msgstr "最終的なパッケージに含まれるパターンの一覧。"
 
 #. type: Plain text
 #: docs/pyproject.md:143
@@ -418,6 +462,8 @@ msgid ""
 "exclude field identify a set of files that are not included when a package "
 "is built."
 msgstr ""
+"パッケージ化のために無視するべき、あるいは含めるべきglobの集合をPoetryに明示的に指定できます。\n"
+"excludeフィールドに指定されたglobは、パッケージのビルド時に含めないファイルの集合を特定します。"
 
 #. type: Plain text
 #: docs/pyproject.md:145
@@ -425,6 +471,7 @@ msgid ""
 "If a VCS is being used for a package, the exclude field will be seeded with "
 "the VCS’ ignore settings (`.gitignore` for git for example)."
 msgstr ""
+"パッケージの管理にVCSを使っている場合は、excludeフィールドはVCSの除外設定 (例えばgitの `.gitignore`) を元に作られます。"
 
 #. type: Plain text
 #: docs/pyproject.md:146
@@ -435,20 +482,22 @@ msgid "[tool.poetry]\n"
 "\n"
 "include = [\"CHANGELOG.md\"]\n"
 "\n"
-msgstr ""
+msgstr "[tool.poetry]\n"
+"# ...\n"
+"include = [\"CHANGELOG.md\"]\n"
 
 #. type: Plain text
 #: docs/pyproject.md:152
 #, no-wrap
 msgid "exclude = [\"my_package/excluded.py\"]\n"
 "\n"
-msgstr ""
+msgstr "exclude = [\"my_package/excluded.py\"]\n"
 
 #. type: Title ##
 #: docs/pyproject.md:156
 #, no-wrap
 msgid "`dependencies` and `dev-dependencies`"
-msgstr ""
+msgstr "`dependencies` と `dev-dependencies`"
 
 #. type: Plain text
 #: docs/pyproject.md:160
@@ -456,6 +505,8 @@ msgid ""
 "Poetry is configured to look for dependencies on [PyPi](https://pypi.org) by "
 "default.  Only the name and a version string are required in this case."
 msgstr ""
+"Poetryは、デフォルトでは [PyPi](https://pypi.org) の依存関係を探すよう設定されています。\n"
+"その場合では、パッケージ名とバージョン文字列だけが要求されます。"
 
 #. type: Plain text
 #: docs/pyproject.md:161
@@ -464,14 +515,15 @@ msgid "[tool.poetry.dependencies]\n"
 "\n"
 "requests = \"^2.13.0\"\n"
 "\n"
-msgstr ""
+msgstr "[tool.poetry.dependencies]\n"
+"requests = \"^2.13.0\"\n"
 
 #. type: Plain text
 #: docs/pyproject.md:167
 msgid ""
 "If you want to use a private repository, you can add it to your `pyproject."
 "toml` file, like so:"
-msgstr ""
+msgstr "プライベートレポジトリを使いたい場合は、次のように `pyproject.toml` ファイルに追加できます:"
 
 #. type: Plain text
 #: docs/pyproject.md:168
@@ -484,6 +536,9 @@ msgid ""
 "url = 'http://example.com/simple'\n"
 "\n"
 msgstr ""
+"[[tool.poetry.source]]\n"
+"name = 'private'\n"
+"url = 'http://example.com/simple'\n"
 
 #. type: Plain text
 #: docs/pyproject.md:178
@@ -491,7 +546,8 @@ msgstr ""
 msgid ""
 "    Be aware that declaring the python version for which your package\n"
 "    is compatible is mandatory:\n"
-msgstr ""
+msgstr "    パッケージと互換性のあるPythonバージョンの宣言は\n"
+"    義務であることに気を付けてください:\n"
 
 #. type: Plain text
 #: docs/pyproject.md:183
@@ -502,19 +558,23 @@ msgid ""
 "    python = \"^3.6\"\n"
 "    ```\n"
 msgstr ""
+"    ```toml\n"
+"    [tool.poetry.dependencies]\n"
+"    python = \"^3.6\"\n"
+"    ```\n"
 
 #. type: Title ##
 #: docs/pyproject.md:184
 #, no-wrap
 msgid "`scripts`"
-msgstr ""
+msgstr "`scripts`"
 
 #. type: Plain text
 #: docs/pyproject.md:187
 msgid ""
 "This section describe the scripts or executable that will be installed when "
 "installing the package"
-msgstr ""
+msgstr "この節は、パッケージをインストールするときにインストールされるスクリプトや実行可能ファイルを記述します"
 
 #. type: Plain text
 #: docs/pyproject.md:188
@@ -523,7 +583,8 @@ msgid "[tool.poetry.scripts]\n"
 "\n"
 "poetry = 'poetry:console.run'\n"
 "\n"
-msgstr ""
+msgstr "[tool.poetry.scripts]\n"
+"poetry = 'poetry:console.run'\n"
 
 #. type: Plain text
 #: docs/pyproject.md:194
@@ -531,28 +592,29 @@ msgid ""
 "Here, we will have the `poetry` script installed which will execute `console."
 "run` in the `poetry` package."
 msgstr ""
+"ほら、これで `poetry` バッケージにある `console.run` を実行する `poetry` スクリプトがインストールされました。"
 
 #. type: Title ##
 #: docs/pyproject.md:195
 #, no-wrap
 msgid "`extras`"
-msgstr ""
+msgstr "`extras`"
 
 #. type: Plain text
 #: docs/pyproject.md:198
 msgid "Poetry supports extras to allow expression of:"
-msgstr ""
+msgstr "Poetryは次の表現を可能にするために追加の依存関係をサポートしています:"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:201
 msgid ""
 "optional dependencies, which enhance a package, but are not required; and"
-msgstr ""
+msgstr "パッケージを拡張するものだが必須ではない、オプションの依存関係"
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:201
 msgid "clusters of optional dependencies."
-msgstr ""
+msgstr "オプションの依存関係のパッケージ群"
 
 #. type: Plain text
 #: docs/pyproject.md:202
@@ -591,19 +653,36 @@ msgid ""
 "pgsql = [\"psycopg2\"]\n"
 "\n"
 msgstr ""
+"[tool.poetry]\n"
+"name = \"awesome\"\n"
+"\n"
+"[tool.poetry.dependencies]\n"
+"# These packages are mandatory and form the core of this package’s "
+"distribution.\n"
+"mandatory = \"^1.0\"\n"
+"\n"
+"# A list of all of the optional dependencies, some of which are included in "
+"the\n"
+"# below `extras`. They can be opted into by apps.\n"
+"psycopg2 = { version = \"^2.7\", optional = true }\n"
+"mysqlclient = { version = \"^1.3\", optional = true }\n"
+"\n"
+"[tool.poetry.extras]\n"
+"mysql = [\"mysqlclient\"]\n"
+"pgsql = [\"psycopg2\"]\n"
 
 #. type: Plain text
 #: docs/pyproject.md:221
 msgid ""
 "When installing packages, you can specify extras by using the `-E|--extras` "
 "option:"
-msgstr ""
+msgstr "パッケージをインストールするときに、 `-E|--extras` オプションを使って追加分だと指定できます:"
 
 #. type: Code fence info string
 #: docs/pyproject.md:222
 #, no-wrap
 msgid "bash"
-msgstr ""
+msgstr "bash"
 
 #. type: Plain text
 #: docs/pyproject.md:222
@@ -614,12 +693,14 @@ msgid ""
 "poetry install -E mysql -E pgsql\n"
 "\n"
 msgstr ""
+"poetry install --extras \"mysql pgsql\"\n"
+"poetry install -E mysql -E pgsql\n"
 
 #. type: Title ##
 #: docs/pyproject.md:227
 #, no-wrap
 msgid "`plugins`"
-msgstr ""
+msgstr "`plugins`"
 
 #. type: Plain text
 #: docs/pyproject.md:232
@@ -643,6 +724,10 @@ msgid ""
 "\".rst\" = \"some_module:SomeClass\"\n"
 "\n"
 msgstr ""
+"[tool.poetry.plugins] # Optional super table\n"
+"\n"
+"[tool.poetry.plugins.\"blogtool.parsers\"]\n"
+"\".rst\" = \"some_module:SomeClass\"\n"
 
 #. type: Title ##
 #: docs/pyproject.md:240
@@ -676,6 +761,9 @@ msgid ""
 "build-backend = \"poetry.masonry.api\"\n"
 "\n"
 msgstr ""
+"[build-system]\n"
+"requires = [\"poetry>=0.12\"]\n"
+"build-backend = \"poetry.masonry.api\"\n"
 
 #. type: Plain text
 #: docs/pyproject.md:257
