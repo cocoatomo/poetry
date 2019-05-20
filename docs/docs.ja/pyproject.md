@@ -236,10 +236,10 @@ poetry install -E mysql -E pgsql
 
 ## `plugins`
 
-Poetry supports arbitrary plugins which work similarly to [setuptools entry
-points](http://setuptools.readthedocs.io/en/latest/setuptools.html).  To
-match the example in the setuptools documentation, you would use the
-following:
+Poetryは
+[setuptoolsのエントリーポイント](http://setuptools.readthedocs.io/en/latest/setuptools.html)
+と同じように動作する任意のプラグインをサポートしています。
+setuptoolsのドキュメントにある例に合わせると、次のように使います:
 
 ```toml
 [tool.poetry.plugins] # Optional super table
@@ -248,14 +248,13 @@ following:
 ".rst" = "some_module:SomeClass"
 ```
 
-## Poetry and PEP-517
+## PoetryとPEP-517
 
-[PEP-517](https://www.python.org/dev/peps/pep-0517/) introduces a standard
-way to define alternative build systems to build a Python project.
+[PEP-517](https://www.python.org/dev/peps/pep-0517/)
+は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法が導入します。
 
-Poetry is compliant with PEP-517 so if you use Poetry to manage your Python
-project you should reference it in the `build-system` section of the
-`pyproject.toml` file like so:
+PoetryはPEP-517に準拠しているので、Poetryを使ってPythonプロジェクトを管理していたなら、次のように
+`pyproject.toml` ファイルの `build-system` 節で目にするはずです:
 
 ```toml
 [build-system]
@@ -265,4 +264,4 @@ build-backend = "poetry.masonry.api"
 
 !!!note
 
-    When using the `new` or `init` command this section will be automatically added.
+    `new` コマンドや `init` コマンドを使うときには、この節は自動的に追加されます。

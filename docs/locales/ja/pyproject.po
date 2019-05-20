@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-19 02:19+0000\n"
+"PO-Revision-Date: 2019-05-20 04:05+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -710,6 +710,9 @@ msgid ""
 "match the example in the setuptools documentation, you would use the "
 "following:"
 msgstr ""
+"Poetryは [setuptoolsのエントリーポイント](http://setuptools.readthedocs.io/en/latest/"
+"setuptools.html) と同じように動作する任意のプラグインをサポートしています。\n"
+"setuptoolsのドキュメントにある例に合わせると、次のように使います:"
 
 #. type: Plain text
 #: docs/pyproject.md:233
@@ -733,7 +736,7 @@ msgstr ""
 #: docs/pyproject.md:240
 #, no-wrap
 msgid "Poetry and PEP-517"
-msgstr ""
+msgstr "PoetryとPEP-517"
 
 #. type: Plain text
 #: docs/pyproject.md:244
@@ -741,6 +744,8 @@ msgid ""
 "[PEP-517](https://www.python.org/dev/peps/pep-0517/) introduces a standard "
 "way to define alternative build systems to build a Python project."
 msgstr ""
+"[PEP-517](https://www.python.org/dev/peps/pep-0517/) "
+"は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法が導入します。"
 
 #. type: Plain text
 #: docs/pyproject.md:248
@@ -749,6 +754,8 @@ msgid ""
 "project you should reference it in the `build-system` section of the "
 "`pyproject.toml` file like so:"
 msgstr ""
+"PoetryはPEP-517に準拠しているので、Poetryを使ってPythonプロジェクトを管理していたなら、次のように `pyproject."
+"toml` ファイルの `build-system` 節で目にするはずです:"
 
 #. type: Plain text
 #: docs/pyproject.md:249
@@ -771,4 +778,4 @@ msgstr ""
 msgid ""
 "    When using the `new` or `init` command this section will be "
 "automatically added.\n"
-msgstr ""
+msgstr "    `new` コマンドや `init` コマンドを使うときには、この節は自動的に追加されます。\n"
