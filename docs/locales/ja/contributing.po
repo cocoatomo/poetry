@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-04 03:35+0000\n"
+"PO-Revision-Date: 2019-05-22 12:41+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -17,12 +17,12 @@ msgstr ""
 #: docs/contributing.md:1
 #, no-wrap
 msgid "Contributing to Poetry"
-msgstr "Poetryへのコントリビュート"
+msgstr "Poetryへの貢献"
 
 #. type: Plain text
 #: docs/contributing.md:4
 msgid "First off, thank for taking the time to contribute!"
-msgstr ""
+msgstr "まず最初に、貢献するための時間を取ってくれてありがとう!"
 
 #. type: Plain text
 #: docs/contributing.md:6
@@ -31,44 +31,47 @@ msgid ""
 "These are mostly guidelines, not rules. Use your best judgment, and feel "
 "free to propose changes to this document in a pull request."
 msgstr ""
+"以下に書かれているのは、GitHubにあるPoetryへ貢献するための指針です。\n"
+"これらは指針であり、規約ではありません。\n"
+"最良の判断を行い、このドキュメントの変更を遠慮無くプルリクエストで提案してください。"
 
 #. type: Title ####
 #: docs/contributing.md:7
 #, no-wrap
 msgid "Table of Contents"
-msgstr ""
+msgstr "目次"
 
 #. type: Plain text
 #: docs/contributing.md:10
 msgid "[How to contribute](#how-to-contribute)"
-msgstr ""
+msgstr "[貢献する方法](#how-to-contribute)"
 
 #. type: Bullet: '  * '
 #: docs/contributing.md:14
 msgid "[Reporting bugs](#reporting-bugs)"
-msgstr ""
+msgstr "[バグ報告](#reporting-bugs)"
 
 #. type: Bullet: '  * '
 #: docs/contributing.md:14
 msgid "[Suggesting enhancements](#suggesting-enhancements)"
-msgstr ""
+msgstr "[機能拡張の提案](#suggesting-enhancements)"
 
 #. type: Bullet: '  * '
 #: docs/contributing.md:14
 msgid "[Contributing to code](#contributing-to-code)"
-msgstr ""
+msgstr "[コードへの貢献](#contributing-to-code)"
 
 #. type: Title ##
 #: docs/contributing.md:16
 #, no-wrap
 msgid "How to contribute"
-msgstr ""
+msgstr "貢献する方法"
 
 #. type: Title ###
 #: docs/contributing.md:18
 #, no-wrap
 msgid "Reporting bugs"
-msgstr ""
+msgstr "バグ報告"
 
 #. type: Plain text
 #: docs/contributing.md:22
@@ -77,6 +80,8 @@ msgid ""
 "Following these guidelines helps maintainers and the community understand "
 "your report, reproduce the behavior, and find related reports."
 msgstr ""
+"この節では、Poetryのバグ報告を送る案内をします。\n"
+"ここに続く指針は、メンテナーやコミュニティが報告を理解し、振る舞いを再現し、関係する報告を見付ける助けになります。"
 
 #. type: Plain text
 #: docs/contributing.md:24
@@ -88,11 +93,17 @@ msgid ""
 "ISSUE_TEMPLATE/1_Bug_report.md), the information it asks helps the "
 "maintainers resolve the issue faster."
 msgstr ""
+"バグ報告を作成する前に [このリスト](#before-submitting-a-bug-report) "
+"を確認して、バグ報告を作成する必要があるか確認してください。\n"
+"バグ報告を作成しているときは、できる限り多く細部について記述してください。\n"
+"[必須項目テンプレート](https://github.com/sdispater/poetry/blob/master/.github/"
+"ISSUE_TEMPLATE/1_Bug_report.md) "
+"を埋めてください。これが要求している情報があると、メンテナーがイシューを速く解決する助けになります。"
 
 #. type: Plain text
 #: docs/contributing.md:26
 msgid "!!!note"
-msgstr ""
+msgstr "!!!note"
 
 #. type: Plain text
 #: docs/contributing.md:28
@@ -102,12 +113,14 @@ msgid ""
 "you're experiencing, open a new issue and include a link to the original "
 "issue in the body of your new one.\n"
 msgstr ""
+"    出くわしたのと同じように見える **解決済み** "
+"のイシューを見付けた場合は、新しいイシューを作成し、その新しい問題報告の本文に元々のイシューへのリンク含めます。\n"
 
 #. type: Title ####
 #: docs/contributing.md:29
 #, no-wrap
 msgid "Before submitting a bug report"
-msgstr ""
+msgstr "バグ報告を提出する前に"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:33 docs/contributing.md:71
@@ -115,6 +128,7 @@ msgid ""
 "**Check the [FAQs on the official website](https://poetry.eustace.io)** for "
 "a list of common questions and problems."
 msgstr ""
+"よくある質問や問題が列挙されている **[公式ウェブサイトのFAQ](https://poetry.eustace.io) を確認してください**  。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:33 docs/contributing.md:71
@@ -122,12 +136,14 @@ msgid ""
 "**Check that your issue does not already exist in the [issue tracker](https:/"
 "/github.com/sdispater/poetry/issues)**."
 msgstr ""
+"**[イシュートラッカー](https://github.com/sdispater/poetry/issues) "
+"に、既にイシューがないか確認してください** 。"
 
 #. type: Title ####
 #: docs/contributing.md:34
 #, no-wrap
 msgid "How do I submit a bug report"
-msgstr ""
+msgstr "バグ報告の提出方法"
 
 #. type: Plain text
 #: docs/contributing.md:37
@@ -137,26 +153,29 @@ msgid ""
 "following information by filling in [the template](https://github.com/"
 "sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md)."
 msgstr ""
+"バグは [公式のイシュートラッカー](https://github.com/sdispater/poetry/issues) で管理されます。そこでは、 "
+"[テンプレート](https://github.com/sdispater/poetry/blob/master/.github/"
+"ISSUE_TEMPLATE/1_Bug_report.md) を埋めて、新しいイシューを作って次の情報を提供できます。"
 
 #. type: Plain text
 #: docs/contributing.md:39
 msgid ""
 "Explain the problem and include additional details to help maintainers "
 "reproduce the problem:"
-msgstr ""
+msgstr "問題について説明し、追加の詳細も説明に含めて、メンテナーが問題を再現するのを助けてください:"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
 msgid ""
 "**Use a clear and descriptive title** for the issue to identify the problem."
-msgstr ""
+msgstr "イシューから問題を特定するために **明快な解説の見出しにしてください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
 msgid ""
 "**Describe the exact steps which reproduce the problem** in as many details "
 "as possible."
-msgstr ""
+msgstr "できる限り多くの細部にわたって **問題を再現する正確な手順を記述してください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
@@ -165,6 +184,8 @@ msgid ""
 "after removing potential private information (like private package "
 "repositories)."
 msgstr ""
+"(プライベートパッケージレポジトリのような) プライベートである恐れのある情報を取り除いてから [Gist](https://gist.github."
+"com) で **pyproject.tomlファイルを提供してください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
@@ -173,18 +194,20 @@ msgid ""
 "issue**. Include links to files or GitHub projects, or copy/pasteable "
 "snippets, which you use in those examples."
 msgstr ""
+"**問題再現の手順を実演する具体例を提供してください** 。\n"
+"具体例で使うファイル、GitHubプロジェクト、コピー・ペーストできるコード片へのリンクも含めてください。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
 msgid ""
 "**Describe the behavior you observed after following the steps** and point "
 "out what exactly is the problem with that behavior."
-msgstr ""
+msgstr "**手順に従って実行した後に見られた振る舞いを記述して** 、厳密にはその振る舞いの何が問題なのか指摘してください。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
 msgid "**Explain which behavior you expected to see instead and why.**"
-msgstr ""
+msgstr "**そうではないどんな振る舞いを、なぜ期待するのか説明してください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:47
@@ -192,18 +215,19 @@ msgid ""
 "**If the problem is an unexpected error being raised**, execute the "
 "corresponding command in **debug** mode (the `-vvv` option)."
 msgstr ""
+"**問題が予想外のエラーの送出だった場合は** 、 **debug** モード (`-vvv` オプション) で同じコマンドを実行してください。"
 
 #. type: Plain text
 #: docs/contributing.md:49
 msgid "Provide more context by answering these questions:"
-msgstr ""
+msgstr "次の質問に答えて、より多くの環境情報を提供してください:"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:53
 msgid ""
 "**Did the problem start happening recently** (e.g. after updating to a new "
 "version of Poetry) or was this always a problem?"
-msgstr ""
+msgstr "**問題は最近起こり始めましたか** (例えば、新しいバージョンのPoetryに更新した後)、それともいつも起こっていましたか？"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:53
@@ -212,6 +236,8 @@ msgid ""
 "in an older version of Poetry?** What's the most recent version in which the "
 "problem doesn't happen?"
 msgstr ""
+"問題が最近起こり始めた場合、 **古いバージョンのPoetryでも問題が再現しますか？**\n"
+"問題が起こらない最新のバージョンはいくつですか？"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:53
@@ -219,11 +245,13 @@ msgid ""
 "**Can you reliably reproduce the issue?** If not, provide details about how "
 "often the problem happens and under which conditions it normally happens."
 msgstr ""
+"**問題は確実に再現できますか？**\n"
+"そうでなければ、どのくらいの頻度で問題が起きるのか、どんな環境ならいつも起こるのか、についての詳細を提供してください。"
 
 #. type: Plain text
 #: docs/contributing.md:55
 msgid "Include details about your configuration and environment:"
-msgstr ""
+msgstr "設定や環境についての詳細を含めてください:"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:59
@@ -248,7 +276,7 @@ msgstr ""
 #: docs/contributing.md:61
 #, no-wrap
 msgid "Suggesting enhancements"
-msgstr ""
+msgstr "機能拡張の提案"
 
 #. type: Plain text
 #: docs/contributing.md:64
@@ -321,7 +349,7 @@ msgstr ""
 #: docs/contributing.md:83
 #, no-wrap
 msgid "Contributing to code"
-msgstr ""
+msgstr "コードへの貢献"
 
 #. type: Title ####
 #: docs/contributing.md:85
