@@ -1,175 +1,147 @@
-# Poetryへのコントリビュート
+# Poetryへの貢献
 
-First off, thank for taking the time to contribute!
+まず最初に、貢献するための時間を取ってくれてありがとう!
 
-The following is a set of guidelines for contributing to Poetry on
-GitHub. These are mostly guidelines, not rules. Use your best judgment, and
-feel free to propose changes to this document in a pull request.
+以下に書かれているのは、GitHubにあるPoetryへ貢献するための指針です。
+これらは指針であり、規約ではありません。
+最良の判断を行い、このドキュメントの変更を遠慮無くプルリクエストで提案してください。
 
-#### Table of Contents
+#### 目次
 
-[How to contribute](#how-to-contribute)
+[貢献する方法](#how-to-contribute)
 
-  * [Reporting bugs](#reporting-bugs)
-  * [Suggesting enhancements](#suggesting-enhancements)
-  * [Contributing to code](#contributing-to-code)
+  * [バグ報告](#reporting-bugs)
+  * [機能拡張の提案](#suggesting-enhancements)
+  * [コードへの貢献](#contributing-to-code)
 
 
-## How to contribute
+## 貢献する方法
 
-### Reporting bugs
+### バグ報告
 
-This section guides you through submitting a bug report for Poetry.
-Following these guidelines helps maintainers and the community understand
-your report, reproduce the behavior, and find related reports.
+この節では、Poetryのバグ報告を送る案内をします。
+ここに続く指針は、メンテナーやコミュニティが報告を理解し、振る舞いを再現し、関係する報告を見付ける助けになります。
 
-Before creating bug reports, please check [this
-list](#before-submitting-a-bug-report) to be sure that you need to create
-one. When you are creating a bug report, please include as many details as
-possible. Fill out the [required
-template](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md),
-the information it asks helps the maintainers resolve the issue faster.
+バグ報告を作成する前に [このリスト](#before-submitting-a-bug-report)
+を確認して、バグ報告を作成する必要があるか確認してください。
+バグ報告を作成しているときは、できる限り多く細部について記述してください。
+[必須項目テンプレート](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md)
+を埋めてください。これが要求している情報があると、メンテナーがイシューを速く解決する助けになります。
 
 !!!note
 
-    If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
+    出くわしたのと同じように見える **解決済み** のイシューを見付けた場合は、新しいイシューを作成し、その新しい問題報告の本文に元々のイシューへのリンク含めます。
 
-#### Before submitting a bug report
+#### バグ報告を提出する前に
 
-* **Check the [FAQs on the official website](https://poetry.eustace.io)**
-  for a list of common questions and problems.
-* **Check that your issue does not already exist in the [issue
-  tracker](https://github.com/sdispater/poetry/issues)**.
+* よくある質問や問題が列挙されている **[公式ウェブサイトのFAQ](https://poetry.eustace.io) を確認してください**
+  。
+* **[イシュートラッカー](https://github.com/sdispater/poetry/issues)
+  に、既にイシューがないか確認してください** 。
 
-#### How do I submit a bug report
+#### バグ報告の提出方法
 
-Bugs are tracked on the [official issue
-tracker](https://github.com/sdispater/poetry/issues) where you can create a
-new one and provide the following information by filling in [the
-template](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md).
+バグは [公式のイシュートラッカー](https://github.com/sdispater/poetry/issues) で管理されます。そこでは、
+[テンプレート](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/1_Bug_report.md)
+を埋めて、新しいイシューを作って次の情報を提供できます。
 
-Explain the problem and include additional details to help maintainers
-reproduce the problem:
+問題について説明し、追加の詳細も説明に含めて、メンテナーが問題を再現するのを助けてください:
 
-* **Use a clear and descriptive title** for the issue to identify the
-  problem.
-* **Describe the exact steps which reproduce the problem** in as many
-  details as possible.
-* **Provide your pyproject.toml file** in a [Gist](https://gist.github.com)
-  after removing potential private information (like private package
-  repositories).
-* **Provide specific examples to demonstrate the steps to reproduce the
-  issue**. Include links to files or GitHub projects, or copy/pasteable
-  snippets, which you use in those examples.
-* **Describe the behavior you observed after following the steps** and point
-  out what exactly is the problem with that behavior.
-* **Explain which behavior you expected to see instead and why.**
-* **If the problem is an unexpected error being raised**, execute the
-  corresponding command in **debug** mode (the `-vvv` option).
+* イシューから問題を特定するために **明快な解説の見出しにしてください** 。
+* できる限り多くの細部にわたって **問題を再現する正確な手順を記述してください** 。
+* (プライベートパッケージレポジトリのような) プライベートである恐れのある情報を取り除いてから
+  [Gist](https://gist.github.com) で **pyproject.tomlファイルを提供してください** 。
+* **問題再現の手順を実演する具体例を提供してください** 。
+  具体例で使うファイル、GitHubプロジェクト、コピー・ペーストできるコード片へのリンクも含めてください。
+* **手順に従って実行した後に見られた振る舞いを記述して** 、厳密にはその振る舞いの何が問題なのか指摘してください。
+* **そうではないどんな振る舞いを、なぜ期待するのか説明してください** 。
+* **問題が予想外のエラーの送出だった場合は** 、 **debug** モード (`-vvv` オプション) で同じコマンドを実行してください。
 
-Provide more context by answering these questions:
+次の質問に答えて、より多くの環境情報を提供してください:
 
-* **Did the problem start happening recently** (e.g. after updating to a new
-  version of Poetry) or was this always a problem?
-* If the problem started happening recently, **can you reproduce the problem
-  in an older version of Poetry?** What's the most recent version in which
-  the problem doesn't happen?
-* **Can you reliably reproduce the issue?** If not, provide details about
-  how often the problem happens and under which conditions it normally
-  happens.
+* **問題は最近起こり始めましたか** (例えば、新しいバージョンのPoetryに更新した後)、それともいつも起こっていましたか？
+* 問題が最近起こり始めた場合、 **古いバージョンのPoetryでも問題が再現しますか？**
+  問題が起こらない最新のバージョンはいくつですか？
+* **問題は確実に再現できますか？**
+  そうでなければ、どのくらいの頻度で問題が起きるのか、どんな環境ならいつも起こるのか、についての詳細を提供してください。
 
-Include details about your configuration and environment:
+設定や環境についての詳細を含めてください:
 
-* **Which version of Poetry are you using?** You can get the exact version
-  by running `poetry -V` in your terminal.
-* **Which Python version Poetry has been installed for?** Execute the
-  `debug:info` to get the information.
-* **What's the name and version of the OS you're using**?
+* **どのバージョンのPoetryを使っていますか？**
+  ターミナルから `poetry -V` を実行すると、正確なバージョンが分かります。
+* **どのPythonのバージョン向けのPoetryがインストールされていますか？**
+  `debug:info` を実行して情報を取得してください。
+* **使用しているOSの名前とバージョンは何ですか** ？
 
 
-### Suggesting enhancements
+### 機能拡張の提案
 
-This section guides you through submitting an enhancement suggestion for
-Poetry, including completely new features and minor improvements to existing
-functionality. Following these guidelines helps maintainers and the
-community understand your suggestion and find related suggestions.
+この節では、今までに無い新規の機能や既存の機能の改善を含めた、Poetryへの機能拡張の提案の提示について案内します。
+この指針に従うと、メンテナーとコミュニティにとって提案を理解し、関係する提案を見付ける助けになります。
 
-Before creating enhancement suggestions, please check [this
-list](#before-submitting-an-enhancement-suggestion) as you might find out
-that you don't need to create one. When you are creating an enhancement
-suggestion, please [include as many details as
-possible](#how-do-i-submit-an-enhancement-suggestion). Fill in [the
-template](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/2_Feature_request.md),
-including the steps that you imagine you would take if the feature you're
-requesting existed.
+機能拡張の提案を作成する必要が無いことが判明するかもしれないので、作成する前に
+[このリスト](#before-submitting-an-enhancement-suggestion) を確認してください。
+機能拡張の提案を作成するときは、
+[できる限り多くの詳細も含めてください](#how-do-i-submit-an-enhancement-suggestion)。
+[テンプレート](https://github.com/sdispater/poetry/blob/master/.github/ISSUE_TEMPLATE/2_Feature_request.md)
+を埋めてください。もし要請している機能が実際に在るなら、思い描いている手順も含めてください。
 
-#### Before submitting an enhancement suggestion
+#### 機能拡張の提案を提示する前に
 
-* **Check the [FAQs on the official website](https://poetry.eustace.io)**
-  for a list of common questions and problems.
-* **Check that your issue does not already exist in the [issue
-  tracker](https://github.com/sdispater/poetry/issues)**.
+* よくある質問や問題が列挙されている **[公式ウェブサイトのFAQ](https://poetry.eustace.io) を確認してください**
+  。
+* **[イシュートラッカー](https://github.com/sdispater/poetry/issues)
+  に、既にイシューがないか確認してください** 。
 
 
-#### How do I submit an Enhancement suggestion?
+#### どうやって機能拡張の提案を提示するのか？
 
-Enhancement suggestions are tracked on the [official issue
-tracker](https://github.com/sdispater/poetry/issues) where you can create a
-new one and provide the following information:
+機能拡張の提案は [公式のイシュートラッカー](https://github.com/sdispater/poetry/issues)
+で管理されます。そこでは、新しいイシューを作って次の情報を提供できます:
 
-* **Use a clear and descriptive title** for the issue to identify the
-  suggestion.
-* **Provide a step-by-step description of the suggested enhancement** in as
-  many details as possible.
-* **Provide specific examples to demonstrate the steps**..
-* **Describe the current behavior** and **explain which behavior you
-  expected to see instead** and why.
+* イシューから提案を特定するために **明快な解説の見出しにしてください** 。
+* できる限り多くの細部にわたって **提案する機能拡張の順を追った説明を提供してください** 。
+* **手順を実演する具体例を提供してください**..
+* **現在の振る舞いを記述** し **そうではないどんな振る舞いを、なぜ期待しているのかを説明してください** 。
 
 
-### Contributing to code
+### コードへの貢献
 
-#### Local development
+#### 手元での開発
 
-You will need Poetry to start contributing on the Poetry codebase. Refer to
-the [documentation](https://poetry.eustace.io/docs/#introduction) to start
-using Poetry.
+Poetryのコードベースへの貢献を始めるにはPoetryが必要です。
+[ドキュメント](https://poetry.eustace.io/docs/#introduction)
+を参照して、Poetryを使い始めてください。
 
-You will first need to clone the repository using `git` and place yourself
-in its directory:
+`git` を使いレポジトリをクローンして、クローン先のディレクトリへ移動する必要があります:
 
 ```bash
 $ git clone git@github.com:sdispater/poetry.git
 $ cd poetry
 ```
 
-Now, you will need to install the required dependency for Poetry and be sure
-that the current tests are passing on your machine:
+さてここで、Poetryの必須の依存関係をインストールし、手元のマシンで現時点でのテストに通ることを確認する必要があります。
 
 ```bash
 $ poetry install
 $ poetry run pytest tests/
 ```
 
-Poetry uses the [black](https://github.com/ambv/black) coding style and you
-must ensure that your code follows it. If not, the CI will fail and your
-Pull Request will not be merged.
+Poetryはコーディングの流儀に [black](https://github.com/ambv/black)
+を使っていて、コードがそれに従っていることを確認しなければなりません。
+そうでない場合、CIは失敗し、プルリクエストはマージされません。
 
-To make sure that you don't accidently commit code that does not follow the
-coding style, you can install a pre-commit hook that will check that
-everything is in order:
+コーディングの流儀に従っていないコードをうっかりコミットしてしまわないように、全てが様式に沿っていることを確認するpre-commitフックをインストールできます:
 
 ```bash
 $ poetry run pre-commit install
 ```
 
-Your code must always be accompanied by corresponding tests, if tests are
-not present your code will not be merged.
+コードは常に対応するテストが伴なっていなければならず、テストが存在しない場合は、コードはマージされません。
 
-#### Pull requests
+#### プルリクエスト
 
-* Fill in [the required
-  template](https://github.com/sdispater/poetry/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
-* Be sure that you pull request contains tests that cover the changed or
-  added code.
-* If you changes warrant a documentation change, the pull request must also
-  update the documentation.
+* [必須項目テンプレート](https://github.com/sdispater/poetry/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
+  を埋めてください。
+* プルリクエストが、変更および追加があったコードを対象とするテストを含んでいることを確認してください。
+* コードの変更によりドキュメントを変更する必要性がある場合、プルリクエストではドキュメントも変更しなければなりません。

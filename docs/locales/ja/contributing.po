@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-23 12:38+0000\n"
+"PO-Revision-Date: 2019-05-23 02:36+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -339,26 +339,26 @@ msgstr ""
 msgid ""
 "**Use a clear and descriptive title** for the issue to identify the "
 "suggestion."
-msgstr ""
+msgstr "イシューから提案を特定するために **明快な解説の見出しにしてください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:81
 msgid ""
 "**Provide a step-by-step description of the suggested enhancement** in as "
 "many details as possible."
-msgstr ""
+msgstr "できる限り多くの細部にわたって **提案する機能拡張の順を追った説明を提供してください** 。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:81
 msgid "**Provide specific examples to demonstrate the steps**.."
-msgstr ""
+msgstr "**手順を実演する具体例を提供してください**.."
 
 #. type: Bullet: '* '
 #: docs/contributing.md:81
 msgid ""
 "**Describe the current behavior** and **explain which behavior you expected "
 "to see instead** and why."
-msgstr ""
+msgstr "**現在の振る舞いを記述** し **そうではないどんな振る舞いを、なぜ期待しているのかを説明してください** 。"
 
 #. type: Title ###
 #: docs/contributing.md:83
@@ -370,7 +370,7 @@ msgstr "コードへの貢献"
 #: docs/contributing.md:85
 #, no-wrap
 msgid "Local development"
-msgstr ""
+msgstr "手元での開発"
 
 #. type: Plain text
 #: docs/contributing.md:88
@@ -379,19 +379,22 @@ msgid ""
 "the [documentation](https://poetry.eustace.io/docs/#introduction) to start "
 "using Poetry."
 msgstr ""
+"Poetryのコードベースへの貢献を始めるにはPoetryが必要です。\n"
+"[ドキュメント](https://poetry.eustace.io/docs/#introduction) "
+"を参照して、Poetryを使い始めてください。"
 
 #. type: Plain text
 #: docs/contributing.md:90
 msgid ""
 "You will first need to clone the repository using `git` and place yourself "
 "in its directory:"
-msgstr ""
+msgstr "`git` を使いレポジトリをクローンして、クローン先のディレクトリへ移動する必要があります:"
 
 #. type: Code fence info string
 #: docs/contributing.md:91 docs/contributing.md:99 docs/contributing.md:110
 #, no-wrap
 msgid "bash"
-msgstr ""
+msgstr "bash"
 
 #. type: Plain text
 #: docs/contributing.md:91
@@ -400,14 +403,15 @@ msgid "$ git clone git@github.com:sdispater/poetry.git\n"
 "\n"
 "$ cd poetry\n"
 "\n"
-msgstr ""
+msgstr "$ git clone git@github.com:sdispater/poetry.git\n"
+"$ cd poetry\n"
 
 #. type: Plain text
 #: docs/contributing.md:98
 msgid ""
 "Now, you will need to install the required dependency for Poetry and be sure "
 "that the current tests are passing on your machine:"
-msgstr ""
+msgstr "さてここで、Poetryの必須の依存関係をインストールし、手元のマシンで現時点でのテストに通ることを確認する必要があります。"
 
 #. type: Plain text
 #: docs/contributing.md:99
@@ -416,7 +420,8 @@ msgid "$ poetry install\n"
 "\n"
 "$ poetry run pytest tests/\n"
 "\n"
-msgstr ""
+msgstr "$ poetry install\n"
+"$ poetry run pytest tests/\n"
 
 #. type: Plain text
 #: docs/contributing.md:106
@@ -425,6 +430,9 @@ msgid ""
 "must ensure that your code follows it. If not, the CI will fail and your "
 "Pull Request will not be merged."
 msgstr ""
+"Poetryはコーディングの流儀に [black](https://github.com/ambv/black) "
+"を使っていて、コードがそれに従っていることを確認しなければなりません。\n"
+"そうでない場合、CIは失敗し、プルリクエストはマージされません。"
 
 #. type: Plain text
 #: docs/contributing.md:109
@@ -433,26 +441,28 @@ msgid ""
 "coding style, you can install a pre-commit hook that will check that "
 "everything is in order:"
 msgstr ""
+"コーディングの流儀に従っていないコードをうっかりコミットしてしまわないように、全てが様式に沿っていることを確認するpre-"
+"commitフックをインストールできます:"
 
 #. type: Plain text
 #: docs/contributing.md:110
 #, no-wrap
 msgid "$ poetry run pre-commit install\n"
 "\n"
-msgstr ""
+msgstr "$ poetry run pre-commit install\n"
 
 #. type: Plain text
 #: docs/contributing.md:116
 msgid ""
 "Your code must always be accompanied by corresponding tests, if tests are "
 "not present your code will not be merged."
-msgstr ""
+msgstr "コードは常に対応するテストが伴なっていなければならず、テストが存在しない場合は、コードはマージされません。"
 
 #. type: Title ####
 #: docs/contributing.md:117
 #, no-wrap
 msgid "Pull requests"
-msgstr ""
+msgstr "プルリクエスト"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:121
@@ -460,17 +470,19 @@ msgid ""
 "Fill in [the required template](https://github.com/sdispater/poetry/blob/"
 "master/.github/PULL_REQUEST_TEMPLATE.md)"
 msgstr ""
+"[必須項目テンプレート](https://github.com/sdispater/poetry/blob/master/.github/"
+"PULL_REQUEST_TEMPLATE.md) を埋めてください。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:121
 msgid ""
 "Be sure that you pull request contains tests that cover the changed or added "
 "code."
-msgstr ""
+msgstr "プルリクエストが、変更および追加があったコードを対象とするテストを含んでいることを確認してください。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:121
 msgid ""
 "If you changes warrant a documentation change, the pull request must also "
 "update the documentation."
-msgstr ""
+msgstr "コードの変更によりドキュメントを変更する必要性がある場合、プルリクエストではドキュメントも変更しなければなりません。"
