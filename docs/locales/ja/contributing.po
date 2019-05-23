@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-22 12:41+0000\n"
+"PO-Revision-Date: 2019-05-23 12:38+0000\n"
 "Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -259,6 +259,8 @@ msgid ""
 "**Which version of Poetry are you using?** You can get the exact version by "
 "running `poetry -V` in your terminal."
 msgstr ""
+"**どのバージョンのPoetryを使っていますか？**\n"
+"ターミナルから `poetry -V` を実行すると、正確なバージョンが分かります。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:59
@@ -266,11 +268,13 @@ msgid ""
 "**Which Python version Poetry has been installed for?** Execute the `debug:"
 "info` to get the information."
 msgstr ""
+"**どのPythonのバージョン向けのPoetryがインストールされていますか？**\n"
+"`debug:info` を実行して情報を取得してください。"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:59
 msgid "**What's the name and version of the OS you're using**?"
-msgstr ""
+msgstr "**使用しているOSの名前とバージョンは何ですか** ？"
 
 #. type: Title ###
 #: docs/contributing.md:61
@@ -286,6 +290,8 @@ msgid ""
 "functionality. Following these guidelines helps maintainers and the "
 "community understand your suggestion and find related suggestions."
 msgstr ""
+"この節では、今までに無い新規の機能や既存の機能の改善を含めた、Poetryへの機能拡張の提案の提示について案内します。\n"
+"この指針に従うと、メンテナーとコミュニティにとって提案を理解し、関係する提案を見付ける助けになります。"
 
 #. type: Plain text
 #: docs/contributing.md:66
@@ -298,18 +304,25 @@ msgid ""
 "master/.github/ISSUE_TEMPLATE/2_Feature_request.md), including the steps "
 "that you imagine you would take if the feature you're requesting existed."
 msgstr ""
+"機能拡張の提案を作成する必要が無いことが判明するかもしれないので、作成する前に [このリスト](#before-submitting-an-"
+"enhancement-suggestion) を確認してください。\n"
+"機能拡張の提案を作成するときは、 [できる限り多くの詳細も含めてください](#how-do-i-submit-an-enhancement-"
+"suggestion)。\n"
+"[テンプレート](https://github.com/sdispater/poetry/blob/master/.github/"
+"ISSUE_TEMPLATE/2_Feature_request.md) "
+"を埋めてください。もし要請している機能が実際に在るなら、思い描いている手順も含めてください。"
 
 #. type: Title ####
 #: docs/contributing.md:67
 #, no-wrap
 msgid "Before submitting an enhancement suggestion"
-msgstr ""
+msgstr "機能拡張の提案を提示する前に"
 
 #. type: Title ####
 #: docs/contributing.md:73
 #, no-wrap
 msgid "How do I submit an Enhancement suggestion?"
-msgstr ""
+msgstr "どうやって機能拡張の提案を提示するのか？"
 
 #. type: Plain text
 #: docs/contributing.md:76
@@ -318,6 +331,8 @@ msgid ""
 "github.com/sdispater/poetry/issues) where you can create a new one and "
 "provide the following information:"
 msgstr ""
+"機能拡張の提案は [公式のイシュートラッカー](https://github.com/sdispater/poetry/issues) "
+"で管理されます。そこでは、新しいイシューを作って次の情報を提供できます:"
 
 #. type: Bullet: '* '
 #: docs/contributing.md:81
