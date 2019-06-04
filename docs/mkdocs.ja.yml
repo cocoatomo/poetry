@@ -27,3 +27,5 @@ markdown_extensions:
       permalink: 🔗
 
 docs_dir: docs.ja
+
+google_analytics: ['UA-117662275-2', 'auto']
