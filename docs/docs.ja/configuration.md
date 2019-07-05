@@ -1,6 +1,6 @@
 # 設定
 
-Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/docs/cli/#config))
+Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/poetry-ja/cli/#config))
 による設定や、初めてそのコマンドを実行するときに自動的に作成される `config.toml` で直接設定が行えます。
 このファイルはたいてい次のディレクトリのうち1つで見付かります。
 
@@ -34,4 +34,4 @@ Unixでは、XDG仕様に従い、 `$XDG_CONFIG_HOME` をサポートしてい�
 ### `repositories.<name>`: string
 
 別のレポジトリを新しく設定します。
-より詳しいことは [レポジトリ](/docs/repositories/) を参照してください。
+より詳しいことは [レポジトリ](/poetry-ja/repositories/) を参照してください。

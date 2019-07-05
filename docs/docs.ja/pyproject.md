@@ -251,7 +251,7 @@ setuptoolsのドキュメントにある例に合わせると、次のように�
 ## PoetryとPEP-517
 
 [PEP-517](https://www.python.org/dev/peps/pep-0517/)
-は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法が導入します。
+は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法を導入します。
 
 PoetryはPEP-517に準拠しているので、Poetryを使ってPythonプロジェクトを管理していたなら、次のように
 `pyproject.toml` ファイルの `build-system` 節で目にするはずです:
