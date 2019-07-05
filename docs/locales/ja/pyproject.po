@@ -745,7 +745,7 @@ msgid ""
 "way to define alternative build systems to build a Python project."
 msgstr ""
 "[PEP-517](https://www.python.org/dev/peps/pep-0517/) "
-"は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法が導入します。"
+"は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法を導入します。"
 
 #. type: Plain text
 #: docs/pyproject.md:248
