@@ -284,7 +284,7 @@ poetry config [options] [setting-key] [setting-value1] ... [setting-valueN]
 ````
 
 `setting-key` は設定のオプション名で `setting-value1` は設定値です。
-利用可能な全ての設定は [設定](/docs/configuration/) を参照してください。
+利用可能な全ての設定は [設定](/poetry-ja/configuration/) を参照してください。
 
 ### Options
 

@@ -13,7 +13,7 @@
 Poetryはパッケージのバージョン付けに関して、どんな慣習も強制することはありませんが、 [semantic
 versioning](https://semver.org) に従うことを **強く** 推奨します。
 
-これにはエンドユーザーにとっての多くの利点があり、適切な [バージョン制約](/docs/versions/) が設定できるようになります。
+これにはエンドユーザーにとっての多くの利点があり、適切な [バージョン制約](/poetry-ja/versions/) が設定できるようになります。
 
 ## ロックファイル
 
@@ -53,7 +53,7 @@ PyPIに公開されたものはなんであれ、必然的にPoetryで取得で�
 poetry publish
 ```
 
-ユーザー登録を済ませ、適切に [証明書が設定されている](/docs/repositories/#adding-credentials)
+ユーザー登録を済ませ、適切に [証明書が設定されている](/poetry-ja/repositories/#adding-credentials)
 という条件が揃っているとき、このコマンドはライブラリをパッケージ化して、PyPIへ公開します。
 
 !!!note
@@ -73,7 +73,7 @@ poetry publish
 その場合は、プライベートレポジトリが必要になります。
 
 プライベートレポジトリに公開するには、レポジトリのリストに追加する必要があります。
-より詳しいことは [レポジトリの追加](/docs/repositories/#adding-a-repository) を参照してください。
+より詳しいことは [レポジトリの追加](/poetry-ja/repositories/#adding-a-repository) を参照してください。
 
 これが済んだら、次のように実際に公開できます:
 

@@ -23,7 +23,7 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 !!! 注意
 
     Poetryは一度だけインストールすれば良いです。Poetryは現在使われているPythonバージョンを自動的に読み取り、
-    それを踏まえて適切に [仮想環境を作成](/docs/basic-usage/#poetry-and-virtualenvs) します。
+    それを踏まえて適切に [仮想環境を作成](/poetry-ja/basic-usage/#poetry-and-virtualenvs) します。
 
 このインストーラーは、 `poetry` ツールをPoetryの `bin` ディレクトリにインストールします。
 そのディレクトリの位置は、Unixでは `$HOME/.poetry/bin` で、Windowsでは

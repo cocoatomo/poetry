@@ -111,7 +111,8 @@
 
 Poetryのコードベースへの貢献を始めるにはPoetryが必要です。
 [ドキュメント](https://poetry.eustace.io/docs/#introduction)
-を参照して、Poetryを使い始めてください。
+を参照して、Poetryを使い始めてください。(訳注:
+[日本語ドキュメント](https://cocoatomo.github.io/poetry-ja/#introduction))
 
 `git` を使いレポジトリをクローンして、クローン先のディレクトリへ移動する必要があります:
 
