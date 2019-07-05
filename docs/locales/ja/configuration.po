@@ -27,7 +27,7 @@ msgid ""
 "be automatically be created when you first run that command.  This file can "
 "typically be found in one of the following directories:"
 msgstr ""
-"Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/docs/cli/#config)) "
+"Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/poetry-ja/cli/#config)) "
 "による設定や、初めてそのコマンドを実行するときに自動的に作成される `config.toml` で直接設定が行えます。\n"
 "このファイルはたいてい次のディレクトリのうち1つで見付かります。"
 
