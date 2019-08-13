@@ -48,7 +48,7 @@ $(TRANSDIR)/%.md: $(PODIR)/%.po $(ORIGDIR)/%.md
 	--po $< \
 	--localized $@
 
-build-$(LANG):
+build-$(LANG): venv
 	PATH=$(VENV)/bin:$$PATH mkdocs build -f mkdocs.$(LANG).yml --theme material
 
 publish-$(LANG):
