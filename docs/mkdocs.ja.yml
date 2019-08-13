@@ -1,4 +1,5 @@
 site_name: Poetry documentation
+site_description: Poetry documentation translated into Japanese
 
 theme:
   name: null
