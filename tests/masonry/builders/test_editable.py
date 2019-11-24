@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from poetry.io import NullIO
+import sys
+
+from clikit.io import NullIO
+
+from poetry.factory import Factory
 from poetry.masonry.builders import EditableBuilder
-from poetry.poetry import Poetry
 from poetry.utils._compat import Path
 from poetry.utils.env import MockEnv
+
 
 fixtures_dir = Path(__file__).parent / "fixtures"
 
@@ -17,10 +21,10 @@ def test_build_should_delegate_to_pip_for_non_pure_python_packages(tmp_dir, mock
     env.site_packages.mkdir(parents=True)
     module_path = fixtures_dir / "extended"
 
-    builder = EditableBuilder(Poetry.create(module_path), env, NullIO())
+    builder = EditableBuilder(Factory().create_poetry(module_path), env, NullIO())
     builder.build()
 
-    expected = [["python", "-m", "pip", "install", "-e", str(module_path)]]
+    expected = [[sys.executable, "-m", "pip", "install", "-e", str(module_path)]]
     assert expected == env.executed
 
     assert 0 == move.call_count
@@ -33,10 +37,10 @@ def test_build_should_temporarily_remove_the_pyproject_file(tmp_dir, mocker):
     env.site_packages.mkdir(parents=True)
     module_path = fixtures_dir / "extended"
 
-    builder = EditableBuilder(Poetry.create(module_path), env, NullIO())
+    builder = EditableBuilder(Factory().create_poetry(module_path), env, NullIO())
     builder.build()
 
-    expected = [["python", "-m", "pip", "install", "-e", str(module_path)]]
+    expected = [[sys.executable, "-m", "pip", "install", "-e", str(module_path)]]
     assert expected == env.executed
 
     assert 2 == move.call_count
