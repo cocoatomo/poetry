@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title #
+#: docs/managing-environments.md:1
+#, no-wrap
+msgid "Managing environments"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:4
+msgid "Poetry makes project environment isolation one of its core feature."
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:9
+msgid ""
+"What this means is that it will always work isolated from your global Python "
+"installation.  To achieve this, it will first check if it's currently "
+"running inside a virtual environment.  If it is, it will use it directly "
+"without creating a new one. But if it's not, it will use one that it has "
+"already created or create a brand new one for you."
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:12
+msgid ""
+"By default, Poetry will try to use the currently activated Python version to "
+"create the virtual environment for the current project."
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:17
+msgid ""
+"However, for various reasons, this Python version might not be compatible "
+"with the `python` requirement of the project. In this case, Poetry will try "
+"to find one that is and use it. If it's unable to do so then you will be "
+"prompted to activate one explicitly, see [Switching "
+"environments](#switching-between-environments)."
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:19
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:22
+#, no-wrap
+msgid ""
+"    To easily switch between Python versions, it is recommended to\n"
+"    use [pyenv](https://github.com/pyenv/pyenv) or similar tools.\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:25
+#, no-wrap
+msgid ""
+"    For instance, if your project is Python 2.7 only, a standard workflow\n"
+"    would be:\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:31
+#, no-wrap
+msgid ""
+"    ```bash\n"
+"    pyenv install 2.7.15\n"
+"    pyenv local 2.7.15  # Activate Python 2.7 for the current project\n"
+"    poetry install\n"
+"    ```\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/managing-environments.md:32
+#, no-wrap
+msgid "Switching between environments"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:38
+msgid ""
+"Sometimes this might not be feasible for your system, especially Windows "
+"where `pyenv` is not available, or you simply prefer to have a more explicit "
+"control over your environment.  For this specific purpose, you can use the "
+"`env use` command to tell Poetry which Python version to use for the current "
+"project."
+msgstr ""
+
+#. type: Code fence info string
+#: docs/managing-environments.md:39 docs/managing-environments.md:45 docs/managing-environments.md:51 docs/managing-environments.md:58 docs/managing-environments.md:67 docs/managing-environments.md:89 docs/managing-environments.md:98 docs/managing-environments.md:114
+#, no-wrap
+msgid "bash"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:39
+#, no-wrap
+msgid ""
+"poetry env use /full/path/to/python\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:44
+msgid "If you have the python executable in your `PATH` you can use it:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:45
+#, no-wrap
+msgid ""
+"poetry env use python3.7\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:50
+msgid "You can even just use the minor Python version in this case:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:51
+#, no-wrap
+msgid ""
+"poetry env use 3.7\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:57
+msgid ""
+"If you want to disable the explicitly activated virtual environment, you can "
+"use the special `system` Python version to retrieve the default behavior:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:58
+#, no-wrap
+msgid ""
+"poetry env use system\n"
+"\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/managing-environments.md:62
+#, no-wrap
+msgid "Displaying the environment information"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:66
+msgid ""
+"If you want to get basic information about the currently activated virtual "
+"environment, you can use the `env info` command:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:67
+#, no-wrap
+msgid ""
+"poetry env info\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:72
+msgid "will output something similar to this:"
+msgstr ""
+
+#. type: Code fence info string
+#: docs/managing-environments.md:73 docs/managing-environments.md:104
+#, no-wrap
+msgid "text"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:73
+#, no-wrap
+msgid ""
+"Virtual environment\n"
+"\n"
+"Python:         3.7.1\n"
+"\n"
+"Implementation: CPython\n"
+"\n"
+"Path:           /path/to/poetry/cache/virtualenvs/test-O3eWbxRl-py3.7\n"
+"\n"
+"Valid:          True\n"
+"\n"
+"\n"
+"\n"
+"System\n"
+"\n"
+"Platform: darwin\n"
+"\n"
+"OS:       posix\n"
+"\n"
+"Python:   /path/to/main/python\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:88
+msgid ""
+"If you only want to know the path to the virtual environment, you can pass "
+"the `--path` option to `env info`:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:89
+#, no-wrap
+msgid ""
+"poetry env info --path\n"
+"\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/managing-environments.md:93
+#, no-wrap
+msgid "Listing the environments associated with the project"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:97
+msgid ""
+"You can also list all the virtual environments associated with the current "
+"virtual environment with the `env list` command:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:98
+#, no-wrap
+msgid ""
+"poetry env list\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:103
+msgid "will output something like the following:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:104
+#, no-wrap
+msgid ""
+"test-O3eWbxRl-py2.7\n"
+"\n"
+"test-O3eWbxRl-py3.6\n"
+"\n"
+"test-O3eWbxRl-py3.7 (Activated)\n"
+"\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/managing-environments.md:110
+#, no-wrap
+msgid "Deleting the environments"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:113
+msgid "Finally, you can delete existing virtual environments by using `env remove`:"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:114
+#, no-wrap
+msgid ""
+"poetry env remove /full/path/to/python\n"
+"\n"
+"poetry env remove python3.7\n"
+"\n"
+"poetry env remove 3.7\n"
+"\n"
+"poetry env remove test-O3eWbxRl-py3.7\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/managing-environments.md:121
+msgid ""
+"If your remove the currently activated virtual environment, it will be "
+"automatically deactivated."
+msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 10:30+0900\n"
+"POT-Creation-Date: 2020-03-29 02:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,29 +57,57 @@ msgid ""
 "recommended way of installing `poetry`."
 msgstr ""
 
+#. type: Title ###
+#: docs/index.md:19
+#, no-wrap
+msgid "osx / linux / bashonwindows install instructions"
+msgstr ""
+
 #. type: Code fence info string
-#: docs/index.md:19 docs/index.md:35 docs/index.md:44 docs/index.md:52 docs/index.md:60 docs/index.md:84 docs/index.md:97 docs/index.md:101 docs/index.md:105 docs/index.md:116 docs/index.md:122 docs/index.md:129 docs/index.md:145 docs/index.md:170
+#: docs/index.md:20 docs/index.md:40 docs/index.md:49 docs/index.md:56 docs/index.md:63 docs/index.md:71 docs/index.md:95 docs/index.md:108 docs/index.md:112 docs/index.md:116 docs/index.md:127 docs/index.md:133 docs/index.md:140 docs/index.md:160 docs/index.md:185
 #, no-wrap
 msgid "bash"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:19
+#: docs/index.md:20
 #, no-wrap
 msgid ""
 "curl -sSL "
-"https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | "
-"python\n"
+"https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py "
+"| python\n"
+"\n"
+msgstr ""
+
+#. type: Title ###
+#: docs/index.md:23
+#, no-wrap
+msgid "windows powershell install instructions"
+msgstr ""
+
+#. type: Code fence info string
+#: docs/index.md:24
+#, no-wrap
+msgid "powershell"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:24
+#, no-wrap
+msgid ""
+"(Invoke-WebRequest -Uri "
+"https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py "
+"-UseBasicParsing).Content | python\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:24 docs/index.md:165
+#: docs/index.md:29 docs/index.md:180
 msgid "!!! note"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:27
+#: docs/index.md:32
 #, no-wrap
 msgid ""
 "    You only need to install Poetry once. It will automatically pick up the "
@@ -89,7 +117,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:30
+#: docs/index.md:35
 msgid ""
 "The installer installs the `poetry` tool to Poetry's `bin` directory.  On "
 "Unix it is located at `$HOME/.poetry/bin` and on Windows at "
@@ -97,7 +125,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:34
+#: docs/index.md:39
 msgid ""
 "This directory will be in your `$PATH` environment variable, which means you "
 "can run them from the shell without further configuration.  Open a new shell "
@@ -105,7 +133,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:35
+#: docs/index.md:40
 #, no-wrap
 msgid ""
 "poetry --version\n"
@@ -113,7 +141,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:43
+#: docs/index.md:48
 msgid ""
 "If you see something like `Poetry 0.12.0` then you are ready to use Poetry.  "
 "If you decide Poetry isn't your thing, you can completely remove it from "
@@ -123,7 +151,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:44
+#: docs/index.md:49
 #, no-wrap
 msgid ""
 "python get-poetry.py --uninstall\n"
@@ -133,7 +161,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:51
+#: docs/index.md:55
+msgid ""
+"By default, Poetry is installed into the user's platform-specific home "
+"directory. If you wish to change this, you may define the `POETRY_HOME` "
+"environment variable:"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:56
+#, no-wrap
+msgid ""
+"POETRY_HOME=/etc/poetry python get-poetry.py\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/index.md:62
 msgid ""
 "If you want to install prerelease versions, you can do so by passing "
 "`--preview` to `get-poetry.py` or by using the `POETRY_PREVIEW` environment "
@@ -141,7 +185,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:52
+#: docs/index.md:63
 #, no-wrap
 msgid ""
 "python get-poetry.py --preview\n"
@@ -151,14 +195,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:59
+#: docs/index.md:70
 msgid ""
 "Similarly, if you want to install a specific version, you can use "
 "`--version` or the `POETRY_VERSION` environment variable:"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:60
+#: docs/index.md:71
 #, no-wrap
 msgid ""
 "python get-poetry.py --version 0.12.0\n"
@@ -168,24 +212,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:66 docs/index.md:72 docs/index.md:134
+#: docs/index.md:77 docs/index.md:83 docs/index.md:145 docs/index.md:150
 msgid "!!!note"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:68
+#: docs/index.md:79
 #, no-wrap
 msgid "    Note that the installer does not support Poetry releases < 0.12.0.\n"
 msgstr ""
 
 #. type: Title ###
-#: docs/index.md:69
+#: docs/index.md:80
 #, no-wrap
 msgid "Alternative installation methods (not recommended)"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:76
+#: docs/index.md:87
 #, no-wrap
 msgid ""
 "    Using alternative installation methods will make Poetry always\n"
@@ -194,7 +238,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:79
+#: docs/index.md:90
 #, no-wrap
 msgid ""
 "    So, you will need to install Poetry for each Python version you\n"
@@ -202,18 +246,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: docs/index.md:80
+#: docs/index.md:91
 #, no-wrap
 msgid "Installing with `pip`"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:83
+#: docs/index.md:94
 msgid "Using `pip` to install Poetry is possible."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:84
+#: docs/index.md:95
 #, no-wrap
 msgid ""
 "pip install --user poetry\n"
@@ -221,12 +265,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:89
+#: docs/index.md:100
 msgid "!!!warning"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:92
+#: docs/index.md:103
 #, no-wrap
 msgid ""
 "    Be aware that it will also install Poetry's dependencies\n"
@@ -234,13 +278,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: docs/index.md:93
+#: docs/index.md:104
 #, no-wrap
 msgid "Installing with `pipx`"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:96
+#: docs/index.md:107
 msgid ""
 "Using [`pipx`](https://github.com/cs01/pipx) to install Poetry is also "
 "possible. [pipx] is used to install Python CLI applications globally while "
@@ -250,7 +294,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:97
+#: docs/index.md:108
 #, no-wrap
 msgid ""
 "pipx install poetry\n"
@@ -258,7 +302,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:101
+#: docs/index.md:112
 #, no-wrap
 msgid ""
 "pipx upgrade poetry\n"
@@ -266,7 +310,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:105
+#: docs/index.md:116
 #, no-wrap
 msgid ""
 "pipx uninstall poetry\n"
@@ -274,77 +318,85 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:110
+#: docs/index.md:121
 msgid "[Github repository](https://github.com/cs01/pipx)."
 msgstr ""
 
 #. type: Title ##
-#: docs/index.md:112
+#: docs/index.md:123
 #, no-wrap
 msgid "Updating `poetry`"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:115
+#: docs/index.md:126
 msgid ""
-"Updating poetry to the latest stable version is as simple as calling the "
-"`self:update` command."
+"Updating Poetry to the latest stable version is as simple as calling the "
+"`self update` command."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:116
+#: docs/index.md:127
 #, no-wrap
 msgid ""
-"poetry self:update\n"
+"poetry self update\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:121
+#: docs/index.md:132
 msgid ""
-"If you want to install prerelease versions, you can use the `--preview` "
+"If you want to install pre-release versions, you can use the `--preview` "
 "option."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:122
+#: docs/index.md:133
 #, no-wrap
 msgid ""
-"poetry self:update --preview\n"
+"poetry self update --preview\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:128
+#: docs/index.md:139
 msgid ""
-"And finally, if you want to install a specific version you can pass it as an "
-"argument to `self:update`."
+"And finally, if you want to install a specific version, you can pass it as "
+"an argument to `self update`."
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:129
+#: docs/index.md:140
 #, no-wrap
 msgid ""
-"poetry self:update 0.8.0\n"
+"poetry self update 0.8.0\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:137
+#: docs/index.md:148
 #, no-wrap
 msgid ""
-"    The `self:update` command will only work if you used the recommended\n"
+"    The `self update` command will only work if you used the recommended\n"
 "    installer to install Poetry.\n"
 msgstr ""
 
+#. type: Plain text
+#: docs/index.md:152
+#, no-wrap
+msgid ""
+"    If you are still on poetry version < 1.0 use `poetry self:update` "
+"instead.\n"
+msgstr ""
+
 #. type: Title ##
-#: docs/index.md:139
+#: docs/index.md:154
 #, no-wrap
 msgid "Enable tab completion for Bash, Fish, or Zsh"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:143
+#: docs/index.md:158
 msgid ""
 "`poetry` supports generating completion scripts for Bash, Fish, and Zsh.  "
 "See `poetry help completions` for full details, but the gist is as simple as "
@@ -352,7 +404,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:145
+#: docs/index.md:160
 #, no-wrap
 msgid ""
 "# Bash\n"
@@ -391,7 +443,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:167
+#: docs/index.md:182
 #, no-wrap
 msgid ""
 "    You may need to restart your shell in order for the changes to take "
@@ -399,14 +451,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:169
+#: docs/index.md:184
 msgid ""
 "For `zsh`, you must then add the following line in your `~/.zshrc` before "
 "`compinit`:"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:170
+#: docs/index.md:185
 #, no-wrap
 msgid ""
 "fpath+=~/.zfunc\n"
@@ -414,12 +466,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:175
+#: docs/index.md:190
 msgid "For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
 msgstr ""
 
 #. type: Plain text
-#: docs/index.md:176
+#: docs/index.md:191
 #, no-wrap
 msgid ""
 "plugins(\n"

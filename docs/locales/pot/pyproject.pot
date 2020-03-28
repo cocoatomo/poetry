@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 10:30+0900\n"
+"POT-Creation-Date: 2020-03-29 02:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,42 +107,42 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "GPL-2.0"
+msgid "GPL-2.0-only"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "GPL-2.0+"
+msgid "GPL-2.0-or-later"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "GPL-3.0"
+msgid "GPL-3.0-only"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "GPL-3.0+"
+msgid "GPL-3.0-or-later"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "LGPL-2.1"
+msgid "LGPL-2.1-only"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "LGPL-2.1+"
+msgid "LGPL-2.1-or-later"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "LGPL-3.0"
+msgid "LGPL-3.0-only"
 msgstr ""
 
 #. type: Bullet: '* '
 #: docs/pyproject.md:39
-msgid "LGPL-3.0+"
+msgid "LGPL-3.0-or-later"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -180,84 +180,104 @@ msgstr ""
 #. type: Title ##
 #: docs/pyproject.md:49
 #, no-wrap
-msgid "readme"
+msgid "maintainers"
 msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:52
-msgid "The readme file of the package. **Optional**"
+msgid "The maintainers of the package. **Optional**"
 msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:54
-msgid "The file can be either `README.rst` or `README.md`."
+#, no-wrap
+msgid ""
+"This is a list of maintainers and should be distinct from "
+"authors. Maintainers may contain an email and be in the form `name "
+"<email>`.\n"
 msgstr ""
 
 #. type: Title ##
 #: docs/pyproject.md:55
 #, no-wrap
-msgid "homepage"
+msgid "readme"
 msgstr ""
 
 #. type: Plain text
 #: docs/pyproject.md:58
+msgid "The readme file of the package. **Optional**"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:60
+msgid "The file can be either `README.rst` or `README.md`."
+msgstr ""
+
+#. type: Title ##
+#: docs/pyproject.md:61
+#, no-wrap
+msgid "homepage"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:64
 msgid "An URL to the website of the project. **Optional**"
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:59
+#: docs/pyproject.md:65
 #, no-wrap
 msgid "repository"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:62
+#: docs/pyproject.md:68
 msgid "An URL to the repository of the project. **Optional**"
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:63
+#: docs/pyproject.md:69
 #, no-wrap
 msgid "documentation"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:66
+#: docs/pyproject.md:72
 msgid "An URL to the documentation of the project. **Optional**"
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:67
+#: docs/pyproject.md:73
 #, no-wrap
 msgid "keywords"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:70
+#: docs/pyproject.md:76
 msgid "A list of keywords (max: 5) that the package is related to. **Optional**"
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:71
+#: docs/pyproject.md:77
 #, no-wrap
 msgid "classifiers"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:74
+#: docs/pyproject.md:80
 msgid ""
 "A list of PyPI [trove classifiers](https://pypi.org/classifiers/) that "
 "describe the project. **Optional**"
 msgstr ""
 
 #. type: Code fence info string
-#: docs/pyproject.md:75 docs/pyproject.md:97 docs/pyproject.md:108 docs/pyproject.md:146 docs/pyproject.md:152 docs/pyproject.md:161 docs/pyproject.md:168 docs/pyproject.md:188 docs/pyproject.md:202 docs/pyproject.md:233 docs/pyproject.md:249
+#: docs/pyproject.md:81 docs/pyproject.md:103 docs/pyproject.md:114 docs/pyproject.md:125 docs/pyproject.md:166 docs/pyproject.md:172 docs/pyproject.md:181 docs/pyproject.md:188 docs/pyproject.md:208 docs/pyproject.md:222 docs/pyproject.md:253 docs/pyproject.md:265 docs/pyproject.md:281
 #, no-wrap
 msgid "toml"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:75
+#: docs/pyproject.md:81
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
@@ -275,12 +295,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:85 docs/pyproject.md:117 docs/pyproject.md:132 docs/pyproject.md:175 docs/pyproject.md:256
+#: docs/pyproject.md:91 docs/pyproject.md:137 docs/pyproject.md:152 docs/pyproject.md:195 docs/pyproject.md:288
 msgid "!!!note"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:87
+#: docs/pyproject.md:93
 #, no-wrap
 msgid ""
 "    Note that Python classifiers are still automatically added for you and "
@@ -288,7 +308,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:89
+#: docs/pyproject.md:95
 #, no-wrap
 msgid ""
 "    The `license` property will also set the License classifier "
@@ -296,18 +316,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:90
+#: docs/pyproject.md:96
 #, no-wrap
 msgid "packages"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:93
+#: docs/pyproject.md:99
 msgid "A list of packages and modules to include in the final distribution."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:96
+#: docs/pyproject.md:102
 msgid ""
 "If your project structure differs from the standard one supported by "
 "`poetry`, you can specify the packages you want to include in the final "
@@ -315,7 +335,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:97
+#: docs/pyproject.md:103
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
@@ -324,7 +344,7 @@ msgid ""
 "\n"
 "packages = [\n"
 "\n"
-"    { include = \"mypackage\" },\n"
+"    { include = \"my_package\" },\n"
 "\n"
 "    { include = \"extra_package/**/*.py\" },\n"
 "\n"
@@ -333,14 +353,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:107
+#: docs/pyproject.md:113
 msgid ""
 "If your package is stored inside a \"source\" directory, you must specify "
 "it:"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:108
+#: docs/pyproject.md:114
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
@@ -349,14 +369,46 @@ msgid ""
 "\n"
 "packages = [\n"
 "\n"
-"    { include = \"mypackage\", from = \"lib\" },\n"
+"    { include = \"my_package\", from = \"lib\" },\n"
 "\n"
 "]\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:120
+#: docs/pyproject.md:124
+msgid ""
+"If you want to restrict a package to a specific [build](#build) format you "
+"can specify it by using `format`:"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:125
+#, no-wrap
+msgid ""
+"[tool.poetry]\n"
+"\n"
+"# ...\n"
+"\n"
+"packages = [\n"
+"\n"
+"    { include = \"my_package\" },\n"
+"\n"
+"    { include = \"tests\", format = \"sdist\" },\n"
+"\n"
+"]\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:135
+msgid ""
+"From now on, only the `sdist` build archive will include the `tests` "
+"package."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:140
 #, no-wrap
 msgid ""
 "    Using `packages` disables the package auto-detection feature meaning you "
@@ -365,7 +417,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:123
+#: docs/pyproject.md:143
 #, no-wrap
 msgid ""
 "    For instance, if you have a package named `my_package` and you want to "
@@ -375,25 +427,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:130
+#: docs/pyproject.md:150
 #, no-wrap
 msgid ""
 "    ```toml\n"
 "    packages = [\n"
-"        { include = \"mypackage\" },\n"
+"        { include = \"my_package\" },\n"
 "        { include = \"extra_package\" },\n"
 "    ]\n"
 "    ```\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:134
+#: docs/pyproject.md:154
 #, no-wrap
 msgid "    Poetry is clever enough to detect Python subpackages.\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:136
+#: docs/pyproject.md:156
 #, no-wrap
 msgid ""
 "    Thus, you only have to specify the directory where your root package "
@@ -401,18 +453,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:137
+#: docs/pyproject.md:157
 #, no-wrap
 msgid "include and exclude"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:140
+#: docs/pyproject.md:160
 msgid "A list of patterns that will be included in the final package."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:143
+#: docs/pyproject.md:163
 msgid ""
 "You can explicitly specify to Poetry that a set of globs should be ignored "
 "or included for the purposes of packaging.  The globs specified in the "
@@ -421,14 +473,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:145
+#: docs/pyproject.md:165
 msgid ""
 "If a VCS is being used for a package, the exclude field will be seeded with "
 "the VCS’ ignore settings (`.gitignore` for git for example)."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:146
+#: docs/pyproject.md:166
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
@@ -440,7 +492,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:152
+#: docs/pyproject.md:172
 #, no-wrap
 msgid ""
 "exclude = [\"my_package/excluded.py\"]\n"
@@ -448,20 +500,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:156
+#: docs/pyproject.md:176
 #, no-wrap
 msgid "`dependencies` and `dev-dependencies`"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:160
+#: docs/pyproject.md:180
 msgid ""
 "Poetry is configured to look for dependencies on [PyPi](https://pypi.org) by "
 "default.  Only the name and a version string are required in this case."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:161
+#: docs/pyproject.md:181
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
@@ -471,14 +523,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:167
+#: docs/pyproject.md:187
 msgid ""
 "If you want to use a private repository, you can add it to your "
 "`pyproject.toml` file, like so:"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:168
+#: docs/pyproject.md:188
 #, no-wrap
 msgid ""
 "[[tool.poetry.source]]\n"
@@ -490,7 +542,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:178
+#: docs/pyproject.md:198
 #, no-wrap
 msgid ""
 "    Be aware that declaring the python version for which your package\n"
@@ -498,7 +550,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:183
+#: docs/pyproject.md:203
 #, no-wrap
 msgid ""
 "    ```toml\n"
@@ -508,58 +560,58 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:184
+#: docs/pyproject.md:204
 #, no-wrap
 msgid "`scripts`"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:187
+#: docs/pyproject.md:207
 msgid ""
 "This section describe the scripts or executable that will be installed when "
 "installing the package"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:188
+#: docs/pyproject.md:208
 #, no-wrap
 msgid ""
 "[tool.poetry.scripts]\n"
 "\n"
-"poetry = 'poetry:console.run'\n"
+"poetry = 'poetry.console:run'\n"
 "\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:194
+#: docs/pyproject.md:214
 msgid ""
 "Here, we will have the `poetry` script installed which will execute "
 "`console.run` in the `poetry` package."
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:195
+#: docs/pyproject.md:215
 #, no-wrap
 msgid "`extras`"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:198
+#: docs/pyproject.md:218
 msgid "Poetry supports extras to allow expression of:"
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/pyproject.md:201
+#: docs/pyproject.md:221
 msgid "optional dependencies, which enhance a package, but are not required; and"
 msgstr ""
 
 #. type: Bullet: '* '
-#: docs/pyproject.md:201
+#: docs/pyproject.md:221
 msgid "clusters of optional dependencies."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:202
+#: docs/pyproject.md:222
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
@@ -597,20 +649,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:221
+#: docs/pyproject.md:241
 msgid ""
 "When installing packages, you can specify extras by using the `-E|--extras` "
 "option:"
 msgstr ""
 
 #. type: Code fence info string
-#: docs/pyproject.md:222
+#: docs/pyproject.md:242
 #, no-wrap
 msgid "bash"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:222
+#: docs/pyproject.md:242
 #, no-wrap
 msgid ""
 "poetry install --extras \"mysql pgsql\"\n"
@@ -620,13 +672,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:227
+#: docs/pyproject.md:247
 #, no-wrap
 msgid "`plugins`"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:232
+#: docs/pyproject.md:252
 msgid ""
 "Poetry supports arbitrary plugins which work similarly to [setuptools entry "
 "points](http://setuptools.readthedocs.io/en/latest/setuptools.html).  To "
@@ -635,7 +687,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:233
+#: docs/pyproject.md:253
 #, no-wrap
 msgid ""
 "[tool.poetry.plugins] # Optional super table\n"
@@ -649,20 +701,50 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/pyproject.md:240
+#: docs/pyproject.md:260
+#, no-wrap
+msgid "`urls`"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:264
+msgid ""
+"In addition to the basic urls (`homepage`, `repository` and "
+"`documentation`), you can specify any custom url in the `urls` section."
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:265
+#, no-wrap
+msgid ""
+"[tool.poetry.urls]\n"
+"\n"
+"\"Bug Tracker\" = \"https://github.com/python-poetry/poetry/issues\"\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/pyproject.md:271
+msgid ""
+"If you publish you package on PyPI, they will appear in the `Project Links` "
+"section."
+msgstr ""
+
+#. type: Title ##
+#: docs/pyproject.md:272
 #, no-wrap
 msgid "Poetry and PEP-517"
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:244
+#: docs/pyproject.md:276
 msgid ""
 "[PEP-517](https://www.python.org/dev/peps/pep-0517/) introduces a standard "
 "way to define alternative build systems to build a Python project."
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:248
+#: docs/pyproject.md:280
 msgid ""
 "Poetry is compliant with PEP-517 so if you use Poetry to manage your Python "
 "project you should reference it in the `build-system` section of the "
@@ -670,7 +752,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:249
+#: docs/pyproject.md:281
 #, no-wrap
 msgid ""
 "[build-system]\n"
@@ -682,7 +764,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/pyproject.md:257
+#: docs/pyproject.md:289
 #, no-wrap
 msgid ""
 "    When using the `new` or `init` command this section will be "

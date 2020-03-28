@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
+"POT-Creation-Date: 2020-03-29 02:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,27 +30,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: docs/libraries.md:5
-#, no-wrap
-msgid "Every project is a package"
-msgstr ""
-
-#. type: Plain text
-#: docs/libraries.md:9
-msgid ""
-"As soon as you have a `pyproject.toml` in a directory, that directory is a "
-"package.  However, to make it accessible to others you will need to package "
-"and publish it."
-msgstr ""
-
-#. type: Title ##
-#: docs/libraries.md:11
+#: docs/libraries.md:6
 #, no-wrap
 msgid "Versioning"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:15
+#: docs/libraries.md:10
 msgid ""
 "While Poetry does not enforce any convention regarding package versioning, "
 "it **strongly** recommends to follow [semantic "
@@ -58,20 +44,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:18
+#: docs/libraries.md:13
 msgid ""
 "This has many advantages for the end users and allows them to set "
-"appropriate [version constraints](/docs/versions/)."
+"appropriate [version "
+"constraints](/docs/dependency-specification/#version-constraints)."
 msgstr ""
 
 #. type: Title ##
-#: docs/libraries.md:19
+#: docs/libraries.md:14
 #, no-wrap
 msgid "Lock file"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:25
+#: docs/libraries.md:20
 msgid ""
 "For your library, you may commit the `poetry.lock` file if you want to.  "
 "This can help your team to always test against the same dependency "
@@ -80,31 +67,31 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:27
+#: docs/libraries.md:22
 msgid ""
 "If you do not want to commit the lock file and you are using git, add it to "
 "the `.gitignore`."
 msgstr ""
 
 #. type: Title ##
-#: docs/libraries.md:28
+#: docs/libraries.md:23
 #, no-wrap
 msgid "Packaging"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:31
+#: docs/libraries.md:26
 msgid "Before you can actually publish your library, you will need to package it."
 msgstr ""
 
 #. type: Code fence info string
-#: docs/libraries.md:32 docs/libraries.md:52 docs/libraries.md:81
+#: docs/libraries.md:27 docs/libraries.md:47 docs/libraries.md:76
 #, no-wrap
 msgid "bash"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:32
+#: docs/libraries.md:27
 #, no-wrap
 msgid ""
 "poetry build\n"
@@ -112,30 +99,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:38
+#: docs/libraries.md:33
 msgid ""
 "This command will package your library in two different formats: `sdist` "
 "which is the source format, and `wheel` which is a `compiled` package."
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:40
+#: docs/libraries.md:35
 msgid "Once that's done you are ready to publish your library"
 msgstr ""
 
 #. type: Title ##
-#: docs/libraries.md:41
+#: docs/libraries.md:36
 #, no-wrap
 msgid "Publishing to PyPI"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:44
+#: docs/libraries.md:39
 msgid "Alright, so now you can publish packages."
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:48
+#: docs/libraries.md:43
 msgid ""
 "Poetry will publish to [PyPI](https://pypi.org) by default. Anything that is "
 "published to PyPI is available automatically through Poetry. Since "
@@ -144,14 +131,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:51
+#: docs/libraries.md:46
 msgid ""
 "If we wanted to share `poetry-demo` with the Python community, we would "
 "publish on PyPI as well.  Doing so is really easy."
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:52
+#: docs/libraries.md:47
 #, no-wrap
 msgid ""
 "poetry publish\n"
@@ -159,7 +146,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:58
+#: docs/libraries.md:53
 msgid ""
 "This will package and publish the library to PyPI, at the condition that you "
 "are a registered user and you have [configured your "
@@ -167,18 +154,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:60
+#: docs/libraries.md:55
 msgid "!!!note"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:62
+#: docs/libraries.md:57
 #, no-wrap
 msgid "    The `publish` command does not execute `build` by default.\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:65
+#: docs/libraries.md:60
 #, no-wrap
 msgid ""
 "    If you want to build and publish your packages together,\n"
@@ -186,30 +173,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:67
+#: docs/libraries.md:62
 msgid "Once this is done, your library will be available to anyone."
 msgstr ""
 
 #. type: Title ##
-#: docs/libraries.md:69
+#: docs/libraries.md:64
 #, no-wrap
 msgid "Publishing to a private repository"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:72
+#: docs/libraries.md:67
 msgid ""
 "Sometimes, you may want to keep your library private but also being "
 "accessible to your team."
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:74
+#: docs/libraries.md:69
 msgid "In this case, you will need to use a private repository."
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:78
+#: docs/libraries.md:73
 msgid ""
 "In order to publish to a private repository, you will need to add it to your "
 "global list of repositories. See [Adding a "
@@ -217,12 +204,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:80
+#: docs/libraries.md:75
 msgid "Once this is done, you can actually publish to it like so:"
 msgstr ""
 
 #. type: Plain text
-#: docs/libraries.md:81
+#: docs/libraries.md:76
 #, no-wrap
 msgid ""
 "poetry publish -r my-repository\n"
