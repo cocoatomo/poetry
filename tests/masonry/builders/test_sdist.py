@@ -124,6 +124,7 @@ def test_make_setup():
         "my_package",
         "my_package.sub_pkg1",
         "my_package.sub_pkg2",
+        "my_package.sub_pkg3",
     ]
     assert ns["install_requires"] == ["cachy[msgpack]>=0.2.0,<0.3.0", "cleo>=0.6,<0.7"]
     assert ns["entry_points"] == {
@@ -178,6 +179,7 @@ def test_find_files_to_add():
             Path("my_package/sub_pkg1/__init__.py"),
             Path("my_package/sub_pkg2/__init__.py"),
             Path("my_package/sub_pkg2/data2/data.json"),
+            Path("my_package/sub_pkg3/foo.py"),
             Path("pyproject.toml"),
         ]
     )
@@ -213,7 +215,12 @@ def test_find_packages():
     pkg_dir, packages, pkg_data = builder.find_packages(include)
 
     assert pkg_dir is None
-    assert packages == ["my_package", "my_package.sub_pkg1", "my_package.sub_pkg2"]
+    assert packages == [
+        "my_package",
+        "my_package.sub_pkg1",
+        "my_package.sub_pkg2",
+        "my_package.sub_pkg3",
+    ]
     assert pkg_data == {
         "": ["*"],
         "my_package": ["data1/*"],
@@ -436,6 +443,7 @@ def test_src_excluded_nested_data():
         assert "my-package-1.2.3/my_package/data/sub_data/data2.txt" not in names
         assert "my-package-1.2.3/my_package/data/sub_data/data3.txt" not in names
         assert "my-package-1.2.3/my_package/data/data1.txt" not in names
+        assert "my-package-1.2.3/my_package/data/data2.txt" in names
         assert "my-package-1.2.3/my_package/puplic/publicdata.txt" in names
         assert "my-package-1.2.3/my_package/public/item1/itemdata1.txt" not in names
         assert (
@@ -465,3 +473,18 @@ def test_proper_python_requires_if_three_digits_precision_version_specified():
     parsed = p.parsestr(to_str(pkg_info))
 
     assert parsed["Requires-Python"] == "==2.7.15"
+
+
+def test_excluded_subpackage():
+    poetry = Factory().create_poetry(project("excluded_subpackage"))
+
+    builder = SdistBuilder(poetry, NullEnv(), NullIO())
+    setup = builder.build_setup()
+
+    setup_ast = ast.parse(setup)
+
+    setup_ast.body = [n for n in setup_ast.body if isinstance(n, ast.Assign)]
+    ns = {}
+    exec(compile(setup_ast, filename="setup.py", mode="exec"), ns)
+
+    assert ns["packages"] == ["example"]

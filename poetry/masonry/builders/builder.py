@@ -44,6 +44,7 @@ class Builder(object):
         self._io = io
         self._package = poetry.package
         self._path = poetry.file.parent
+        self._original_path = self._path
 
         packages = []
         for p in self._package.packages:
@@ -75,7 +76,7 @@ class Builder(object):
     @lru_cache(maxsize=None)
     def find_excluded_files(self):  # type: () -> Set[str]
         # Checking VCS
-        vcs = get_vcs(self._path)
+        vcs = get_vcs(self._original_path)
         if not vcs:
             vcs_ignored_files = set()
         else:
@@ -162,7 +163,7 @@ class Builder(object):
             )
             to_add.append(license_file.relative_to(self._path))
 
-        # If a README is specificed we need to include it
+        # If a README is specified we need to include it
         # to avoid errors
         if "readme" in self._poetry.local_config:
             readme = self._path / self._poetry.local_config["readme"]
