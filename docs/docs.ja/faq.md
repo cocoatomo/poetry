@@ -1,41 +1,50 @@
 # FAQ
 
-## なぜ依存関係解決の処理は遅いのですか？
+## Why is the dependency resolution process slow?
 
-Poetryの心臓部である依存関係解決器は大いに最適化されており、ほとんどのケースで十分に速いはずですが、ときどき、ある依存関係の特定の組み合わせでは、妥当な解決策を見付けるのに時間がかかることがあります。
+While the dependency resolver at the heart of Poetry is highly optimized and
+should be fast enough for most cases, sometimes, with some specific set of
+dependencies, it can take time to find a valid solution.
 
-これは、PyPIにある全てのライブラリが適切なメタデータの宣言をしているわけではなく、それらはPyPI JSON
-APIからは利用可能でないという事実に依るものです。
-現時点では、パッケージをダウンロードし、中身を調べて必要な情報を取得する以外の選択肢は、Poetryにはありません。
-これは手間の掛かる作業で、それが原因でバンド幅と時間の両方において長い処理に見えるのです。
+This is due to the fact that not all libraries on PyPI have properly
+declared their metadata and, as such, they are not available via the PyPI
+JSON API. At this point, Poetry has no choice but downloading the packages
+and inspect them to get the necessary information. This is an expensive
+operation, both in bandwidth and time, which is why it seems this is a long
+process.
 
-今のところ、これを回避する道はありません。
+At the moment there is no way around it.
 
-!!!注意
+!!!note
 
-    いったんPoetryがリリース情報をキャッシュしてしまえば、
-    依存関係解決の処理はとても速くなります。
+    Once Poetry has cached the releases' information, the dependency resolution process
+    will be much faster.
 
-## 上限の無いバージョン制約が良くないのはなぜですか？
+## Why are unbound version constraints a bad idea?
 
-`*` や `>=3.4` のような上限の無いバージョン制約は、依存関係のいくらでも先のバージョンへの更新を許可します。
-これには後方互換性を破壊するメジャーバージョンも含まれています。
+A version constraint without an upper bound such as `*` or `>=3.4` will allow updates to any future version of the dependency.
+This includes major versions breaking backward compatibility.
 
-いったんパッケージのリリースが公開されてしまうと、後方互換性の破壊が起きてしまうケースでも、それ以降は依存関係の微調整は行えなくなります。そうなると新しいリリースを出さなればいけませんが、その前のリリースは後方互換性が壊れたままです。
+Once a release of your package is published, you cannot tweak its
+dependencies anymore in case a dependency breaks BC - you have to do a new
+release but the previous one stays broken.
 
-唯一の適切な選択肢は、バージョン制約に上限を設け、パッケージが依存関係の新しいメジャーバージョンと互換性があることをテストした後の新しいリリースで、その上限を上げられるようにすることです。
+The only good alternative is to define an upper bound on your constraints,
+which you can increase in a new release after testing that your package is
+compatible with the new major version of your dependency.
 
-例えば、 `>=3.4` を使う代わりに、 `<4.0` を満たす全てのバージョンを許可する `~3.4` を使うべきです。
-`^` 演算子は、 [semantic versioning](https://semver.org) に従ったライブラリと非常に相性が良いです。
+For example instead of using `>=3.4` you should use `~3.4` which allows all versions `<4.0`.
+The `^` operator works very well with libraries following [semantic versioning](https://semver.org).
 
-## toxはサポートしていますか？
+## Is tox supported?
 
-はい。
-`tox` が提供している
-[隔離ビルド](https://tox.readthedocs.io/en/latest/config.html#conf-isolated_build)
-を使うことで、Poetryが提供するPEP 517準拠のビルドシステムと `tox` を連携して使えます。
+Yes. By using the [isolated
+builds](https://tox.readthedocs.io/en/latest/config.html#conf-isolated_build)
+`tox` provides, you can use it in combination with the PEP 517 compliant
+build system provided by Poetry.
 
-連携させるには、 `pyproject.toml` ファイルに、この節がまだ無ければ追加してください:
+So, in your `pyproject.toml` file, add this section if it does not already
+exist:
 
 ```toml
 [build-system]
@@ -43,7 +52,7 @@ requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 ```
 
-そして、このような `tox.ini` 設定ファイルを使ってください:
+And use a `tox.ini` configuration file similar to this:
 
 ```INI
 [tox]
@@ -57,12 +66,15 @@ commands =
     poetry run pytest tests/
 ```
 
-## Poetryに仮想環境を管理されたくありません。無効化できませんか？
+## I don't want Poetry to manage my virtual environments. Can I disable it?
 
-Poetryは、グローバルにインストールされたPythonから隔離された状態で動作するために仮想環境を自動的に作成しますが、コンテナで動作させるときのような、その必要が無くむしろオーバーヘッドになるという、そうしない妥当な理由もあります。
+While Poetry automatically creates virtual environments to always work
+isolated from the global Python installation, there are valid reasons why
+it's not necessary and is an overhead, like when working with containers.
 
-このケースでは、 `virtualenvs.create` に `false` を設定することで、この機能を無効化できます:
+In this case, you can disable this feature by setting the
+`virtualenvs.create` setting to `false`:
 
 ```bash
-poetry config settings.virtualenvs.create false
+poetry config virtualenvs.create false
 ```

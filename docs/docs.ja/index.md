@@ -1,99 +1,119 @@
-# 入門
+# Introduction
 
-PoetryはPythonでの依存関係管理とパッケージングのためのツールです。
-Poetryを使うとプロジェクトが依存しているライブラリを宣言でき、それらを管理 (インストールおよびアップデート) してくれます。
-
-
-## システム要件
-
-PoetryはPython 2.7あるいはPython 3.4以降を必要とします。
-Poetryはマルチプラットフォームに対応していて、Windows, Linux, OSXで同じように動作することを目標としています。
+Poetry is a tool for dependency management and packaging in Python.  It
+allows you to declare the libraries your project depends on and it will
+manage (install/update) them for you.
 
 
-## インストール
+## System requirements
 
-Poetryは独自のインストーラーを提供していて、依存パッケージをベンダー化 (vendorizing) によって `poetry`
-を、システムの他のものから隔離された状態でインストールします。
-これは推奨された `poetry` のインストール方法です。
+Poetry requires Python 2.7 or 3.4+. It is multi-platform and the goal is to
+make it work equally well on Windows, Linux and OSX.
 
+
+## Installation
+
+Poetry provides a custom installer that will install `poetry` isolated from
+the rest of your system by vendorizing its dependencies. This is the
+recommended way of installing `poetry`.
+
+### osx / linux / bashonwindows install instructions
 ```bash
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+```
+### windows powershell install instructions
+```powershell
+(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python
 ```
 
-!!! 注意
+!!! note
 
-    Poetryは一度だけインストールすれば良いです。Poetryは現在使われているPythonバージョンを自動的に読み取り、
-    それを踏まえて適切に [仮想環境を作成](/poetry-ja/basic-usage/#poetry-and-virtualenvs) します。
+    You only need to install Poetry once. It will automatically pick up the current
+    Python version and use it to [create virtualenvs](/docs/basic-usage/#poetry-and-virtualenvs) accordingly.
 
-このインストーラーは、 `poetry` ツールをPoetryの `bin` ディレクトリにインストールします。
-そのディレクトリの位置は、Unixでは `$HOME/.poetry/bin` で、Windowsでは
-`%USERPROFILE%\.poetry\bin` です。
+The installer installs the `poetry` tool to Poetry's `bin` directory.  On
+Unix it is located at `$HOME/.poetry/bin` and on Windows at
+`%USERPROFILE%\.poetry\bin`.
 
-このディレクトリは `$PATH` 環境変数に含まれ、何かしらの設定をしなくてもシェルから実行できるということになります。
-シェルを新たに開き、次のコマンドを打ち込んでください:
+This directory will be in your `$PATH` environment variable, which means you
+can run them from the shell without further configuration.  Open a new shell
+and type the following:
 
 ```bash
 poetry --version
 ```
 
-`Poetry 0.12.0` のような出力が見えたら、Poetryを使う準備が整いました。
-もしPoetryが自分には向かないと判断したら、 `--uninstall` オプションを付けるか、インストーラーを実行する前に
-`POETRY_UNINSTALL` 環境変数を設定するかして、先程のインストーラーを再度実行すると、システムからPoetryを完全に消去できます。
+If you see something like `Poetry 0.12.0` then you are ready to use Poetry.
+If you decide Poetry isn't your thing, you can completely remove it from
+your system by running the installer again with the `--uninstall` option or
+by setting the `POETRY_UNINSTALL` environment variable before executing the
+installer.
 
 ```bash
 python get-poetry.py --uninstall
 POETRY_UNINSTALL=1 python get-poetry.py
 ```
 
-プレリリースバージョンをインストールしたい場合は、 `get-poetry.py` に `--preview` を渡すか
-`POETRY_PREVIEW` 環境変数を使えばできます:
+By default, Poetry is installed into the user's platform-specific home
+directory. If you wish to change this, you may define the `POETRY_HOME`
+environment variable:
+
+```bash
+POETRY_HOME=/etc/poetry python get-poetry.py
+```
+
+If you want to install prerelease versions, you can do so by passing
+`--preview` to `get-poetry.py` or by using the `POETRY_PREVIEW` environment
+variable:
 
 ```bash
 python get-poetry.py --preview
 POETRY_PREVIEW=1 python get-poetry.py
 ```
 
-同様に、特定のバージョンをインストールしたい場合は、 `--version` や `POETRY_VERSION` 環境変数が使えます:
+Similarly, if you want to install a specific version, you can use
+`--version` or the `POETRY_VERSION` environment variable:
 
 ```bash
 python get-poetry.py --version 0.12.0
 POETRY_VERSION=0.12.0 python get-poetry.py
 ```
 
-!!!注意
+!!!note
 
-    インストーラーはリリースバージョンが0.12.0より前のPoetryはサポートしていないことに注意してください。
+    Note that the installer does not support Poetry releases < 0.12.0.
 
-### 他のインストール方法 (非推奨)
+### Alternative installation methods (not recommended)
 
-!!!注意
+!!!note
 
-    他のインストール方法を使うと、Poetryは常に、
-    仮想環境を作成するためにインストールされたバージョンのPythonを使います。
+    Using alternative installation methods will make Poetry always
+    use the Python version for which it has been installed to create
+    virtualenvs.
 
-そのため、使いたいPythonのバージョンごとにPoetryをインストールし、切り替える必要があります。
+    So, you will need to install Poetry for each Python version you
+    want to use and switch between them.
 
-#### `pip` でインストール
+#### Installing with `pip`
 
-`pip` を使ってPoetryをインストールできます。
+Using `pip` to install Poetry is possible.
 
 ```bash
 pip install --user poetry
 ```
 
-!!!警告
+!!!warning
 
-    他のパッケージと衝突を起こす可能性のあるPoetryの依存パッケージを
-    インストールすることにもなるのを認識しておいてください。
+    Be aware that it will also install Poetry's dependencies
+    which might cause conflicts with other packages.
 
-#### `pipx` でインストール
+#### Installing with `pipx`
 
-[`pipx`](https://github.com/cs01/pipx)を使ってPoetryをインストールすることもできます。
-[pipx]は、PythonのCLIアプリケーションを仮想環境に隔離したまま、システム全体で使えるようにインストールするのに使われます。
-これにより更新やアンインストールが環境を汚さずに行えます。
-pipxはPython 3.6以降のバージョンをサポートしています。
-もっと前のバージョンのPythonを使っている場合は、
-[pipsi](https://github.com/mitsuhiko/pipsi)を検討してください。
+Using [`pipx`](https://github.com/cs01/pipx) to install Poetry is also
+possible. [pipx] is used to install Python CLI applications globally while
+still isolating them in virtual environments. This allows for clean upgrades
+and uninstalls. pipx supports Python 3.6 and later. If using an earlier
+version of Python, consider [pipsi](https://github.com/mitsuhiko/pipsi).
 
 ```bash
 pipx install poetry
@@ -107,39 +127,47 @@ pipx upgrade poetry
 pipx uninstall poetry
 ```
 
-[Github repository](https://github.com/cs01/pipx)。
+[Github repository](https://github.com/cs01/pipx).
 
 
-## `poetry` のアップデート
+## Updating `poetry`
 
-Poetryを最新バージョンまで更新するのは簡単で `self:update` コマンドを呼び出すだけです。
-
-```bash
-poetry self:update
-```
-
-プレリリースバージョンをインストールしたい場合は、 `--preview` オプションが使えます。
+Updating Poetry to the latest stable version is as simple as calling the
+`self update` command.
 
 ```bash
-poetry self:update --preview
+poetry self update
 ```
 
-最後に、特定のバージョンをインストールしたい場合は、引数としてバージョンを `self:update` に渡せます。
+If you want to install pre-release versions, you can use the `--preview`
+option.
 
 ```bash
-poetry self:update 0.8.0
+poetry self update --preview
 ```
 
-!!!注意
+And finally, if you want to install a specific version, you can pass it as
+an argument to `self update`.
 
-    `self:update` コマンドが使えるのは、推奨インストーラーを使って
-    Poetryをインストールしたときだけです。
+```bash
+poetry self update 0.8.0
+```
+
+!!!note
+
+    The `self update` command will only work if you used the recommended
+    installer to install Poetry.
+
+!!!note
+
+    If you are still on poetry version < 1.0 use `poetry self:update` instead.
 
 
-## Bash, Fish, Zshでの補完の有効化
+## Enable tab completion for Bash, Fish, or Zsh
 
-`poetry` はBash, Fish, Zsh用の補完スクリプトの生成をサポートしています。
-完全な詳細については `poetry help completions` を参照してください。要点は簡単で、次のコマンドのどれか1つを使う、です:
+`poetry` supports generating completion scripts for Bash, Fish, and Zsh.
+See `poetry help completions` for full details, but the gist is as simple as
+using one of the following:
 
 
 ```bash
@@ -161,17 +189,18 @@ poetry completions zsh > $ZSH/plugins/poetry/_poetry
 
 ```
 
-!!! 注意
+!!! note
 
-    変更が効くようにするのにシェルを再起動する必要があるかもしれません。
+    You may need to restart your shell in order for the changes to take effect.
 
-`zsh` では、 `~/.zshrc` の `compinit` より前に次の行を追加しなければなりません:
+For `zsh`, you must then add the following line in your `~/.zshrc` before
+`compinit`:
 
 ```bash
 fpath+=~/.zfunc
 ```
 
-`oh-my-zsh` では、 `~/.zshrc` プラグインでpoetryを有効化しなければなりません:
+For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins
 
 ```
 plugins(

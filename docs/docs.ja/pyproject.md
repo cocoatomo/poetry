@@ -1,86 +1,85 @@
-# `pyproject.toml` ファイル
+# The `pyproject.toml` file
 
-`pyproject.toml` ファイルの `tool.poetry` 節は複数の節で構成されています。
+The `tool.poetry` section of the `pyproject.toml` file is composed of
+multiple sections.
 
 ## name
 
-パッケージ名。
-**必須**
+The name of the package. **Required**
 
 ## version
 
-パッケージのバージョン。 **必須**
+The version of the package. **Required**
 
-これは [semantic versioning](http://semver.org/) に従うべきです。
-ただし、強制はしませんし、他の仕様に従う自由も残されています。
+This should follow [semantic versioning](http://semver.org/). However it
+will not be enforced and you remain free to follow another specification.
 
 ## description
 
-パッケージの短い説明。 **必須**
+A short description of the package. **Required**
 
 ## license
 
-パッケージのライセンス。
+The license of the package.
 
-最もよく使われるライセンスの推奨される記法は (アルファベット順で) 次の通りです:
+The recommended notation for the most common licenses is (alphabetical):
 
 * Apache-2.0
 * BSD-2-Clause
 * BSD-3-Clause
 * BSD-4-Clause
-* GPL-2.0
-* GPL-2.0+
-* GPL-3.0
-* GPL-3.0+
-* LGPL-2.1
-* LGPL-2.1+
-* LGPL-3.0
-* LGPL-3.0+
+* GPL-2.0-only
+* GPL-2.0-or-later
+* GPL-3.0-only
+* GPL-3.0-or-later
+* LGPL-2.1-only
+* LGPL-2.1-or-later
+* LGPL-3.0-only
+* LGPL-3.0-or-later
 * MIT
 
-任意ですが、この節を載せておくことを強く推奨します。
-この他の識別子は [SPDX Open Source License Registry](https://www.spdx.org/licenses/)
-に一覧があります。
+Optional, but it is highly recommended to supply this.  More identifiers are
+listed at the [SPDX Open Source License
+Registry](https://www.spdx.org/licenses/).
 
 ## authors
 
-パッケージの作者。
-**必須**
+The authors of the package. **Required**
 
-これは作者のリストで、少なくとも1人は載せるべきです。
-作者は `name <email>` という形式で載せなければなりません。
+This is a list of authors and should contain at least one author. Authors must be in the form `name <email>`.
+
+## maintainers
+
+The maintainers of the package. **Optional**
+
+This is a list of maintainers and should be distinct from authors. Maintainers may contain an email and be in the form `name <email>`.
 
 ## readme
 
-パッケージのreadmeファイル。
-**任意**
+The readme file of the package. **Optional**
 
-ファイルは `README.rst` もしくは `README.md` のどちらでも構いません。
+The file can be either `README.rst` or `README.md`.
 
 ## homepage
 
-プロジェクトのウェブサイトへのURL。
-**任意**
+An URL to the website of the project. **Optional**
 
 ## repository
 
-プロジェクトのウェブサイトへのURL。
-**任意**
+An URL to the repository of the project. **Optional**
 
-## ドキュメント
+## documentation
 
-プロジェクトのドキュメントへのURL。
-**任意**
+An URL to the documentation of the project. **Optional**
 
 ## keywords
 
-パッケージに関連する (最大5つの) キーワードの一覧。
-**任意**
+A list of keywords (max: 5) that the package is related to. **Optional**
 
 ## classifiers
 
-プロジェクトの説明となるPyPIの [trove classifiers](https://pypi.org/classifiers/) の一覧。
-**任意**
+A list of PyPI [trove classifiers](https://pypi.org/classifiers/) that
+describe the project. **Optional**
 
 ```toml
 [tool.poetry]
@@ -93,16 +92,17 @@ classifiers = [
 
 !!!note
 
-    何にせよ、Python classifierは自動的に追加され、
-    それは `python` 要件で決まります。
+    Note that Python classifiers are still automatically added for you and are determined by your `python` requirement.
 
-    `license` 属性から自動的にLicense classifierが設定されます。
+    The `license` property will also set the License classifier automatically.
 
 ## packages
 
-最終配布物に含まれるパッケージやモジュールの一覧。
+A list of packages and modules to include in the final distribution.
 
-プロジェクトの構成が `poetry` が標準でサポートしているものと異なる場合は、最終配布物に含めたいパッケージを指定できます。
+If your project structure differs from the standard one supported by
+`poetry`, you can specify the packages you want to include in the final
+distribution.
 
 ```toml
 [tool.poetry]
@@ -113,7 +113,7 @@ packages = [
 ]
 ```
 
-パッケージが"source"ディレクトリ内にある場合は、それを指定しなければなりません:
+If your package is stored inside a "source" directory, you must specify it:
 
 ```toml
 [tool.poetry]
@@ -123,13 +123,28 @@ packages = [
 ]
 ```
 
+If you want to restrict a package to a specific [build](#build) format you
+can specify it by using `format`:
+
+```toml
+[tool.poetry]
+# ...
+packages = [
+    { include = "my_package" },
+    { include = "tests", format = "sdist" },
+]
+```
+
+From now on, only the `sdist` build archive will include the `tests`
+package.
+
 !!!note
 
-    `packages` を使うとパッケージの自動検出機能が無効になり、
-    「デフォルトの」パッケージを **明示的に** 指定しないといけないことになります。
+    Using `packages` disables the package auto-detection feature meaning you have to
+    **explicitly** specify the "default" package.
 
-    例えば、 `my_package` という名前のパッケージがあり、 `extra_package` という名前の別のパッケージも一緒に含めたい場合、
-    明示的に `my_package` も指定する必要があります:
+    For instance, if you have a package named `my_package` and you want to also include
+    another package named `extra_package`, you will need to specify `my_package` explicitly:
 
     ```toml
     packages = [
@@ -140,18 +155,21 @@ packages = [
 
 !!!note
 
-    Poetryは賢いのでPythonのサブパッケージを検出できます。
+    Poetry is clever enough to detect Python subpackages.
 
-    それなので、ルートパッケージがあるディレクトリを指定するだけで済みます。
+    Thus, you only have to specify the directory where your root package resides.
 
-## includeとexclude
+## include and exclude
 
-最終的なパッケージに含まれるパターンの一覧。
+A list of patterns that will be included in the final package.
 
-パッケージ化のために無視するべき、あるいは含めるべきglobの集合をPoetryに明示的に指定できます。
-excludeフィールドに指定されたglobは、パッケージのビルド時に含めないファイルの集合を特定します。
+You can explicitly specify to Poetry that a set of globs should be ignored
+or included for the purposes of packaging.  The globs specified in the
+exclude field identify a set of files that are not included when a package
+is built.
 
-パッケージの管理にVCSを使っている場合は、excludeフィールドはVCSの除外設定 (例えばgitの `.gitignore`) を元に作られます。
+If a VCS is being used for a package, the exclude field will be seeded with
+the VCS’ ignore settings (`.gitignore` for git for example).
 
 ```toml
 [tool.poetry]
@@ -163,17 +181,18 @@ include = ["CHANGELOG.md"]
 exclude = ["my_package/excluded.py"]
 ```
 
-## `dependencies` と `dev-dependencies`
+## `dependencies` and `dev-dependencies`
 
-Poetryは、デフォルトでは [PyPi](https://pypi.org) の依存関係を探すよう設定されています。
-その場合では、パッケージ名とバージョン文字列だけが要求されます。
+Poetry is configured to look for dependencies on [PyPi](https://pypi.org) by
+default.  Only the name and a version string are required in this case.
 
 ```toml
 [tool.poetry.dependencies]
 requests = "^2.13.0"
 ```
 
-プライベートレポジトリを使いたい場合は、次のように `pyproject.toml` ファイルに追加できます:
+If you want to use a private repository, you can add it to your
+`pyproject.toml` file, like so:
 
 ```toml
 [[tool.poetry.source]]
@@ -183,8 +202,8 @@ url = 'http://example.com/simple'
 
 !!!note
 
-    パッケージと互換性のあるPythonバージョンの宣言は
-    義務であることに気を付けてください:
+    Be aware that declaring the python version for which your package
+    is compatible is mandatory:
 
     ```toml
     [tool.poetry.dependencies]
@@ -193,21 +212,23 @@ url = 'http://example.com/simple'
 
 ## `scripts`
 
-この節は、パッケージをインストールするときにインストールされるスクリプトや実行可能ファイルを記述します
+This section describe the scripts or executable that will be installed when
+installing the package
 
 ```toml
 [tool.poetry.scripts]
-poetry = 'poetry:console.run'
+poetry = 'poetry.console:run'
 ```
 
-ほら、これで `poetry` バッケージにある `console.run` を実行する `poetry` スクリプトがインストールされました。
+Here, we will have the `poetry` script installed which will execute
+`console.run` in the `poetry` package.
 
 ## `extras`
 
-Poetryは次の表現を可能にするために追加の依存関係をサポートしています:
+Poetry supports extras to allow expression of:
 
-* パッケージを拡張するものだが必須ではない、オプションの依存関係
-* オプションの依存関係のパッケージ群
+* optional dependencies, which enhance a package, but are not required; and
+* clusters of optional dependencies.
 
 ```toml
 [tool.poetry]
@@ -227,7 +248,8 @@ mysql = ["mysqlclient"]
 pgsql = ["psycopg2"]
 ```
 
-パッケージをインストールするときに、 `-E|--extras` オプションを使って追加分だと指定できます:
+When installing packages, you can specify extras by using the `-E|--extras`
+option:
 
 ```bash
 poetry install --extras "mysql pgsql"
@@ -236,10 +258,10 @@ poetry install -E mysql -E pgsql
 
 ## `plugins`
 
-Poetryは
-[setuptoolsのエントリーポイント](http://setuptools.readthedocs.io/en/latest/setuptools.html)
-と同じように動作する任意のプラグインをサポートしています。
-setuptoolsのドキュメントにある例に合わせると、次のように使います:
+Poetry supports arbitrary plugins which work similarly to [setuptools entry
+points](http://setuptools.readthedocs.io/en/latest/setuptools.html).  To
+match the example in the setuptools documentation, you would use the
+following:
 
 ```toml
 [tool.poetry.plugins] # Optional super table
@@ -248,13 +270,27 @@ setuptoolsのドキュメントにある例に合わせると、次のように�
 ".rst" = "some_module:SomeClass"
 ```
 
-## PoetryとPEP-517
+## `urls`
 
-[PEP-517](https://www.python.org/dev/peps/pep-0517/)
-は、Pythonプロジェクトをビルドする別のビルドシステムを定義する標準的な方法を導入します。
+In addition to the basic urls (`homepage`, `repository` and
+`documentation`), you can specify any custom url in the `urls` section.
 
-PoetryはPEP-517に準拠しているので、Poetryを使ってPythonプロジェクトを管理していたなら、次のように
-`pyproject.toml` ファイルの `build-system` 節で目にするはずです:
+```toml
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
+```
+
+If you publish you package on PyPI, they will appear in the `Project Links`
+section.
+
+## Poetry and PEP-517
+
+[PEP-517](https://www.python.org/dev/peps/pep-0517/) introduces a standard
+way to define alternative build systems to build a Python project.
+
+Poetry is compliant with PEP-517 so if you use Poetry to manage your Python
+project you should reference it in the `build-system` section of the
+`pyproject.toml` file like so:
 
 ```toml
 [build-system]
@@ -264,4 +300,4 @@ build-backend = "poetry.masonry.api"
 
 !!!note
 
-    `new` コマンドや `init` コマンドを使うときには、この節は自動的に追加されます。
+    When using the `new` or `init` command this section will be automatically added.
