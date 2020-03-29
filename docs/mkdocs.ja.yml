@@ -10,12 +10,13 @@ extra:
 
 nav:
   - Introduction: index.md
-  - Basic Usage: basic-usage.md
+  - 基本的な使い方: basic-usage.md
   - Libraries: libraries.md
   - Commands: cli.md
   - Configuration: configuration.md
   - Repositories: repositories.md
-  - Versions: versions.md
+  - Managing environments: managing-environments.md
+  - Dependency specification: dependency-specification.md
   - The pyproject.toml file: pyproject.md
   - Contributing: contributing.md
   - FAQ: faq.md
@@ -26,6 +27,8 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: 🔗
+  - markdown_include.include:
+      base_path: docs.ja
 
 docs_dir: docs.ja
 
