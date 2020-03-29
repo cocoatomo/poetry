@@ -1,0 +1,75 @@
+[main]
+host = https://www.transifex.com
+
+[poetry-ja.basic-usage]
+file_filter = <lang>/LC_MESSAGES/basic-usage.po
+source_file = pot/basic-usage.pot
+source_lang = en
+type = PO
+
+[poetry-ja.cli]
+file_filter = <lang>/LC_MESSAGES/cli.po
+source_file = pot/cli.pot
+source_lang = en
+type = PO
+
+[poetry-ja.configuration]
+file_filter = <lang>/LC_MESSAGES/configuration.po
+source_file = pot/configuration.pot
+source_lang = en
+type = PO
+
+[poetry-ja.contributing]
+file_filter = <lang>/LC_MESSAGES/contributing.po
+source_file = pot/contributing.pot
+source_lang = en
+type = PO
+
+[poetry-ja.dependency-specification]
+file_filter = <lang>/LC_MESSAGES/dependency-specification.po
+source_file = pot/dependency-specification.pot
+source_lang = en
+type = PO
+
+[poetry-ja.faq]
+file_filter = <lang>/LC_MESSAGES/faq.po
+source_file = pot/faq.pot
+source_lang = en
+type = PO
+
+[poetry-ja.index]
+file_filter = <lang>/LC_MESSAGES/index.po
+source_file = pot/index.pot
+source_lang = en
+type = PO
+
+[poetry-ja.libraries]
+file_filter = <lang>/LC_MESSAGES/libraries.po
+source_file = pot/libraries.pot
+source_lang = en
+type = PO
+
+[poetry-ja.managing-environments]
+file_filter = <lang>/LC_MESSAGES/managing-environments.po
+source_file = pot/managing-environments.pot
+source_lang = en
+type = PO
+
+[poetry-ja.pyproject]
+file_filter = <lang>/LC_MESSAGES/pyproject.po
+source_file = pot/pyproject.pot
+source_lang = en
+type = PO
+
+[poetry-ja.repositories]
+file_filter = <lang>/LC_MESSAGES/repositories.po
+source_file = pot/repositories.pot
+source_lang = en
+type = PO
+
+[poetry-ja.versions]
+file_filter = <lang>/LC_MESSAGES/versions.po
+source_file = pot/versions.pot
+source_lang = en
+type = PO
+
