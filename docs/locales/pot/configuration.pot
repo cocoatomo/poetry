@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,18 +59,10 @@ msgid ""
 "project by passing the `--local` option to the `config` command."
 msgstr ""
 
-#. type: Code fence info string
-#: docs/configuration.md:18 docs/configuration.md:27 docs/configuration.md:45 docs/configuration.md:56 docs/configuration.md:66 docs/configuration.md:82 docs/configuration.md:88
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:18
 #, no-wrap
-msgid ""
-"poetry config virtualenvs.create false --local\n"
-"\n"
+msgid "poetry config virtualenvs.create false --local\n"
 msgstr ""
 
 #. type: Title ##
@@ -86,12 +78,10 @@ msgid ""
 "`config` command:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:27
 #, no-wrap
-msgid ""
-"poetry config --list\n"
-"\n"
+msgid "poetry config --list\n"
 msgstr ""
 
 #. type: Plain text
@@ -99,25 +89,15 @@ msgstr ""
 msgid "which will give you something similar to this:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/configuration.md:33
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/configuration.md:33
 #, no-wrap
 msgid ""
 "cache-dir = \"/path/to/cache/directory\"\n"
-"\n"
 "virtualenvs.create = true\n"
-"\n"
 "virtualenvs.in-project = false\n"
-"\n"
 "virtualenvs.path = \"{cache-dir}/virtualenvs\"  # "
 "/path/to/cache/directory/virtualenvs\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -133,12 +113,10 @@ msgid ""
 "the `config` command"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:45
 #, no-wrap
-msgid ""
-"poetry config virtualenvs.path\n"
-"\n"
+msgid "poetry config virtualenvs.path\n"
 msgstr ""
 
 #. type: Plain text
@@ -161,12 +139,10 @@ msgid ""
 "after the setting's name:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:56
 #, no-wrap
-msgid ""
-"poetry config virtualenvs.path /path/to/cache/directory/virtualenvs\n"
-"\n"
+msgid "poetry config virtualenvs.path /path/to/cache/directory/virtualenvs\n"
 msgstr ""
 
 #. type: Title ##
@@ -182,12 +158,10 @@ msgid ""
 "option:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:66
 #, no-wrap
-msgid ""
-"poetry config virtualenvs.path --unset\n"
-"\n"
+msgid "poetry config virtualenvs.path --unset\n"
 msgstr ""
 
 #. type: Plain text
@@ -223,12 +197,10 @@ msgid ""
 "underscore, here is an example:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:82
 #, no-wrap
-msgid ""
-"export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory\n"
-"\n"
+msgid "export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory\n"
 msgstr ""
 
 #. type: Plain text
@@ -236,12 +208,10 @@ msgstr ""
 msgid "This also works for secret settings, like credentials:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/configuration.md:88
 #, no-wrap
-msgid ""
-"export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret\n"
-"\n"
+msgid "export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret\n"
 msgstr ""
 
 #. type: Title ##

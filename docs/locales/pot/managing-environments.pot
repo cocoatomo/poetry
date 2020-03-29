@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,18 +102,10 @@ msgid ""
 "project."
 msgstr ""
 
-#. type: Code fence info string
-#: docs/managing-environments.md:39 docs/managing-environments.md:45 docs/managing-environments.md:51 docs/managing-environments.md:58 docs/managing-environments.md:67 docs/managing-environments.md:89 docs/managing-environments.md:98 docs/managing-environments.md:114
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:39
 #, no-wrap
-msgid ""
-"poetry env use /full/path/to/python\n"
-"\n"
+msgid "poetry env use /full/path/to/python\n"
 msgstr ""
 
 #. type: Plain text
@@ -121,12 +113,10 @@ msgstr ""
 msgid "If you have the python executable in your `PATH` you can use it:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:45
 #, no-wrap
-msgid ""
-"poetry env use python3.7\n"
-"\n"
+msgid "poetry env use python3.7\n"
 msgstr ""
 
 #. type: Plain text
@@ -134,12 +124,10 @@ msgstr ""
 msgid "You can even just use the minor Python version in this case:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:51
 #, no-wrap
-msgid ""
-"poetry env use 3.7\n"
-"\n"
+msgid "poetry env use 3.7\n"
 msgstr ""
 
 #. type: Plain text
@@ -149,12 +137,10 @@ msgid ""
 "use the special `system` Python version to retrieve the default behavior:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:58
 #, no-wrap
-msgid ""
-"poetry env use system\n"
-"\n"
+msgid "poetry env use system\n"
 msgstr ""
 
 #. type: Title ##
@@ -170,12 +156,10 @@ msgid ""
 "environment, you can use the `env info` command:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:67
 #, no-wrap
-msgid ""
-"poetry env info\n"
-"\n"
+msgid "poetry env info\n"
 msgstr ""
 
 #. type: Plain text
@@ -183,36 +167,20 @@ msgstr ""
 msgid "will output something similar to this:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/managing-environments.md:73 docs/managing-environments.md:104
-#, no-wrap
-msgid "text"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (text)
 #: docs/managing-environments.md:73
 #, no-wrap
 msgid ""
 "Virtual environment\n"
-"\n"
 "Python:         3.7.1\n"
-"\n"
 "Implementation: CPython\n"
-"\n"
 "Path:           /path/to/poetry/cache/virtualenvs/test-O3eWbxRl-py3.7\n"
-"\n"
 "Valid:          True\n"
 "\n"
-"\n"
-"\n"
 "System\n"
-"\n"
 "Platform: darwin\n"
-"\n"
 "OS:       posix\n"
-"\n"
 "Python:   /path/to/main/python\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -222,12 +190,10 @@ msgid ""
 "the `--path` option to `env info`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:89
 #, no-wrap
-msgid ""
-"poetry env info --path\n"
-"\n"
+msgid "poetry env info --path\n"
 msgstr ""
 
 #. type: Title ##
@@ -243,12 +209,10 @@ msgid ""
 "virtual environment with the `env list` command:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:98
 #, no-wrap
-msgid ""
-"poetry env list\n"
-"\n"
+msgid "poetry env list\n"
 msgstr ""
 
 #. type: Plain text
@@ -256,16 +220,13 @@ msgstr ""
 msgid "will output something like the following:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (text)
 #: docs/managing-environments.md:104
 #, no-wrap
 msgid ""
 "test-O3eWbxRl-py2.7\n"
-"\n"
 "test-O3eWbxRl-py3.6\n"
-"\n"
 "test-O3eWbxRl-py3.7 (Activated)\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -279,18 +240,14 @@ msgstr ""
 msgid "Finally, you can delete existing virtual environments by using `env remove`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/managing-environments.md:114
 #, no-wrap
 msgid ""
 "poetry env remove /full/path/to/python\n"
-"\n"
 "poetry env remove python3.7\n"
-"\n"
 "poetry env remove 3.7\n"
-"\n"
 "poetry env remove test-O3eWbxRl-py3.7\n"
-"\n"
 msgstr ""
 
 #. type: Plain text

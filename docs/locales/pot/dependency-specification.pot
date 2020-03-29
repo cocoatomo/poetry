@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,24 +163,14 @@ msgstr ""
 msgid "Here are some examples of inequality requirements:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/dependency-specification.md:61
-#, no-wrap
-msgid "text"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (text)
 #: docs/dependency-specification.md:61
 #, no-wrap
 msgid ""
 ">= 1.2.0\n"
-"\n"
 "> 1\n"
-"\n"
 "< 2\n"
-"\n"
 "!= 1.2.3\n"
-"\n"
 msgstr ""
 
 #. type: Title ###
@@ -226,20 +216,12 @@ msgid ""
 "git key:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/dependency-specification.md:83 docs/dependency-specification.md:96 docs/dependency-specification.md:111 docs/dependency-specification.md:126 docs/dependency-specification.md:143 docs/dependency-specification.md:148 docs/dependency-specification.md:159 docs/dependency-specification.md:174
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:83
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "requests = { git = \"https://github.com/requests/requests.git\" }\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -257,27 +239,20 @@ msgid ""
 "hash or tagged ref, respectively. For example:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:96
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "# Get the latest revision on the branch named \"next\"\n"
-"\n"
 "requests = { git = \"https://github.com/kennethreitz/requests.git\", branch "
 "= \"next\" }\n"
-"\n"
 "# Get a revision by its commit hash\n"
-"\n"
 "flask = { git = \"https://github.com/pallets/flask.git\", rev = \"38eb5d3b\" "
 "}\n"
-"\n"
 "# Get a revision by its tag\n"
-"\n"
 "numpy = { git = \"https://github.com/numpy/numpy.git\", tag = \"v0.13.2\" "
 "}\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -293,22 +268,16 @@ msgid ""
 "`path` property:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:111
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "# directory\n"
-"\n"
 "my-package = { path = \"../my-package/\" }\n"
 "\n"
-"\n"
-"\n"
 "# file\n"
-"\n"
 "my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -324,16 +293,13 @@ msgid ""
 "property:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:126
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "# directory\n"
-"\n"
 "my-package = { url = \"https://example.com/my-package-0.1.0.tar.gz\" }\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -341,18 +307,10 @@ msgstr ""
 msgid "with the corresponding `add` call:"
 msgstr ""
 
-#. type: Code fence info string
+#. type: Fenced code block (bash)
 #: docs/dependency-specification.md:134
 #, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
-#: docs/dependency-specification.md:134
-#, no-wrap
-msgid ""
-"poetry add https://example.com/my-package-0.1.0.tar.gz\n"
-"\n"
+msgid "poetry add https://example.com/my-package-0.1.0.tar.gz\n"
 msgstr ""
 
 #. type: Title ##
@@ -368,24 +326,20 @@ msgid ""
 "Python versions:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:143
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "pathlib2 = { version = \"^2.2\", python = \"~2.7\" }\n"
-"\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:148
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "pathlib2 = { version = \"^2.2\", python = \"~2.7 || ^3.2\" }\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -403,15 +357,13 @@ msgid ""
 "the `markers` property:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:159
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "pathlib2 = { version = \"^2.2\", markers = \"python_version ~= '2.7' or "
 "sys_platform == 'win32'\" }\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -438,20 +390,15 @@ msgid ""
 "you would declare it like so:\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/dependency-specification.md:174
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "foo = [\n"
-"\n"
 "    {version = \"<=1.9\", python = \"^2.7\"},\n"
-"\n"
 "    {version = \"^2.0\", python = \"^3.4\"}\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text

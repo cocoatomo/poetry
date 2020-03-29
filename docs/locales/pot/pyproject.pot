@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -270,28 +270,16 @@ msgid ""
 "describe the project. **Optional**"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/pyproject.md:81 docs/pyproject.md:103 docs/pyproject.md:114 docs/pyproject.md:125 docs/pyproject.md:166 docs/pyproject.md:172 docs/pyproject.md:181 docs/pyproject.md:188 docs/pyproject.md:208 docs/pyproject.md:222 docs/pyproject.md:253 docs/pyproject.md:265 docs/pyproject.md:281
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:81
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "# ...\n"
-"\n"
 "classifiers = [\n"
-"\n"
 "    \"Topic :: Software Development :: Build Tools\",\n"
-"\n"
 "    \"Topic :: Software Development :: Libraries :: Python Modules\"\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -334,22 +322,16 @@ msgid ""
 "distribution."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:103
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "# ...\n"
-"\n"
 "packages = [\n"
-"\n"
 "    { include = \"my_package\" },\n"
-"\n"
 "    { include = \"extra_package/**/*.py\" },\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -359,20 +341,15 @@ msgid ""
 "it:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:114
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "# ...\n"
-"\n"
 "packages = [\n"
-"\n"
 "    { include = \"my_package\", from = \"lib\" },\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -382,22 +359,16 @@ msgid ""
 "can specify it by using `format`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:125
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "# ...\n"
-"\n"
 "packages = [\n"
-"\n"
 "    { include = \"my_package\" },\n"
-"\n"
 "    { include = \"tests\", format = \"sdist\" },\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -479,24 +450,19 @@ msgid ""
 "the VCS’ ignore settings (`.gitignore` for git for example)."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:166
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "# ...\n"
-"\n"
 "include = [\"CHANGELOG.md\"]\n"
-"\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:172
 #, no-wrap
-msgid ""
-"exclude = [\"my_package/excluded.py\"]\n"
-"\n"
+msgid "exclude = [\"my_package/excluded.py\"]\n"
 msgstr ""
 
 #. type: Title ##
@@ -512,14 +478,12 @@ msgid ""
 "default.  Only the name and a version string are required in this case."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:181
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "requests = \"^2.13.0\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -529,16 +493,13 @@ msgid ""
 "`pyproject.toml` file, like so:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:188
 #, no-wrap
 msgid ""
 "[[tool.poetry.source]]\n"
-"\n"
 "name = 'private'\n"
-"\n"
 "url = 'http://example.com/simple'\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -572,14 +533,12 @@ msgid ""
 "installing the package"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:208
 #, no-wrap
 msgid ""
 "[tool.poetry.scripts]\n"
-"\n"
 "poetry = 'poetry.console:run'\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -610,42 +569,27 @@ msgstr ""
 msgid "clusters of optional dependencies."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:222
 #, no-wrap
 msgid ""
 "[tool.poetry]\n"
-"\n"
 "name = \"awesome\"\n"
 "\n"
-"\n"
-"\n"
 "[tool.poetry.dependencies]\n"
-"\n"
 "# These packages are mandatory and form the core of this package’s "
 "distribution.\n"
-"\n"
 "mandatory = \"^1.0\"\n"
-"\n"
-"\n"
 "\n"
 "# A list of all of the optional dependencies, some of which are included in "
 "the\n"
-"\n"
 "# below `extras`. They can be opted into by apps.\n"
-"\n"
 "psycopg2 = { version = \"^2.7\", optional = true }\n"
-"\n"
 "mysqlclient = { version = \"^1.3\", optional = true }\n"
 "\n"
-"\n"
-"\n"
 "[tool.poetry.extras]\n"
-"\n"
 "mysql = [\"mysqlclient\"]\n"
-"\n"
 "pgsql = [\"psycopg2\"]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -655,20 +599,12 @@ msgid ""
 "option:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/pyproject.md:242
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/pyproject.md:242
 #, no-wrap
 msgid ""
 "poetry install --extras \"mysql pgsql\"\n"
-"\n"
 "poetry install -E mysql -E pgsql\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -686,18 +622,14 @@ msgid ""
 "following:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:253
 #, no-wrap
 msgid ""
 "[tool.poetry.plugins] # Optional super table\n"
 "\n"
-"\n"
-"\n"
 "[tool.poetry.plugins.\"blogtool.parsers\"]\n"
-"\n"
 "\".rst\" = \"some_module:SomeClass\"\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -713,14 +645,12 @@ msgid ""
 "`documentation`), you can specify any custom url in the `urls` section."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:265
 #, no-wrap
 msgid ""
 "[tool.poetry.urls]\n"
-"\n"
 "\"Bug Tracker\" = \"https://github.com/python-poetry/poetry/issues\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -751,16 +681,13 @@ msgid ""
 "`pyproject.toml` file like so:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/pyproject.md:281
 #, no-wrap
 msgid ""
 "[build-system]\n"
-"\n"
 "requires = [\"poetry>=0.12\"]\n"
-"\n"
 "build-backend = \"poetry.masonry.api\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text

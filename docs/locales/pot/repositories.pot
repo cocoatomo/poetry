@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,18 +72,10 @@ msgstr ""
 msgid "Adding a new repository is easy with the `config` command."
 msgstr ""
 
-#. type: Code fence info string
-#: docs/repositories.md:24 docs/repositories.md:34 docs/repositories.md:68 docs/repositories.md:82
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/repositories.md:24
 #, no-wrap
-msgid ""
-"poetry config repositories.foo https://foo.bar/simple/\n"
-"\n"
+msgid "poetry config repositories.foo https://foo.bar/simple/\n"
 msgstr ""
 
 #. type: Plain text
@@ -104,12 +96,10 @@ msgid ""
 "so easily:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/repositories.md:34
 #, no-wrap
-msgid ""
-"poetry config http-basic.foo username password\n"
-"\n"
+msgid "poetry config http-basic.foo username password\n"
 msgstr ""
 
 #. type: Plain text
@@ -198,16 +188,13 @@ msgstr ""
 msgid "Alternatively, you can use environment variables to provide the credentials:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/repositories.md:68
 #, no-wrap
 msgid ""
 "export POETRY_PYPI_TOKEN_PYPI=my-token\n"
-"\n"
 "export POETRY_HTTP_BASIC_PYPI_USERNAME=username\n"
-"\n"
 "export POETRY_HTTP_BASIC_PYPI_PASSWORD=password\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -235,14 +222,12 @@ msgid ""
 "need to be set):"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/repositories.md:82
 #, no-wrap
 msgid ""
 "    poetry config certificates.foo.cert /path/to/ca.pem\n"
-"\n"
 "    poetry config certificates.foo.client-cert /path/to/client.pem\n"
-"\n"
 msgstr ""
 
 #. type: Title ###
@@ -263,22 +248,13 @@ msgstr ""
 msgid "For that, you have to edit your `pyproject.toml` file, like so"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/repositories.md:94 docs/repositories.md:129
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/repositories.md:94
 #, no-wrap
 msgid ""
 "[[tool.poetry.source]]\n"
-"\n"
 "name = \"foo\"\n"
-"\n"
 "url = \"https://foo.bar/simple/\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -337,18 +313,14 @@ msgid ""
 "repository, you can set it as the default one by using the `default` keyword"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/repositories.md:129
 #, no-wrap
 msgid ""
 "[[tool.poetry.source]]\n"
-"\n"
 "name = \"foo\"\n"
-"\n"
 "url = \"https://foo.bar/simple/\"\n"
-"\n"
 "default = true\n"
-"\n"
 msgstr ""
 
 #. type: Plain text

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,18 +44,10 @@ msgid ""
 "commands by short name if it's not ambiguous."
 msgstr ""
 
-#. type: Code fence info string
-#: docs/cli.md:11 docs/cli.md:33 docs/cli.md:53 docs/cli.md:59 docs/cli.md:84 docs/cli.md:102 docs/cli.md:115 docs/cli.md:122 docs/cli.md:129 docs/cli.md:141 docs/cli.md:156 docs/cli.md:164 docs/cli.md:181 docs/cli.md:187 docs/cli.md:197 docs/cli.md:203 docs/cli.md:210 docs/cli.md:217 docs/cli.md:236 docs/cli.md:255 docs/cli.md:269 docs/cli.md:275 docs/cli.md:300 docs/cli.md:316 docs/cli.md:333 docs/cli.md:339 docs/cli.md:355 docs/cli.md:370 docs/cli.md:383 docs/cli.md:392 docs/cli.md:400 docs/cli.md:412 docs/cli.md:430
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:11
 #, no-wrap
-msgid ""
-"poetry up\n"
-"\n"
+msgid "poetry up\n"
 msgstr ""
 
 #. type: Plain text
@@ -114,12 +106,10 @@ msgid ""
 "directory structure suitable for most projects."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:33
 #, no-wrap
-msgid ""
-"poetry new my-package\n"
-"\n"
+msgid "poetry new my-package\n"
 msgstr ""
 
 #. type: Plain text
@@ -127,32 +117,18 @@ msgstr ""
 msgid "will create a folder as follows:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/cli.md:39 docs/cli.md:65
-#, no-wrap
-msgid "text"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (text)
 #: docs/cli.md:39
 #, no-wrap
 msgid ""
 "my-package\n"
-"\n"
 "├── pyproject.toml\n"
-"\n"
 "├── README.rst\n"
-"\n"
 "├── my_package\n"
-"\n"
 "│   └── __init__.py\n"
-"\n"
 "└── tests\n"
-"\n"
 "    ├── __init__.py\n"
-"\n"
 "    └── test_my_package.py\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -162,12 +138,10 @@ msgid ""
 "the `--name` option:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:53
 #, no-wrap
-msgid ""
-"poetry new my-folder --name my-package\n"
-"\n"
+msgid "poetry new my-folder --name my-package\n"
 msgstr ""
 
 #. type: Plain text
@@ -175,12 +149,10 @@ msgstr ""
 msgid "If you want to use a src folder, you can use the `--src` option:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:59
 #, no-wrap
-msgid ""
-"poetry new --src my-package\n"
-"\n"
+msgid "poetry new --src my-package\n"
 msgstr ""
 
 #. type: Plain text
@@ -188,28 +160,19 @@ msgstr ""
 msgid "That will create a folder structure as follows:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (text)
 #: docs/cli.md:65
 #, no-wrap
 msgid ""
 "my-package\n"
-"\n"
 "├── pyproject.toml\n"
-"\n"
 "├── README.rst\n"
-"\n"
 "├── src\n"
-"\n"
 "│   └── my_package\n"
-"\n"
 "│       └── __init__.py\n"
-"\n"
 "└── tests\n"
-"\n"
 "    ├── __init__.py\n"
-"\n"
 "    └── test_my_package.py\n"
-"\n"
 msgstr ""
 
 #. type: Title ##
@@ -232,12 +195,10 @@ msgid ""
 "defaults."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:84
 #, no-wrap
-msgid ""
-"poetry init\n"
-"\n"
+msgid "poetry init\n"
 msgstr ""
 
 #. type: Title ###
@@ -286,12 +247,10 @@ msgid ""
 "project, resolves the dependencies, and installs them."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:102
 #, no-wrap
-msgid ""
-"poetry install\n"
-"\n"
+msgid "poetry install\n"
 msgstr ""
 
 #. type: Plain text
@@ -316,12 +275,10 @@ msgid ""
 "dependencies installed by passing the `--no-dev` option."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:115
 #, no-wrap
-msgid ""
-"poetry install --no-dev\n"
-"\n"
+msgid "poetry install --no-dev\n"
 msgstr ""
 
 #. type: Plain text
@@ -331,14 +288,12 @@ msgid ""
 "`--E|--extras` option (See [Extras](#extras) for more info)"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:122
 #, no-wrap
 msgid ""
 "poetry install --extras \"mysql pgsql\"\n"
-"\n"
 "poetry install -E mysql -E pgsql\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -348,23 +303,16 @@ msgid ""
 "`install`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:129
 #, no-wrap
 msgid ""
 "$ poetry install\n"
-"\n"
 "Installing dependencies from lock file\n"
-"\n"
-"\n"
 "\n"
 "No dependencies to install or update\n"
 "\n"
-"\n"
-"\n"
 "  - Installing <your-package-name> (x.x.x)\n"
-"\n"
-"\n"
 "\n"
 msgstr ""
 
@@ -373,12 +321,10 @@ msgstr ""
 msgid "If you want to skip this installation, use the `--no-root` option."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:141
 #, no-wrap
-msgid ""
-"poetry install --no-root\n"
-"\n"
+msgid "poetry install --no-root\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -409,12 +355,10 @@ msgid ""
 "`poetry.lock` file, you should use the `update` command."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:156
 #, no-wrap
-msgid ""
-"poetry update\n"
-"\n"
+msgid "poetry update\n"
 msgstr ""
 
 #. type: Plain text
@@ -431,12 +375,10 @@ msgid ""
 "such:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:164
 #, no-wrap
-msgid ""
-"poetry update requests toml\n"
-"\n"
+msgid "poetry update requests toml\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -476,12 +418,10 @@ msgid ""
 "one based on the available package versions."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:181
 #, no-wrap
-msgid ""
-"poetry add requests pendulum\n"
-"\n"
+msgid "poetry add requests pendulum\n"
 msgstr ""
 
 #. type: Plain text
@@ -489,14 +429,12 @@ msgstr ""
 msgid "You also can specify a constraint when adding a package, like so:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:187
 #, no-wrap
 msgid ""
 "poetry add pendulum@^2.0.5\n"
-"\n"
 "poetry add \"pendulum>=2.0.5\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -509,12 +447,10 @@ msgid ""
 "constraint:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:197
 #, no-wrap
-msgid ""
-"poetry add pendulum@latest\n"
-"\n"
+msgid "poetry add pendulum@latest\n"
 msgstr ""
 
 #. type: Plain text
@@ -522,12 +458,10 @@ msgstr ""
 msgid "You can also add `git` dependencies:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:203
 #, no-wrap
-msgid ""
-"poetry add git+https://github.com/sdispater/pendulum.git\n"
-"\n"
+msgid "poetry add git+https://github.com/sdispater/pendulum.git\n"
 msgstr ""
 
 #. type: Plain text
@@ -537,14 +471,12 @@ msgid ""
 "it when using `add`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:210
 #, no-wrap
 msgid ""
 "poetry add git+https://github.com/sdispater/pendulum.git#develop\n"
-"\n"
 "poetry add git+https://github.com/sdispater/pendulum.git#2.0.5\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -552,16 +484,13 @@ msgstr ""
 msgid "or make them point to a local directory or file:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:217
 #, no-wrap
 msgid ""
 "poetry add ./my-package/\n"
-"\n"
 "poetry add ../my-package/dist/my-package-0.1.0.tar.gz\n"
-"\n"
 "poetry add ../my-package/dist/my_package-0.1.0.whl\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -579,20 +508,12 @@ msgid ""
 "specify it in the `pyproject.toml` file:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/cli.md:228 docs/cli.md:363
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/cli.md:228
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "my-package = {path = \"../my/path\", develop = false}\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -602,16 +523,13 @@ msgid ""
 "when adding the package:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:236
 #, no-wrap
 msgid ""
 "poetry add requests[security,socks]\n"
-"\n"
 "poetry add \"requests[security,socks]~=2.22.0\"\n"
-"\n"
 "poetry add \"git+https://github.com/pallets/flask.git@1.1.1[dotenv,dev]\"\n"
-"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -642,12 +560,10 @@ msgid ""
 "packages."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:255
 #, no-wrap
-msgid ""
-"poetry remove pendulum\n"
-"\n"
+msgid "poetry remove pendulum\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -666,12 +582,10 @@ msgstr ""
 msgid "To list all of the available packages, you can use the `show` command."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:269
 #, no-wrap
-msgid ""
-"poetry show\n"
-"\n"
+msgid "poetry show\n"
 msgstr ""
 
 #. type: Plain text
@@ -681,30 +595,20 @@ msgid ""
 "package name."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:275
 #, no-wrap
 msgid ""
 "poetry show pendulum\n"
 "\n"
-"\n"
-"\n"
 "name        : pendulum\n"
-"\n"
 "version     : 1.4.2\n"
-"\n"
 "description : Python datetimes made easy\n"
 "\n"
-"\n"
-"\n"
 "dependencies:\n"
-"\n"
 " - python-dateutil >=2.6.1\n"
-"\n"
 " - tzlocal >=1.4\n"
-"\n"
 " - pytzdata >=2017.2.2\n"
-"\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -740,12 +644,10 @@ msgstr ""
 msgid "The `build` command builds the source and wheels archives."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:300
 #, no-wrap
-msgid ""
-"poetry build\n"
-"\n"
+msgid "poetry build\n"
 msgstr ""
 
 #. type: Plain text
@@ -778,12 +680,10 @@ msgid ""
 "first time it is submitted."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:316
 #, no-wrap
-msgid ""
-"poetry publish\n"
-"\n"
+msgid "poetry publish\n"
 msgstr ""
 
 #. type: Plain text
@@ -815,12 +715,10 @@ msgid ""
 "repositories."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:333
 #, no-wrap
-msgid ""
-"poetry config --list\n"
-"\n"
+msgid "poetry config --list\n"
 msgstr ""
 
 #. type: Title ###
@@ -829,13 +727,12 @@ msgstr ""
 msgid "Usage"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:339
 #, no-wrap
 msgid ""
 "poetry config [options] [setting-key] [setting-value1] "
 "... [setting-valueN]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -869,12 +766,10 @@ msgid ""
 "virtualenv."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:355
 #, no-wrap
-msgid ""
-"poetry run python -V\n"
-"\n"
+msgid "poetry run python -V\n"
 msgstr ""
 
 #. type: Plain text
@@ -887,14 +782,12 @@ msgstr ""
 msgid "So, if you have a script defined like this:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (toml)
 #: docs/cli.md:363
 #, no-wrap
 msgid ""
 "[tool.poetry.scripts]\n"
-"\n"
 "my-script = \"my_module:main\"\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -902,12 +795,10 @@ msgstr ""
 msgid "You can execute it like so:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:370
 #, no-wrap
-msgid ""
-"poetry run my-script\n"
-"\n"
+msgid "poetry run my-script\n"
 msgstr ""
 
 #. type: Plain text
@@ -929,12 +820,10 @@ msgid ""
 "be created."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:383
 #, no-wrap
-msgid ""
-"poetry shell\n"
-"\n"
+msgid "poetry shell\n"
 msgstr ""
 
 #. type: Title ##
@@ -950,12 +839,10 @@ msgid ""
 "returns a detailed report if there are any errors."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:392
 #, no-wrap
-msgid ""
-"poetry check\n"
-"\n"
+msgid "poetry check\n"
 msgstr ""
 
 #. type: Title ##
@@ -969,12 +856,10 @@ msgstr ""
 msgid "This command searches for packages on a remote index."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:400
 #, no-wrap
-msgid ""
-"poetry search requests pendulum\n"
-"\n"
+msgid "poetry search requests pendulum\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -995,12 +880,10 @@ msgid ""
 "`pyproject.toml`."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:412
 #, no-wrap
-msgid ""
-"poetry lock\n"
-"\n"
+msgid "poetry lock\n"
 msgstr ""
 
 #. type: Title ##
@@ -1036,12 +919,10 @@ msgstr ""
 msgid "This command exports the lock file to other formats."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/cli.md:430
 #, no-wrap
-msgid ""
-"poetry export -f requirements.txt > requirements.txt\n"
-"\n"
+msgid "poetry export -f requirements.txt > requirements.txt\n"
 msgstr ""
 
 #. type: Plain text

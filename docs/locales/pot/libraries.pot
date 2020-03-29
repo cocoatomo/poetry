@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,18 +84,10 @@ msgstr ""
 msgid "Before you can actually publish your library, you will need to package it."
 msgstr ""
 
-#. type: Code fence info string
-#: docs/libraries.md:27 docs/libraries.md:47 docs/libraries.md:76
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/libraries.md:27
 #, no-wrap
-msgid ""
-"poetry build\n"
-"\n"
+msgid "poetry build\n"
 msgstr ""
 
 #. type: Plain text
@@ -137,12 +129,10 @@ msgid ""
 "publish on PyPI as well.  Doing so is really easy."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/libraries.md:47
 #, no-wrap
-msgid ""
-"poetry publish\n"
-"\n"
+msgid "poetry publish\n"
 msgstr ""
 
 #. type: Plain text
@@ -208,10 +198,8 @@ msgstr ""
 msgid "Once this is done, you can actually publish to it like so:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/libraries.md:76
 #, no-wrap
-msgid ""
-"poetry publish -r my-repository\n"
-"\n"
+msgid "poetry publish -r my-repository\n"
 msgstr ""

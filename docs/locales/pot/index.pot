@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-29 02:25+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,20 +63,13 @@ msgstr ""
 msgid "osx / linux / bashonwindows install instructions"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/index.md:20 docs/index.md:40 docs/index.md:49 docs/index.md:56 docs/index.md:63 docs/index.md:71 docs/index.md:95 docs/index.md:108 docs/index.md:112 docs/index.md:116 docs/index.md:127 docs/index.md:133 docs/index.md:140 docs/index.md:160 docs/index.md:185
-#, no-wrap
-msgid "bash"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:20
 #, no-wrap
 msgid ""
 "curl -sSL "
 "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py "
 "| python\n"
-"\n"
 msgstr ""
 
 #. type: Title ###
@@ -85,20 +78,13 @@ msgstr ""
 msgid "windows powershell install instructions"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/index.md:24
-#, no-wrap
-msgid "powershell"
-msgstr ""
-
-#. type: Plain text
+#. type: Fenced code block (powershell)
 #: docs/index.md:24
 #, no-wrap
 msgid ""
 "(Invoke-WebRequest -Uri "
 "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py "
 "-UseBasicParsing).Content | python\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -132,12 +118,10 @@ msgid ""
 "and type the following:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:40
 #, no-wrap
-msgid ""
-"poetry --version\n"
-"\n"
+msgid "poetry --version\n"
 msgstr ""
 
 #. type: Plain text
@@ -150,14 +134,12 @@ msgid ""
 "installer."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:49
 #, no-wrap
 msgid ""
 "python get-poetry.py --uninstall\n"
-"\n"
 "POETRY_UNINSTALL=1 python get-poetry.py\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -168,12 +150,10 @@ msgid ""
 "environment variable:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:56
 #, no-wrap
-msgid ""
-"POETRY_HOME=/etc/poetry python get-poetry.py\n"
-"\n"
+msgid "POETRY_HOME=/etc/poetry python get-poetry.py\n"
 msgstr ""
 
 #. type: Plain text
@@ -184,14 +164,12 @@ msgid ""
 "variable:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:63
 #, no-wrap
 msgid ""
 "python get-poetry.py --preview\n"
-"\n"
 "POETRY_PREVIEW=1 python get-poetry.py\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -201,14 +179,12 @@ msgid ""
 "`--version` or the `POETRY_VERSION` environment variable:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:71
 #, no-wrap
 msgid ""
 "python get-poetry.py --version 0.12.0\n"
-"\n"
 "POETRY_VERSION=0.12.0 python get-poetry.py\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
@@ -256,12 +232,10 @@ msgstr ""
 msgid "Using `pip` to install Poetry is possible."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:95
 #, no-wrap
-msgid ""
-"pip install --user poetry\n"
-"\n"
+msgid "pip install --user poetry\n"
 msgstr ""
 
 #. type: Plain text
@@ -293,28 +267,22 @@ msgid ""
 "version of Python, consider [pipsi](https://github.com/mitsuhiko/pipsi)."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:108
 #, no-wrap
-msgid ""
-"pipx install poetry\n"
-"\n"
+msgid "pipx install poetry\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:112
 #, no-wrap
-msgid ""
-"pipx upgrade poetry\n"
-"\n"
+msgid "pipx upgrade poetry\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:116
 #, no-wrap
-msgid ""
-"pipx uninstall poetry\n"
-"\n"
+msgid "pipx uninstall poetry\n"
 msgstr ""
 
 #. type: Plain text
@@ -335,12 +303,10 @@ msgid ""
 "`self update` command."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:127
 #, no-wrap
-msgid ""
-"poetry self update\n"
-"\n"
+msgid "poetry self update\n"
 msgstr ""
 
 #. type: Plain text
@@ -350,12 +316,10 @@ msgid ""
 "option."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:133
 #, no-wrap
-msgid ""
-"poetry self update --preview\n"
-"\n"
+msgid "poetry self update --preview\n"
 msgstr ""
 
 #. type: Plain text
@@ -365,12 +329,10 @@ msgid ""
 "an argument to `self update`."
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:140
 #, no-wrap
-msgid ""
-"poetry self update 0.8.0\n"
-"\n"
+msgid "poetry self update 0.8.0\n"
 msgstr ""
 
 #. type: Plain text
@@ -403,42 +365,26 @@ msgid ""
 "using one of the following:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:160
 #, no-wrap
 msgid ""
 "# Bash\n"
-"\n"
 "poetry completions bash > /etc/bash_completion.d/poetry.bash-completion\n"
 "\n"
-"\n"
-"\n"
 "# Bash (macOS/Homebrew)\n"
-"\n"
 "poetry completions bash > $(brew "
 "--prefix)/etc/bash_completion.d/poetry.bash-completion\n"
 "\n"
-"\n"
-"\n"
 "# Fish\n"
-"\n"
 "poetry completions fish > ~/.config/fish/completions/poetry.fish\n"
 "\n"
-"\n"
-"\n"
 "# Zsh\n"
-"\n"
 "poetry completions zsh > ~/.zfunc/_poetry\n"
 "\n"
-"\n"
-"\n"
 "# Oh-My-Zsh\n"
-"\n"
 "mkdir $ZSH/plugins/poetry\n"
-"\n"
 "poetry completions zsh > $ZSH/plugins/poetry/_poetry\n"
-"\n"
-"\n"
 "\n"
 msgstr ""
 
@@ -457,12 +403,10 @@ msgid ""
 "`compinit`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: docs/index.md:185
 #, no-wrap
-msgid ""
-"fpath+=~/.zfunc\n"
-"\n"
+msgid "fpath+=~/.zfunc\n"
 msgstr ""
 
 #. type: Plain text
@@ -470,16 +414,12 @@ msgstr ""
 msgid "For `oh-my-zsh`, you must then enable poetry in your `~/.zshrc` plugins"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block
 #: docs/index.md:191
 #, no-wrap
 msgid ""
 "plugins(\n"
-"\n"
 "\tpoetry\n"
-"\n"
 "\t...\n"
-"\n"
 "\t)\n"
-"\n"
 msgstr ""
