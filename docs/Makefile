@@ -4,7 +4,7 @@ LANG := ja
 ORIGDIR := docs
 LOCALESDIR := locales
 POTDIR := $(LOCALESDIR)/pot
-PODIR := $(LOCALESDIR)/$(LANG)
+PODIR := $(LOCALESDIR)/$(LANG)/LC_MESSAGES
 TRANSDIR := docs.$(LANG)
 PUBLISHDIR := ../../../cocoatomo.github.io/poetry-ja
 
