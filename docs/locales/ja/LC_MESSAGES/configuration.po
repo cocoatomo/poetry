@@ -1,35 +1,35 @@
-# cocoatomo <cocoatomo77@gmail.com>, 2019. #zanata
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
+"PO-Revision-Date: 2020-03-29 08:15+0000\n"
+"Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-07-05 10:26+0000\n"
-"Last-Translator: cocoatomo <cocoatomo77@gmail.com>\n"
-"Language-Team: Japanese\n"
 "Language: ja\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title #
 #: docs/configuration.md:1
 #, no-wrap
 msgid "Configuration"
-msgstr "設定"
+msgstr ""
 
 #. type: Plain text
 #: docs/configuration.md:6
 msgid ""
-"Poetry can be configured via the `config` command ([see more about its usage "
-"here](/docs/cli/#config))  or directly in the `config.toml` file that will "
+"Poetry can be configured via the `config` command ([see more about its usage"
+" here](/docs/cli/#config))  or directly in the `config.toml` file that will "
 "be automatically be created when you first run that command.  This file can "
 "typically be found in one of the following directories:"
 msgstr ""
-"Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/poetry-ja/cli/#config)) "
-"による設定や、初めてそのコマンドを実行するときに自動的に作成される `config.toml` で直接設定が行えます。\n"
-"このファイルはたいてい次のディレクトリのうち1つで見付かります。"
 
 #. type: Plain text
 #: docs/configuration.md:9
@@ -38,8 +38,6 @@ msgid ""
 "- macOS:   `~/Library/Application Support/pypoetry`\n"
 "- Windows: `C:\\Users\\<username>\\AppData\\Roaming\\pypoetry`\n"
 msgstr ""
-"- macOS:   `~/Library/Application Support/pypoetry`\n"
-"- Windows: `C:\\Users\\<username>\\AppData\\Roaming\\pypoetry`\n"
 
 #. type: Plain text
 #: docs/configuration.md:12
@@ -47,81 +45,253 @@ msgid ""
 "For Unix, we follow the XDG spec and support `$XDG_CONFIG_HOME`.  That "
 "means, by default `~/.config/pypoetry`."
 msgstr ""
-"Unixでは、XDG仕様に従い、 `$XDG_CONFIG_HOME` をサポートしています。\n"
-"つまり、デフォルトでは `~/.config/pypoetry` となります。"
 
 #. type: Title ##
 #: docs/configuration.md:13
 #, no-wrap
-msgid "Available settings"
-msgstr "利用可能な設定"
-
-#. type: Title ###
-#: docs/configuration.md:15
-#, no-wrap
-msgid "`settings.virtualenvs.create`: boolean"
-msgstr "`settings.virtualenvs.create`: boolean"
+msgid "Local configuration"
+msgstr ""
 
 #. type: Plain text
-#: docs/configuration.md:19
+#: docs/configuration.md:17
 msgid ""
-"Create a new virtualenv if one doesn't already exist.  Defaults to `true`."
-msgstr "まだ存在していない場合、新しい仮想環境を作成します。\n"
-"デフォルトは `true` です。"
+"Poetry also provides the ability to have settings that are specific to a "
+"project by passing the `--local` option to the `config` command."
+msgstr ""
 
-#. type: Title ###
-#: docs/configuration.md:20
+#. type: Fenced code block (bash)
+#: docs/configuration.md:18
 #, no-wrap
-msgid "`settings.virtualenvs.in-project`: boolean"
-msgstr "`settings.virtualenvs.in-project`: boolean"
+msgid "poetry config virtualenvs.create false --local\n"
+msgstr ""
 
-#. type: Plain text
-#: docs/configuration.md:24
-msgid ""
-"Create the virtualenv inside the project's root directory.  Defaults to "
-"`false`."
-msgstr "プロジェクトのルートディレクトリに仮想環境を作成します。\n"
-"デフォルトは `false` です。"
-
-#. type: Title ###
-#: docs/configuration.md:25
+#. type: Title ##
+#: docs/configuration.md:22
 #, no-wrap
-msgid "`settings.virtualenvs.path`: string"
-msgstr "`settings.virtualenvs.path`: string"
+msgid "Listing the current configuration"
+msgstr ""
 
 #. type: Plain text
-#: docs/configuration.md:29
+#: docs/configuration.md:26
 msgid ""
-"Directory where virtualenvs will be created.  Defaults to one of the "
-"following directories:"
-msgstr "仮想環境が作成されるディレクトリ。\n"
-"デフォルトは次のディレクトリのうちの1つです。"
+"To list the current configuration you can use the `--list` option of the "
+"`config` command:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:27
+#, no-wrap
+msgid "poetry config --list\n"
+msgstr ""
 
 #. type: Plain text
+#: docs/configuration.md:32
+msgid "which will give you something similar to this:"
+msgstr ""
+
+#. type: Fenced code block (toml)
 #: docs/configuration.md:33
 #, no-wrap
 msgid ""
-"- macOS:   `~/Library/Caches/pypoetry/virtualenvs`\n"
-"- Windows: `C:\\Users\\<username>\\AppData\\Local\\pypoetry\\Cache/"
-"virtualenvs`\n"
-"- Unix:    `~/.cache/pypoetry/virtualenvs`\n"
+"cache-dir = \"/path/to/cache/directory\"\n"
+"virtualenvs.create = true\n"
+"virtualenvs.in-project = false\n"
+"virtualenvs.path = \"{cache-dir}/virtualenvs\"  # /path/to/cache/directory/virtualenvs\n"
 msgstr ""
-"- macOS:   `~/Library/Caches/pypoetry/virtualenvs`\n"
-"- Windows: `C:\\Users\\<username>\\AppData\\Local\\pypoetry\\Cache/"
-"virtualenvs`\n"
-"- Unix:    `~/.cache/pypoetry/virtualenvs`\n"
 
-#. type: Title ###
-#: docs/configuration.md:34
+#. type: Title ##
+#: docs/configuration.md:40
 #, no-wrap
-msgid "`repositories.<name>`: string"
-msgstr "`repositories.<name>`: string"
+msgid "Displaying a single configuration setting"
+msgstr ""
 
 #. type: Plain text
-#: docs/configuration.md:36
+#: docs/configuration.md:44
+msgid ""
+"If you want to see the value of a specific setting, you can give its name to"
+" the `config` command"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:45
+#, no-wrap
+msgid "poetry config virtualenvs.path\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:50 docs/configuration.md:61
+msgid ""
+"For a full list of the supported settings see [Available settings"
+"](#available-settings)."
+msgstr ""
+
+#. type: Title ##
+#: docs/configuration.md:51
+#, no-wrap
+msgid "Adding or updating a configuration setting"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:55
+msgid ""
+"To change or otherwise add a new configuration setting, you can pass a value"
+" after the setting's name:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:56
+#, no-wrap
+msgid "poetry config virtualenvs.path /path/to/cache/directory/virtualenvs\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/configuration.md:62
+#, no-wrap
+msgid "Removing a specific setting"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:65
+msgid ""
+"If you want to remove a previously set setting, you can use the `--unset` "
+"option:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:66
+#, no-wrap
+msgid "poetry config virtualenvs.path --unset\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:71
+msgid "The setting will then retrieve its default value."
+msgstr ""
+
+#. type: Title ##
+#: docs/configuration.md:72
+#, no-wrap
+msgid "Using environment variables"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:76
+msgid ""
+"Sometimes, in particular when using Poetry with CI tools, it's easier to use"
+" environment variables and not have to execute configuration commands."
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:78
+msgid ""
+"Poetry supports this and any setting can be set by using environment "
+"variables."
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:81
+msgid ""
+"The environment variables must be prefixed by `POETRY_` and are comprised of"
+" the uppercase name of the setting and with dots and dashes replaced by "
+"underscore, here is an example:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:82
+#, no-wrap
+msgid "export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory\n"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:87
+msgid "This also works for secret settings, like credentials:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/configuration.md:88
+#, no-wrap
+msgid "export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/configuration.md:93
+#, no-wrap
+msgid "Available settings"
+msgstr ""
+
+#. type: Title ###
+#: docs/configuration.md:95
+#, no-wrap
+msgid "`cache-dir`: string"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:98
+msgid "The path to the cache directory used by Poetry."
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:100
+msgid "Defaults to one of the following directories:"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:104
+#, no-wrap
+msgid ""
+"- macOS:   `~/Library/Caches/pypoetry`\n"
+"- Windows: `C:\\Users\\<username>\\AppData\\Local\\pypoetry\\Cache`\n"
+"- Unix:    `~/.cache/pypoetry`\n"
+msgstr ""
+
+#. type: Title ###
+#: docs/configuration.md:105
+#, no-wrap
+msgid "`virtualenvs.create`: boolean"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:109
+msgid ""
+"Create a new virtual environment if one doesn't already exist.  Defaults to "
+"`true`."
+msgstr ""
+
+#. type: Title ###
+#: docs/configuration.md:110
+#, no-wrap
+msgid "`virtualenvs.in-project`: boolean"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:114
+msgid ""
+"Create the virtualenv inside the project's root directory.  Defaults to "
+"`false`."
+msgstr ""
+
+#. type: Title ###
+#: docs/configuration.md:115
+#, no-wrap
+msgid "`virtualenvs.path`: string"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:119
+msgid ""
+"Directory where virtual environments will be created.  Defaults to `{cache-"
+"dir}/virtualenvs` (`{cache-dir}\\virtualenvs` on Windows)."
+msgstr ""
+
+#. type: Title ###
+#: docs/configuration.md:120
+#, no-wrap
+msgid "`repositories.<name>`: string"
+msgstr ""
+
+#. type: Plain text
+#: docs/configuration.md:122
 msgid ""
 "Set a new alternative repository. See [Repositories](/docs/repositories/) "
 "for more information."
 msgstr ""
-"別のレポジトリを新しく設定します。\n"
-"より詳しいことは [レポジトリ](/poetry-ja/repositories/) を参照してください。"

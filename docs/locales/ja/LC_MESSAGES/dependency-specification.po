@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-09 08:57+0900\n"
-"PO-Revision-Date: 2020-03-29 08:16+0000\n"
+"POT-Creation-Date: 2020-03-29 21:00+0900\n"
+"PO-Revision-Date: 2020-03-29 08:15+0000\n"
 "Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,32 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title #
-#: docs/versions.md:1
+#: docs/dependency-specification.md:1
 #, no-wrap
-msgid "Versions and constraints"
+msgid "Dependency specification"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:4
+#: docs/dependency-specification.md:5
 msgid ""
-"Poetry recommends following [semantic versioning](https://semver.org) but "
-"will not enforce it."
+"Dependencies for a project can be specified in various forms, which depend "
+"on the type of the dependency and on the optional constraints that might be "
+"needed for it to be installed."
 msgstr ""
 
 #. type: Title ##
-#: docs/versions.md:5
+#: docs/dependency-specification.md:6
 #, no-wrap
 msgid "Version constraints"
 msgstr ""
 
 #. type: Title ###
-#: docs/versions.md:7
+#: docs/dependency-specification.md:8
 #, no-wrap
 msgid "Caret requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:15
+#: docs/dependency-specification.md:16
 #, no-wrap
 msgid ""
 "**Caret requirements** allow SemVer compatible updates to a specified version.\n"
@@ -54,14 +55,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:17
+#: docs/dependency-specification.md:18
 msgid ""
 "Here are some more examples of caret requirements and the versions that "
 "would be allowed with them:"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:27
+#: docs/dependency-specification.md:28
 #, no-wrap
 msgid ""
 "| Requirement | Versions allowed |\n"
@@ -76,13 +77,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: docs/versions.md:28
+#: docs/dependency-specification.md:29
 #, no-wrap
 msgid "Tilde requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:33
+#: docs/dependency-specification.md:34
 #, no-wrap
 msgid ""
 "**Tilde requirements** specify a minimal version with some ability to update.\n"
@@ -91,12 +92,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:35
+#: docs/dependency-specification.md:36
 msgid "`~1.2.3` is an example of a tilde requirement."
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:41
+#: docs/dependency-specification.md:42
 #, no-wrap
 msgid ""
 "| Requirement | Versions allowed |\n"
@@ -107,13 +108,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: docs/versions.md:42
+#: docs/dependency-specification.md:43
 #, no-wrap
 msgid "Wildcard requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:45
+#: docs/dependency-specification.md:46
 #, no-wrap
 msgid ""
 "**Wildcard requirements** allow for any version where the wildcard is "
@@ -121,12 +122,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:47
+#: docs/dependency-specification.md:48
 msgid "`*`, `1.*` and `1.2.*` are examples of wildcard requirements."
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:53
+#: docs/dependency-specification.md:54
 #, no-wrap
 msgid ""
 "| Requirement | Versions allowed |\n"
@@ -137,13 +138,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: docs/versions.md:54
+#: docs/dependency-specification.md:55
 #, no-wrap
 msgid "Inequality requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:57
+#: docs/dependency-specification.md:58
 #, no-wrap
 msgid ""
 "**Inequality requirements** allow manually specifying a version range or an "
@@ -151,38 +152,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:59
+#: docs/dependency-specification.md:60
 msgid "Here are some examples of inequality requirements:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/versions.md:60
-#, no-wrap
-msgid "text"
-msgstr ""
-
-#. type: Plain text
-#: docs/versions.md:60
+#. type: Fenced code block (text)
+#: docs/dependency-specification.md:61
 #, no-wrap
 msgid ""
 ">= 1.2.0\n"
-"\n"
 "> 1\n"
-"\n"
 "< 2\n"
-"\n"
 "!= 1.2.3\n"
-"\n"
 msgstr ""
 
 #. type: Title ###
-#: docs/versions.md:67
+#: docs/dependency-specification.md:68
 #, no-wrap
 msgid "Exact requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:72
+#: docs/dependency-specification.md:73
 msgid ""
 "You can specify the exact version of a package.  This will tell Poetry to "
 "install this version and this version only.  If other dependencies require a"
@@ -191,163 +182,193 @@ msgid ""
 msgstr ""
 
 #. type: Title ####
-#: docs/versions.md:73
+#: docs/dependency-specification.md:74
 #, no-wrap
 msgid "Multiple requirements"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:76
+#: docs/dependency-specification.md:77
 #, no-wrap
 msgid ""
 "Multiple version requirements can also be separated with a comma, e.g. `>= "
 "1.2, < 1.5`.\n"
 msgstr ""
 
-#. type: Title ###
-#: docs/versions.md:77
+#. type: Title ##
+#: docs/dependency-specification.md:78
 #, no-wrap
 msgid "`git` dependencies"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:81
+#: docs/dependency-specification.md:82
 msgid ""
 "To depend on a library located in a `git` repository, the minimum "
 "information you need to specify is the location of the repository with the "
 "git key:"
 msgstr ""
 
-#. type: Code fence info string
-#: docs/versions.md:82 docs/versions.md:92 docs/versions.md:102
-#: docs/versions.md:122 docs/versions.md:127 docs/versions.md:142
-#, no-wrap
-msgid "toml"
-msgstr ""
-
-#. type: Plain text
-#: docs/versions.md:82
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:83
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "requests = { git = \"https://github.com/requests/requests.git\" }\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:91
+#: docs/dependency-specification.md:91
 msgid ""
 "Since we haven’t specified any other information, Poetry assumes that we "
 "intend to use the latest commit on the `master` branch to build our project."
-"  You can combine the `git` key with the `rev`, `tag`, or `branch` keys to "
-"specify something else.  Here's an example of specifying that you want to "
-"use the latest commit on a branch named `next`:"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:92
+#: docs/dependency-specification.md:95
+msgid ""
+"You can combine the `git` key with the `branch` key to use another branch.  "
+"Alternatively, use `rev` or `tag` to pin a dependency to a specific commit "
+"hash or tagged ref, respectively. For example:"
+msgstr ""
+
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:96
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
+"# Get the latest revision on the branch named \"next\"\n"
 "requests = { git = \"https://github.com/kennethreitz/requests.git\", branch = \"next\" }\n"
-"\n"
+"# Get a revision by its commit hash\n"
+"flask = { git = \"https://github.com/pallets/flask.git\", rev = \"38eb5d3b\" }\n"
+"# Get a revision by its tag\n"
+"numpy = { git = \"https://github.com/numpy/numpy.git\", tag = \"v0.13.2\" }\n"
 msgstr ""
 
-#. type: Title ###
-#: docs/versions.md:97
+#. type: Title ##
+#: docs/dependency-specification.md:106
 #, no-wrap
 msgid "`path` dependencies"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:101
+#: docs/dependency-specification.md:110
 msgid ""
 "To depend on a library located in a local directory or file, you can use the"
 " `path` property:"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:102
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:111
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "# directory\n"
-"\n"
 "my-package = { path = \"../my-package/\" }\n"
 "\n"
-"\n"
-"\n"
 "# file\n"
-"\n"
 "my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
-"\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/dependency-specification.md:121
+#, no-wrap
+msgid "`url` dependencies"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:112 docs/versions.md:151
-msgid "!!!note"
+#: docs/dependency-specification.md:125
+msgid ""
+"To depend on a library located on a remote archive, you can use the `url` "
+"property:"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:116
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:126
 #, no-wrap
 msgid ""
-"    You can install path dependencies in editable/development mode.\n"
-"    Just pass `--develop my-package` (repeatable as much as you want) to\n"
-"    the `install` command.\n"
+"[tool.poetry.dependencies]\n"
+"# directory\n"
+"my-package = { url = \"https://example.com/my-package-0.1.0.tar.gz\" }\n"
 msgstr ""
 
-#. type: Title ###
-#: docs/versions.md:118
+#. type: Plain text
+#: docs/dependency-specification.md:133
+msgid "with the corresponding `add` call:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: docs/dependency-specification.md:134
+#, no-wrap
+msgid "poetry add https://example.com/my-package-0.1.0.tar.gz\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/dependency-specification.md:139
 #, no-wrap
 msgid "Python restricted dependencies"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:121
+#: docs/dependency-specification.md:142
 msgid ""
 "You can also specify that a dependency should be installed only for specific"
 " Python versions:"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:122
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:143
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "pathlib2 = { version = \"^2.2\", python = \"~2.7\" }\n"
-"\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:127
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:148
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
-"pathlib2 = { version = \"^2.2\", python = [\"~2.7\", \"^3.2\"] }\n"
-"\n"
+"pathlib2 = { version = \"^2.2\", python = \"~2.7 || ^3.2\" }\n"
 msgstr ""
 
-#. type: Title ###
-#: docs/versions.md:133
+#. type: Title ##
+#: docs/dependency-specification.md:153
+#, no-wrap
+msgid "Using environment markers"
+msgstr ""
+
+#. type: Plain text
+#: docs/dependency-specification.md:158
+msgid ""
+"If you need more complex install conditions for your dependencies, Poetry "
+"supports [environment markers](https://www.python.org/dev/peps/pep-0508"
+"/#environment-markers)  via the `markers` property:"
+msgstr ""
+
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:159
+#, no-wrap
+msgid ""
+"[tool.poetry.dependencies]\n"
+"pathlib2 = { version = \"^2.2\", markers = \"python_version ~= '2.7' or sys_platform == 'win32'\" }\n"
+msgstr ""
+
+#. type: Title ##
+#: docs/dependency-specification.md:165
 #, no-wrap
 msgid "Multiple constraints dependencies"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:137
+#: docs/dependency-specification.md:169
 msgid ""
 "Sometimes, one of your dependency may have different version ranges "
 "depending on the target Python versions."
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:141
+#: docs/dependency-specification.md:173
 #, no-wrap
 msgid ""
 "Let's say you have a dependency on the package `foo` which is only compatible\n"
@@ -355,24 +376,24 @@ msgid ""
 "you would declare it like so:\n"
 msgstr ""
 
-#. type: Plain text
-#: docs/versions.md:142
+#. type: Fenced code block (toml)
+#: docs/dependency-specification.md:174
 #, no-wrap
 msgid ""
 "[tool.poetry.dependencies]\n"
-"\n"
 "foo = [\n"
-"\n"
 "    {version = \"<=1.9\", python = \"^2.7\"},\n"
-"\n"
 "    {version = \"^2.0\", python = \"^3.4\"}\n"
-"\n"
 "]\n"
-"\n"
 msgstr ""
 
 #. type: Plain text
-#: docs/versions.md:153
+#: docs/dependency-specification.md:183
+msgid "!!!note"
+msgstr ""
+
+#. type: Plain text
+#: docs/dependency-specification.md:185
 #, no-wrap
 msgid ""
 "    The constraints **must** have different requirements (like `python`)\n"
