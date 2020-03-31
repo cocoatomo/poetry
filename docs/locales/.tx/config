@@ -78,10 +78,3 @@ source_file = pot/repositories.pot
 source_lang = en
 type = PO
 
-[poetry-ja.versions]
-file_filter = <lang>/LC_MESSAGES/versions.po
-minimum_perc = 0
-source_file = pot/versions.pot
-source_lang = en
-type = PO
-
