@@ -9,16 +9,16 @@ extra:
   version: 2.0
 
 nav:
-  - Introduction: index.md
+  - 入門: index.md
   - 基本的な使い方: basic-usage.md
-  - Libraries: libraries.md
-  - Commands: cli.md
-  - Configuration: configuration.md
-  - Repositories: repositories.md
-  - Managing environments: managing-environments.md
-  - Dependency specification: dependency-specification.md
-  - The pyproject.toml file: pyproject.md
-  - Contributing: contributing.md
+  - ライブラリ: libraries.md
+  - コマンド: cli.md
+  - 設定: configuration.md
+  - レポジトリ: repositories.md
+  - 環境管理: managing-environments.md
+  - 依存関係指定: dependency-specification.md
+  - pyproject.toml ファイル: pyproject.md
+  - コントリビュート: contributing.md
   - FAQ: faq.md
 
 markdown_extensions:
