@@ -53,4 +53,4 @@ build-$(LANG): venv
 
 publish-$(LANG):
 	rm -rf $(PUBLISHDIR)/*
-	cp -rp site/* $(PUBLISHDIR)/
+	cp -pR site/* $(PUBLISHDIR)/
