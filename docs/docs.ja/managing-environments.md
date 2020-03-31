@@ -17,7 +17,7 @@ to find one that is and use it. If it's unable to do so then you will be
 prompted to activate one explicitly, see [Switching
 environments](#switching-between-environments).
 
-!!!note
+!!!注意
 
     To easily switch between Python versions, it is recommended to
     use [pyenv](https://github.com/pyenv/pyenv) or similar tools.

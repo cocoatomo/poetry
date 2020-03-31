@@ -1,46 +1,43 @@
-# Repositories
+# レポジトリ
 
-## Using the PyPI repository
+## PyPIレポジトリの使用
 
-By default, Poetry is configured to use the [PyPI](https://pypi.org)
-repository, for package installation and publishing.
+デフォルトでは、Poetryはパッケージのインストールと公開に [PyPI](https://pypi.org) レポジトリを使うよう設定されます。
 
-So, when you add dependencies to your project, Poetry will assume they are
-available on PyPI.
+そのため、プロジェクトに依存関係を追加すると、PoetryはそれがPyPIで利用可能だと仮定します。
 
-This represents most cases and will likely be enough for most users.
+これはほとんどの場合に当たり、ほとんどのユーザーにとって十分なようです。
 
 
-## Using a private repository
+## プライベートレポジトリの使用
 
-However, at times, you may need to keep your package private while still
-being able to share it with your teammates. In this case, you will need to
-use a private repository.
+しかし、あるときは、チームメイトには共有可能にしつつ、パッケージを非公開のままにする必要があるかもしれません。
+その場合、プライベートレポジトリを使う必要があります。
 
-### Adding a repository
+### レポジトリの追加
 
-Adding a new repository is easy with the `config` command.
+レポジトリの追加は `config` コマンドを使うと簡単です。
 
 ```bash
 poetry config repositories.foo https://foo.bar/simple/
 ```
 
-This will set the url for repository `foo` to `https://foo.bar/simple/`.
+このコマンドは、レポジトリ `foo` のURLを `https://foo.bar/simple/` に設定します。
 
-### Configuring credentials
+### 認証情報の設定
 
-If you want to store your credentials for a specific repository, you can do
-so easily:
+もし特定のレポジトリの認証情報を保存したいなら、次のように簡単にできます:
 
 ```bash
 poetry config http-basic.foo username password
 ```
 
-If you do not specify the password you will be prompted to write it.
+パスワードを指定しなかった場合は、パスワードを書くように促されます。
 
-!!!note
+!!!注意
 
-    To publish to PyPI, you can set your credentials for the repository named `pypi`.
+    PyPIへ公開するために、 `pypi` という名前のレポジトリの認証情報を
+    設定できます:
 
     Note that it is recommended to use [API tokens](https://pypi.org/help/#apitoken)
     when uploading packages to PyPI.
@@ -57,8 +54,8 @@ If you do not specify the password you will be prompted to write it.
     poetry config http-basic.pypi username password
     ```
 
-You can also specify the username and password when using the `publish`
-command with the `--username` and `--password` options.
+`pyblish` コマンドを使うときに `--username` オプションと `--password`
+オプションを付けて、ユーザー名とパスワードを指定することもできます。
 
 If a system keyring is available and supported, the password is stored to
 and retrieved from the keyring. In the above example, the credential will be
@@ -95,12 +92,11 @@ need to be set):
     poetry config certificates.foo.client-cert /path/to/client.pem
 ```
 
-### Install dependencies from a private repository
+### プライベートレポジトリからの依存関係インストール
 
-Now that you can publish to your private repository, you need to be able to
-install dependencies from it.
+プライベートレポジトリへの公開ができようになったので、そこから依存関係をインストールできるようにする必要があります。
 
-For that, you have to edit your `pyproject.toml` file, like so
+そのためには、 `pyproject.toml` ファイルを次のように編集する必要があります
 
 ```toml
 [[tool.poetry.source]]
@@ -108,9 +104,9 @@ name = "foo"
 url = "https://foo.bar/simple/"
 ```
 
-From now on, Poetry will also look for packages in your private repository.
+今後は、Poetryはプライベートレポジトリのパッケージも検索します。
 
-!!!note
+!!!注意
 
     Any custom repository will have precedence over PyPI.
 
@@ -124,16 +120,13 @@ From now on, Poetry will also look for packages in your private repository.
     secondary = true
     ```
 
-If your private repository requires HTTP Basic Auth be sure to add the
-username and password to your `http-basic` configuration using the example
-above (be sure to use the same name that is in the `tool.poetry.source`
-section). If your repository requires either a custom certificate authority
-or client certificates, similarly refer to the example above to configure
-the `certificates` section. Poetry will use these values to authenticate to
-your private repository when downloading or looking for packages.
+プライベートレポジトリがHTTP Basic認証を要求する場合、上の例を使って、忘れずにユーザー名とパスワードを `http-basic`
+設定に追加してください (`tool.poetry.source` セクションにある名前と同じものを使うことも忘れないでください)。
+レポジトリにカスタムの認証局かクライアント証明書が必要な場合も同様に上の例を参照して `certificates` セクションを設定してください。
+Poetryは、パッケージのダウンロードや検索をするときに、これらの値をプライベートレポジトリに対する認証に使います。
 
 
-### Disabling the PyPI repository
+### PyPIレポジトリの無効化
 
 If you want your packages to be exclusively looked up from a private
 repository, you can set it as the default one by using the `default` keyword

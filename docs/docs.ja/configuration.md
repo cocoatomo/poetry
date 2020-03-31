@@ -1,15 +1,14 @@
-# Configuration
+# 設定
 
-Poetry can be configured via the `config` command ([see more about its usage
-here](/docs/cli/#config))  or directly in the `config.toml` file that will
-be automatically be created when you first run that command.  This file can
-typically be found in one of the following directories:
+Poetryは、 `config` コマンド ([使い方のより詳しいことはこちら](/poetry-ja/cli/#config))
+による設定や、初めてそのコマンドを実行するときに自動的に作成される `config.toml` で直接設定が行えます。
+このファイルはたいてい次のディレクトリのうち1つで見付かります。
 
 - macOS:   `~/Library/Application Support/pypoetry`
 - Windows: `C:\Users\<username>\AppData\Roaming\pypoetry`
 
-For Unix, we follow the XDG spec and support `$XDG_CONFIG_HOME`.  That
-means, by default `~/.config/pypoetry`.
+Unixでは、XDG仕様に従い、 `$XDG_CONFIG_HOME` をサポートしています。
+つまり、デフォルトでは `~/.config/pypoetry` となります。
 
 ## Local configuration
 
@@ -96,7 +95,7 @@ export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret
 ```
 
 
-## Available settings
+## 利用可能な設定
 
 ### `cache-dir`: string
 
@@ -110,20 +109,20 @@ Defaults to one of the following directories:
 
 ### `virtualenvs.create`: boolean
 
-Create a new virtual environment if one doesn't already exist.  Defaults to
-`true`.
+まだ存在していない場合、新しい仮想環境を作成します。
+デフォルトは `true` です。
 
 ### `virtualenvs.in-project`: boolean
 
-Create the virtualenv inside the project's root directory.  Defaults to
-`false`.
+プロジェクトのルートディレクトリに仮想環境を作成します。
+デフォルトは `false` です。
 
 ### `virtualenvs.path`: string
 
-Directory where virtual environments will be created.  Defaults to
-`{cache-dir}/virtualenvs` (`{cache-dir}\virtualenvs` on Windows).
+仮想環境が作成されるディレクトリ。
+デフォルトは `{cache-dir}/virtualenvs` (Windowsでは `{cache-dir}\virtualenvs`) です。
 
 ### `repositories.<name>`: string
 
-Set a new alternative repository. See [Repositories](/docs/repositories/)
-for more information.
+別のレポジトリを新しく設定します。
+より詳しいことは [レポジトリ](/poetry-ja/repositories/) を参照してください。

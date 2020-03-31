@@ -1,22 +1,18 @@
-# Dependency specification
+# 依存関係指定
 
-Dependencies for a project can be specified in various forms, which depend
-on the type of the dependency and on the optional constraints that might be
-needed for it to be installed.
+プロジェクトの依存関係は、依存関係の種類とインストールするときに必要になる任意の制約に基づいて様々な形式で指定できます。
 
-## Version constraints
+## バージョン制約
 
-### Caret requirements
+### キャレット要件
 
-**Caret requirements** allow SemVer compatible updates to a specified version.
-An update is allowed if the new version number does not modify the left-most non-zero digit in the major, minor, patch grouping.
-In this case, if we ran `poetry update requests`, poetry would update us to version `2.14.0` if it was available,
-but would not update us to `3.0.0`.
-If instead we had specified the version string as `^0.1.13`, poetry would update to `0.1.14` but not `0.2.0`.
-`0.0.x` is not considered compatible with any other version.
+**キャレット要件** を使うと、指定したバージョンへのsemantic versioningに適合した更新が行えます。
+メジャー、マイナー、パッチという番号群のうち0でない最も左の数字を、新しいバージョン番号が更新しない場合に、更新が許可されます。
+この場合に、 `poetry update requests` を実行したとすると、Poetryはもし利用可能ならバージョン `2.14.0` ヘ更新しますが、 `3.0.0` には更新しません。
+その変わりにバージョン文字列に `^0.1.13` を指定していた場合は、Poetryは `0.2.0` ではなく `0.1.14` へ更新します。
+`0.0.x` は他のどんなバージョンとも適合しないと見なされます。
 
-Here are some more examples of caret requirements and the versions that
-would be allowed with them:
+これらがキャレット要件とそれに許可されたバージョンの例です:
 
 | Requirement | Versions allowed |
 | ----------- | ---------------- |
@@ -28,13 +24,13 @@ would be allowed with them:
 | ^0.0        | >=0.0.0 <0.1.0   |
 | ^0          | >=0.0.0 <1.0.0   |
 
-### Tilde requirements
+### チルダ要件
 
-**Tilde requirements** specify a minimal version with some ability to update.
-If you specify a major, minor, and patch version or only a major and minor version, only patch-level changes are allowed.
-If you only specify a major version, then minor- and patch-level changes are allowed.
+**チルダ要件** は更新できる最小バージョンを指定します。
+メジャー、マイナー、パッチバージョンを指定するか、メジャー、マイナーバージョンだけを指定した場合は、パッチレベルのみ変更が許可されます。
+メジャーバージョンだけを指定した場合は、マイナーレベルとパッチレベルの変更が許可されます。
 
-`~1.2.3` is an example of a tilde requirement.
+`~1.2.3` はチルダ要件の例です。
 
 | Requirement | Versions allowed |
 | ----------- | ---------------- |
@@ -42,11 +38,11 @@ If you only specify a major version, then minor- and patch-level changes are all
 | ~1.2        | >=1.2.0 <1.3.0   |
 | ~1          | >=1.0.0 <2.0.0   |
 
-### Wildcard requirements
+### ワイルドカード要件
 
-**Wildcard requirements** allow for any version where the wildcard is positioned.
+**ワイルドカード要件** を使うと、ワイルドカードの位置に任意のバージョンが許可されます。
 
-`*`, `1.*` and `1.2.*` are examples of wildcard requirements.
+`*`, `1.*`, `1.2.*` はワイルドカード要件の例です。
 
 | Requirement | Versions allowed |
 | ----------- | ---------------- |
@@ -54,47 +50,46 @@ If you only specify a major version, then minor- and patch-level changes are all
 | 1.*         | >=1.0.0 <2.0.0   |
 | 1.2.*       | >=1.2.0 <1.3.0   |
 
-### Inequality requirements
+### 不等要件
 
-**Inequality requirements** allow manually specifying a version range or an exact version to depend on.
+**不等要件** を使うと、バージョンの範囲や依存している厳密なバージョンを自分の手で指定できます。
 
-Here are some examples of inequality requirements:
+これらが不等要件の例です:
 
 ```text
 >= 1.2.0
+
 > 1
+
 < 2
+
 != 1.2.3
+
 ```
 
-### Exact requirements
+### 厳密要件
 
-You can specify the exact version of a package.  This will tell Poetry to
-install this version and this version only.  If other dependencies require a
-different version, the solver will ultimately fail and abort any install or
-update procedures.
+パッケージの厳密なバージョンを指定できます。
+この指定は、このバージョンかつこのバージョンのみをインストールするようPoetryに指示します。
+他の依存関係が別のバージョンを要求した場合は、ソルバーは最終的には失敗し、インストールや更新の手続きを中止します。
 
-#### Multiple requirements
+#### 複合要件
 
-Multiple version requirements can also be separated with a comma, e.g. `>= 1.2, < 1.5`.
+複数のバージョン要件は、コンマ区切りで並べられます。例えば、 `>= 1.2, < 1.5` などです。
 
-## `git` dependencies
+## `git` 依存関係
 
-To depend on a library located in a `git` repository, the minimum
-information you need to specify is the location of the repository with the
-git key:
+`git` レポジトリにあるライブラリに依存するための、指定する必要のある最小限の情報はgitをキーとするレポジトリの場所です:
 
 ```toml
 [tool.poetry.dependencies]
 requests = { git = "https://github.com/requests/requests.git" }
 ```
 
-Since we haven’t specified any other information, Poetry assumes that we
-intend to use the latest commit on the `master` branch to build our project.
+これ以外の情報を指定していないので、Poetryは `master` ブランチの最新のコミットを使いプロジェクトをするつもりなのだと仮定します。
 
-You can combine the `git` key with the `branch` key to use another branch.
-Alternatively, use `rev` or `tag` to pin a dependency to a specific commit
-hash or tagged ref, respectively. For example:
+`git` キーと `rev` キー, `tag` キー, `branch` キーを組み合わせて、それ以外のものも指定できます。
+これが、 `next` という名前のブランチの最新のコミットを使いたいことを指定する例です:
 
 ```toml
 [tool.poetry.dependencies]
@@ -106,10 +101,9 @@ flask = { git = "https://github.com/pallets/flask.git", rev = "38eb5d3b" }
 numpy = { git = "https://github.com/numpy/numpy.git", tag = "v0.13.2" }
 ```
 
-## `path` dependencies
+## `path` 依存関係
 
-To depend on a library located in a local directory or file, you can use the
-`path` property:
+ローカルディレクトリやローカルファイルにあるライブラリに依存するために、 `path` 属性が使えます:
 
 ```toml
 [tool.poetry.dependencies]
@@ -121,10 +115,9 @@ my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
 ```
 
 
-## `url` dependencies
+## `url` 依存関係
 
-To depend on a library located on a remote archive, you can use the `url`
-property:
+リモートアーカイブにあるライブラリに依存するために、 `url` 属性が使えます:
 
 ```toml
 [tool.poetry.dependencies]
@@ -139,10 +132,9 @@ poetry add https://example.com/my-package-0.1.0.tar.gz
 ```
 
 
-## Python restricted dependencies
+## Python制限依存関係
 
-You can also specify that a dependency should be installed only for specific
-Python versions:
+ある依存関係を特定のバージョンのPythonでだけインストールする、という指定もできます:
 
 ```toml
 [tool.poetry.dependencies]
@@ -167,14 +159,12 @@ pathlib2 = { version = "^2.2", markers = "python_version ~= '2.7' or sys_platfor
 ```
 
 
-## Multiple constraints dependencies
+## 複数制約依存関係
 
-Sometimes, one of your dependency may have different version ranges
-depending on the target Python versions.
+あるときは、対象のPythonバージョンに依存して、依存関係に異なるバージョン範囲が設定されることがあります。
 
-Let's say you have a dependency on the package `foo` which is only compatible
-with Python <3.0 up to version 1.9 and compatible with Python 3.4+ from version 2.0:
-you would declare it like so:
+バージョン1.9まではPython 3.0未満、2.0以降はPython 3.4以上というPythonとの互換性を持つパッケージ `foo` への依存関係があるとしましょう:
+このとき次のように宣言します:
 
 ```toml
 [tool.poetry.dependencies]
@@ -184,7 +174,7 @@ foo = [
 ]
 ```
 
-!!!note
+!!!注意
 
-    The constraints **must** have different requirements (like `python`)
-    otherwise it will cause an error when resolving dependencies.
+    制約は (`python` のように) 異なる要件で **なければならず** 、
+    そうでない場合は、依存関係の解決でエラーが発生します。
