@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# tomo, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: 2020-03-29 08:15+0000\n"
+"Last-Translator: tomo, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,13 +24,13 @@ msgstr ""
 #: docs/faq.md:1
 #, no-wrap
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #. type: Title ##
 #: docs/faq.md:3
 #, no-wrap
 msgid "Why is the dependency resolution process slow?"
-msgstr ""
+msgstr "なぜ依存関係解決の処理は遅いのですか？"
 
 #. type: Plain text
 #: docs/faq.md:8
@@ -35,6 +39,7 @@ msgid ""
 " should be fast enough for most cases, sometimes, with some specific set of "
 "dependencies, it can take time to find a valid solution."
 msgstr ""
+"Poetryの心臓部である依存関係解決器は大いに最適化されており、ほとんどのケースで十分に速いはずですが、ときどき、ある依存関係の特定の組み合わせでは、妥当な解決策を見付けるのに時間がかかることがあります。"
 
 #. type: Plain text
 #: docs/faq.md:13
@@ -46,16 +51,19 @@ msgid ""
 "operation, both in bandwidth and time, which is why it seems this is a long "
 "process."
 msgstr ""
+"これは、PyPIにある全てのライブラリが適切なメタデータの宣言をしているわけではなく、それらはPyPI JSON APIからは利用可能でないという事実に依るものです。\n"
+"現時点では、パッケージをダウンロードし、中身を調べて必要な情報を取得する以外の選択肢は、Poetryにはありません。\n"
+"これは手間の掛かる作業で、それが原因でバンド幅と時間の両方において長い処理に見えるのです。"
 
 #. type: Plain text
 #: docs/faq.md:15
 msgid "At the moment there is no way around it."
-msgstr ""
+msgstr "今のところ、これを回避する道はありません。"
 
 #. type: Plain text
 #: docs/faq.md:17
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/faq.md:20
@@ -64,12 +72,14 @@ msgid ""
 "    Once Poetry has cached the releases' information, the dependency resolution process\n"
 "    will be much faster.\n"
 msgstr ""
+" いったんPoetryがリリース情報をキャッシュしてしまえば、\n"
+"依存関係解決の処理はとても速くなります。\n"
 
 #. type: Title ##
 #: docs/faq.md:21
 #, no-wrap
 msgid "Why are unbound version constraints a bad idea?"
-msgstr ""
+msgstr "上限の無いバージョン制約が良くないのはなぜですか？"
 
 #. type: Plain text
 #: docs/faq.md:25
@@ -78,6 +88,8 @@ msgid ""
 "A version constraint without an upper bound such as `*` or `>=3.4` will allow updates to any future version of the dependency.\n"
 "This includes major versions breaking backward compatibility.\n"
 msgstr ""
+"`*` や `>=3.4` のような上限の無いバージョン制約は、依存関係のいくらでも先のバージョンへの更新を許可します。\n"
+"これには後方互換性を破壊するメジャーバージョンも含まれています。\n"
 
 #. type: Plain text
 #: docs/faq.md:28
@@ -86,6 +98,7 @@ msgid ""
 "dependencies anymore in case a dependency breaks BC - you have to do a new "
 "release but the previous one stays broken."
 msgstr ""
+"いったんパッケージのリリースが公開されてしまうと、後方互換性の破壊が起きてしまうケースでも、それ以降は依存関係の微調整は行えなくなります。そうなると新しいリリースを出さなればいけませんが、その前のリリースは後方互換性が壊れたままです。"
 
 #. type: Plain text
 #: docs/faq.md:32
@@ -94,6 +107,7 @@ msgid ""
 "which you can increase in a new release after testing that your package is "
 "compatible with the new major version of your dependency."
 msgstr ""
+"唯一の適切な選択肢は、バージョン制約に上限を設け、パッケージが依存関係の新しいメジャーバージョンと互換性があることをテストした後の新しいリリースで、その上限を上げられるようにすることです。"
 
 #. type: Plain text
 #: docs/faq.md:35
@@ -102,12 +116,14 @@ msgid ""
 "For example instead of using `>=3.4` you should use `~3.4` which allows all versions `<4.0`.\n"
 "The `^` operator works very well with libraries following [semantic versioning](https://semver.org).\n"
 msgstr ""
+"例えば、 `>=3.4` を使う代わりに、 `<4.0` を満たす全てのバージョンを許可する `~3.4` を使うべきです。\n"
+"`^` 演算子は、 [semantic versioning](https://semver.org) に従ったライブラリと非常に相性が良いです。\n"
 
 #. type: Title ##
 #: docs/faq.md:36
 #, no-wrap
 msgid "Is tox supported?"
-msgstr ""
+msgstr "toxはサポートしていますか？"
 
 #. type: Plain text
 #: docs/faq.md:40
@@ -117,13 +133,15 @@ msgid ""
 "isolated_build) `tox` provides, you can use it in combination with the PEP "
 "517 compliant build system provided by Poetry."
 msgstr ""
+"はい。\n"
+"`tox` が提供している [隔離ビルド](https://tox.readthedocs.io/en/latest/config.html#conf-isolated_build) を使うことで、Poetryが提供するPEP 517準拠のビルドシステムと `tox` を連携して使えます。"
 
 #. type: Plain text
 #: docs/faq.md:42
 msgid ""
 "So, in your `pyproject.toml` file, add this section if it does not already "
 "exist:"
-msgstr ""
+msgstr "連携させるには、 `pyproject.toml` ファイルに、この節がまだ無ければ追加してください:"
 
 #. type: Fenced code block (toml)
 #: docs/faq.md:43
@@ -133,11 +151,14 @@ msgid ""
 "requires = [\"poetry>=0.12\"]\n"
 "build-backend = \"poetry.masonry.api\"\n"
 msgstr ""
+"[build-system]\n"
+"requires = [\"poetry>=0.12\"]\n"
+"build-backend = \"poetry.masonry.api\"\n"
 
 #. type: Plain text
 #: docs/faq.md:50
 msgid "And use a `tox.ini` configuration file similar to this:"
-msgstr ""
+msgstr "そして、このような `tox.ini` 設定ファイルを使ってください:"
 
 #. type: Fenced code block (INI)
 #: docs/faq.md:51
@@ -153,13 +174,22 @@ msgid ""
 "    poetry install -v\n"
 "    poetry run pytest tests/\n"
 msgstr ""
+"[tox]\n"
+"isolated_build = true\n"
+"envlist = py27, py36\n"
+"\n"
+"[testenv]\n"
+"whitelist_externals = poetry\n"
+"commands =\n"
+"    poetry install -v\n"
+"    poetry run pytest tests/\n"
 
 #. type: Title ##
 #: docs/faq.md:63
 #, no-wrap
 msgid ""
 "I don't want Poetry to manage my virtual environments. Can I disable it?"
-msgstr ""
+msgstr "Poetryに仮想環境を管理されたくありません。無効化できませんか？"
 
 #. type: Plain text
 #: docs/faq.md:68
@@ -168,16 +198,17 @@ msgid ""
 "isolated from the global Python installation, there are valid reasons why "
 "it's not necessary and is an overhead, like when working with containers."
 msgstr ""
+"Poetryは、グローバルにインストールされたPythonから隔離された状態で動作するために仮想環境を自動的に作成しますが、コンテナで動作させるときのような、その必要が無くむしろオーバーヘッドになるという、そうしない妥当な理由もあります。"
 
 #. type: Plain text
 #: docs/faq.md:70
 msgid ""
 "In this case, you can disable this feature by setting the "
 "`virtualenvs.create` setting to `false`:"
-msgstr ""
+msgstr "このケースでは、 `virtualenvs.create` に `false` を設定することで、この機能を無効化できます:"
 
 #. type: Fenced code block (bash)
 #: docs/faq.md:71
 #, no-wrap
 msgid "poetry config virtualenvs.create false\n"
-msgstr ""
+msgstr "poetry config virtualenvs.create false\n"

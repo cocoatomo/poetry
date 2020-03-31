@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# tomo, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: 2020-03-29 08:15+0000\n"
+"Last-Translator: tomo, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +24,7 @@ msgstr ""
 #: docs/cli.md:1
 #, no-wrap
 msgid "Commands"
-msgstr ""
+msgstr "コマンド"
 
 #. type: Plain text
 #: docs/cli.md:5
@@ -28,6 +32,8 @@ msgid ""
 "You've already learned how to use the command-line interface to do some "
 "things.  This chapter documents all the available commands."
 msgstr ""
+"これまでに、何かをするためのコマンドラインインターフェースの使い方を学びました。\n"
+"この章では、全ての利用可能なコマンドについて記述します。"
 
 #. type: Plain text
 #: docs/cli.md:8
@@ -36,6 +42,8 @@ msgid ""
 "list of commands, then `--help` combined with any of those can give you more"
 " information."
 msgstr ""
+"コマントラインでヘルプを出すには、 `poetry` と呼び出すとコマンドの完全なリストが見られて、コマンドのどれかに `--help` "
+"を付けて実行するとより詳しい情報が得られます。"
 
 #. type: Plain text
 #: docs/cli.md:10
@@ -43,23 +51,25 @@ msgid ""
 "As `Poetry` uses [cleo](https://github.com/sdispater/cleo) you can call "
 "commands by short name if it's not ambiguous."
 msgstr ""
+"`Poetry` は [cleo](https://github.com/sdispater/cleo) "
+"を使っているので、曖昧性が無い場合は、短い名前でもコマンドが呼び出せます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:11
 #, no-wrap
 msgid "poetry up\n"
-msgstr ""
+msgstr "poetry up\n"
 
 #. type: Plain text
 #: docs/cli.md:16
 msgid "calls `poetry update`."
-msgstr ""
+msgstr "これは `poetry update` コマンドを呼び出します。"
 
 #. type: Title ##
 #: docs/cli.md:18
 #, no-wrap
 msgid "Global options"
-msgstr ""
+msgstr "グローバルオプション"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
@@ -67,55 +77,57 @@ msgid ""
 "`--verbose (-v|vv|vvv)`: Increase the verbosity of messages: \"-v\" for "
 "normal output, \"-vv\" for more verbose output and \"-vvv\" for debug."
 msgstr ""
+"`--verbose (-v|vv|vvv)`: メッセージの冗長さを増やします: "
+"1つでは標準の出力、2つではより冗長な出力、3つではデバッグ出力です。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--help (-h)` : Display help information."
-msgstr ""
+msgstr "`--help (-h)` : ヘルプ情報を表示します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--quiet (-q)` : Do not output any message."
-msgstr ""
+msgstr "`--quiet (-q)` : メッセージを出力しません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--ansi`: Force ANSI output."
-msgstr ""
+msgstr "`--ansi`: ANSI出力を強制します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--no-ansi`: Disable ANSI output."
-msgstr ""
+msgstr "`--no-ansi`: ANSI出力を無効にします。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:26
 msgid "`--version (-V)`: Display this application version."
-msgstr ""
+msgstr "`--version (-V)`: このアプリケーションのバージョンを表示します。"
 
 #. type: Title ##
 #: docs/cli.md:28
 #, no-wrap
 msgid "new"
-msgstr ""
+msgstr "new"
 
 #. type: Plain text
 #: docs/cli.md:32
 msgid ""
 "This command will help you kickstart your new Python project by creating a "
 "directory structure suitable for most projects."
-msgstr ""
+msgstr "このコマンドは、ほとんどのプロジェクトに適するディレクトリ構造を作成して、新しいPythonプロジェクトに勢いをつける助けをしてくれます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:33
 #, no-wrap
 msgid "poetry new my-package\n"
-msgstr ""
+msgstr "poetry new my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:38
 msgid "will create a folder as follows:"
-msgstr ""
+msgstr "というコマンドは次のフォルダを作成します:"
 
 #. type: Fenced code block (text)
 #: docs/cli.md:39
@@ -130,35 +142,43 @@ msgid ""
 "    ├── __init__.py\n"
 "    └── test_my_package.py\n"
 msgstr ""
+"my-package\n"
+"├── pyproject.toml\n"
+"├── README.rst\n"
+"├── my_package\n"
+"│   └── __init__.py\n"
+"└── tests\n"
+"    ├── __init__.py\n"
+"    └── test_my_package.py\n"
 
 #. type: Plain text
 #: docs/cli.md:52
 msgid ""
 "If you want to name your project differently than the folder, you can pass "
 "the `--name` option:"
-msgstr ""
+msgstr "フォルダとは別のプロジェクト名を付けたい場合は、 `--name` オプションで渡せます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:53
 #, no-wrap
 msgid "poetry new my-folder --name my-package\n"
-msgstr ""
+msgstr "poetry new my-folder --name my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:58
 msgid "If you want to use a src folder, you can use the `--src` option:"
-msgstr ""
+msgstr "srcフォルダを使いたい場合は、 `--src` オプションが使えます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:59
 #, no-wrap
 msgid "poetry new --src my-package\n"
-msgstr ""
+msgstr "poetry new --src my-package\n"
 
 #. type: Plain text
 #: docs/cli.md:64
 msgid "That will create a folder structure as follows:"
-msgstr ""
+msgstr "このコマンドは次のようなフォルダ構成を作成します:"
 
 #. type: Fenced code block (text)
 #: docs/cli.md:65
@@ -174,12 +194,21 @@ msgid ""
 "    ├── __init__.py\n"
 "    └── test_my_package.py\n"
 msgstr ""
+"my-package\n"
+"├── pyproject.toml\n"
+"├── README.rst\n"
+"├── src\n"
+"│   └── my_package\n"
+"│       └── __init__.py\n"
+"└── tests\n"
+"    ├── __init__.py\n"
+"    └── test_my_package.py\n"
 
 #. type: Title ##
 #: docs/cli.md:77
 #, no-wrap
 msgid "init"
-msgstr ""
+msgstr "init"
 
 #. type: Plain text
 #: docs/cli.md:81
@@ -187,19 +216,20 @@ msgid ""
 "This command will help you create a `pyproject.toml` file interactively by "
 "prompting you to provide basic information about your package."
 msgstr ""
+"このコマンドは、パッケージについての基本的な情報を提供するよう促して、 `pyproject.toml` ファイルを対話的に作成する助けになります。"
 
 #. type: Plain text
 #: docs/cli.md:83
 msgid ""
 "It will interactively ask you to fill in the fields, while using some smart "
 "defaults."
-msgstr ""
+msgstr "このコマンドは、賢いデフォルト設定を使いつつ、フィールドを埋めるよう対話的に求めます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:84
 #, no-wrap
 msgid "poetry init\n"
-msgstr ""
+msgstr "poetry init\n"
 
 #. type: Title ###
 #: docs/cli.md:88 docs/cli.md:145 docs/cli.md:168 docs/cli.md:242
@@ -207,40 +237,40 @@ msgstr ""
 #: docs/cli.md:346 docs/cli.md:404 docs/cli.md:438
 #, no-wrap
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--name`: Name of the package."
-msgstr ""
+msgstr "`--name`: パッケージ名。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--description`: Description of the package."
-msgstr ""
+msgstr "`--description`: パッケージの説明。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--author`: Author of the package."
-msgstr ""
+msgstr "`--author`: パッケージの作者。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid ""
 "`--dependency`: Package to require with a version constraint. Should be in "
 "format `foo:1.0.0`."
-msgstr ""
+msgstr "`--dependency`: バージョン制約付きの要求されるパッケージ。 `foo:1.0.0` 形式でなければいけません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:95
 msgid "`--dev-dependency`: Development requirements, see `--require`."
-msgstr ""
+msgstr "`--dev-dependency`: 開発時に要求されるパッケージ、 `--require` を参照してください。"
 
 #. type: Title ##
 #: docs/cli.md:97
 #, no-wrap
 msgid "install"
-msgstr ""
+msgstr "install"
 
 #. type: Plain text
 #: docs/cli.md:101
@@ -248,12 +278,13 @@ msgid ""
 "The `install` command reads the `pyproject.toml` file from the current "
 "project, resolves the dependencies, and installs them."
 msgstr ""
+"`install` コマンドは、現在のプロジェクトにある `pyproject.toml` ファイルを読み込み、依存関係を解決し、インストールします。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:102
 #, no-wrap
 msgid "poetry install\n"
-msgstr ""
+msgstr "poetry install\n"
 
 #. type: Plain text
 #: docs/cli.md:109
@@ -262,26 +293,28 @@ msgid ""
 "exact versions from there instead of resolving them.  This ensures that "
 "everyone using the library will get the same versions of the dependencies."
 msgstr ""
+"`poetry.lock` ファイルが今のディレクトリにある場合は、依存関係を解決する代わりに、ロックファイルにある厳密なバージョンを使います。\n"
+"これにより、そのライブラリを使う全員が同じバージョンの依存関係を手に入れることを保証します。"
 
 #. type: Plain text
 #: docs/cli.md:111
 msgid ""
 "If there is no `poetry.lock` file, Poetry will create one after dependency "
 "resolution."
-msgstr ""
+msgstr "`poetry.lock` ファイルが無い場合は、Poetryは依存関係解決の結果に従ってロックファイルを作成します。"
 
 #. type: Plain text
 #: docs/cli.md:114
 msgid ""
 "You can specify to the command that you do not want the development "
 "dependencies installed by passing the `--no-dev` option."
-msgstr ""
+msgstr "`--no-dev` オプションを渡すことで、開発用の依存関係をインストールさせないで欲しいことをコマンドに指定できます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:115
 #, no-wrap
 msgid "poetry install --no-dev\n"
-msgstr ""
+msgstr "poetry install --no-dev\n"
 
 #. type: Plain text
 #: docs/cli.md:121
@@ -289,6 +322,8 @@ msgid ""
 "You can also specify the extras you want installed by passing the "
 "`--E|--extras` option (See [Extras](#extras) for more info)"
 msgstr ""
+"`--E|--extras` オプションを渡すことで、インストールして欲しい追加の依存関係の指定もできます (より詳しいことは "
+"[Extras](#extras) を参照してください)"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:122
@@ -297,6 +332,8 @@ msgid ""
 "poetry install --extras \"mysql pgsql\"\n"
 "poetry install -E mysql -E pgsql\n"
 msgstr ""
+"poetry install --extras \"mysql pgsql\"\n"
+"poetry install -E mysql -E pgsql\n"
 
 #. type: Plain text
 #: docs/cli.md:128
@@ -327,12 +364,12 @@ msgstr ""
 #: docs/cli.md:141
 #, no-wrap
 msgid "poetry install --no-root\n"
-msgstr ""
+msgstr "poetry install --no-root\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:150
 msgid "`--no-dev`: Do not install dev dependencies."
-msgstr ""
+msgstr "`--no-dev`: 開発用の依存関係をインストールしない。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:150
@@ -342,89 +379,89 @@ msgstr ""
 #. type: Bullet: '* '
 #: docs/cli.md:150
 msgid "`--extras (-E)`: Features to install (multiple values allowed)."
-msgstr ""
+msgstr "`--extras (-E)`: インストールする機能 (複数値も可能です)。"
 
 #. type: Title ##
 #: docs/cli.md:151
 #, no-wrap
 msgid "update"
-msgstr ""
+msgstr "update"
 
 #. type: Plain text
 #: docs/cli.md:155
 msgid ""
 "In order to get the latest versions of the dependencies and to update the "
 "`poetry.lock` file, you should use the `update` command."
-msgstr ""
+msgstr "最新バージョンの依存関係を取得し、 `poetry.lock` を更新するには、 `update` コマンドを使いましょう。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:156
 #, no-wrap
 msgid "poetry update\n"
-msgstr ""
+msgstr "poetry update\n"
 
 #. type: Plain text
 #: docs/cli.md:161
 msgid ""
 "This will resolve all dependencies of the project and write the exact "
 "versions into `poetry.lock`."
-msgstr ""
+msgstr "このコマンドは、プロジェクトの全ての依存関係を解決し、その厳密なバージョンを `poetry.lock` に書き込みます。"
 
 #. type: Plain text
 #: docs/cli.md:163
 msgid ""
 "If you just want to update a few packages and not all, you can list them as "
 "such:"
-msgstr ""
+msgstr "全てではない一部のパッケージだけを更新したい場合は、このように並べて指定できます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:164
 #, no-wrap
 msgid "poetry update requests toml\n"
-msgstr ""
+msgstr "poetry update requests toml\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:173 docs/cli.md:248 docs/cli.md:263
 msgid ""
 "`--dry-run` : Outputs the operations but will not execute anything "
 "(implicitly enables --verbose)."
-msgstr ""
+msgstr "`--dry-run` : 作業を表示しますが、何も実行しません (暗黙的に --verbose が有効になります)。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:173
 msgid "`--no-dev` : Do not install dev dependencies."
-msgstr ""
+msgstr "`--no-dev` : 開発用の依存関係をインストールしません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:173
 msgid "`--lock` : Do not perform install (only update the lockfile)."
-msgstr ""
+msgstr "`--lock` : インストールを行いません (ロックファイルを更新するだけです)。"
 
 #. type: Title ##
 #: docs/cli.md:174
 #, no-wrap
 msgid "add"
-msgstr ""
+msgstr "add"
 
 #. type: Plain text
 #: docs/cli.md:177
 msgid ""
 "The `add` command adds required packages to your `pyproject.toml` and "
 "installs them."
-msgstr ""
+msgstr "`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。"
 
 #. type: Plain text
 #: docs/cli.md:180
 msgid ""
 "If you do not specify a version constraint, poetry will choose a suitable "
 "one based on the available package versions."
-msgstr ""
+msgstr "`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:181
 #, no-wrap
 msgid "poetry add requests pendulum\n"
-msgstr ""
+msgstr "poetry add requests pendulum\n"
 
 #. type: Plain text
 #: docs/cli.md:186
@@ -438,6 +475,8 @@ msgid ""
 "poetry add pendulum@^2.0.5\n"
 "poetry add \"pendulum>=2.0.5\"\n"
 msgstr ""
+"poetry add pendulum@^2.0.5\n"
+"poetry add \"pendulum>=2.0.5\"\n"
 
 #. type: Plain text
 #: docs/cli.md:196
@@ -453,18 +492,18 @@ msgstr ""
 #: docs/cli.md:197
 #, no-wrap
 msgid "poetry add pendulum@latest\n"
-msgstr ""
+msgstr "poetry add pendulum@latest\n"
 
 #. type: Plain text
 #: docs/cli.md:202
 msgid "You can also add `git` dependencies:"
-msgstr ""
+msgstr "`git` 依存関係の追加もできます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:203
 #, no-wrap
 msgid "poetry add git+https://github.com/sdispater/pendulum.git\n"
-msgstr ""
+msgstr "poetry add git+https://github.com/sdispater/pendulum.git\n"
 
 #. type: Plain text
 #: docs/cli.md:209
@@ -480,11 +519,13 @@ msgid ""
 "poetry add git+https://github.com/sdispater/pendulum.git#develop\n"
 "poetry add git+https://github.com/sdispater/pendulum.git#2.0.5\n"
 msgstr ""
+"poetry add git+https://github.com/sdispater/pendulum.git#develop\n"
+"poetry add git+https://github.com/sdispater/pendulum.git#2.0.5\n"
 
 #. type: Plain text
 #: docs/cli.md:216
 msgid "or make them point to a local directory or file:"
-msgstr ""
+msgstr "のようにするか、ローカルのディレクトリやファイルを指し示すようにします:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:217
@@ -494,6 +535,9 @@ msgid ""
 "poetry add ../my-package/dist/my-package-0.1.0.tar.gz\n"
 "poetry add ../my-package/dist/my_package-0.1.0.whl\n"
 msgstr ""
+"poetry add ./my-package/\n"
+"poetry add ../my-package/dist/my-package-0.1.0.tar.gz\n"
+"poetry add ../my-package/dist/my_package-0.1.0.whl\n"
 
 #. type: Plain text
 #: docs/cli.md:225
@@ -502,13 +546,15 @@ msgid ""
 "editable mode (i.e. setuptools \"develop mode\").  It means that changes in "
 "the local directory will be reflected directly in environment."
 msgstr ""
+"ローカルのディレクトリを指すパス依存関係は、編集可能モード (つまり、setuptoolsの\"develop mode\") でインストールされます。\n"
+"これは、ローカルのディレクトリの変更が、動作環境に直接影響するということです。"
 
 #. type: Plain text
 #: docs/cli.md:227
 msgid ""
 "If you don't want the dependency to be installed in editable mode you can "
 "specify it in the `pyproject.toml` file:"
-msgstr ""
+msgstr "依存関係を編集可能モードでインストールしたくない場合は、 `pyproject.toml` ファイルでその指定ができます。"
 
 #. type: Fenced code block (toml)
 #: docs/cli.md:228
@@ -517,6 +563,8 @@ msgid ""
 "[tool.poetry.dependencies]\n"
 "my-package = {path = \"../my/path\", develop = false}\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"my-package = {path = \"../my/path\", develop = false}\n"
 
 #. type: Plain text
 #: docs/cli.md:235
@@ -537,65 +585,65 @@ msgstr ""
 #. type: Bullet: '* '
 #: docs/cli.md:248
 msgid "`--dev (-D)`: Add package as development dependency."
-msgstr ""
+msgstr "`--dev (-D)`: 開発用の依存関係としてパッケージを追加します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:248
 msgid "`--path`: The path to a dependency."
-msgstr ""
+msgstr "`--path`: 依存関係へのパス。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:248
 msgid "`--optional` : Add as an optional dependency."
-msgstr ""
+msgstr "`--optional` : オプションの依存関係を追加します。"
 
 #. type: Title ##
 #: docs/cli.md:250
 #, no-wrap
 msgid "remove"
-msgstr ""
+msgstr "remove"
 
 #. type: Plain text
 #: docs/cli.md:254
 msgid ""
 "The `remove` command removes a package from the current list of installed "
 "packages."
-msgstr ""
+msgstr "`remove` コマンドは、現在のインストールされたパッケージの一覧からパッケージを削除します。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:255
 #, no-wrap
 msgid "poetry remove pendulum\n"
-msgstr ""
+msgstr "poetry remove pendulum\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:263
 msgid "`--dev (-D)`: Removes a package from the development dependencies."
-msgstr ""
+msgstr "`--dev (-D)`: 開発用の依存関係からパッケージを削除します。"
 
 #. type: Title ##
 #: docs/cli.md:265
 #, no-wrap
 msgid "show"
-msgstr ""
+msgstr "show"
 
 #. type: Plain text
 #: docs/cli.md:268
 msgid "To list all of the available packages, you can use the `show` command."
-msgstr ""
+msgstr "全ての利用可能なパッケージを列挙するには、 `show` コマンドが使えます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:269
 #, no-wrap
 msgid "poetry show\n"
-msgstr ""
+msgstr "poetry show\n"
 
 #. type: Plain text
 #: docs/cli.md:274
 msgid ""
 "If you want to see the details of a certain package, you can pass the "
 "package name."
-msgstr ""
+msgstr "ある特定のパッケージの詳細を見たい場合は、パッケージ名を渡せます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:275
@@ -612,86 +660,96 @@ msgid ""
 " - tzlocal >=1.4\n"
 " - pytzdata >=2017.2.2\n"
 msgstr ""
+"poetry show pendulum\n"
+"\n"
+"name        : pendulum\n"
+"version     : 1.4.2\n"
+"description : Python datetimes made easy\n"
+"\n"
+"dependencies:\n"
+" - python-dateutil >=2.6.1\n"
+" - tzlocal >=1.4\n"
+" - pytzdata >=2017.2.2\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:294
 msgid "`--no-dev`: Do not list the dev dependencies."
-msgstr ""
+msgstr "`--no-dev`: 開発用の依存関係を列挙しません。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:294
 msgid "`--tree`: List the dependencies as a tree."
-msgstr ""
+msgstr "`--tree`: 依存関係を木構造で列挙します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:294
 msgid "`--latest (-l)`: Show the latest version."
-msgstr ""
+msgstr "`--latest (-l)`: 最新バージョンを表示します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:294
 msgid ""
 "`--outdated (-o)`: Show the latest version but only for packages that are "
 "outdated."
-msgstr ""
+msgstr "`--outdated (-o)`: 古くなったパッケージの最新バージョンだけを表示します。"
 
 #. type: Title ##
 #: docs/cli.md:296
 #, no-wrap
 msgid "build"
-msgstr ""
+msgstr "build"
 
 #. type: Plain text
 #: docs/cli.md:299
 msgid "The `build` command builds the source and wheels archives."
-msgstr ""
+msgstr "`build` コマンドは、ソースアーカイブとwheelアーカイブへビルドします。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:300
 #, no-wrap
 msgid "poetry build\n"
-msgstr ""
+msgstr "poetry build\n"
 
 #. type: Plain text
 #: docs/cli.md:305
 msgid "Note that, at the moment, only pure python wheels are supported."
-msgstr ""
+msgstr "現時点では、ピュアPythonのwheelのみサポートされていることに注意してください。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:309
 msgid "`--format (-f)`: Limit the format to either `wheel` or `sdist`."
-msgstr ""
+msgstr "`--format (-f)`: 形式をwheelもしくはsdistに限定します。"
 
 #. type: Title ##
 #: docs/cli.md:310
 #, no-wrap
 msgid "publish"
-msgstr ""
+msgstr "publish"
 
 #. type: Plain text
 #: docs/cli.md:313
 msgid ""
 "This command publishes the package, previously built with the "
 "[`build`](#build) command, to the remote repository."
-msgstr ""
+msgstr "このコマンドは、前に [`build`](#build) コマンドでビルドしたパッケージを、リモートレポジトリに公開します。"
 
 #. type: Plain text
 #: docs/cli.md:315
 msgid ""
 "It will automatically register the package before uploading if this is the "
 "first time it is submitted."
-msgstr ""
+msgstr "初めて提出する場合には、このコマンドは、アップロードの前に自動的にパッケージの登録を行います。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:316
 #, no-wrap
 msgid "poetry publish\n"
-msgstr ""
+msgstr "poetry publish\n"
 
 #. type: Plain text
 #: docs/cli.md:321
 msgid "It can also build the package if you pass it the `--build` option."
-msgstr ""
+msgstr "`--build` オプションを渡すと、パッケージのビルドもしてくれます。"
 
 #. type: Plain text
 #: docs/cli.md:328
@@ -702,31 +760,35 @@ msgid ""
 "* `--username (-u)`: The username to access the repository.\n"
 "* `--password (-p)`: The password to access the repository.\n"
 msgstr ""
+"* `--repository (-r)`: パッケージを登録するレポジトリ (デフォルト: `pypi`) です。\n"
+"[`config`](#config) コマンドで設定したレポジトリ名と一致しなければなりません。\n"
+"* `--username (-u)`: レポジトリにアクセスするためのユーザー名。\n"
+"* `--password (-p)`: レポジトリにアクセスするためのパスワード。\n"
 
 #. type: Title ##
 #: docs/cli.md:329
 #, no-wrap
 msgid "config"
-msgstr ""
+msgstr "config"
 
 #. type: Plain text
 #: docs/cli.md:332
 msgid ""
 "The `config` command allows you to edit poetry config settings and "
 "repositories."
-msgstr ""
+msgstr "`config` コマンドを使うと、Poetryのsettingsやrepositoriesの設定を編集できます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:333
 #, no-wrap
 msgid "poetry config --list\n"
-msgstr ""
+msgstr "poetry config --list\n"
 
 #. type: Title ###
 #: docs/cli.md:337
 #, no-wrap
 msgid "Usage"
-msgstr ""
+msgstr "使い方"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:339
@@ -735,6 +797,8 @@ msgid ""
 "poetry config [options] [setting-key] [setting-value1] ... [setting-"
 "valueN]\n"
 msgstr ""
+"poetry config [options] [setting-key] [setting-value1] ... [setting-"
+"valueN]\n"
 
 #. type: Plain text
 #: docs/cli.md:345
@@ -743,45 +807,47 @@ msgid ""
 "configuration value.  See [Configuration](/docs/configuration/) for all "
 "available settings."
 msgstr ""
+"`setting-key` は設定のオプション名で `setting-value1` は設定値です。\n"
+"利用可能な全ての設定は [設定](/poetry-ja/configuration/) を参照してください。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:350
 msgid "`--unset`: Remove the configuration element named by `setting-key`."
-msgstr ""
+msgstr "`--unset`: `setting-key` で名付けられた設定要素を削除します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:350
 msgid "`--list`: Show the list of current config variables."
-msgstr ""
+msgstr "`--list`: 現在の設定変数の一覧を表示します。"
 
 #. type: Title ##
 #: docs/cli.md:351
 #, no-wrap
 msgid "run"
-msgstr ""
+msgstr "run"
 
 #. type: Plain text
 #: docs/cli.md:354
 msgid ""
 "The `run` command executes the given command inside the project's "
 "virtualenv."
-msgstr ""
+msgstr "`run` コマンドは、与えられたコマンドをプロジェクトの仮想環境の中で実行します。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:355
 #, no-wrap
 msgid "poetry run python -V\n"
-msgstr ""
+msgstr "poetry run python -V\n"
 
 #. type: Plain text
 #: docs/cli.md:360
 msgid "It can also execute one of the scripts defined in `pyproject.toml`."
-msgstr ""
+msgstr "このコマンドは `pyproject.toml` に定義されたスクリプトうち1つを実行することもできます。"
 
 #. type: Plain text
 #: docs/cli.md:362
 msgid "So, if you have a script defined like this:"
-msgstr ""
+msgstr "それなので、次のように定義されたスクリプトがある場合:"
 
 #. type: Fenced code block (toml)
 #: docs/cli.md:363
@@ -790,28 +856,30 @@ msgid ""
 "[tool.poetry.scripts]\n"
 "my-script = \"my_module:main\"\n"
 msgstr ""
+"[tool.poetry.scripts]\n"
+"my-script = \"my_module:main\"\n"
 
 #. type: Plain text
 #: docs/cli.md:369
 msgid "You can execute it like so:"
-msgstr ""
+msgstr "このようにして実行できます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:370
 #, no-wrap
 msgid "poetry run my-script\n"
-msgstr ""
+msgstr "poetry run my-script\n"
 
 #. type: Plain text
 #: docs/cli.md:375
 msgid "Note that this command has no option."
-msgstr ""
+msgstr "このコマンドにはオプションが無いことに注意してください。"
 
 #. type: Title ##
 #: docs/cli.md:376
 #, no-wrap
 msgid "shell"
-msgstr ""
+msgstr "shell"
 
 #. type: Plain text
 #: docs/cli.md:382
@@ -820,78 +888,80 @@ msgid ""
 "variable, within the virtual environment.  If one doesn't exist yet, it will"
 " be created."
 msgstr ""
+"`shell` コマンドは、 `$SHELL` 環境変数に従って、仮想環境の中でシェルを起動します。\n"
+"仮想環境がまだ無い場合は、作成されます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:383
 #, no-wrap
 msgid "poetry shell\n"
-msgstr ""
+msgstr "poetry shell\n"
 
 #. type: Title ##
 #: docs/cli.md:387
 #, no-wrap
 msgid "check"
-msgstr ""
+msgstr "check"
 
 #. type: Plain text
 #: docs/cli.md:391
 msgid ""
 "The `check` command validates the structure of the `pyproject.toml` file and"
 " returns a detailed report if there are any errors."
-msgstr ""
+msgstr "`check` コマンドは、 `pyproject.toml` ファイルの構造を検証し、エラーがあった場合は、詳細なレポートを返します。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:392
 #, no-wrap
 msgid "poetry check\n"
-msgstr ""
+msgstr "poetry check\n"
 
 #. type: Title ##
 #: docs/cli.md:396
 #, no-wrap
 msgid "search"
-msgstr ""
+msgstr "search"
 
 #. type: Plain text
 #: docs/cli.md:399
 msgid "This command searches for packages on a remote index."
-msgstr ""
+msgstr "このコマンドは、リモートの目録にあるパッケージを検索します。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:400
 #, no-wrap
 msgid "poetry search requests pendulum\n"
-msgstr ""
+msgstr "poetry search requests pendulum\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:407
 msgid "`--only-name (-N)`: Search only in name."
-msgstr ""
+msgstr "`--only-name (-N)`: 名前でのみ検索します。"
 
 #. type: Title ##
 #: docs/cli.md:408
 #, no-wrap
 msgid "lock"
-msgstr ""
+msgstr "lock"
 
 #. type: Plain text
 #: docs/cli.md:411
 msgid ""
 "This command locks (without installing) the dependencies specified in "
 "`pyproject.toml`."
-msgstr ""
+msgstr "このコマンドは、(インストールはせずに) `pyproject.toml` に指定されている依存関係をロックします。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:412
 #, no-wrap
 msgid "poetry lock\n"
-msgstr ""
+msgstr "poetry lock\n"
 
 #. type: Title ##
 #: docs/cli.md:416
 #, no-wrap
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #. type: Plain text
 #: docs/cli.md:421
@@ -908,12 +978,14 @@ msgid ""
 "rule: `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`, "
 "`prerelease`."
 msgstr ""
+"新しいバージョンは理想的には、有効なセマンティックバージョン文字列か、有効な更新規則であるべきです。有効な更新規則: `patch`, `minor`,"
+" `major`, `prepatch`, `preminor`, `premajor`, `prerelease` 。"
 
 #. type: Title ##
 #: docs/cli.md:426
 #, no-wrap
 msgid "export"
-msgstr ""
+msgstr "export"
 
 #. type: Plain text
 #: docs/cli.md:429
@@ -924,12 +996,12 @@ msgstr ""
 #: docs/cli.md:430
 #, no-wrap
 msgid "poetry export -f requirements.txt > requirements.txt\n"
-msgstr ""
+msgstr "poetry export -f requirements.txt > requirements.txt\n"
 
 #. type: Plain text
 #: docs/cli.md:435
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/cli.md:437
@@ -975,7 +1047,7 @@ msgstr ""
 #: docs/cli.md:449
 #, no-wrap
 msgid "env"
-msgstr ""
+msgstr "env"
 
 #. type: Plain text
 #: docs/cli.md:453

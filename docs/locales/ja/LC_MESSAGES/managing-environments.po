@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# tomo, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: 2020-03-29 08:15+0000\n"
+"Last-Translator: tomo, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +61,7 @@ msgstr ""
 #. type: Plain text
 #: docs/managing-environments.md:19
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/managing-environments.md:22
@@ -85,6 +89,11 @@ msgid ""
 "    poetry install\n"
 "    ```\n"
 msgstr ""
+"    ```bash\n"
+"    pyenv install 2.7.15\n"
+"    pyenv local 2.7.15  # Activate Python 2.7 for the current project\n"
+"    poetry install\n"
+"    ```\n"
 
 #. type: Title ##
 #: docs/managing-environments.md:32
@@ -106,7 +115,7 @@ msgstr ""
 #: docs/managing-environments.md:39
 #, no-wrap
 msgid "poetry env use /full/path/to/python\n"
-msgstr ""
+msgstr "poetry env use /full/path/to/python\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:44
@@ -117,7 +126,7 @@ msgstr ""
 #: docs/managing-environments.md:45
 #, no-wrap
 msgid "poetry env use python3.7\n"
-msgstr ""
+msgstr "poetry env use python3.7\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:50
@@ -128,7 +137,7 @@ msgstr ""
 #: docs/managing-environments.md:51
 #, no-wrap
 msgid "poetry env use 3.7\n"
-msgstr ""
+msgstr "poetry env use 3.7\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:57
@@ -141,7 +150,7 @@ msgstr ""
 #: docs/managing-environments.md:58
 #, no-wrap
 msgid "poetry env use system\n"
-msgstr ""
+msgstr "poetry env use system\n"
 
 #. type: Title ##
 #: docs/managing-environments.md:62
@@ -160,7 +169,7 @@ msgstr ""
 #: docs/managing-environments.md:67
 #, no-wrap
 msgid "poetry env info\n"
-msgstr ""
+msgstr "poetry env info\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:72
@@ -182,6 +191,16 @@ msgid ""
 "OS:       posix\n"
 "Python:   /path/to/main/python\n"
 msgstr ""
+"Virtual environment\n"
+"Python:         3.7.1\n"
+"Implementation: CPython\n"
+"Path:           /path/to/poetry/cache/virtualenvs/test-O3eWbxRl-py3.7\n"
+"Valid:          True\n"
+"\n"
+"System\n"
+"Platform: darwin\n"
+"OS:       posix\n"
+"Python:   /path/to/main/python\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:88
@@ -194,7 +213,7 @@ msgstr ""
 #: docs/managing-environments.md:89
 #, no-wrap
 msgid "poetry env info --path\n"
-msgstr ""
+msgstr "poetry env info --path\n"
 
 #. type: Title ##
 #: docs/managing-environments.md:93
@@ -213,7 +232,7 @@ msgstr ""
 #: docs/managing-environments.md:98
 #, no-wrap
 msgid "poetry env list\n"
-msgstr ""
+msgstr "poetry env list\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:103
@@ -228,6 +247,9 @@ msgid ""
 "test-O3eWbxRl-py3.6\n"
 "test-O3eWbxRl-py3.7 (Activated)\n"
 msgstr ""
+"test-O3eWbxRl-py2.7\n"
+"test-O3eWbxRl-py3.6\n"
+"test-O3eWbxRl-py3.7 (Activated)\n"
 
 #. type: Title ##
 #: docs/managing-environments.md:110
@@ -250,6 +272,10 @@ msgid ""
 "poetry env remove 3.7\n"
 "poetry env remove test-O3eWbxRl-py3.7\n"
 msgstr ""
+"poetry env remove /full/path/to/python\n"
+"poetry env remove python3.7\n"
+"poetry env remove 3.7\n"
+"poetry env remove test-O3eWbxRl-py3.7\n"
 
 #. type: Plain text
 #: docs/managing-environments.md:121

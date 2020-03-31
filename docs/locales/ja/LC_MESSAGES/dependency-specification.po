@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# tomo, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-29 21:00+0900\n"
 "PO-Revision-Date: 2020-03-29 08:15+0000\n"
+"Last-Translator: tomo, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/cocoatomo/teams/108519/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +24,7 @@ msgstr ""
 #: docs/dependency-specification.md:1
 #, no-wrap
 msgid "Dependency specification"
-msgstr ""
+msgstr "依存関係指定"
 
 #. type: Plain text
 #: docs/dependency-specification.md:5
@@ -28,19 +32,19 @@ msgid ""
 "Dependencies for a project can be specified in various forms, which depend "
 "on the type of the dependency and on the optional constraints that might be "
 "needed for it to be installed."
-msgstr ""
+msgstr "プロジェクトの依存関係は、依存関係の種類とインストールするときに必要になる任意の制約に基づいて様々な形式で指定できます。"
 
 #. type: Title ##
 #: docs/dependency-specification.md:6
 #, no-wrap
 msgid "Version constraints"
-msgstr ""
+msgstr "バージョン制約"
 
 #. type: Title ###
 #: docs/dependency-specification.md:8
 #, no-wrap
 msgid "Caret requirements"
-msgstr ""
+msgstr "キャレット要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:16
@@ -53,13 +57,18 @@ msgid ""
 "If instead we had specified the version string as `^0.1.13`, poetry would update to `0.1.14` but not `0.2.0`.\n"
 "`0.0.x` is not considered compatible with any other version.\n"
 msgstr ""
+"**キャレット要件** を使うと、指定したバージョンへのsemantic versioningに適合した更新が行えます。\n"
+"メジャー、マイナー、パッチという番号群のうち0でない最も左の数字を、新しいバージョン番号が更新しない場合に、更新が許可されます。\n"
+"この場合に、 `poetry update requests` を実行したとすると、Poetryはもし利用可能ならバージョン `2.14.0` ヘ更新しますが、 `3.0.0` には更新しません。\n"
+"その変わりにバージョン文字列に `^0.1.13` を指定していた場合は、Poetryは `0.2.0` ではなく `0.1.14` へ更新します。\n"
+"`0.0.x` は他のどんなバージョンとも適合しないと見なされます。\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:18
 msgid ""
 "Here are some more examples of caret requirements and the versions that "
 "would be allowed with them:"
-msgstr ""
+msgstr "これらがキャレット要件とそれに許可されたバージョンの例です:"
 
 #. type: Plain text
 #: docs/dependency-specification.md:28
@@ -75,12 +84,21 @@ msgid ""
 "| ^0.0        | >=0.0.0 <0.1.0   |\n"
 "| ^0          | >=0.0.0 <1.0.0   |\n"
 msgstr ""
+"| Requirement | Versions allowed |\n"
+"| ----------- | ---------------- |\n"
+"| ^1.2.3      | >=1.2.3 <2.0.0   |\n"
+"| ^1.2        | >=1.2.0 <2.0.0   |\n"
+"| ^1          | >=1.0.0 <2.0.0   |\n"
+"| ^0.2.3      | >=0.2.3 <0.3.0   |\n"
+"| ^0.0.3      | >=0.0.3 <0.0.4   |\n"
+"| ^0.0        | >=0.0.0 <0.1.0   |\n"
+"| ^0          | >=0.0.0 <1.0.0   |\n"
 
 #. type: Title ###
 #: docs/dependency-specification.md:29
 #, no-wrap
 msgid "Tilde requirements"
-msgstr ""
+msgstr "チルダ要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:34
@@ -90,11 +108,14 @@ msgid ""
 "If you specify a major, minor, and patch version or only a major and minor version, only patch-level changes are allowed.\n"
 "If you only specify a major version, then minor- and patch-level changes are allowed.\n"
 msgstr ""
+"**チルダ要件** は更新できる最小バージョンを指定します。\n"
+"メジャー、マイナー、パッチバージョンを指定するか、メジャー、マイナーバージョンだけを指定した場合は、パッチレベルのみ変更が許可されます。\n"
+"メジャーバージョンだけを指定した場合は、マイナーレベルとパッチレベルの変更が許可されます。\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:36
 msgid "`~1.2.3` is an example of a tilde requirement."
-msgstr ""
+msgstr "`~1.2.3` はチルダ要件の例です。"
 
 #. type: Plain text
 #: docs/dependency-specification.md:42
@@ -106,12 +127,17 @@ msgid ""
 "| ~1.2        | >=1.2.0 <1.3.0   |\n"
 "| ~1          | >=1.0.0 <2.0.0   |\n"
 msgstr ""
+"| Requirement | Versions allowed |\n"
+"| ----------- | ---------------- |\n"
+"| ~1.2.3      | >=1.2.3 <1.3.0   |\n"
+"| ~1.2        | >=1.2.0 <1.3.0   |\n"
+"| ~1          | >=1.0.0 <2.0.0   |\n"
 
 #. type: Title ###
 #: docs/dependency-specification.md:43
 #, no-wrap
 msgid "Wildcard requirements"
-msgstr ""
+msgstr "ワイルドカード要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:46
@@ -119,12 +145,12 @@ msgstr ""
 msgid ""
 "**Wildcard requirements** allow for any version where the wildcard is "
 "positioned.\n"
-msgstr ""
+msgstr "**ワイルドカード要件** を使うと、ワイルドカードの位置に任意のバージョンが許可されます。\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:48
 msgid "`*`, `1.*` and `1.2.*` are examples of wildcard requirements."
-msgstr ""
+msgstr "`*`, `1.*`, `1.2.*` はワイルドカード要件の例です。"
 
 #. type: Plain text
 #: docs/dependency-specification.md:54
@@ -136,12 +162,17 @@ msgid ""
 "| 1.*         | >=1.0.0 <2.0.0   |\n"
 "| 1.2.*       | >=1.2.0 <1.3.0   |\n"
 msgstr ""
+"| Requirement | Versions allowed |\n"
+"| ----------- | ---------------- |\n"
+"| *           | >=0.0.0          |\n"
+"| 1.*         | >=1.0.0 <2.0.0   |\n"
+"| 1.2.*       | >=1.2.0 <1.3.0   |\n"
 
 #. type: Title ###
 #: docs/dependency-specification.md:55
 #, no-wrap
 msgid "Inequality requirements"
-msgstr ""
+msgstr "不等要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:58
@@ -149,12 +180,12 @@ msgstr ""
 msgid ""
 "**Inequality requirements** allow manually specifying a version range or an "
 "exact version to depend on.\n"
-msgstr ""
+msgstr "**不等要件** を使うと、バージョンの範囲や依存している厳密なバージョンを自分の手で指定できます。\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:60
 msgid "Here are some examples of inequality requirements:"
-msgstr ""
+msgstr "これらが不等要件の例です:"
 
 #. type: Fenced code block (text)
 #: docs/dependency-specification.md:61
@@ -165,12 +196,20 @@ msgid ""
 "< 2\n"
 "!= 1.2.3\n"
 msgstr ""
+">= 1.2.0\n"
+"\n"
+"> 1\n"
+"\n"
+"< 2\n"
+"\n"
+"!= 1.2.3\n"
+"\n"
 
 #. type: Title ###
 #: docs/dependency-specification.md:68
 #, no-wrap
 msgid "Exact requirements"
-msgstr ""
+msgstr "厳密要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:73
@@ -180,12 +219,15 @@ msgid ""
 " different version, the solver will ultimately fail and abort any install or"
 " update procedures."
 msgstr ""
+"パッケージの厳密なバージョンを指定できます。\n"
+"この指定は、このバージョンかつこのバージョンのみをインストールするようPoetryに指示します。\n"
+"他の依存関係が別のバージョンを要求した場合は、ソルバーは最終的には失敗し、インストールや更新の手続きを中止します。"
 
 #. type: Title ####
 #: docs/dependency-specification.md:74
 #, no-wrap
 msgid "Multiple requirements"
-msgstr ""
+msgstr "複合要件"
 
 #. type: Plain text
 #: docs/dependency-specification.md:77
@@ -193,13 +235,13 @@ msgstr ""
 msgid ""
 "Multiple version requirements can also be separated with a comma, e.g. `>= "
 "1.2, < 1.5`.\n"
-msgstr ""
+msgstr "複数のバージョン要件は、コンマ区切りで並べられます。例えば、 `>= 1.2, < 1.5` などです。\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:78
 #, no-wrap
 msgid "`git` dependencies"
-msgstr ""
+msgstr "`git` 依存関係"
 
 #. type: Plain text
 #: docs/dependency-specification.md:82
@@ -207,7 +249,7 @@ msgid ""
 "To depend on a library located in a `git` repository, the minimum "
 "information you need to specify is the location of the repository with the "
 "git key:"
-msgstr ""
+msgstr "`git` レポジトリにあるライブラリに依存するための、指定する必要のある最小限の情報はgitをキーとするレポジトリの場所です:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:83
@@ -216,6 +258,8 @@ msgid ""
 "[tool.poetry.dependencies]\n"
 "requests = { git = \"https://github.com/requests/requests.git\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"requests = { git = \"https://github.com/requests/requests.git\" }\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:91
@@ -223,6 +267,7 @@ msgid ""
 "Since we haven’t specified any other information, Poetry assumes that we "
 "intend to use the latest commit on the `master` branch to build our project."
 msgstr ""
+"これ以外の情報を指定していないので、Poetryは `master` ブランチの最新のコミットを使いプロジェクトをするつもりなのだと仮定します。"
 
 #. type: Plain text
 #: docs/dependency-specification.md:95
@@ -231,6 +276,8 @@ msgid ""
 "Alternatively, use `rev` or `tag` to pin a dependency to a specific commit "
 "hash or tagged ref, respectively. For example:"
 msgstr ""
+"`git` キーと `rev` キー, `tag` キー, `branch` キーを組み合わせて、それ以外のものも指定できます。\n"
+"これが、 `next` という名前のブランチの最新のコミットを使いたいことを指定する例です:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:96
@@ -244,19 +291,26 @@ msgid ""
 "# Get a revision by its tag\n"
 "numpy = { git = \"https://github.com/numpy/numpy.git\", tag = \"v0.13.2\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"# Get the latest revision on the branch named \"next\"\n"
+"requests = { git = \"https://github.com/kennethreitz/requests.git\", branch = \"next\" }\n"
+"# Get a revision by its commit hash\n"
+"flask = { git = \"https://github.com/pallets/flask.git\", rev = \"38eb5d3b\" }\n"
+"# Get a revision by its tag\n"
+"numpy = { git = \"https://github.com/numpy/numpy.git\", tag = \"v0.13.2\" }\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:106
 #, no-wrap
 msgid "`path` dependencies"
-msgstr ""
+msgstr "`path` 依存関係"
 
 #. type: Plain text
 #: docs/dependency-specification.md:110
 msgid ""
 "To depend on a library located in a local directory or file, you can use the"
 " `path` property:"
-msgstr ""
+msgstr "ローカルディレクトリやローカルファイルにあるライブラリに依存するために、 `path` 属性が使えます:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:111
@@ -269,19 +323,25 @@ msgid ""
 "# file\n"
 "my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"# directory\n"
+"my-package = { path = \"../my-package/\" }\n"
+"\n"
+"# file\n"
+"my-package = { path = \"../my-package/dist/my-package-0.1.0.tar.gz\" }\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:121
 #, no-wrap
 msgid "`url` dependencies"
-msgstr ""
+msgstr "`url` 依存関係"
 
 #. type: Plain text
 #: docs/dependency-specification.md:125
 msgid ""
 "To depend on a library located on a remote archive, you can use the `url` "
 "property:"
-msgstr ""
+msgstr "リモートアーカイブにあるライブラリに依存するために、 `url` 属性が使えます:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:126
@@ -291,6 +351,9 @@ msgid ""
 "# directory\n"
 "my-package = { url = \"https://example.com/my-package-0.1.0.tar.gz\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"# directory\n"
+"my-package = { url = \"https://example.com/my-package-0.1.0.tar.gz\" }\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:133
@@ -301,20 +364,20 @@ msgstr ""
 #: docs/dependency-specification.md:134
 #, no-wrap
 msgid "poetry add https://example.com/my-package-0.1.0.tar.gz\n"
-msgstr ""
+msgstr "poetry add https://example.com/my-package-0.1.0.tar.gz\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:139
 #, no-wrap
 msgid "Python restricted dependencies"
-msgstr ""
+msgstr "Python制限依存関係"
 
 #. type: Plain text
 #: docs/dependency-specification.md:142
 msgid ""
 "You can also specify that a dependency should be installed only for specific"
 " Python versions:"
-msgstr ""
+msgstr "ある依存関係を特定のバージョンのPythonでだけインストールする、という指定もできます:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:143
@@ -323,6 +386,8 @@ msgid ""
 "[tool.poetry.dependencies]\n"
 "pathlib2 = { version = \"^2.2\", python = \"~2.7\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"pathlib2 = { version = \"^2.2\", python = \"~2.7\" }\n"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:148
@@ -331,6 +396,8 @@ msgid ""
 "[tool.poetry.dependencies]\n"
 "pathlib2 = { version = \"^2.2\", python = \"~2.7 || ^3.2\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"pathlib2 = { version = \"^2.2\", python = \"~2.7 || ^3.2\" }\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:153
@@ -353,19 +420,21 @@ msgid ""
 "[tool.poetry.dependencies]\n"
 "pathlib2 = { version = \"^2.2\", markers = \"python_version ~= '2.7' or sys_platform == 'win32'\" }\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"pathlib2 = { version = \"^2.2\", markers = \"python_version ~= '2.7' or sys_platform == 'win32'\" }\n"
 
 #. type: Title ##
 #: docs/dependency-specification.md:165
 #, no-wrap
 msgid "Multiple constraints dependencies"
-msgstr ""
+msgstr "複数制約依存関係"
 
 #. type: Plain text
 #: docs/dependency-specification.md:169
 msgid ""
 "Sometimes, one of your dependency may have different version ranges "
 "depending on the target Python versions."
-msgstr ""
+msgstr "あるときは、対象のPythonバージョンに依存して、依存関係に異なるバージョン範囲が設定されることがあります。"
 
 #. type: Plain text
 #: docs/dependency-specification.md:173
@@ -375,6 +444,8 @@ msgid ""
 "with Python <3.0 up to version 1.9 and compatible with Python 3.4+ from version 2.0:\n"
 "you would declare it like so:\n"
 msgstr ""
+"バージョン1.9まではPython 3.0未満、2.0以降はPython 3.4以上というPythonとの互換性を持つパッケージ `foo` への依存関係があるとしましょう:\n"
+"このとき次のように宣言します:\n"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:174
@@ -386,11 +457,16 @@ msgid ""
 "    {version = \"^2.0\", python = \"^3.4\"}\n"
 "]\n"
 msgstr ""
+"[tool.poetry.dependencies]\n"
+"foo = [\n"
+"    {version = \"<=1.9\", python = \"^2.7\"},\n"
+"    {version = \"^2.0\", python = \"^3.4\"}\n"
+"]\n"
 
 #. type: Plain text
 #: docs/dependency-specification.md:183
 msgid "!!!note"
-msgstr ""
+msgstr "!!!注意"
 
 #. type: Plain text
 #: docs/dependency-specification.md:185
@@ -399,3 +475,5 @@ msgid ""
 "    The constraints **must** have different requirements (like `python`)\n"
 "    otherwise it will cause an error when resolving dependencies.\n"
 msgstr ""
+"    制約は (`python` のように) 異なる要件で **なければならず** 、\n"
+"    そうでない場合は、依存関係の解決でエラーが発生します。\n"
