@@ -33,7 +33,7 @@ $(POTDIR)/%.pot: $(ORIGDIR)/%.md
 	--po $@
 
 pullpo:
-	cd $(LOCALESDIR) && tx pull --language ja
+	cd $(LOCALESDIR) && tx pull --language ja --force
 
 translate: $(TRANSDOCS)
 
