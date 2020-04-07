@@ -17,6 +17,7 @@ TRANSDOCS := $(subst $(ORIGDIR), $(TRANSDIR), $(DOCS))
 
 venv:
 	$(PYTHON) -m venv --prompt=poetrydoc $(VENV)
+	$(VENV)/bin/pip install --upgrade pip
 	$(VENV)/bin/pip install mkdocs pygments mkdocs-material markdown-include
 
 pushorig: catalog
