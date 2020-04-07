@@ -1,6 +1,6 @@
-# Managing environments
+# 環境管理
 
-Poetry makes project environment isolation one of its core feature.
+Poetryのコア機能の1つとして、プロジェクト環境隔離があります。
 
 What this means is that it will always work isolated from your global Python
 installation.  To achieve this, it will first check if it's currently

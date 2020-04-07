@@ -24,12 +24,12 @@ msgstr ""
 #: docs/managing-environments.md:1
 #, no-wrap
 msgid "Managing environments"
-msgstr ""
+msgstr "環境管理"
 
 #. type: Plain text
 #: docs/managing-environments.md:4
 msgid "Poetry makes project environment isolation one of its core feature."
-msgstr ""
+msgstr "Poetryのコア機能の1つとして、プロジェクト環境隔離があります。"
 
 #. type: Plain text
 #: docs/managing-environments.md:9

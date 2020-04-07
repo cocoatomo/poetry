@@ -125,7 +125,7 @@ my-package = { path = "../my-package/dist/my-package-0.1.0.tar.gz" }
 my-package = { url = "https://example.com/my-package-0.1.0.tar.gz" }
 ```
 
-with the corresponding `add` call:
+対応する `add` 呼び出しはこれです:
 
 ```bash
 poetry add https://example.com/my-package-0.1.0.tar.gz
@@ -146,12 +146,11 @@ pathlib2 = { version = "^2.2", python = "~2.7" }
 pathlib2 = { version = "^2.2", python = "~2.7 || ^3.2" }
 ```
 
-## Using environment markers
+## 環境マーカーの使用
 
-If you need more complex install conditions for your dependencies, Poetry
-supports [environment
-markers](https://www.python.org/dev/peps/pep-0508/#environment-markers)  via
-the `markers` property:
+依存関係のためのより複雑なインストール条件が必要な場合、Poetryは `markers` 属性で
+[環境マーカー](https://www.python.org/dev/peps/pep-0508/#environment-markers)
+に対応しています:
 
 ```toml
 [tool.poetry.dependencies]

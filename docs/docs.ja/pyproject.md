@@ -131,8 +131,7 @@ packages = [
 ]
 ```
 
-If you want to restrict a package to a specific [build](#build) format you
-can specify it by using `format`:
+パッケージを特定の [ビルド](#build) 形式だけに制限したい場合は、`format` を使って指定できます。
 
 ```toml
 [tool.poetry]
@@ -143,8 +142,7 @@ packages = [
 ]
 ```
 
-From now on, only the `sdist` build archive will include the `tests`
-package.
+今後一切、`sdist` ビルドアーカイブだけが `tests` パッケージに含まれることになります。
 
 !!!注意
 
@@ -273,16 +271,15 @@ setuptoolsのドキュメントにある例に合わせると、次のように�
 
 ## `urls`
 
-In addition to the basic urls (`homepage`, `repository` and
-`documentation`), you can specify any custom url in the `urls` section.
+基本的なurl (`homepage`, `repository`, `documentation`) に加えて、`urls`
+節には独自のurlを指定できます。
 
 ```toml
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
 ```
 
-If you publish you package on PyPI, they will appear in the `Project Links`
-section.
+PyPIにパッケージを公開した場合、urlたちは `Project Links` 節に出てきます。
 
 ## PoetryとPEP-517
 

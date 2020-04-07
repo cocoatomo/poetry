@@ -60,7 +60,7 @@ msgstr ""
 #: docs/configuration.md:13
 #, no-wrap
 msgid "Local configuration"
-msgstr ""
+msgstr "ローカル設定"
 
 #. type: Plain text
 #: docs/configuration.md:17
@@ -68,6 +68,7 @@ msgid ""
 "Poetry also provides the ability to have settings that are specific to a "
 "project by passing the `--local` option to the `config` command."
 msgstr ""
+"Poetryは、`config` コマンドの `--local` オプションを渡すことで、プロジェクトに特定の設定を持たせる機能も提供しています。"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:18
@@ -79,14 +80,14 @@ msgstr "poetry config virtualenvs.create false --local\n"
 #: docs/configuration.md:22
 #, no-wrap
 msgid "Listing the current configuration"
-msgstr ""
+msgstr "現在の設定の一覧"
 
 #. type: Plain text
 #: docs/configuration.md:26
 msgid ""
 "To list the current configuration you can use the `--list` option of the "
 "`config` command:"
-msgstr ""
+msgstr "現在の設定の一覧を出すには、`config` コマンドの `--list` オプションが使えます:"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:27
@@ -97,7 +98,7 @@ msgstr "poetry config --list\n"
 #. type: Plain text
 #: docs/configuration.md:32
 msgid "which will give you something similar to this:"
-msgstr ""
+msgstr "これで次のような出力が見れます:"
 
 #. type: Fenced code block (toml)
 #: docs/configuration.md:33
@@ -117,14 +118,14 @@ msgstr ""
 #: docs/configuration.md:40
 #, no-wrap
 msgid "Displaying a single configuration setting"
-msgstr ""
+msgstr "設定を1つだけ表示"
 
 #. type: Plain text
 #: docs/configuration.md:44
 msgid ""
 "If you want to see the value of a specific setting, you can give its name to"
 " the `config` command"
-msgstr ""
+msgstr "ある1つの設定の値を見たい場合は、`config` コマンドにその設定の名前を渡せばよいです。"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:45
@@ -137,20 +138,20 @@ msgstr "poetry config virtualenvs.path\n"
 msgid ""
 "For a full list of the supported settings see [Available settings"
 "](#available-settings)."
-msgstr ""
+msgstr "サポートされている設定の全一覧は [利用可能な設定](#available-settings) を参照してください。"
 
 #. type: Title ##
 #: docs/configuration.md:51
 #, no-wrap
 msgid "Adding or updating a configuration setting"
-msgstr ""
+msgstr "設定の追加あるいは更新"
 
 #. type: Plain text
 #: docs/configuration.md:55
 msgid ""
 "To change or otherwise add a new configuration setting, you can pass a value"
 " after the setting's name:"
-msgstr ""
+msgstr "新しい設定の変更それか追加するには、設定名の後ろに値を渡せば良いです:"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:56
@@ -162,14 +163,14 @@ msgstr "poetry config virtualenvs.path /path/to/cache/directory/virtualenvs\n"
 #: docs/configuration.md:62
 #, no-wrap
 msgid "Removing a specific setting"
-msgstr ""
+msgstr "ある設定を消す"
 
 #. type: Plain text
 #: docs/configuration.md:65
 msgid ""
 "If you want to remove a previously set setting, you can use the `--unset` "
 "option:"
-msgstr ""
+msgstr "前に設定したものを消したい場合は、`--unset` オプションが使えます:"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:66
@@ -180,27 +181,27 @@ msgstr "poetry config virtualenvs.path --unset\n"
 #. type: Plain text
 #: docs/configuration.md:71
 msgid "The setting will then retrieve its default value."
-msgstr ""
+msgstr "その設定はデフォルト値に戻ります。"
 
 #. type: Title ##
 #: docs/configuration.md:72
 #, no-wrap
 msgid "Using environment variables"
-msgstr ""
+msgstr "環境変数の使用"
 
 #. type: Plain text
 #: docs/configuration.md:76
 msgid ""
 "Sometimes, in particular when using Poetry with CI tools, it's easier to use"
 " environment variables and not have to execute configuration commands."
-msgstr ""
+msgstr "あるとき、特にPoetryをCIツールと一緒に使っているとき、環境変数を使うのは簡単で、設定コマンドを実行する必要がありません。"
 
 #. type: Plain text
 #: docs/configuration.md:78
 msgid ""
 "Poetry supports this and any setting can be set by using environment "
 "variables."
-msgstr ""
+msgstr "Poetryはそれをサポートしていて、どんな設定でも環境変数で設定できます。"
 
 #. type: Plain text
 #: docs/configuration.md:81
@@ -209,6 +210,8 @@ msgid ""
 " the uppercase name of the setting and with dots and dashes replaced by "
 "underscore, here is an example:"
 msgstr ""
+"環境変数は `POETRY_` で始まらなければならず、大文字にした設定の名前で構成され、ドットとダッシュをアンダースコアで置き換えたものとなります。\n"
+"これが例です。"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:82
@@ -219,7 +222,7 @@ msgstr "export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory\n"
 #. type: Plain text
 #: docs/configuration.md:87
 msgid "This also works for secret settings, like credentials:"
-msgstr ""
+msgstr "この機能は証明書のような秘密情報に対しても使えます:"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:88
@@ -242,12 +245,12 @@ msgstr "`cache-dir`: string"
 #. type: Plain text
 #: docs/configuration.md:98
 msgid "The path to the cache directory used by Poetry."
-msgstr ""
+msgstr "Poetryが使うキャッシュディレクトリのpathです。"
 
 #. type: Plain text
 #: docs/configuration.md:100
 msgid "Defaults to one of the following directories:"
-msgstr ""
+msgstr "次のディレクトリのうち1つがデフォルト値になります:"
 
 #. type: Plain text
 #: docs/configuration.md:104

@@ -10,25 +10,23 @@ Poetryは、 `config` コマンド ([使い方のより詳しいことはこち�
 Unixでは、XDG仕様に従い、 `$XDG_CONFIG_HOME` をサポートしています。
 つまり、デフォルトでは `~/.config/pypoetry` となります。
 
-## Local configuration
+## ローカル設定
 
-Poetry also provides the ability to have settings that are specific to a
-project by passing the `--local` option to the `config` command.
+Poetryは、`config` コマンドの `--local` オプションを渡すことで、プロジェクトに特定の設定を持たせる機能も提供しています。
 
 ```bash
 poetry config virtualenvs.create false --local
 ```
 
-## Listing the current configuration
+## 現在の設定の一覧
 
-To list the current configuration you can use the `--list` option of the
-`config` command:
+現在の設定の一覧を出すには、`config` コマンドの `--list` オプションが使えます:
 
 ```bash
 poetry config --list
 ```
 
-which will give you something similar to this:
+これで次のような出力が見れます:
 
 ```toml
 cache-dir = "/path/to/cache/directory"
@@ -37,58 +35,50 @@ virtualenvs.in-project = false
 virtualenvs.path = "{cache-dir}/virtualenvs"  # /path/to/cache/directory/virtualenvs
 ```
 
-## Displaying a single configuration setting
+## 設定を1つだけ表示
 
-If you want to see the value of a specific setting, you can give its name to
-the `config` command
+ある1つの設定の値を見たい場合は、`config` コマンドにその設定の名前を渡せばよいです。
 
 ```bash
 poetry config virtualenvs.path
 ```
 
-For a full list of the supported settings see [Available
-settings](#available-settings).
+サポートされている設定の全一覧は [利用可能な設定](#available-settings) を参照してください。
 
-## Adding or updating a configuration setting
+## 設定の追加あるいは更新
 
-To change or otherwise add a new configuration setting, you can pass a value
-after the setting's name:
+新しい設定の変更それか追加するには、設定名の後ろに値を渡せば良いです:
 
 ```bash
 poetry config virtualenvs.path /path/to/cache/directory/virtualenvs
 ```
 
-For a full list of the supported settings see [Available
-settings](#available-settings).
+サポートされている設定の全一覧は [利用可能な設定](#available-settings) を参照してください。
 
-## Removing a specific setting
+## ある設定を消す
 
-If you want to remove a previously set setting, you can use the `--unset`
-option:
+前に設定したものを消したい場合は、`--unset` オプションが使えます:
 
 ```bash
 poetry config virtualenvs.path --unset
 ```
 
-The setting will then retrieve its default value.
+その設定はデフォルト値に戻ります。
 
-## Using environment variables
+## 環境変数の使用
 
-Sometimes, in particular when using Poetry with CI tools, it's easier to use
-environment variables and not have to execute configuration commands.
+あるとき、特にPoetryをCIツールと一緒に使っているとき、環境変数を使うのは簡単で、設定コマンドを実行する必要がありません。
 
-Poetry supports this and any setting can be set by using environment
-variables.
+Poetryはそれをサポートしていて、どんな設定でも環境変数で設定できます。
 
-The environment variables must be prefixed by `POETRY_` and are comprised of
-the uppercase name of the setting and with dots and dashes replaced by
-underscore, here is an example:
+環境変数は `POETRY_` で始まらなければならず、大文字にした設定の名前で構成され、ドットとダッシュをアンダースコアで置き換えたものとなります。
+これが例です。
 
 ```bash
 export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory
 ```
 
-This also works for secret settings, like credentials:
+この機能は証明書のような秘密情報に対しても使えます:
 
 ```bash
 export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret
@@ -99,9 +89,9 @@ export POETRY_HTTP_BASIC_MY_REPOSITORY_PASSWORD=secret
 
 ### `cache-dir`: string
 
-The path to the cache directory used by Poetry.
+Poetryが使うキャッシュディレクトリのpathです。
 
-Defaults to one of the following directories:
+次のディレクトリのうち1つがデフォルト値になります:
 
 - macOS:   `~/Library/Caches/pypoetry`
 - Windows: `C:\Users\<username>\AppData\Local\pypoetry\Cache`

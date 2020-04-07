@@ -358,7 +358,7 @@ msgstr ""
 #. type: Plain text
 #: docs/dependency-specification.md:133
 msgid "with the corresponding `add` call:"
-msgstr ""
+msgstr "対応する `add` 呼び出しはこれです:"
 
 #. type: Fenced code block (bash)
 #: docs/dependency-specification.md:134
@@ -403,7 +403,7 @@ msgstr ""
 #: docs/dependency-specification.md:153
 #, no-wrap
 msgid "Using environment markers"
-msgstr ""
+msgstr "環境マーカーの使用"
 
 #. type: Plain text
 #: docs/dependency-specification.md:158
@@ -412,6 +412,9 @@ msgid ""
 "supports [environment markers](https://www.python.org/dev/peps/pep-0508"
 "/#environment-markers)  via the `markers` property:"
 msgstr ""
+"依存関係のためのより複雑なインストール条件が必要な場合、Poetryは `markers` 属性で "
+"[環境マーカー](https://www.python.org/dev/peps/pep-0508/#environment-markers) "
+"に対応しています:"
 
 #. type: Fenced code block (toml)
 #: docs/dependency-specification.md:159

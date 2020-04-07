@@ -408,7 +408,7 @@ msgstr ""
 msgid ""
 "If you want to restrict a package to a specific [build](#build) format you "
 "can specify it by using `format`:"
-msgstr ""
+msgstr "パッケージを特定の [ビルド](#build) 形式だけに制限したい場合は、`format` を使って指定できます。"
 
 #. type: Fenced code block (toml)
 #: docs/pyproject.md:125
@@ -433,7 +433,7 @@ msgstr ""
 msgid ""
 "From now on, only the `sdist` build archive will include the `tests` "
 "package."
-msgstr ""
+msgstr "今後一切、`sdist` ビルドアーカイブだけが `tests` パッケージに含まれることになります。"
 
 #. type: Plain text
 #: docs/pyproject.md:140
@@ -752,6 +752,8 @@ msgid ""
 "In addition to the basic urls (`homepage`, `repository` and "
 "`documentation`), you can specify any custom url in the `urls` section."
 msgstr ""
+"基本的なurl (`homepage`, `repository`, `documentation`) に加えて、`urls` "
+"節には独自のurlを指定できます。"
 
 #. type: Fenced code block (toml)
 #: docs/pyproject.md:265
@@ -768,7 +770,7 @@ msgstr ""
 msgid ""
 "If you publish you package on PyPI, they will appear in the `Project Links` "
 "section."
-msgstr ""
+msgstr "PyPIにパッケージを公開した場合、urlたちは `Project Links` 節に出てきます。"
 
 #. type: Title ##
 #: docs/pyproject.md:272
