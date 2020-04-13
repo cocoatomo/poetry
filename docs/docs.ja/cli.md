@@ -120,8 +120,7 @@ poetry install --extras "mysql pgsql"
 poetry install -E mysql -E pgsql
 ```
 
-By default `poetry` will install your project's package everytime you run
-`install`:
+デフォルトでは、`poetry` は `install` を実行するたびにプロジェクトのパッケージをインストールします:
 
 ```bash
 $ poetry install
@@ -133,7 +132,7 @@ No dependencies to install or update
 
 ```
 
-If you want to skip this installation, use the `--no-root` option.
+このインストールをスキップしたい場合は、`--no-root` オプションを使ってください。
 
 ```bash
 poetry install --no-root
@@ -142,7 +141,7 @@ poetry install --no-root
 ### Options
 
 * `--no-dev`: 開発用の依存関係をインストールしない。
-* `--no-root`: Do not install the root package (your project).
+* `--no-root`: ルートパッケージ (あなたのプロジェクト) をインストールしない。
 * `--extras (-E)`: インストールする機能 (複数値も可能です)。
 
 ## update
@@ -177,18 +176,16 @@ poetry update requests toml
 poetry add requests pendulum
 ```
 
-You also can specify a constraint when adding a package, like so:
+パッケージを追加するときに、次のように制約を指定できます:
 
 ```bash
 poetry add pendulum@^2.0.5
 poetry add "pendulum>=2.0.5"
 ```
 
-If you try to add a package that is already present, you will get an error.
-However, if you specify a constraint, like above, the dependency will be
-updated by using the specified constraint. If you want to get the latest
-version of an already present dependency you can use the special `latest`
-constraint:
+既に追加してあるパッケージを追加しようとすると、エラーが出ます。
+ただし、上にあるような制約を指定している場合は、その指定された制約を使って依存関係が更新されます。既に追加してある依存関係の最新バージョンが欲しい場合は、
+`latest` という特殊な制約が使えます:
 
 ```bash
 poetry add pendulum@latest
@@ -200,8 +197,7 @@ poetry add pendulum@latest
 poetry add git+https://github.com/sdispater/pendulum.git
 ```
 
-If you need to checkout a specific branch, tag or revision, you can specify
-it when using `add`:
+特定のブランチ、タグ、リビジョンをチェックアウトする必要がある場合に、 `add` を使っているときはその指定ができます:
 
 ```bash
 poetry add git+https://github.com/sdispater/pendulum.git#develop
@@ -226,8 +222,7 @@ poetry add ../my-package/dist/my_package-0.1.0.whl
 my-package = {path = "../my/path", develop = false}
 ```
 
-If the package(s) you want to install provide extras, you can specify them
-when adding the package:
+インストールしたいパッケージがextraを提供している場合、パッケージを追加するときにそのextrasを指定できます:
 
 ```bash
 poetry add requests[security,socks]
@@ -407,9 +402,8 @@ poetry lock
 
 ## version
 
-This command shows the current version of the project or bumps the version
-of the project and writes the new version back to `pyproject.toml` if a
-valid bump rule is provided.
+このコマンドは現在のプロジェクトのバージョンを表示したり、正しいバージョン更新規則を指定された場合、プロジェクトのバージョンを進めて
+`pyproject.toml` へ新しいバージョンを書き戻します。
 
 新しいバージョンは理想的には、有効なセマンティックバージョン文字列か、有効な更新規則であるべきです。有効な更新規則: `patch`, `minor`,
 `major`, `prepatch`, `preminor`, `premajor`, `prerelease` 。
@@ -417,7 +411,7 @@ valid bump rule is provided.
 
 ## export
 
-This command exports the lock file to other formats.
+このコマンドはlockファイルを他のフォーマットへ出力します。
 
 ```bash
 poetry export -f requirements.txt > requirements.txt
@@ -425,17 +419,15 @@ poetry export -f requirements.txt > requirements.txt
 
 !!!注意
 
-    Only the `requirements.txt` format is currently supported.
+    現時点では `requirements.txt` 形式のみをサポートしています。
 
 ### Options
 
-* `--format (-f)`: The format to export to.  Currently, only
-  `requirements.txt` is supported.
-* `--output (-o)`: The name of the output file.  If omitted, print to
-  standard output.
-* `--dev`: Include development dependencies.
-* `--extras (-E)`: Extra sets of dependencies to include.
-* `--without-hashes`: Exclude hashes from the exported file.
+* `--format (-f)`: 出力する形式。現時点では `requirements.txt` のみサポートされています。
+* `--output (-o)`: 出力ファイル名。省略した場合は、標準出力に表示されます。
+* `--dev`: 開発用の依存関係を含めます。
+* `--extras (-E)`: 含めたい依存関係のextra一式です。
+* `--without-hashes`: 出力したファイルのハッシュを除外します。
 * `--with-credentials`: Include credentials for extra indices.
 
 ## env

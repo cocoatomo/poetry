@@ -2,11 +2,7 @@
 
 Poetryのコア機能の1つとして、プロジェクト環境隔離があります。
 
-What this means is that it will always work isolated from your global Python
-installation.  To achieve this, it will first check if it's currently
-running inside a virtual environment.  If it is, it will use it directly
-without creating a new one. But if it's not, it will use one that it has
-already created or create a brand new one for you.
+これが意味するのは、グローバルにインストールされたPythonから常に隔離された状態で動作するということです。これを実現するために、まず最初に、今は仮想環境内から実行されているかどうかを確認します。もしそうであれば、新しい仮想環境は作らずに今あるものをそのまま使います。しかしそうでない場合は、既に作られていた仮想環境を使うか、それ用に新しい仮想環境を作成します。
 
 By default, Poetry will try to use the currently activated Python version to
 create the virtual environment for the current project.

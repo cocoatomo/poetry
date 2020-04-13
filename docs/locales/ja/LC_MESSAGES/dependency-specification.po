@@ -24,7 +24,7 @@ msgstr ""
 #: docs/dependency-specification.md:1
 #, no-wrap
 msgid "Dependency specification"
-msgstr "依存関係指定"
+msgstr "依存関係仕様"
 
 #. type: Plain text
 #: docs/dependency-specification.md:5

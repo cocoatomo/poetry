@@ -16,7 +16,7 @@ nav:
   - 設定: configuration.md
   - レポジトリ: repositories.md
   - 環境管理: managing-environments.md
-  - 依存関係指定: dependency-specification.md
+  - 依存関係仕様: dependency-specification.md
   - pyproject.toml ファイル: pyproject.md
   - コントリビュート: contributing.md
   - FAQ: faq.md

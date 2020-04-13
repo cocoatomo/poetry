@@ -72,7 +72,7 @@ poetry config virtualenvs.path --unset
 Poetryはそれをサポートしていて、どんな設定でも環境変数で設定できます。
 
 環境変数は `POETRY_` で始まらなければならず、大文字にした設定の名前で構成され、ドットとダッシュをアンダースコアで置き換えたものとなります。
-これが例です。
+これが例です:
 
 ```bash
 export POETRY_VIRTUALENVS_PATH=/path/to/virtualenvs/directory

@@ -39,36 +39,33 @@ poetry config http-basic.foo username password
     PyPIへ公開するために、 `pypi` という名前のレポジトリの認証情報を
     設定できます:
 
-    Note that it is recommended to use [API tokens](https://pypi.org/help/#apitoken)
-    when uploading packages to PyPI.
-    Once you have created a new token, you can tell Poetry to use it:
+パッケージをPyPIにアップロードするときには、[API tokens](https://pypi.org/help/#apitoken)を使うのが推奨されていることに注意してください。
+新しくトークンを作っておけば、Poetryにそれを使わせられます:
 
     ```bash
     poetry config pypi-token.pypi my-token
     ```
 
-    If you still want to use you username and password, you can do so with the following
-    call to `config`.
+ここでも自分のユーザー名とパスワードを使いたい場合、次の `config` の呼び出し方でできます。
 
     ```bash
     poetry config http-basic.pypi username password
     ```
 
-`pyblish` コマンドを使うときに `--username` オプションと `--password`
+`publish` コマンドを使うときに `--username` オプションと `--password`
 オプションを付けて、ユーザー名とパスワードを指定することもできます。
 
-If a system keyring is available and supported, the password is stored to
-and retrieved from the keyring. In the above example, the credential will be
-stored using the name `poetry-repository-pypi`. If access to keyring fails
-or is unsupported, this will fall back to writing the password to the
-`auth.toml` file along with the username.
+システムのキーリングが利用可能でサポートされている場合、パスワードはキーリングに格納されたり、キーリングから取得されたりします。認証情報は
+`poetry-repository-pypi`
+という名前で格納されます。キーリングへのアクセスに失敗したりサポートされていない場合、パスワードはユーザー名と一緒に `auth.toml`
+ファイルに書き込まれます。
 
-Keyring support is enabled using the [keyring
-library](https://pypi.org/project/keyring/). For more information on
-supported backends refer to the [library
-documentation](https://keyring.readthedocs.io/en/latest/?badge=latest).
+キーリングのサポートは [keyringライブラリ](https://pypi.org/project/keyring/)
+を使って有効にします。サポートされる環境基盤についてより詳しいことは
+[ライブラリドキュメント](https://keyring.readthedocs.io/en/latest/?badge=latest)
+を参照してください。
 
-Alternatively, you can use environment variables to provide the credentials:
+あるいは、環境変数を使って認証情報を提供けいます:
 
 ```bash
 export POETRY_PYPI_TOKEN_PYPI=my-token
@@ -76,11 +73,9 @@ export POETRY_HTTP_BASIC_PYPI_USERNAME=username
 export POETRY_HTTP_BASIC_PYPI_PASSWORD=password
 ```
 
-See [Using environment
-variables](/docs/configuration/#using-environment-variables) for more
-information on how to configure Poetry with environment variables.
+環境変数でPoetryを設定する方法についてより詳しいことは、[環境変数の使用](/docs/configuration/#using-environment-variables)を参照してください。
 
-#### Custom certificate authority and mutual TLS authentication
+#### カスタム認証局と相互TLS認証
 Poetry supports repositories that are secured by a custom certificate
 authority as well as those that require certificate-based client
 authentication.  The following will configure the "foo" repository to
