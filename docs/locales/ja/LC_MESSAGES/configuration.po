@@ -211,7 +211,7 @@ msgid ""
 "underscore, here is an example:"
 msgstr ""
 "環境変数は `POETRY_` で始まらなければならず、大文字にした設定の名前で構成され、ドットとダッシュをアンダースコアで置き換えたものとなります。\n"
-"これが例です。"
+"これが例です:"
 
 #. type: Fenced code block (bash)
 #: docs/configuration.md:82

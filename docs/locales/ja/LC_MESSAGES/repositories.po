@@ -138,6 +138,8 @@ msgid ""
 "    when uploading packages to PyPI.\n"
 "    Once you have created a new token, you can tell Poetry to use it:\n"
 msgstr ""
+"パッケージをPyPIにアップロードするときには、[API tokens](https://pypi.org/help/#apitoken)を使うのが推奨されていることに注意してください。\n"
+"新しくトークンを作っておけば、Poetryにそれを使わせられます:\n"
 
 #. type: Plain text
 #: docs/repositories.md:51
@@ -157,7 +159,7 @@ msgstr ""
 msgid ""
 "    If you still want to use you username and password, you can do so with the following\n"
 "    call to `config`.\n"
-msgstr ""
+msgstr "ここでも自分のユーザー名とパスワードを使いたい場合、次の `config` の呼び出し方でできます。\n"
 
 #. type: Plain text
 #: docs/repositories.md:58
@@ -177,7 +179,7 @@ msgid ""
 "You can also specify the username and password when using the `publish` "
 "command with the `--username` and `--password` options."
 msgstr ""
-"`pyblish` コマンドを使うときに `--username` オプションと `--password` "
+"`publish` コマンドを使うときに `--username` オプションと `--password` "
 "オプションを付けて、ユーザー名とパスワードを指定することもできます。"
 
 #. type: Plain text
@@ -189,6 +191,10 @@ msgid ""
 "or is unsupported, this will fall back to writing the password to the "
 "`auth.toml` file along with the username."
 msgstr ""
+"システムのキーリングが利用可能でサポートされている場合、パスワードはキーリングに格納されたり、キーリングから取得されたりします。認証情報は "
+"`poetry-repository-pypi` "
+"という名前で格納されます。キーリングへのアクセスに失敗したりサポートされていない場合、パスワードはユーザー名と一緒に `auth.toml` "
+"ファイルに書き込まれます。"
 
 #. type: Plain text
 #: docs/repositories.md:65
@@ -198,12 +204,16 @@ msgid ""
 "supported backends refer to the [library "
 "documentation](https://keyring.readthedocs.io/en/latest/?badge=latest)."
 msgstr ""
+"キーリングのサポートは [keyringライブラリ](https://pypi.org/project/keyring/) "
+"を使って有効にします。サポートされる環境基盤についてより詳しいことは "
+"[ライブラリドキュメント](https://keyring.readthedocs.io/en/latest/?badge=latest) "
+"を参照してください。"
 
 #. type: Plain text
 #: docs/repositories.md:67
 msgid ""
 "Alternatively, you can use environment variables to provide the credentials:"
-msgstr ""
+msgstr "あるいは、環境変数を使って認証情報を提供けいます:"
 
 #. type: Fenced code block (bash)
 #: docs/repositories.md:68
@@ -224,12 +234,14 @@ msgid ""
 "variables) for more information on how to configure Poetry with environment "
 "variables."
 msgstr ""
+"環境変数でPoetryを設定する方法についてより詳しいことは、[環境変数の使用](/docs/configuration/#using-"
+"environment-variables)を参照してください。"
 
 #. type: Title ####
 #: docs/repositories.md:77
 #, no-wrap
 msgid "Custom certificate authority and mutual TLS authentication"
-msgstr ""
+msgstr "カスタム認証局と相互TLS認証"
 
 #. type: Plain text
 #: docs/repositories.md:82
@@ -249,6 +261,8 @@ msgid ""
 "    poetry config certificates.foo.cert /path/to/ca.pem\n"
 "    poetry config certificates.foo.client-cert /path/to/client.pem\n"
 msgstr ""
+"    poetry config certificates.foo.cert /path/to/ca.pem\n"
+"    poetry config certificates.foo.client-cert /path/to/client.pem\n"
 
 #. type: Title ###
 #: docs/repositories.md:87

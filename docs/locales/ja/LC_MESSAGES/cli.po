@@ -340,7 +340,7 @@ msgstr ""
 msgid ""
 "By default `poetry` will install your project's package everytime you run "
 "`install`:"
-msgstr ""
+msgstr "デフォルトでは、`poetry` は `install` を実行するたびにプロジェクトのパッケージをインストールします:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:129
@@ -354,11 +354,18 @@ msgid ""
 "  - Installing <your-package-name> (x.x.x)\n"
 "\n"
 msgstr ""
+"$ poetry install\n"
+"Installing dependencies from lock file\n"
+"\n"
+"No dependencies to install or update\n"
+"\n"
+"  - Installing <your-package-name> (x.x.x)\n"
+"\n"
 
 #. type: Plain text
 #: docs/cli.md:140
 msgid "If you want to skip this installation, use the `--no-root` option."
-msgstr ""
+msgstr "このインストールをスキップしたい場合は、`--no-root` オプションを使ってください。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:141
@@ -374,7 +381,7 @@ msgstr "`--no-dev`: 開発用の依存関係をインストールしない。"
 #. type: Bullet: '* '
 #: docs/cli.md:150
 msgid "`--no-root`: Do not install the root package (your project)."
-msgstr ""
+msgstr "`--no-root`: ルートパッケージ (あなたのプロジェクト) をインストールしない。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:150
@@ -466,7 +473,7 @@ msgstr "poetry add requests pendulum\n"
 #. type: Plain text
 #: docs/cli.md:186
 msgid "You also can specify a constraint when adding a package, like so:"
-msgstr ""
+msgstr "パッケージを追加するときに、次のように制約を指定できます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:187
@@ -487,6 +494,8 @@ msgid ""
 "version of an already present dependency you can use the special `latest` "
 "constraint:"
 msgstr ""
+"既に追加してあるパッケージを追加しようとすると、エラーが出ます。\n"
+"ただし、上にあるような制約を指定している場合は、その指定された制約を使って依存関係が更新されます。既に追加してある依存関係の最新バージョンが欲しい場合は、 `latest` という特殊な制約が使えます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:197
@@ -510,7 +519,7 @@ msgstr "poetry add git+https://github.com/sdispater/pendulum.git\n"
 msgid ""
 "If you need to checkout a specific branch, tag or revision, you can specify "
 "it when using `add`:"
-msgstr ""
+msgstr "特定のブランチ、タグ、リビジョンをチェックアウトする必要がある場合に、 `add` を使っているときはその指定ができます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:210
@@ -571,7 +580,7 @@ msgstr ""
 msgid ""
 "If the package(s) you want to install provide extras, you can specify them "
 "when adding the package:"
-msgstr ""
+msgstr "インストールしたいパッケージがextraを提供している場合、パッケージを追加するときにそのextrasを指定できます:"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:236
@@ -581,6 +590,9 @@ msgid ""
 "poetry add \"requests[security,socks]~=2.22.0\"\n"
 "poetry add \"git+https://github.com/pallets/flask.git@1.1.1[dotenv,dev]\"\n"
 msgstr ""
+"poetry add requests[security,socks]\n"
+"poetry add \"requests[security,socks]~=2.22.0\"\n"
+"poetry add \"git+https://github.com/pallets/flask.git@1.1.1[dotenv,dev]\"\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:248
@@ -970,6 +982,8 @@ msgid ""
 "of the project and writes the new version back to `pyproject.toml` if a "
 "valid bump rule is provided."
 msgstr ""
+"このコマンドは現在のプロジェクトのバージョンを表示したり、正しいバージョン更新規則を指定された場合、プロジェクトのバージョンを進めて "
+"`pyproject.toml` へ新しいバージョンを書き戻します。"
 
 #. type: Plain text
 #: docs/cli.md:424
@@ -990,7 +1004,7 @@ msgstr "export"
 #. type: Plain text
 #: docs/cli.md:429
 msgid "This command exports the lock file to other formats."
-msgstr ""
+msgstr "このコマンドはlockファイルを他のフォーマットへ出力します。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:430
@@ -1007,36 +1021,36 @@ msgstr "!!!注意"
 #: docs/cli.md:437
 #, no-wrap
 msgid "    Only the `requirements.txt` format is currently supported.\n"
-msgstr ""
+msgstr "    現時点では `requirements.txt` 形式のみをサポートしています。\n"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
 msgid ""
 "`--format (-f)`: The format to export to.  Currently, only "
 "`requirements.txt` is supported."
-msgstr ""
+msgstr "`--format (-f)`: 出力する形式。現時点では `requirements.txt` のみサポートされています。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
 msgid ""
 "`--output (-o)`: The name of the output file.  If omitted, print to standard"
 " output."
-msgstr ""
+msgstr "`--output (-o)`: 出力ファイル名。省略した場合は、標準出力に表示されます。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
 msgid "`--dev`: Include development dependencies."
-msgstr ""
+msgstr "`--dev`: 開発用の依存関係を含めます。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
 msgid "`--extras (-E)`: Extra sets of dependencies to include."
-msgstr ""
+msgstr "`--extras (-E)`: 含めたい依存関係のextra一式です。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
 msgid "`--without-hashes`: Exclude hashes from the exported file."
-msgstr ""
+msgstr "`--without-hashes`: 出力したファイルのハッシュを除外します。"
 
 #. type: Bullet: '* '
 #: docs/cli.md:448
