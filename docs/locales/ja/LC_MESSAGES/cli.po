@@ -462,7 +462,7 @@ msgstr "`add` コマンドは `pyproject.toml` に要求しているパッケー
 msgid ""
 "If you do not specify a version constraint, poetry will choose a suitable "
 "one based on the available package versions."
-msgstr "`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。"
+msgstr "バージョン制約を指定いない場合、poetryは利用可能なパッケージバージョンに基づいて適したものを選びます。"
 
 #. type: Fenced code block (bash)
 #: docs/cli.md:181
@@ -1075,4 +1075,4 @@ msgstr ""
 msgid ""
 "See [Managing environments](./managing-environments.md) for more information"
 " about these commands."
-msgstr ""
+msgstr "これらのコマンドについては [環境管理](./managing-environments.md) を参照してください。"

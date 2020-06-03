@@ -47,7 +47,7 @@ msgstr ""
 msgid ""
 "By default, Poetry will try to use the currently activated Python version to"
 " create the virtual environment for the current project."
-msgstr ""
+msgstr "デフォルトでは、Poetryは現時点で有効になっているバージョンのPythonを使って、プロジェクトの仮想環境を作成しようとします。"
 
 #. type: Plain text
 #: docs/managing-environments.md:17
