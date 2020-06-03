@@ -103,10 +103,10 @@ url = "https://foo.bar/simple/"
 
 !!!注意
 
-    Any custom repository will have precedence over PyPI.
+どんな独自レポジトリもPyPIより優先されます。
 
-    If you still want PyPI to be your primary source for your packages
-    you can declare custom repositories as secondary.
+    PyPIを第一のパッケージ取得元としておきたい場合は、
+    独自レポジトリを第二のレポジトリと宣言できます。
 
     ```toml
     [[tool.poetry.source]]
@@ -123,8 +123,7 @@ Poetryは、パッケージのダウンロードや検索をするときに、�
 
 ### PyPIレポジトリの無効化
 
-If you want your packages to be exclusively looked up from a private
-repository, you can set it as the default one by using the `default` keyword
+パッケージがプライベートレポジトリからのみ探されて欲しい場合は、`default` キーワードを使ってデフォルトであることが設定できます。
 
 ```toml
 [[tool.poetry.source]]
@@ -133,4 +132,4 @@ url = "https://foo.bar/simple/"
 default = true
 ```
 
-A default source will also be the fallback source if you add other sources.
+デフォルトの取得元は、他の取得元を追加した場合のフォールバック先になります。

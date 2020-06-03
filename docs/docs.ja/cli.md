@@ -170,7 +170,7 @@ poetry update requests toml
 
 `add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。
 
-`add` コマンドは `pyproject.toml` に要求しているパッケージを追加し、インストールします。
+バージョン制約を指定いない場合、poetryは利用可能なパッケージバージョンに基づいて適したものを選びます。
 
 ```bash
 poetry add requests pendulum
@@ -435,5 +435,4 @@ poetry export -f requirements.txt > requirements.txt
 The `env` command regroups sub commands to interact with the virtualenvs
 associated with a specific project.
 
-See [Managing environments](./managing-environments.md) for more information
-about these commands.
+これらのコマンドについては [環境管理](./managing-environments.md) を参照してください。
