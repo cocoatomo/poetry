@@ -21,7 +21,7 @@ venv:
 	$(VENV)/bin/pip install mkdocs pygments mkdocs-material markdown-include
 
 pushorig: catalog
-	cd $(LOCALESDIR) &&	tx push --source
+	cd $(LOCALESDIR) && tx push --source
 
 catalog: $(POTS)
 
