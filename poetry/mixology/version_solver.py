@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 import time
 
-from typing import Any
+from typing import TYPE_CHECKING
 from typing import Dict
 from typing import List
 from typing import Union
 
-from poetry.packages import Dependency
-from poetry.packages import Package
-from poetry.packages import ProjectPackage
-from poetry.puzzle.provider import Provider
-from poetry.semver import Version
-from poetry.semver import VersionRange
+from poetry.core.packages import Dependency
+from poetry.core.packages import Package
+from poetry.core.packages import ProjectPackage
 
 from .failure import SolveFailure
 from .incompatibility import Incompatibility
@@ -23,6 +20,10 @@ from .partial_solution import PartialSolution
 from .result import SolverResult
 from .set_relation import SetRelation
 from .term import Term
+
+
+if TYPE_CHECKING:
+    from poetry.puzzle.provider import Provider
 
 
 _conflict = object()
@@ -179,7 +180,7 @@ class VersionSolver:
             unsatisfied.dependency, not unsatisfied.is_positive(), incompatibility
         )
 
-        return unsatisfied.dependency.name
+        return unsatisfied.dependency.complete_name
 
     def _resolve_conflict(
         self, incompatibility
@@ -336,7 +337,22 @@ class VersionSolver:
                 # only has one version to choose from.
                 return 1
 
-            if dependency.name in self._locked:
+            locked = self._get_locked(dependency)
+            if locked and (
+                dependency.constraint.allows(locked.version)
+                or locked.is_prerelease()
+                and dependency.constraint.allows(locked.version.next_patch)
+            ):
+                return 1
+
+            # VCS, URL, File or Directory dependencies
+            # represent a single version
+            if (
+                dependency.is_vcs()
+                or dependency.is_url()
+                or dependency.is_file()
+                or dependency.is_directory()
+            ):
                 return 1
 
             try:
@@ -357,23 +373,23 @@ class VersionSolver:
                 self._add_incompatibility(
                     Incompatibility([Term(dependency, True)], PackageNotFoundCause(e))
                 )
-                return dependency.name
+                return dependency.complete_name
 
             try:
                 version = packages[0]
             except IndexError:
                 version = None
+
+            if version is None:
+                # If there are no versions that satisfy the constraint,
+                # add an incompatibility that indicates that.
+                self._add_incompatibility(
+                    Incompatibility([Term(dependency, True)], NoVersionsCause())
+                )
+
+                return dependency.complete_name
         else:
             version = locked
-
-        if version is None:
-            # If there are no versions that satisfy the constraint,
-            # add an incompatibility that indicates that.
-            self._add_incompatibility(
-                Incompatibility([Term(dependency, True)], NoVersionsCause())
-            )
-
-            return dependency.name
 
         version = self._provider.complete_package(version)
 
@@ -387,23 +403,20 @@ class VersionSolver:
             # We'll continue adding its dependencies, then go back to
             # unit propagation which will guide us to choose a better version.
             conflict = conflict or all(
-                [
-                    term.dependency.name == dependency.name
-                    or self._solution.satisfies(term)
-                    for term in incompatibility.terms
-                ]
+                term.dependency.complete_name == dependency.complete_name
+                or self._solution.satisfies(term)
+                for term in incompatibility.terms
             )
 
         if not conflict:
             self._solution.decide(version)
             self._log(
-                "selecting {} ({})".format(version.name, version.full_pretty_version)
+                "selecting {} ({})".format(
+                    version.complete_name, version.full_pretty_version
+                )
             )
 
-        return dependency.name
-
-    def _excludes_single_version(self, constraint):  # type: (Any) -> bool
-        return isinstance(VersionRange().difference(constraint), Version)
+        return dependency.complete_name
 
     def _result(self):  # type: () -> SolverResult
         """
@@ -421,13 +434,18 @@ class VersionSolver:
         self._log("fact: {}".format(incompatibility))
 
         for term in incompatibility.terms:
-            if term.dependency.name not in self._incompatibilities:
-                self._incompatibilities[term.dependency.name] = []
+            if term.dependency.complete_name not in self._incompatibilities:
+                self._incompatibilities[term.dependency.complete_name] = []
 
-            if incompatibility in self._incompatibilities[term.dependency.name]:
+            if (
+                incompatibility
+                in self._incompatibilities[term.dependency.complete_name]
+            ):
                 continue
 
-            self._incompatibilities[term.dependency.name].append(incompatibility)
+            self._incompatibilities[term.dependency.complete_name].append(
+                incompatibility
+            )
 
     def _get_locked(self, dependency):  # type: (Dependency) -> Union[Package, None]
         if dependency.name in self._use_latest:
@@ -437,8 +455,8 @@ class VersionSolver:
         if not locked:
             return
 
-        if dependency.extras:
-            locked.requires_extras = dependency.extras
+        if not dependency.is_same_package_as(locked):
+            return
 
         return locked
 

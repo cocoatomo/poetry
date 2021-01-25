@@ -5,33 +5,42 @@ import os
 import platform
 import re
 import shutil
+import subprocess
 import sys
 import sysconfig
-import warnings
+import textwrap
 
 from contextlib import contextmanager
+from pathlib import Path
+from subprocess import CalledProcessError
 from typing import Any
 from typing import Dict
 from typing import List
 from typing import Optional
 from typing import Tuple
+from typing import Union
 
+import packaging.tags
 import tomlkit
+import virtualenv
 
 from clikit.api.io import IO
+from packaging.tags import Tag
+from packaging.tags import interpreter_name
+from packaging.tags import interpreter_version
+from packaging.tags import sys_tags
 
+from poetry.core.semver import parse_constraint
+from poetry.core.semver.version import Version
+from poetry.core.toml.file import TOMLFile
+from poetry.core.version.markers import BaseMarker
 from poetry.locations import CACHE_DIR
 from poetry.poetry import Poetry
-from poetry.semver import parse_constraint
-from poetry.semver.version import Version
-from poetry.utils._compat import CalledProcessError
-from poetry.utils._compat import Path
 from poetry.utils._compat import decode
 from poetry.utils._compat import encode
 from poetry.utils._compat import list_to_shell_command
-from poetry.utils._compat import subprocess
-from poetry.utils.toml_file import TomlFile
-from poetry.version.markers import BaseMarker
+from poetry.utils.helpers import is_dir_writable
+from poetry.utils.helpers import paths_csv
 
 
 GET_ENVIRONMENT_INFO = """\
@@ -39,6 +48,36 @@ import json
 import os
 import platform
 import sys
+import sysconfig
+
+INTERPRETER_SHORT_NAMES = {
+    "python": "py",
+    "cpython": "cp",
+    "pypy": "pp",
+    "ironpython": "ip",
+    "jython": "jy",
+}
+
+
+def interpreter_version():
+    version = sysconfig.get_config_var("interpreter_version")
+    if version:
+        version = str(version)
+    else:
+        version = _version_nodot(sys.version_info[:2])
+
+    return version
+
+
+def _version_nodot(version):
+    # type: (PythonVersion) -> str
+    if any(v >= 10 for v in version):
+        sep = "_"
+    else:
+        sep = ""
+
+    return sep.join(map(str, version))
+
 
 if hasattr(sys, "implementation"):
     info = sys.implementation.version
@@ -50,7 +89,7 @@ if hasattr(sys, "implementation"):
     implementation_name = sys.implementation.name
 else:
     iver = "0"
-    implementation_name = ""
+    implementation_name = platform.python_implementation().lower()
 
 env = {
     "implementation_name": implementation_name,
@@ -65,6 +104,9 @@ env = {
     "python_version": platform.python_version()[:3],
     "sys_platform": sys.platform,
     "version_info": tuple(sys.version_info),
+    # Extra information
+    "interpreter_name": INTERPRETER_SHORT_NAMES.get(implementation_name, implementation_name),
+    "interpreter_version": interpreter_version(),
 }
 
 print(json.dumps(env))
@@ -82,12 +124,6 @@ else:
     print(sys.prefix)
 """
 
-GET_CONFIG_VAR = """\
-import sysconfig
-
-print(sysconfig.get_config_var("{config_var}")),
-"""
-
 GET_PYTHON_VERSION = """\
 import sys
 
@@ -101,26 +137,126 @@ import sys
 print(json.dumps(sys.path))
 """
 
-CREATE_VENV_COMMAND = """\
-path = {!r}
+GET_PATHS = """\
+import json
+import sysconfig
 
-try:
-    from venv import EnvBuilder
-
-    builder = EnvBuilder(with_pip=True)
-    builder.create(path)
-except ImportError:
-    try:
-        # We fallback on virtualenv for Python 2.7
-        from virtualenv import create_environment
-
-        create_environment(path)
-    except ImportError:
-        # since virtualenv>20 we have to use cli_run
-        from virtualenv import cli_run
-
-        cli_run([path])
+print(json.dumps(sysconfig.get_paths()))
 """
+
+
+class SitePackages:
+    def __init__(
+        self, path, fallbacks=None, skip_write_checks=False
+    ):  # type: (Path, List[Path], bool) -> None
+        self._path = path
+        self._fallbacks = fallbacks or []
+        self._skip_write_checks = skip_write_checks
+        self._candidates = [self._path] + self._fallbacks
+        self._writable_candidates = None if not skip_write_checks else self._candidates
+
+    @property
+    def path(self):  # type: () -> Path
+        return self._path
+
+    @property
+    def candidates(self):  # type: () -> List[Path]
+        return self._candidates
+
+    @property
+    def writable_candidates(self):  # type: () -> List[Path]
+        if self._writable_candidates is not None:
+            return self._writable_candidates
+
+        self._writable_candidates = []
+        for candidate in self._candidates:
+            if not is_dir_writable(path=candidate, create=True):
+                continue
+            self._writable_candidates.append(candidate)
+
+        return self._writable_candidates
+
+    def make_candidates(
+        self, path, writable_only=False
+    ):  # type: (Path, bool) -> List[Path]
+        candidates = self._candidates if not writable_only else self.writable_candidates
+        if path.is_absolute():
+            for candidate in candidates:
+                try:
+                    path.relative_to(candidate)
+                    return [path]
+                except ValueError:
+                    pass
+            else:
+                raise ValueError(
+                    "{} is not relative to any discovered {}sites".format(
+                        path, "writable " if writable_only else ""
+                    )
+                )
+
+        return [candidate / path for candidate in candidates if candidate]
+
+    def _path_method_wrapper(
+        self, path, method, *args, **kwargs
+    ):  # type: (Path, str, *Any, **Any) -> Union[Tuple[Path, Any], List[Tuple[Path, Any]]]
+
+        # TODO: Move to parameters after dropping Python 2.7
+        return_first = kwargs.pop("return_first", True)
+        writable_only = kwargs.pop("writable_only", False)
+
+        candidates = self.make_candidates(path, writable_only=writable_only)
+
+        if not candidates:
+            raise RuntimeError(
+                'Unable to find a suitable destination for "{}" in {}'.format(
+                    str(path), paths_csv(self._candidates)
+                )
+            )
+
+        results = []
+
+        for candidate in candidates:
+            try:
+                result = candidate, getattr(candidate, method)(*args, **kwargs)
+                if return_first:
+                    return result
+                else:
+                    results.append(result)
+            except (IOError, OSError):
+                # TODO: Replace with PermissionError
+                pass
+
+        if results:
+            return results
+
+        raise OSError("Unable to access any of {}".format(paths_csv(candidates)))
+
+    def write_text(self, path, *args, **kwargs):  # type: (Path, *Any, **Any) -> Path
+        return self._path_method_wrapper(path, "write_text", *args, **kwargs)[0]
+
+    def mkdir(self, path, *args, **kwargs):  # type: (Path, *Any, **Any) -> Path
+        return self._path_method_wrapper(path, "mkdir", *args, **kwargs)[0]
+
+    def exists(self, path):  # type: (Path) -> bool
+        return any(
+            value[-1]
+            for value in self._path_method_wrapper(path, "exists", return_first=False)
+        )
+
+    def find(self, path, writable_only=False):  # type: (Path, bool) -> List[Path]
+        return [
+            value[0]
+            for value in self._path_method_wrapper(
+                path, "exists", return_first=False, writable_only=writable_only
+            )
+            if value[-1] is True
+        ]
+
+    def __getattr__(self, item):
+        try:
+            return super(SitePackages, self).__getattribute__(item)
+        except AttributeError:
+            return getattr(self.path, item)
 
 
 class EnvError(Exception):
@@ -181,7 +317,7 @@ class EnvManager(object):
 
         cwd = self._poetry.file.parent
 
-        envs_file = TomlFile(venv_path / self.ENVS_FILE)
+        envs_file = TOMLFile(venv_path / self.ENVS_FILE)
 
         try:
             python_version = Version.parse(python)
@@ -279,7 +415,7 @@ class EnvManager(object):
         name = self._poetry.package.name
         name = self.generate_env_name(name, str(self._poetry.file.parent))
 
-        envs_file = TomlFile(venv_path / self.ENVS_FILE)
+        envs_file = TOMLFile(venv_path / self.ENVS_FILE)
         if envs_file.exists():
             envs = envs_file.read()
             env = envs.get(name)
@@ -306,7 +442,7 @@ class EnvManager(object):
             venv_path = Path(venv_path)
 
         cwd = self._poetry.file.parent
-        envs_file = TomlFile(venv_path / self.ENVS_FILE)
+        envs_file = TOMLFile(venv_path / self.ENVS_FILE)
         env = None
         base_env_name = self.generate_env_name(self._poetry.package.name, str(cwd))
         if envs_file.exists():
@@ -326,10 +462,11 @@ class EnvManager(object):
 
         if not in_venv or env is not None:
             # Checking if a local virtualenv exists
-            if (cwd / ".venv").exists() and (cwd / ".venv").is_dir():
-                venv = cwd / ".venv"
+            if self._poetry.config.get("virtualenvs.in-project") is not False:
+                if (cwd / ".venv").exists() and (cwd / ".venv").is_dir():
+                    venv = cwd / ".venv"
 
-                return VirtualEnv(venv)
+                    return VirtualEnv(venv)
 
             create_venv = self._poetry.config.get("virtualenvs.create", True)
 
@@ -394,7 +531,7 @@ class EnvManager(object):
             venv_path = Path(venv_path)
 
         cwd = self._poetry.file.parent
-        envs_file = TomlFile(venv_path / self.ENVS_FILE)
+        envs_file = TOMLFile(venv_path / self.ENVS_FILE)
         base_env_name = self.generate_env_name(self._poetry.package.name, str(cwd))
 
         if python.startswith(base_env_name):
@@ -403,7 +540,7 @@ class EnvManager(object):
                 if venv.path.name == python:
                     # Exact virtualenv name
                     if not envs_file.exists():
-                        self.remove_venv(str(venv.path))
+                        self.remove_venv(venv.path)
 
                         return venv
 
@@ -413,7 +550,7 @@ class EnvManager(object):
 
                     current_env = envs.get(base_env_name)
                     if not current_env:
-                        self.remove_venv(str(venv.path))
+                        self.remove_venv(venv.path)
 
                         return venv
 
@@ -421,7 +558,7 @@ class EnvManager(object):
                         del envs[base_env_name]
                         envs_file.write(envs)
 
-                    self.remove_venv(str(venv.path))
+                    self.remove_venv(venv.path)
 
                     return venv
 
@@ -475,7 +612,7 @@ class EnvManager(object):
                     del envs[base_env_name]
                     envs_file.write(envs)
 
-        self.remove_venv(str(venv))
+        self.remove_venv(venv)
 
         return VirtualEnv(venv)
 
@@ -621,7 +758,11 @@ class EnvManager(object):
                 "Creating virtualenv <c1>{}</> in {}".format(name, str(venv_path))
             )
 
-            self.build_venv(str(venv), executable=executable)
+            self.build_venv(
+                venv,
+                executable=executable,
+                flags=self._poetry.config.get("virtualenvs.options"),
+            )
         else:
             if force:
                 if not env.is_sane():
@@ -633,8 +774,12 @@ class EnvManager(object):
                 io.write_line(
                     "Recreating virtualenv <c1>{}</> in {}".format(name, str(venv))
                 )
-                self.remove_venv(str(venv))
-                self.build_venv(str(venv), executable=executable)
+                self.remove_venv(venv)
+                self.build_venv(
+                    venv,
+                    executable=executable,
+                    flags=self._poetry.config.get("virtualenvs.options"),
+                )
             elif io.is_very_verbose():
                 io.write_line("Virtualenv <c1>{}</> already exists.".format(name))
 
@@ -657,46 +802,50 @@ class EnvManager(object):
         return VirtualEnv(venv)
 
     @classmethod
-    def build_venv(cls, path, executable=None):
-        if executable is not None:
-            # Create virtualenv by using an external executable
-            try:
-                p = subprocess.Popen(
-                    list_to_shell_command([executable, "-"]),
-                    stdin=subprocess.PIPE,
-                    shell=True,
-                )
-                p.communicate(encode(CREATE_VENV_COMMAND.format(path)))
-            except CalledProcessError as e:
-                raise EnvCommandError(e)
+    def build_venv(
+        cls, path, executable=None, flags=None
+    ):  # type: (Union[Path,str], Optional[Union[str, Path]], Dict[str, bool]) -> virtualenv.run.session.Session
+        flags = flags or {}
 
-            return
+        if isinstance(executable, Path):
+            executable = executable.resolve().as_posix()
 
+        args = [
+            "--no-download",
+            "--no-periodic-update",
+            "--python",
+            executable or sys.executable,
+            str(path),
+        ]
+
+        for flag, value in flags.items():
+            if value is True:
+                args.insert(0, "--{}".format(flag))
+
+        return virtualenv.cli_run(args)
+
+    @classmethod
+    def remove_venv(cls, path):  # type: (Union[Path,str]) -> None
+        if isinstance(path, str):
+            path = Path(path)
+        assert path.is_dir()
         try:
-            from venv import EnvBuilder
+            shutil.rmtree(str(path))
+            return
+        except OSError as e:
+            # Continue only if e.errno == 16
+            if e.errno != 16:  # ERRNO 16: Device or resource busy
+                raise e
 
-            # use the same defaults as python -m venv
-            if os.name == "nt":
-                use_symlinks = False
-            else:
-                use_symlinks = True
-
-            builder = EnvBuilder(with_pip=True, symlinks=use_symlinks)
-            builder.create(path)
-        except ImportError:
-            try:
-                # We fallback on virtualenv for Python 2.7
-                from virtualenv import create_environment
-
-                create_environment(path)
-            except ImportError:
-                # since virtualenv>20 we have to use cli_run
-                from virtualenv import cli_run
-
-                cli_run([path])
-
-    def remove_venv(self, path):  # type: (str) -> None
-        shutil.rmtree(path)
+        # Delete all files and folders but the toplevel one. This is because sometimes
+        # the venv folder is mounted by the OS, such as in a docker volume. In such
+        # cases, an attempt to delete the folder itself will result in an `OSError`.
+        # See https://github.com/python-poetry/poetry/pull/2064
+        for file_path in path.iterdir():
+            if file_path.is_file() or file_path.is_symlink():
+                file_path.unlink()
+            elif file_path.is_dir():
+                shutil.rmtree(str(file_path))
 
     def get_base_prefix(self):  # type: () -> Path
         if hasattr(sys, "real_prefix"):
@@ -734,6 +883,11 @@ class Env(object):
         self._marker_env = None
         self._pip_version = None
         self._site_packages = None
+        self._paths = None
+        self._supported_tags = None
+        self._purelib = None
+        self._platlib = None
+        self._script_dirs = None
 
     @property
     def path(self):  # type: () -> Path
@@ -788,30 +942,69 @@ class Env(object):
         return self._pip_version
 
     @property
-    def site_packages(self):  # type: () -> Path
+    def site_packages(self):  # type: () -> SitePackages
         if self._site_packages is None:
-            site_packages = []
-            dist_packages = []
-            for entry in self.sys_path:
-                entry = Path(entry)
-                if entry.name == "site-packages":
-                    site_packages.append(entry)
-                elif entry.name == "dist-packages":
-                    dist_packages.append(entry)
-
-            if not site_packages and not dist_packages:
-                raise RuntimeError("Unable to find the site-packages directory")
-
-            if site_packages:
-                self._site_packages = site_packages[0]
-            else:
-                self._site_packages = dist_packages[0]
-
+            # we disable write checks if no user site exist
+            fallbacks = [self.usersite] if self.usersite else []
+            self._site_packages = SitePackages(
+                self.purelib, fallbacks, skip_write_checks=False if fallbacks else True
+            )
         return self._site_packages
+
+    @property
+    def usersite(self):  # type: () -> Optional[Path]
+        if "usersite" in self.paths:
+            return Path(self.paths["usersite"])
+
+    @property
+    def userbase(self):  # type: () -> Optional[Path]
+        if "userbase" in self.paths:
+            return Path(self.paths["userbase"])
+
+    @property
+    def purelib(self):  # type: () -> Path
+        if self._purelib is None:
+            self._purelib = Path(self.paths["purelib"])
+
+        return self._purelib
+
+    @property
+    def platlib(self):  # type: () -> Path
+        if self._platlib is None:
+            if "platlib" in self.paths:
+                self._platlib = Path(self.paths["platlib"])
+            else:
+                self._platlib = self.purelib
+
+        return self._platlib
+
+    def is_path_relative_to_lib(self, path):  # type: (Path) -> bool
+        for lib_path in [self.purelib, self.platlib]:
+            try:
+                path.relative_to(lib_path)
+                return True
+            except ValueError:
+                pass
+
+        return False
 
     @property
     def sys_path(self):  # type: () -> List[str]
         raise NotImplementedError()
+
+    @property
+    def paths(self):  # type: () -> Dict[str, str]
+        if self._paths is None:
+            self._paths = self.get_paths()
+
+        return self._paths
+
+    @property
+    def supported_tags(self):  # type: () -> List[Tag]
+        if self._supported_tags is None:
+            self._supported_tags = self.get_supported_tags()
+
+        return self._supported_tags
 
     @classmethod
     def get_base_prefix(cls):  # type: () -> Path
@@ -835,10 +1028,13 @@ class Env(object):
     def get_pip_command(self):  # type: () -> List[str]
         raise NotImplementedError()
 
-    def config_var(self, var):  # type: (str) -> Any
+    def get_supported_tags(self):  # type: () -> List[Tag]
         raise NotImplementedError()
 
     def get_pip_version(self):  # type: () -> Version
+        raise NotImplementedError()
+
+    def get_paths(self):  # type: () -> Dict[str, str]
         raise NotImplementedError()
 
     def is_valid_for_marker(self, marker):  # type: (BaseMarker) -> bool
@@ -864,15 +1060,15 @@ class Env(object):
         """
         Run a command inside the Python environment.
         """
-        shell = kwargs.get("shell", False)
         call = kwargs.pop("call", False)
         input_ = kwargs.pop("input_", None)
 
-        if shell:
-            cmd = list_to_shell_command(cmd)
         try:
             if self._is_windows:
                 kwargs["shell"] = True
+
+            if kwargs.get("shell", False):
+                cmd = list_to_shell_command(cmd)
 
             if input_:
                 output = subprocess.run(
@@ -911,6 +1107,18 @@ class Env(object):
     def is_venv(self):  # type: () -> bool
         raise NotImplementedError()
 
+    @property
+    def script_dirs(self):  # type: () -> List[Path]
+        if self._script_dirs is None:
+            self._script_dirs = (
+                [Path(self.paths["scripts"])]
+                if "scripts" in self.paths
+                else self._bin_dir
+            )
+            if self.userbase:
+                self._script_dirs.append(self.userbase / self._script_dirs[0].name)
+        return self._script_dirs
+
     def _bin(self, bin):  # type: (str) -> str
         """
         Return path to the given executable.
@@ -947,6 +1155,10 @@ class SystemEnv(Env):
     """
 
     @property
+    def python(self):  # type: () -> str
+        return sys.executable
+
+    @property
     def sys_path(self):  # type: () -> List[str]
         return sys.path
 
@@ -960,6 +1172,38 @@ class SystemEnv(Env):
         # If we're not in a venv, assume the interpreter we're running on
         # has a pip and use that
         return [sys.executable, "-m", "pip"]
+
+    def get_paths(self):  # type: () -> Dict[str, str]
+        # We can't use sysconfig.get_paths() because
+        # on some distributions it does not return the proper paths
+        # (those used by pip for instance). We go through distutils
+        # to get the proper ones.
+        import site
+
+        from distutils.command.install import SCHEME_KEYS  # noqa
+        from distutils.core import Distribution
+
+        d = Distribution()
+        d.parse_config_files()
+        obj = d.get_command_obj("install", create=True)
+        obj.finalize_options()
+
+        paths = sysconfig.get_paths().copy()
+        for key in SCHEME_KEYS:
+            if key == "headers":
+                # headers is not a path returned by sysconfig.get_paths()
+                continue
+
+            paths[key] = getattr(obj, "install_{}".format(key))
+
+        if site.check_enableusersite() and hasattr(obj, "install_usersite"):
+            paths["usersite"] = getattr(obj, "install_usersite")
+            paths["userbase"] = getattr(obj, "install_userbase")
+
+        return paths
+
+    def get_supported_tags(self):  # type: () -> List[Tag]
+        return list(sys_tags())
 
     def get_marker_env(self):  # type: () -> Dict[str, Any]
         if hasattr(sys, "implementation"):
@@ -984,18 +1228,15 @@ class SystemEnv(Env):
             "platform_version": platform.version(),
             "python_full_version": platform.python_version(),
             "platform_python_implementation": platform.python_implementation(),
-            "python_version": platform.python_version()[:3],
+            "python_version": ".".join(
+                v for v in platform.python_version().split(".")[:2]
+            ),
             "sys_platform": sys.platform,
             "version_info": sys.version_info,
+            # Extra information
+            "interpreter_name": interpreter_name(),
+            "interpreter_version": interpreter_version(),
         }
-
-    def config_var(self, var):  # type: (str) -> Any
-        try:
-            return sysconfig.get_config_var(var)
-        except IOError as e:
-            warnings.warn("{0}".format(e), RuntimeWarning)
-
-            return
 
     def get_pip_version(self):  # type: () -> Version
         from pip import __version__
@@ -1040,28 +1281,40 @@ class VirtualEnv(Env):
         # so assume that we have a functional pip
         return [self._bin("pip")]
 
+    def get_supported_tags(self):  # type: () -> List[Tag]
+        file_path = Path(packaging.tags.__file__)
+        if file_path.suffix == ".pyc":
+            # Python 2
+            file_path = file_path.with_suffix(".py")
+
+        with file_path.open(encoding="utf-8") as f:
+            script = decode(f.read())
+
+        script = script.replace(
+            "from ._typing import TYPE_CHECKING, cast",
+            "TYPE_CHECKING = False\ncast = lambda type_, value: value",
+        )
+        script = script.replace(
+            "from ._typing import MYPY_CHECK_RUNNING, cast",
+            "MYPY_CHECK_RUNNING = False\ncast = lambda type_, value: value",
+        )
+
+        script += textwrap.dedent(
+            """
+            import json
+
+            print(json.dumps([(t.interpreter, t.abi, t.platform) for t in sys_tags()]))
+            """
+        )
+
+        output = self.run("python", "-", input_=script)
+
+        return [Tag(*t) for t in json.loads(output)]
+
     def get_marker_env(self):  # type: () -> Dict[str, Any]
         output = self.run("python", "-", input_=GET_ENVIRONMENT_INFO)
 
         return json.loads(output)
-
-    def config_var(self, var):  # type: (str) -> Any
-        try:
-            value = self.run(
-                "python", "-", input_=GET_CONFIG_VAR.format(config_var=var)
-            ).strip()
-        except EnvCommandError as e:
-            warnings.warn("{0}".format(e), RuntimeWarning)
-            return None
-
-        if value == "None":
-            value = None
-        elif value == "1":
-            value = 1
-        elif value == "0":
-            value = 0
-
-        return value
 
     def get_pip_version(self):  # type: () -> Version
         output = self.run_pip("--version").strip()
@@ -1071,12 +1324,17 @@ class VirtualEnv(Env):
 
         return Version.parse(m.group(1))
 
+    def get_paths(self):  # type: () -> Dict[str, str]
+        output = self.run("python", "-", input_=GET_PATHS)
+
+        return json.loads(output)
+
     def is_venv(self):  # type: () -> bool
         return True
 
     def is_sane(self):
         # A virtualenv is considered sane if both "python" and "pip" exist.
-        return os.path.exists(self._bin("python")) and os.path.exists(self._bin("pip"))
+        return os.path.exists(self.python) and os.path.exists(self._bin("pip"))
 
     def _run(self, cmd, **kwargs):
         with self.temp_environ():
@@ -1112,7 +1370,7 @@ class VirtualEnv(Env):
             del os.environ[key]
 
     def _updated_path(self):
-        return os.pathsep.join([str(self._bin_dir), os.environ["PATH"]])
+        return os.pathsep.join([str(self._bin_dir), os.environ.get("PATH", "")])
 
 
 class NullEnv(SystemEnv):
@@ -1124,6 +1382,9 @@ class NullEnv(SystemEnv):
 
         self._execute = execute
         self.executed = []
+
+    def get_pip_command(self):  # type: () -> List[str]
+        return [self._bin("python"), "-m", "pip"]
 
     def _run(self, cmd, **kwargs):
         self.executed.append(cmd)
@@ -1151,6 +1412,8 @@ class MockEnv(NullEnv):
         is_venv=False,
         pip_version="19.1",
         sys_path=None,
+        marker_env=None,
+        supported_tags=None,
         **kwargs
     ):
         super(MockEnv, self).__init__(**kwargs)
@@ -1162,14 +1425,8 @@ class MockEnv(NullEnv):
         self._is_venv = is_venv
         self._pip_version = Version.parse(pip_version)
         self._sys_path = sys_path
-
-    @property
-    def version_info(self):  # type: () -> Tuple[int]
-        return self._version_info
-
-    @property
-    def python_implementation(self):  # type: () -> str
-        return self._python_implementation
+        self._mock_marker_env = marker_env
+        self._supported_tags = supported_tags
 
     @property
     def platform(self):  # type: () -> str
@@ -1189,6 +1446,23 @@ class MockEnv(NullEnv):
             return super(MockEnv, self).sys_path
 
         return self._sys_path
+
+    def get_marker_env(self):  # type: () -> Dict[str, Any]
+        if self._mock_marker_env is not None:
+            return self._mock_marker_env
+
+        marker_env = super(MockEnv, self).get_marker_env()
+        marker_env["python_implementation"] = self._python_implementation
+        marker_env["version_info"] = self._version_info
+        marker_env["python_version"] = ".".join(str(v) for v in self._version_info[:2])
+        marker_env["python_full_version"] = ".".join(str(v) for v in self._version_info)
+        marker_env["sys_platform"] = self._platform
+        marker_env["interpreter_name"] = self._python_implementation.lower()
+        marker_env["interpreter_version"] = "cp" + "".join(
+            str(v) for v in self._version_info[:2]
+        )
+
+        return marker_env
 
     def is_venv(self):  # type: () -> bool
         return self._is_venv

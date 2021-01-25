@@ -1,6 +1,6 @@
-from cleo import option
+from pathlib import Path
 
-from poetry.utils._compat import Path
+from cleo import option
 
 from .command import Command
 
@@ -26,6 +26,7 @@ class PublishCommand(Command):
             flag=False,
         ),
         option("build", None, "Build the package before publishing."),
+        option("dry-run", None, "Perform all actions except upload the package."),
     ]
 
     help = """The publish command builds and uploads the package to a remote repository.
@@ -40,7 +41,7 @@ the config command.
     loggers = ["poetry.masonry.publishing.publisher"]
 
     def handle(self):
-        from poetry.masonry.publishing.publisher import Publisher
+        from poetry.publishing.publisher import Publisher
 
         publisher = Publisher(self.poetry, self.io)
 
@@ -79,4 +80,5 @@ the config command.
             self.option("password"),
             cert,
             client_cert,
+            self.option("dry-run"),
         )

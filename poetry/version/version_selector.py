@@ -1,9 +1,7 @@
 from typing import Union
 
-from poetry.packages import Dependency
-from poetry.packages import Package
-from poetry.semver import Version
-from poetry.semver import parse_constraint
+from poetry.core.packages import Package
+from poetry.core.semver import Version
 
 
 class VersionSelector(object):
@@ -15,32 +13,33 @@ class VersionSelector(object):
         package_name,  # type: str
         target_package_version=None,  # type:  Union[str, None]
         allow_prereleases=False,  # type: bool
+        source=None,  # type: str
     ):  # type: (...) -> Union[Package, bool]
         """
         Given a package name and optional version,
         returns the latest Package that matches
         """
-        if target_package_version:
-            constraint = parse_constraint(target_package_version)
-        else:
-            constraint = parse_constraint("*")
+        from poetry.factory import Factory
 
-        candidates = self._pool.find_packages(
-            package_name, constraint, allow_prereleases=True
+        dependency = Factory.create_dependency(
+            package_name,
+            {
+                "version": target_package_version or "*",
+                "allow_prereleases": allow_prereleases,
+                "source": source,
+            },
         )
+        candidates = self._pool.find_packages(dependency)
         only_prereleases = all([c.version.is_prerelease() for c in candidates])
 
         if not candidates:
             return False
-
-        dependency = Dependency(package_name, constraint)
 
         package = None
         for candidate in candidates:
             if (
                 candidate.is_prerelease()
                 and not dependency.allows_prereleases()
-                and not allow_prereleases
                 and not only_prereleases
             ):
                 continue

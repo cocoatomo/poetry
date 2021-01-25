@@ -1,9 +1,15 @@
+from typing import TYPE_CHECKING
+from typing import Optional
+
 from tomlkit import dumps
 from tomlkit import loads
 from tomlkit import table
 
 from poetry.utils.helpers import module_name
 
+
+if TYPE_CHECKING:
+    from poetry.core.pyproject.toml import PyProjectTOML
 
 TESTS_DEFAULT = u"""from {package_name} import __version__
 
@@ -38,7 +44,7 @@ license = ""
 [tool.poetry.dev-dependencies]
 """
 
-BUILD_SYSTEM_MIN_VERSION = "0.12"
+BUILD_SYSTEM_MIN_VERSION = "1.0.0"
 BUILD_SYSTEM_MAX_VERSION = None
 
 
@@ -81,7 +87,9 @@ class Layout(object):
 
         self._write_poetry(path)
 
-    def generate_poetry_content(self):
+    def generate_poetry_content(
+        self, original=None
+    ):  # type: (Optional["PyProjectTOML"]) -> str
         template = POETRY_DEFAULT
         if self._license:
             template = POETRY_WITH_LICENSE
@@ -109,12 +117,17 @@ class Layout(object):
         if BUILD_SYSTEM_MAX_VERSION is not None:
             build_system_version += ",<" + BUILD_SYSTEM_MAX_VERSION
 
-        build_system.add("requires", ["poetry" + build_system_version])
-        build_system.add("build-backend", "poetry.masonry.api")
+        build_system.add("requires", ["poetry-core" + build_system_version])
+        build_system.add("build-backend", "poetry.core.masonry.api")
 
         content.add("build-system", build_system)
 
-        return dumps(content)
+        content = dumps(content)
+
+        if original and original.file.exists():
+            content = dumps(original.data) + "\n" + content
+
+        return content
 
     def _create_default(self, path, src=True):
         raise NotImplementedError()

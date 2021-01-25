@@ -23,7 +23,7 @@ class Incompatibility:
         if (
             len(terms) != 1
             and isinstance(cause, ConflictCause)
-            and any([term.is_positive() and term.dependency.is_root for term in terms])
+            and any(term.is_positive() and term.dependency.is_root for term in terms)
         ):
             terms = [
                 term
@@ -36,18 +36,18 @@ class Incompatibility:
             # Short-circuit in the common case of a two-term incompatibility with
             # two different packages (for example, a dependency).
             or len(terms) == 2
-            and terms[0].dependency.name != terms[-1].dependency.name
+            and terms[0].dependency.complete_name != terms[-1].dependency.complete_name
         ):
             pass
         else:
             # Coalesce multiple terms about the same package if possible.
             by_name = {}  # type: Dict[str, Dict[str, Term]]
             for term in terms:
-                if term.dependency.name not in by_name:
-                    by_name[term.dependency.name] = {}
+                if term.dependency.complete_name not in by_name:
+                    by_name[term.dependency.complete_name] = {}
 
-                by_ref = by_name[term.dependency.name]
-                ref = term.dependency.name
+                by_ref = by_name[term.dependency.complete_name]
+                ref = term.dependency.complete_name
 
                 if ref in by_ref:
                     by_ref[ref] = by_ref[ref].intersect(term)
@@ -61,18 +61,18 @@ class Incompatibility:
                 else:
                     by_ref[ref] = term
 
-                new_terms = []
-                for by_ref in by_name.values():
-                    positive_terms = [
-                        term for term in by_ref.values() if term.is_positive()
-                    ]
-                    if positive_terms:
-                        new_terms += positive_terms
-                        continue
+            new_terms = []
+            for by_ref in by_name.values():
+                positive_terms = [
+                    term for term in by_ref.values() if term.is_positive()
+                ]
+                if positive_terms:
+                    new_terms += positive_terms
+                    continue
 
-                    new_terms += list(by_ref.values())
+                new_terms += list(by_ref.values())
 
-                terms = new_terms
+            terms = new_terms
 
         self._terms = terms
         self._cause = cause
@@ -432,7 +432,7 @@ class Incompatibility:
 
     def _terse(self, term, allow_every=False):
         if allow_every and term.constraint.is_any():
-            return "every version of {}".format(term.dependency.name)
+            return "every version of {}".format(term.dependency.complete_name)
 
         return str(term.dependency)
 

@@ -5,12 +5,15 @@ import stat
 import tempfile
 
 from contextlib import contextmanager
+from pathlib import Path
 from typing import List
 from typing import Optional
 
+import requests
+
 from poetry.config.config import Config
-from poetry.utils._compat import Path
-from poetry.version import Version
+from poetry.core.packages.package import Package
+from poetry.core.version import Version
 
 
 try:
@@ -34,60 +37,18 @@ def normalize_version(version):  # type: (str) -> str
     return str(Version(version))
 
 
+def _del_ro(action, name, exc):
+    os.chmod(name, stat.S_IWRITE)
+    os.remove(name)
+
+
 @contextmanager
 def temporary_directory(*args, **kwargs):
-    try:
-        from tempfile import TemporaryDirectory
+    name = tempfile.mkdtemp(*args, **kwargs)
 
-        with TemporaryDirectory(*args, **kwargs) as name:
-            yield name
-    except ImportError:
-        name = tempfile.mkdtemp(*args, **kwargs)
+    yield name
 
-        yield name
-
-        shutil.rmtree(name)
-
-
-def parse_requires(requires):  # type: (str) -> List[str]
-    lines = requires.split("\n")
-
-    requires_dist = []
-    in_section = False
-    current_marker = None
-    for line in lines:
-        line = line.strip()
-        if not line:
-            if in_section:
-                in_section = False
-
-            continue
-
-        if line.startswith("["):
-            # extras or conditional dependencies
-            marker = line.lstrip("[").rstrip("]")
-            if ":" not in marker:
-                extra, marker = marker, None
-            else:
-                extra, marker = marker.split(":")
-
-            if extra:
-                if marker:
-                    marker = '{} and extra == "{}"'.format(marker, extra)
-                else:
-                    marker = 'extra == "{}"'.format(extra)
-
-            if marker:
-                current_marker = marker
-
-            continue
-
-        if current_marker:
-            line = "{}; {}".format(line, current_marker)
-
-        requires_dist.append(line)
-
-    return requires_dist
+    shutil.rmtree(name, onerror=_del_ro)
 
 
 def get_cert(config, repository_name):  # type: (Config, str) -> Optional[Path]
@@ -127,3 +88,48 @@ def merge_dicts(d1, d2):
             merge_dicts(d1[k], d2[k])
         else:
             d1[k] = d2[k]
+
+
+def download_file(
+    url, dest, session=None, chunk_size=1024
+):  # type: (str, str, Optional[requests.Session], int) -> None
+    get = requests.get if not session else session.get
+
+    with get(url, stream=True) as response:
+        response.raise_for_status()
+
+        with open(dest, "wb") as f:
+            for chunk in response.iter_content(chunk_size=chunk_size):
+                if chunk:
+                    f.write(chunk)
+
+
+def get_package_version_display_string(
+    package, root=None
+):  # type: (Package, Optional[Path]) -> str
+    if package.source_type in ["file", "directory"] and root:
+        return "{} {}".format(
+            package.version,
+            Path(os.path.relpath(package.source_url, root.as_posix())).as_posix(),
+        )
+
+    return package.full_pretty_version
+
+
+def paths_csv(paths):  # type: (List[Path]) -> str
+    return ", ".join('"{}"'.format(str(c)) for c in paths)
+
+
+def is_dir_writable(path, create=False):  # type: (Path, bool) -> bool
+    try:
+        if not path.exists():
+            if not create:
+                return False
+            path.mkdir(parents=True, exist_ok=True)
+
+        with tempfile.TemporaryFile(dir=str(path)):
+            pass
+    except (IOError, OSError):
+        return False
+    else:
+        return True

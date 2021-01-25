@@ -2,6 +2,8 @@ import os
 import signal
 import sys
 
+from pathlib import Path
+
 import pexpect
 
 from clikit.utils.terminal import Terminal
@@ -42,7 +44,17 @@ class Shell:
         try:
             name, path = detect_shell(os.getpid())
         except (RuntimeError, ShellDetectionFailure):
-            raise RuntimeError("Unable to detect the current shell.")
+            shell = None
+
+            if os.name == "posix":
+                shell = os.environ.get("SHELL")
+            elif os.name == "nt":
+                shell = os.environ.get("COMSPEC")
+
+            if not shell:
+                raise RuntimeError("Unable to detect the current shell.")
+
+            name, path = Path(shell).stem, shell
 
         cls._shell = cls(name, path)
 
@@ -83,6 +95,8 @@ class Shell:
             suffix = ".fish"
         elif "csh" == self._name:
             suffix = ".csh"
+        elif "tcsh" == self._name:
+            suffix = ".csh"
         else:
             suffix = ""
 
@@ -92,6 +106,8 @@ class Shell:
         if "fish" == self._name:
             return "source"
         elif "csh" == self._name:
+            return "source"
+        elif "tcsh" == self._name:
             return "source"
 
         return "."
